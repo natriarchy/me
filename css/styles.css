@@ -447,14 +447,12 @@ footer:hover {
   .menu {
     display:block;
     position: fixed;
-    left: auto;
-    right: auto;
-    top: 0em;
+    top: -2em;
     transform: rotate(90deg);
   }
   .menu-title {
     left: 1.6em;
-    top: 7.5em;
+    top: -2em;
     transform: none;
   }
   header {
