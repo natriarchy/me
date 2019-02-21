@@ -462,12 +462,10 @@ footer:hover {
   }
   .design-header {
     width:90%;
-    align-content: center;
-    text-align: center;
   }
   .design-title {
     display: block;
-    margin-left: auto;
+    margin-left: 10%;
     margin-right: auto;
     font-size-adjust: auto;
   }
