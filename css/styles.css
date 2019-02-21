@@ -467,7 +467,10 @@ footer:hover {
     margin-right: auto;
     }
   nav li {
-    margin: 1em;
+    margin-bottom: 1em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;    
   }
   .aboutme-rutgerslogo {
     display: none;
