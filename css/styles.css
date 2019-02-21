@@ -453,11 +453,9 @@ footer:hover {
     transform: rotate(90deg);
   }
   .menu-title {
-      left: 1.6em;
+    left: 1.6em;
     top: 7.5em;
-    float: right;
     transform: none;
-
   }
   header {
     width:100%;
@@ -501,6 +499,18 @@ footer:hover {
   .resume-description {
     margin-left: 2em;
     margin-right: 1em;
+  }
+  .leftbutton {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+  .rightbutton {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
   }
   footer {
       position:relative;
