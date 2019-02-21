@@ -444,6 +444,14 @@ footer:hover {
     margin-right: auto;
     width: 100%;
   }
+  header {
+    z-index: 2;
+    background-color: black;
+    position: fixed;
+    top: 4em;
+    width:100%;
+    left: -21em;
+  }
   .design-header {
     width:90%;
     text-align: center;
@@ -486,6 +494,6 @@ footer:hover {
       padding-top: .5em;
   }
   footer:hover {
-    transform: translateY(0em);
+    transform: none;
   }
 }
