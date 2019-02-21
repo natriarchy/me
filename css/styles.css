@@ -317,9 +317,9 @@ footer:hover {
 #items{
   overflow-x: scroll;
   width: 95%;
-  display:inline-block;
-  margin-left: 50px;
-  margin-right: 50px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
   }
 .item{
   white-space: nowrap;
