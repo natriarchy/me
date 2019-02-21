@@ -505,12 +505,14 @@ footer:hover {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
+    float: none;
   }
   .rightbutton {
     display: block;
     margin-right: auto;
     margin-left: auto;
     width: 80%;
+    float: none;
   }
   footer {
       position:relative;
