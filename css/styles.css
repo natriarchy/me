@@ -462,6 +462,7 @@ footer:hover {
   }
   .design-header {
     width:90%;
+    overflow-y: scroll; 
   }
   .design-title {
     display: block;
