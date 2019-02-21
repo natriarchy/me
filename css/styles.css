@@ -445,12 +445,8 @@ footer:hover {
     width: 100%;
   }
   header {
-    z-index: 2;
-    background-color: black;
-    position: fixed;
-    top: 4em;
     width:100%;
-    left: -21em;
+    left: -100%;
   }
   .design-header {
     width:90%;
