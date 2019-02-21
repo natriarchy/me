@@ -447,7 +447,8 @@ footer:hover {
   .menu {
     display:block;
     position: fixed;
-    top: -2em;
+    left: 2em;
+    top: -1em;
     transform: rotate(90deg);
   }
   .menu-title {
@@ -461,6 +462,7 @@ footer:hover {
   }
   .design-header {
     width:90%;
+    align-content: center;
     text-align: center;
   }
   .design-title {
