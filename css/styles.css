@@ -446,6 +446,7 @@ footer:hover {
   }
   .design-header {
     width:90%;
+    text-align: center;
   }
   .design-title {
     display: block;
