@@ -33,8 +33,8 @@
 
  nav ul {
    text-align: center;
-   padding-top: 2em;
-   padding-bottom: 2em;
+   width: 75%;
+   padding: 2em;
    margin-left: 4em;
    margin-right: 1em;
    background-image: linear-gradient(225deg, paleturquoise, palegoldenrod, aquamarine, orchid);
@@ -43,11 +43,15 @@
 
  nav li {
     list-style: none;
-     margin-right: 2em;
+    display: block;
+    margin: 0 auto;
  }
 
  .nav {
-   display:list-item;
+   display:block;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
    background: white;
    text-decoration: overline;
    text-transform: uppercase;
@@ -195,7 +199,6 @@ body {
   font-family: "Century Gothic", sans-serif;
   font-size: 18px;
   text-align: left;
-  -epub-hyphens:auto;
 }
 
 p {
@@ -493,30 +496,70 @@ footer:hover .contact {
   .menu {
     display:block;
     position: fixed;
-    right: -100%;
-    top: -1em;
+    margin-left: auto;
+    margin-right: auto;
+    top:-.75em;
+    left: 1.75em;
     transform: rotate(90deg);
+    opacity: .75;
   }
-  .menu-title {
-    left: 1.6em;
-    top: -2em;
-    transform: none;
+    .menu-title {
+    top: .55em;
+    left: 4.4em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: .2em;
+    padding-right: .5em;
+    transform: rotate(0);
+    text-align: center;
+    background-color: white;
+    opacity: .75;
+  }
+  header:hover .menu-title{
+    color:white;
+    background-color: black;
+    -webkit-transition-delay: .5s;
+    transition-delay: .5s;
+      opacity: 1;
+  }
+
+  header:hover .menu{
+        -webkit-transition-delay: .5s;
+        transition-delay: .5s;
+          opacity: 1;
+  }
+  .card {
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  p {
+    margin-left: 1em;
+    margin-right: 1em;
   }
   header {
     width:100%;
     left: -101%;
+    top: 2.75em;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
+  h1,h2,h3,h4,h5 {
+    margin-left: 1em;
+    margin-right: 1em;
+
+  }
   .design-header {
+    margin-top: 5em;
     width:90%;
-    overflow-y: scroll;
+    display: flex;
   }
   .design-title {
     display: block;
-    margin-left: 10%;
-    margin-right: auto;
-    font-size-adjust: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 1em;
   }
   .square-logo {
     display: none;
@@ -528,7 +571,7 @@ footer:hover .contact {
     }
   nav li {
     margin-bottom: 1em;
-    width: 70%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -564,10 +607,17 @@ footer:hover .contact {
   footer {
       position:relative;
       line-height:2em;
-      bottom: 0em;
-      padding-top: .5em;
+      bottom: -3em;
+      padding-top: 2em;
+      height: auto;
   }
   footer:hover {
     transform: none;
+  }
+  .contact {
+      display: none;
+  }
+  .look-button {
+    width: 50%;
   }
 }
