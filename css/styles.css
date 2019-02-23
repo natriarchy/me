@@ -263,17 +263,46 @@ h6 {
 
 footer {
   z-index: 1;
+  display: block;
   text-align: center;
   position: fixed;
-  bottom: -6.5em;
-  height: 10em;
+  bottom: -3em;
+  height: 3em;
   width: 100%;
   background-color: darkslategray;
   font-variant: small-caps;
   box-shadow: inset 0px 5px 10px 0px black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 footer:hover {
-  transform: translateY(-6em);
+  transform: translateY(-3em);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
+  -webkit-transition-delay: .5s;
+  transition-delay: .5s;
+}
+footer:hover .contact {
+    background-color: black;
+}
+.contact {
+    height: 2.25em;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: dimgray;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: inset 0px 5px 10px 0px black;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    top: -2.25em;
+}
+.contact:hover {
+  background-color: black;
   -webkit-transition-duration: 0.5s;
   transition-duration: .5s;
 }
@@ -282,7 +311,7 @@ footer:hover {
   color: white;
   display: block;
   position: relative;
-  top: 1px;
+  top: -1px;
   font-size: 12px;
 }
 
