@@ -8,9 +8,15 @@
    top: 4em;
    width:20em;
    left: -21em;
+   border-top-right-radius: 25px;
+   border-bottom-right-radius: 25px;
    box-shadow: 0px 5px 2px 1px black;
+   -webkit-transition-duration: 0.5s;
+   transition-duration: .5s;
  }
      header:hover {
+       -webkit-transition-delay: 0.5s;
+       transition-delay: .5s;
        -webkit-transition-duration: 0.5s;
        transition-duration: .5s;
        left:0;
@@ -36,8 +42,11 @@
  }
 
  nav li {
-   list-style: none;
-   margin-right: 2em;
+    list-style: none;
+     margin-right: 2em;
+ }
+
+ .nav {
    display:list-item;
    background: white;
    text-decoration: overline;
@@ -49,16 +58,16 @@
    border-radius: 20px 20px 20px 0;
    padding: .7em;
    box-shadow: 8px 5px 1px 1px black;
+   -webkit-transition-duration: 0.5s;
+   transition-duration: .5s;
  }
-
-     nav li:hover {
-       color: white;
-       background: black;
-       box-shadow: -20px 5px 1px 1px white;
-       -webkit-transition-duration: 0.5s;
-       transition-duration: .5s;
- }
-
+  .nav:hover {
+     color: white;
+     background: black;
+     box-shadow: -20px 5px 1px 1px white;
+     -webkit-transition-duration: 0.5s;
+     transition-duration: .5s;
+}
 .menu {
   display:block;
   position: fixed;
@@ -73,6 +82,8 @@
   border-radius: 10px;
   border: 3px solid goldenrod;
   box-shadow: inset 0px 0px 10px 0px black;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 .menu-title {
   display:block;
@@ -86,7 +97,8 @@
   float: right;
   transform-origin: left;
   transform: rotate(90deg);
-
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 
 .menu:hover .menu-hr {
@@ -100,6 +112,8 @@
 
 .menu:hover {
   background: white;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 
 .menu-hr {
@@ -108,6 +122,8 @@
   border-color: orange;
   top: -12px;
   border-width: 3px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 
 /*Splash Area*/
@@ -210,15 +226,6 @@ h2 {
   border-bottom: 0px;
   box-shadow: None;
 }
-h2:hover {
-  color: white;
-  background-color: black;
-  border: none;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: .2s;
-  box-shadow: inset 0 0 10px #000000;
-  text-shadow:none;
-}
 
 h3 {
   position:relative;
@@ -274,6 +281,8 @@ footer {
   box-shadow: inset 0px 5px 10px 0px black;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 footer:hover {
   transform: translateY(-3em);
@@ -297,12 +306,13 @@ footer:hover .contact {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     box-shadow: inset 0px 5px 10px 0px white;
-
     padding-top: 1em;
     padding-bottom: .5em;
     padding-left: 2em;
     padding-right: 2em;
     top: -2.22em;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: .5s;
 }
 .contact:hover {
   background-color: black;
@@ -334,8 +344,6 @@ footer:hover .contact {
   display:block;
   margin-left: auto;
   margin-right: auto;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
   }
 .item{
   white-space: nowrap;
@@ -358,6 +366,8 @@ footer:hover .contact {
   margin-bottom: 5em;
   box-shadow: 0 9px #999;
   cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 
 .rightbutton {
@@ -372,6 +382,8 @@ footer:hover .contact {
   margin-bottom: 5em;
   box-shadow: 0 9px #999;
   cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 .rightbutton:hover {
   font-weight: 900;
@@ -380,6 +392,8 @@ footer:hover .contact {
   border: 1px solid black;
   box-shadow: 0 0px #999;
   transform:translateY(.5em);
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
   }
 
 .leftbutton:hover {
@@ -390,6 +404,8 @@ footer:hover .contact {
   border: 1px solid black;
   box-shadow: 0 0px #999;
   transform:translateY(.5em);
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 
 /* Resume Elements*/
@@ -450,6 +466,22 @@ footer:hover .contact {
   border-radius: 15px;
   border-top-right-radius: 0px;
 }
+.look-button {
+  display: block;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: .5em;
+  -webkit-transition-duration: .25s;
+  transition-duration: .25s;
+}
+.look-button:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  transform: scale(1.1);
+  -webkit-transition-duration: .25s;
+  transition-duration: .25s;
+}
 
 /* Screen Compatibility*/
 @media screen and (max-width: 800px) {
@@ -473,6 +505,8 @@ footer:hover .contact {
   header {
     width:100%;
     left: -101%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
   .design-header {
     width:90%;
