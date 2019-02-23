@@ -545,9 +545,14 @@ footer:hover .contact {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  h1,h2,h3,h4,h5 {
-    margin-left: 1em;
-    margin-right: 1em;
+  h1,h2,h3,h4 {
+    margin-left: .75em;
+    margin-right: .75em;
+
+  }
+  h5 {
+    margin-left: -.5em;
+    margin-right: .75em;
 
   }
   .design-header {
@@ -587,7 +592,7 @@ footer:hover .contact {
     left: 2.5%;
   }
   .resume-description {
-    margin-left: 2em;
+    margin-left: 1em;
     margin-right: 1em;
   }
   .leftbutton {
