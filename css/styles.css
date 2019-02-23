@@ -165,7 +165,8 @@
   position: relative;
   padding-top: .5em;
   padding-bottom: .5em;
-  background-color: grey;
+  background-color: whitesmoke;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
   width: 75%;
   left: 12.5%;
 }
@@ -423,9 +424,9 @@ footer:hover .contact {
 .resume-description {
   font-weight: 500;
   list-style: circle;
-  margin-left: 4em;
-  margin-right: 4em;
-  color: white;
+  line-height: 1.5;
+  margin-left: 3em;
+  margin-right: 3em;
   word-spacing: .15em;
   text-align: left;
 }
