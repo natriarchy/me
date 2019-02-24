@@ -34,29 +34,6 @@
   </div>
   <br>
   <article class="card">
-    <div>
-          <script>
-          function docload () {
-            var fileId = '1vN2XsR2ocwQ1lEgAV-lvWcqjKN19XKnuBS5GjYzOyQE';
-            var dest = fs.createWriteStream('docs/thots.html');
-            drive.files.export({
-              fileId: fileId,
-              mimeType: 'type/html'
-            })
-                .on('end', function () {
-                  console.log('Done');
-                })
-                .on('error', function (err) {
-                  console.log('Error during download', err);
-                })
-                .pipe(dest);
-              }
-          </script>
-          <embed src="docs/thots.html" onload="function docload()" type="text/html">
-      </div>
-  </article>
-  <br>
-  <article class="card">
     <h3>First Thoughts</h3>
     <h4>February 20th, 2018</h4>
       <p>I wake from another frustrating dream. Yes, I am a little sweaty again, and my head hurts. The glare of the sun illuminates my disgusting windows. Through them, a snapshot of a cityscape that has changed little in sixty years; dirty facades, decrepit husks of acceptable mid-century apartments. In the distance, there is a fashionable modern gym. The little specks of human constantly huff, guffaw, and vibrate. You can feel their quixotic zeal to get “in shape” from my worn-out apartment across the way. </p>
