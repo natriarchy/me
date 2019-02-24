@@ -62,15 +62,15 @@
    border-radius: 20px 20px 20px 0;
    padding: .7em;
    box-shadow: 8px 5px 1px 1px black;
-   -webkit-transition-duration: 0.5s;
-   transition-duration: .5s;
+   -webkit-transition-duration: 0.35s;
+   transition-duration: .35s;
  }
   .nav:hover {
      color: white;
      background: black;
      box-shadow: -20px 5px 1px 1px white;
-     -webkit-transition-duration: 0.5s;
-     transition-duration: .5s;
+     -webkit-transition-duration: 0.35s;
+     transition-duration: .35s;
 }
 .menu {
   display:block;
@@ -110,14 +110,14 @@
   margin:2;
   vertical-align: middle;
   top:.5em;
-  -webkit-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.35s;
   transition-duration: .5s;
 }
 
 .menu:hover {
   background: white;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
 }
 
 .menu-hr {
