@@ -286,15 +286,15 @@ footer {
   box-shadow: inset 0px 5px 10px 0px black;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
 }
 footer:hover {
   transform: translateY(-3em);
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
-  -webkit-transition-delay: .25s;
-  transition-delay: .25s;
+  -webkit-transition-delay: .35s;
+  transition-delay: .35s;
 }
 footer:hover .contact {
     background-color: darkslategray;
@@ -316,13 +316,13 @@ footer:hover .contact {
     padding-left: 2em;
     padding-right: 2em;
     top: -2.22em;
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: .35s;
 }
 .contact:hover {
   background-color: black;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
 }
 
 .footer-content {
