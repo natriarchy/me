@@ -172,6 +172,7 @@
   box-shadow: 10px 5px 25px 5px;
   margin-top: 1em;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  background-size: 4em auto;
 }
 .card-link {
   margin-top: 2em;
@@ -330,11 +331,9 @@ footer {
   bottom: -3em;
   height: 3em;
   width: 100%;
-  background-color: darkslategray;
+  background-color:dimgray;
+  box-shadow: inset 2px 8px 10px 0px black;
   font-variant: small-caps;
-  box-shadow: inset 0px 5px 10px 0px black;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
 }
@@ -637,6 +636,10 @@ footer:hover .contact {
     margin-left: auto;
     margin-right: auto;
   }
+  .general-link {
+    width: 75%;
+    letter-spacing: .5;
+  }
   .aboutme-rutgerslogo {
     display: none;
   }
@@ -667,19 +670,27 @@ footer:hover .contact {
     float: none;
   }
   footer {
-      position:relative;
-      line-height:2em;
-      bottom: -3em;
-      padding-top: 2em;
-      height: auto;
+    position:relative;
+    box-shadow: none;
+    background-color: black;
+    line-height:2em;
+    padding-top: 1em;
+    margin:auto;
+    width:100%;
+    height: auto;
   }
   footer:hover {
     transform: none;
+  }
+  .footer-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .contact {
       display: none;
   }
   .look-button {
-    width: 50%;
+      width: 50%;
   }
 }
