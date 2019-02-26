@@ -102,7 +102,7 @@
   font-variant: small-caps;
   position: fixed;
   left: 1.6em;
-  top: 7.3em;
+  top: 7.5em;
   float: right;
   transform-origin: left;
   transform: rotate(90deg);
@@ -162,7 +162,7 @@
   box-shadow: inset 5px 5px 25px 12px;
 	height: 15em;
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   max-width: 1700px;
   }
 
@@ -255,7 +255,22 @@ p {
 	text-align: justify;
 	text-align-last: center;
 }
+h1 {
+  position:relative;
+  text-shadow: 3px 3px 3px grey;
+  font-size: 24px;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: .5em;
+  text-align: center;
+  text-align-last: center;
+  font-variant: small-caps;
+  color: white;
+  letter-spacing: 5px;
+  line-height: 1.25;
+  box-shadow: None;
 
+}
 h2 {
   position:relative;
   text-shadow: 3px 3px 3px grey;
@@ -546,10 +561,10 @@ footer:hover .contact {
     opacity: .75;
   }
     .menu-title {
-    top: .55em;
-    left: 4.4em;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    top: .65em;
+    left: 4.6em;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     padding: .2em;
     padding-right: .5em;
     transform: rotate(0);
@@ -606,7 +621,7 @@ footer:hover .contact {
     display: block;
     margin-left: 5%;
     margin-right: 5%;
-    padding-bottom: 1em;
+    padding-bottom: .75em;
     font-size: 41px;
   }
   .square-logo {
