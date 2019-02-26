@@ -51,11 +51,17 @@
   <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
   <section class="footer-content">
       <h6> <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-         ║ (202) 681-1138 ║
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a> ║
+        <span id="doublebar"> ║ </span>(202) 681-1138 ║
+        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
+        <span id="doublebar2"> ║ </span>
           <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-            <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">&rarr;nterwin714</a>
+            <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
       </h6>
   </section>
 </footer>
+<script>
+    if (screen.width <= 800) {
+      doublebar.innerHTML = "<br>";
+      doublebar2.innerHTML = "<br>";};
+</script>
 </html>
