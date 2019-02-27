@@ -189,38 +189,28 @@
   position: relative;
   float:left;
   width: 48%;
-  height:auto;
-  padding: 1em;
+  height: 40em;
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-right: .5em;
-  margin-bottom: 1em;
-  background-color: black;
-}
-.portfoliopg {
-  width: 100%;
-  z-index: 0;
-}
-.portfoliopg:active {
-  position:absolute;
-  width:70vw;
-  float: left;
-  z-index: 3;
-}
-.portfoliopg:not(:active) {
-  z-index: 2;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: lightcoral;
 }
 .card-quarter-right {
   display: block;
   position: relative;
   float:right;
   width: 48%;
-  padding: 1em;
+  height: 40em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-left: .5em;
-  margin-bottom: 1em;
-  background-color: black;
+  margin-bottom: 2em;
+  background-color: darkgoldenrod;
 }
 .card-link {
   margin-top: 2em;
@@ -239,12 +229,6 @@
   height: 100%;
   width: 12vw;
   top:0;
-}
-.twitter {
-  text-align: justify;
-  float: right;
-  position: fixed;
-  margin-top: 12.5vh;
 }
 
 .rightside {
@@ -266,9 +250,10 @@
   padding-left: 2em;
   padding-right: 2em;
   position:relative;
+  word-wrap: normal;
   font-weight: 900;
   text-shadow: 1px 3px 4px black;
-  font-size: 28px;
+  font-size: 20px;
   text-align: center;
   font-variant: small-caps;
   color: orange;
@@ -287,7 +272,9 @@
   position: relative;
   padding-top: .5em;
   padding-bottom: .5em;
-  background-color: lavenderblush;
+  border: 2px solid black;
+  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+  background-color: beige;
   width: 75%;
   left: 12.5%;
 }
@@ -330,8 +317,8 @@ p {
 	font-size:20px;
 	line-height:28px;
 	margin-bottom:2em;
-	margin-left:2em;
-	margin-right:2em;
+	margin-left:1.5em;
+	margin-right:1.5em;
 	margin-top:2em;
 	text-align: justify;
 	text-align-last: center;
@@ -340,17 +327,36 @@ h1 {
   position:relative;
   text-shadow: 3px 3px 3px grey;
   font-size: 24px;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-bottom: .5em;
   text-align: center;
   text-align-last: center;
   font-variant: small-caps;
   color: white;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   line-height: 1.25;
   box-shadow: None;
-
+}
+span.left{
+  display: block;
+  position: relative;
+  text-align: center;
+  top:0em;
+  left: 0%;
+  width: 50%;
+  line-height: 1.5;
+  font-weight: bolder;
+}
+span.right{
+  display: block;
+  position: relative;
+  text-align: center;
+  font-weight: bolder;
+  top:-4.5em;
+  right:-50%;
+  width: 50%;
+  line-height: 1.5;
 }
 h2 {
   position:relative;
@@ -393,7 +399,8 @@ h5 {
   font-variant: small-caps;
   margin-left: -3em;
   color: black;
-  text-shadow: 1px 2px 5px grey;
+  letter-spacing: 1.25;
+  text-shadow: 1px 2px 5px black;
 }
 
 h6 {
@@ -472,10 +479,9 @@ footer:hover .contact {
 }
 
 /* Here are portfoliopgs */
-.portfoliopgs {
-  text-align: center;
-  font-variant: small-caps;
-  font-size: 16px;
+.image {
+  width: 100%;
+  border: 5px black double;
 }
 .leftbutton {
   text-align:center;
@@ -540,7 +546,7 @@ footer:hover .contact {
   top: .25em;
   font-variant: small-caps;
   margin-left: 1em;
-  margin-right: -.15em;
+  margin-right: .75em;
 }
 
 .resume-description {
@@ -662,6 +668,24 @@ footer:hover .contact {
     padding-left: 0;
     padding-right: 0;
   }
+  .card-quarter-left {
+    width:100%;
+    float: none;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height:auto;
+  }
+  .card-quarter-right {
+    width:100%;
+    float:none;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height:auto;
+  }
   .leftside {
     display: none;
   }
@@ -718,7 +742,8 @@ footer:hover .contact {
     margin-right: auto;
   }
   .general-link {
-    width: 75%;
+    width: auto;
+    margin:.5em;
     letter-spacing: .5;
   }
   .aboutme-rutgerslogo {
@@ -773,5 +798,26 @@ footer:hover .contact {
   }
   .look-button {
       width: 50%;
+  }
+  span.left{
+    display:inline-block;
+    position: inherit;
+    text-align: center;
+    top:none;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: bolder;
+    margin-bottom: 1em;
+  }
+  span.right{
+    display: inline-block;
+    position:inherit;
+    text-align: center;
+    font-weight: bolder;
+    top:none;
+    right:none;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 1em;
   }
 }
