@@ -1,7 +1,7 @@
 
 
  /* Sidebar/nav Elements*/
- header {
+ .header {
    z-index: 2;
    background-color: black;
    position: fixed;
@@ -14,33 +14,48 @@
    -webkit-transition-duration: 0.35s;
    transition-duration: .35s;
  }
-     header:hover {
-       -webkit-transition-delay: 0.5s;
-       transition-delay: .5s;
+     .menu-open .header {
        -webkit-transition-duration: 0.35s;
        transition-duration: .35s;
        left:0;
      }
-     header:hover .menu{
+     .menu-open .menu {
        background-color: white;
        opacity: 1;
        -webkit-transition-duration: 0.35s;
        transition-duration: .35s;
      }
-     header:hover .menu-title{
+     .menu-open .menu-title{
        color:white;
+       background-color: black;
        opacity: 1;
-       background: none;
-       -webkit-transition-delay: 0.5s;
-       transition-delay: .5s;
        -webkit-transition-duration: 0.35s;
        transition-duration: .35s;
      }
-     header:hover .menu-hr {
+     .menu-open .menu .hr1 {
        border-color: black;
        background-color: black;
-       transform: scaleX(4);
-       transform: scaleY(.5);
+       transform-origin: center;
+       transform:  translate(3px, 12px) rotate(-45deg);
+       margin:0;
+       width: 3em;
+       height: .4em;
+       -webkit-transition-duration: 0.35s;
+       transition-duration: .35s;
+       opacity: 1;
+     }
+     .menu-open .menu .hr2 {
+      opacity: 0;
+      -webkit-transition-duration: 0.35s;
+      transition-duration: .35s;
+     }
+     .menu-open .menu .hr3 {
+       border-color: black;
+       background-color: black;
+       transform: translate(3px, -8px) rotate(45deg);
+       margin:0;
+       width:3em;
+       height: .4em;
        -webkit-transition-duration: 0.35s;
        transition-duration: .35s;
        opacity: 1;
@@ -95,9 +110,10 @@
   float: right;
   width: 4em;
   height: 8em;
+  color: orange;
   background: black;
   line-height: 1px;
-  padding: 1em;
+  padding: 1px;
   border-radius: 10px;
   border: 3px solid goldenrod;
   box-shadow: inset 0px 0px 10px 0px black;
@@ -105,6 +121,14 @@
   transition-duration: .35s;
   opacity: .5;
 }
+.menu:hover {
+  color: black;
+  background-color: white;
+  opacity: 1;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+}
+
 .menu-title {
   display:block;
   color: grey;
@@ -125,25 +149,18 @@
   opacity: .5;
 }
 
-.menu:hover {
-  background: white;
+.menu .hr1,.hr2,.hr3{
+  margin-top:6px;
+  margin-bottom:6px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2em;
+  border-style:solid;
+  color: inherit;
+  border-radius: 50px;
+  border-width: 2px;
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
-  opacity: 1;
-}
-
-.menu-hr {
-  display: block;
-  border-style:solid;
-  background-color: orange;
-  border-color: orange;
-  padding: .25em;
-  margin-top: .15em;
-  margin-bottom: .15em;
-  border-radius: 50px;
-  border-width: 1px;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
 }
 
 /*Splash Area*/
@@ -643,7 +660,7 @@ footer:hover .contact {
     transform: rotate(90deg);
     opacity: .5;
   }
-    .menu-title {
+  .menu-title {
     top: .65em;
     left: 4.4em;
     border-top-left-radius: 0px;
@@ -652,21 +669,7 @@ footer:hover .contact {
     padding-right: .5em;
     transform: rotate(0);
     text-align: center;
-    background-color: white;
     opacity: .5;
-  }
-  header:hover .menu-title{
-    color:white;
-    background-color: black;
-    -webkit-transition-delay: .5s;
-    transition-delay: .5s;
-      opacity: 1;
-  }
-
-  header:hover .menu{
-    -webkit-transition-delay: .5s;
-    transition-delay: .5s;
-    opacity: 1;
   }
   .card {
     margin-left: 0em;
@@ -702,7 +705,7 @@ footer:hover .contact {
     margin-left: 1em;
     margin-right: 1em;
   }
-  header {
+  .header {
     width:100%;
     left: -101%;
     top: 2.75em;
