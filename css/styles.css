@@ -106,10 +106,10 @@
   display:block;
   position: fixed;
   left: .85em;
-  top: 6em;
+  top: 8%;
   float: right;
-  width: 4em;
-  height: 8em;
+  width: 5%;
+  height: 10%;
   color: orange;
   background: black;
   line-height: 1px;
@@ -136,8 +136,8 @@
   font-weight:600;
   font-variant: small-caps;
   position: fixed;
-  left: 1.6em;
-  top: 7.5em;
+  left: 3.5%;
+  top: 17%;
   float: right;
   transform-origin: left;
   transform: rotate(90deg);
@@ -688,9 +688,10 @@ footer:hover .contact {
     position: fixed;
     margin-left: auto;
     margin-right: auto;
-    height: 7.25em;
-    top:-1em;
-    left: 2em;
+    height: 13%;
+    width: 13%;
+    top: -2%;
+    left: 6.5%;
     transform: rotate(90deg);
     opacity: .5;
   }
