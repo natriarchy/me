@@ -591,10 +591,10 @@ h6 {
   cursor: zoom-in;
 }
 .showcase-zoom {
+  cursor: zoom-out;
   transform: scale(1.5);
   overflow-x: scroll;
   z-index: 1;
-  cursor: zoom-out;
 }
 .leftbutton {
   text-align:center;
