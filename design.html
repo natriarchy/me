@@ -78,10 +78,15 @@
       </h6>
   </section>
 </footer>
-  <script type="text/javascript">
-      function menu(x)
-        {
-          x.classList.toggle("menu-open");
-        };
-  </script>
+<script type="text/javascript">
+    function menu(x)
+      {
+        x.classList.toggle("menu-open");
+      };
+    var colors = ['darkseagreen', 'thistle'];
+    var colors2 = ['salmon', 'cornflowerblue'];
+    myDIV1.style.backgroundColor = colors2[Math.floor(Math.random() * colors.length)];
+    myDIV2.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    myDIV3.style.backgroundColor = colors2[Math.floor(Math.random() * colors.length)];
+</script>
 </html>
