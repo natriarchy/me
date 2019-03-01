@@ -805,6 +805,7 @@ footer:hover .contact {
   .resume-description {
     margin-left: 1em;
     margin-right: 1em;
+    font-weight: normal;
   }
   .leftbutton {
     display: block;
