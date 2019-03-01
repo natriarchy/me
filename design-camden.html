@@ -55,7 +55,7 @@
     </div>
 <br>
     <div class="portfoliopg-show">
-      <img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" width=100%>
+      <img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" onclick="transformer(this)" width=100%>
     </div>
 <br>
 		<div>
@@ -92,8 +92,8 @@
       function portfolio4(x)
         {document.getElementById("showcase").src="img/portfolio5.png"};
       function contactme(x)
-        {
-          x.classList.toggle("contact-open");
-        };
+        {x.classList.toggle("contact-open");};
+      function transformer(x)
+        {x.classList.toggle("showcase-zoom");};
   </script>
 </html>
