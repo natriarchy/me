@@ -563,7 +563,7 @@ h6 {
   width:21%;
   z-index:1;
   float: left;
-  cursor:zoom-in;
+  cursor:pointer;
   margin-top:5px;
   margin-bottom: 1em;
   border-radius: 15px;
@@ -588,11 +588,13 @@ h6 {
   border-right: 2px aqua solid;
   border-radius:15px;
   box-shadow: -2px -2px 10px 5px;
+  cursor: zoom-in;
 }
 .showcase-zoom {
   transform: scale(1.5);
   overflow-x: scroll;
   z-index: 1;
+  cursor: zoom-out;
 }
 .leftbutton {
   text-align:center;
