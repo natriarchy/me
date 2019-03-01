@@ -518,6 +518,7 @@ h6 {
 .footer-content {
   color: white;
   display: block;
+  vertical-align: baseline;
   position: relative;
   top: -5em;
   font-size: 12px;
