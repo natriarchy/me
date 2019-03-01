@@ -9,7 +9,7 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
 </head>
-<header onclick="menu(this)" id="header">
+<header onclick="menu(this)">
   <div class="header">
     <nav>
       <a href="index.html" type="button" class="nav">Home</a><br>
@@ -53,24 +53,30 @@
 </section>
 <br>
 </body>
-<footer class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact" onclick=""><br>
-  <section class="footer-content">
-      <h6>
-        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <texbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+2026811138" target="_blank">(202) 681-1138</a> ║
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <texbox id="doublebar2"><span><br></span></textbox>
-        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
-      </h6>
+<footer onclick="contactme(this)">
+  <section class="footer" >
+  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
+    <div class="footer-content">
+        <h6>
+          <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
+          <texbox id="doublebar"><span><br></span></textbox>
+          <a href="tel:+2026811138" target="_blank">(202) 681-1138</a> ║
+          <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
+          <texbox id="doublebar2"><span><br></span></textbox>
+          <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
+          <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
+        </h6>
+    </div>
   </section>
 </footer>
   <script type="text/javascript">
       function menu(x)
         {
           x.classList.toggle("menu-open");
+        };
+      function contactme(x)
+        {
+          x.classList.toggle("contact-open");
         };
   </script>
 </html>

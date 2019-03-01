@@ -452,7 +452,7 @@ h6 {
   font-weight: bolder;
 }
 
-footer {
+.footer {
   z-index: 1;
   display: block;
   text-align: center;
@@ -466,14 +466,12 @@ footer {
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
 }
-footer:hover {
+.contact-open .footer {
   transform: translateY(-3em);
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
-  -webkit-transition-delay: .35s;
-  transition-delay: .35s;
 }
-footer:hover .contact {
+.footer:hover .contact {
     background-color: darkslategray;
     -webkit-filter: invert(0);
     filter: invert(0);
