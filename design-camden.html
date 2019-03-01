@@ -35,12 +35,28 @@
 <br>
 <body>
 	<section class="column-main">
-		<div>
-			<img src="img\portfolio2.png" alt="PortfolioPg2" class="portfoliopg" width=100%>
-			<img src="img\portfolio3.png" alt="PortfolioPg3" class="portfoliopg" width=100%>
-			<img src="img\portfolio4.png" alt="PortfolioPg4" class="portfoliopg" width=100%>
-			<img src="img\portfolio5.png" alt="PortfolioPg5" class="portfoliopg" width=100%>
-		</div>
+		<div class="portfoliopg">
+      <figure onclick="portfolio1(this)">
+        <img src="img\portfolio2.png" alt="PortfolioPg2" width=100%>
+        <figcaption>2</figcaption>
+      </figure>
+      <figure onclick="portfolio2(this)">
+        <img src="img\portfolio3.png" alt="PortfolioPg3" width=100%>
+        <figcaption>3</figcaption>
+      </figure>
+      <figure onclick="portfolio3(this)">
+  			<img src="img\portfolio4.png" alt="PortfolioPg4" width=100%>
+        <figcaption>4</figcaption>
+      </figure>
+      <figure onclick="portfolio4(this)">
+        <img src="img\portfolio5.png" alt="PortfolioPg5" width=100%>
+        <figcaption>5</figcaption>
+      </figure>
+    </div>
+<br>
+    <div class="portfoliopg-show">
+      <img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" width=100%>
+    </div>
 <br>
 		<div>
 				<a href="design.html" class="leftbutton">Back to Overview</a>
@@ -66,9 +82,15 @@
 </footer>
   <script type="text/javascript">
       function menu(x)
-        {
-          x.classList.toggle("menu-open");
-        };
+        {x.classList.toggle("menu-open");};
+      function portfolio1(x)
+        {document.getElementById("showcase").src="img/portfolio2.png"};
+      function portfolio2(x)
+        {document.getElementById("showcase").src="img/portfolio3.png"};
+      function portfolio3(x)
+        {document.getElementById("showcase").src="img/portfolio4.png"};
+      function portfolio4(x)
+        {document.getElementById("showcase").src="img/portfolio5.png"};
       function contactme(x)
         {
           x.classList.toggle("contact-open");

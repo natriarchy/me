@@ -36,10 +36,20 @@
 	<br>
 	<body>
 	<section class=column-main>
-		<div>
-			<img src="img\portfolio6.png" alt="PortfolioPg6" class="portfolio-left" width=100%>
-			<img src="img\portfolio7.png" alt="PortfolioPg7" class="portfolio-right" width=100%>
-		</div>
+		<div class="portfoliopg">
+      <figure onclick="portfolio1(this)">
+        <img src="img\portfolio6.png" alt="PortfolioPg2" width=100%>
+        <figcaption>6</figcaption>
+      </figure>
+      <figure onclick="portfolio2(this)">
+        <img src="img\portfolio7.png" alt="PortfolioPg3" width=100%>
+        <figcaption>7</figcaption>
+      </figure>
+    </div>
+<br>
+    <div class="portfoliopg-show">
+      <img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" width=100%>
+    </div>
 <br>
 		<div>
 				<a href="design.html" class="leftbutton">Back to Overview</a>
@@ -63,14 +73,16 @@
     </div>
   </section>
 </footer>
-  <script type="text/javascript">
-      function menu(x)
-        {
-          x.classList.toggle("menu-open");
-        };
-      function contactme(x)
-        {
-          x.classList.toggle("contact-open");
-        };
-  </script>
+<script type="text/javascript">
+		function menu(x)
+			{x.classList.toggle("menu-open");};
+		function portfolio1(x)
+			{document.getElementById("showcase").src="img/portfolio6.png"};
+		function portfolio2(x)
+			{document.getElementById("showcase").src="img/portfolio7.png"};
+		function contactme(x)
+			{
+				x.classList.toggle("contact-open");
+			};
+</script>
 </html>
