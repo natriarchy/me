@@ -5,7 +5,7 @@
    z-index: 2;
    background-color: black;
    position: fixed;
-   top: 4em;
+   top: 5%;
    width:20em;
    left: -21em;
    border-top-right-radius: 25px;
@@ -22,6 +22,9 @@
      .menu-open .menu {
        background-color: white;
        opacity: 1;
+       padding-right:0;
+       padding-left: 1;
+       padding-bottom: 1.5em;
        -webkit-transition-duration: 0.2s;
        transition-duration: .2s;
      }
@@ -35,8 +38,8 @@
      .menu-open .menu .hr1 {
        border-color: maroon;
        background-color: maroon;
-       transform-origin: center;
-       transform:  translate(3px, 12px) rotate(-45deg);
+       transform-origin: left;
+       transform:  translate(0px, 0px) rotate(45deg);
        margin:0;
        width: 3em;
        height: .4em;
@@ -52,7 +55,8 @@
      .menu-open .menu .hr3 {
        border-color: maroon;
        background-color: maroon;
-       transform: translate(3px, -8px) rotate(45deg);
+       transform-origin: right;
+       transform: translate(-11px, -21px) rotate(-45deg);
        margin:0;
        width:3em;
        height: .4em;
@@ -66,7 +70,7 @@
    width: 75%;
    padding: 2em;
    margin: 1em;
-   margin-left: 4em;
+   margin-left: 5em;
    background-image: linear-gradient(225deg, paleturquoise, palegoldenrod, aquamarine, orchid);
    box-shadow: inset 0 0 10px #000000;
  }
@@ -105,15 +109,12 @@
 .menu {
   display:block;
   position: fixed;
-  left: .85em;
-  top: 8%;
-  float: right;
-  width: 5%;
-  height: 10%;
+  left: 1em;
+  top: 10%;
   color: orange;
   background: black;
   line-height: 1px;
-  padding: 1px;
+  padding: 1em;
   border-radius: 10px;
   border: 3px solid goldenrod;
   box-shadow: inset 0px 0px 10px 0px black;
@@ -130,22 +131,21 @@
 }
 
 .menu-title {
-  display:block;
+  display:flex;
+  position:fixed;
+  top:5%;
+  justify-content: center;
+  left: .9em;
   color: grey;
-  font-size: 23px;
+  background-color: white;
+  font-size: 20px;
   font-weight:600;
   font-variant: small-caps;
-  position: fixed;
-  left: 3.5%;
-  top: 17%;
-  float: right;
-  transform-origin: left;
-  transform: rotate(90deg);
+  border-radius: 5px;
+  padding: .1em;
+
   -webkit-transition-duration: 0.2s;
   transition-duration: .2s;
-  background-color: white;
-  border-radius: 5px;
-  padding: .2em;
   opacity: .5;
 }
 
@@ -689,19 +689,14 @@ footer:hover .contact {
     top:0;
     margin-left: 10px;
     margin-right: auto;
-    height: auto;
-    width: auto;
-    padding: 1.5em;
     transform: rotate(90deg);
     opacity: .5;
   }
   .menu-title {
-    top: 20px;
-    left: 97px;
-    height: 40px;
-    width: auto;
+    top: .5em;
+    left: 4.4em;
     border-radius:5px;
-    padding: .2em;
+    padding: .5em;
     padding-right: .5em;
     transform: rotate(0);
     text-align: center;
