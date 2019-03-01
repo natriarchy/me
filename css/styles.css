@@ -591,7 +591,7 @@ h6 {
 }
 .showcase-zoom {
   transform: scale(1.5);
-  overflow: scroll;
+  overflow-x: scroll;
   z-index: 1;
 }
 .leftbutton {
