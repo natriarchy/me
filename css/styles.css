@@ -686,18 +686,20 @@ footer:hover .contact {
   .menu {
     display:block;
     position: fixed;
-    margin-left: auto;
+    top:0;
+    margin-left: 10px;
     margin-right: auto;
-    height: 13%;
-    width: 13%;
-    top: -2%;
-    left: 6.5%;
+    height: auto;
+    width: auto;
+    padding: 1.5em;
     transform: rotate(90deg);
     opacity: .5;
   }
   .menu-title {
-    top: .65em;
-    left: 4.4em;
+    top: 20px;
+    left: 97px;
+    height: 40px;
+    width: auto;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     padding: .2em;
