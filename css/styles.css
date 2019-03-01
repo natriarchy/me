@@ -193,7 +193,7 @@
   box-shadow: inset 5px 5px 25px 12px;
 	height: 15em;
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   max-width: 1500px;
   }
 
@@ -211,7 +211,7 @@
   position: relative;
   float:left;
   width: 48%;
-  height: 40em;
+  height: 38em;
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-right: .5em;
@@ -225,7 +225,7 @@
   position: relative;
   float:right;
   width: 48%;
-  height: 40em;
+  height: 38em;
   padding-top: 1em;
   padding-bottom: 1em;
   box-shadow: 10px 5px 25px 5px;
@@ -268,27 +268,44 @@
 }
 
 .general-link {
+  display: flex;
+  justify-content: center;
+  background: none;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 3px 3px 5px aqua;
+  font-variant: small-caps;
+  letter-spacing: 10px;
+  color: white;
+  border-top: 4px aqua solid;
+  border-left: 1px aqua solid;
+  border-right: 1px aqua solid;
+  border-radius:15px;
+  box-shadow: -5px -5px 20px 10px;
+  width: 66%;
   padding: .25em;
   padding-left: 2em;
   padding-right: 2em;
-  position:relative;
-  word-wrap: normal;
-  font-weight: 900;
-  text-shadow: 1px 3px 4px black;
-  font-size: 20px;
-  text-align: center;
-  font-variant: small-caps;
-  color: orange;
-  letter-spacing: 10px;
-  background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");
-  border: 5px ridge black;
-  border-radius: 10px;
-}
+  margin-left: auto;
+  margin-right: auto;
+  }
 .general-link:hover {
-  color:lavender;
-  text-decoration: underline;
-  background-color: white;
-}
+  color: white;
+  border-color: orange;
+  text-shadow: 3px 3px 5px orange;
+  text-decoration: overline;
+  text-emphasis-position: above;
+  }
+.column-main hr {
+  background-clip: padding-box;
+  background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+  background-color: teal;
+  height: 2.5em;
+  margin-top: 5em;
+  border-left: 1em black solid;
+  border-right: 1em black solid;
+  box-shadow: inset 0 0 10px #000000;
+  }
 .inset {
   box-shadow: inset 0 0 10px #000000;
   position: relative;
@@ -299,6 +316,7 @@
   background-color: beige;
   width: 75%;
   left: 12.5%;
+  border-radius: 20px;
 }
 article {
   background-color: thistle;
@@ -337,29 +355,15 @@ body {
 p {
   font-family: "Century Gothic", sans-serif;
 	font-size:20px;
-	line-height:28px;
-	margin-bottom:2em;
+	line-height:20px;
+	margin-bottom:1em;
 	margin-left:1.5em;
 	margin-right:1.5em;
-	margin-top:2em;
+	margin-top:1em;
 	text-align: justify;
 	text-align-last: center;
 }
-h1 {
-  position:relative;
-  text-shadow: 3px 3px 3px grey;
-  font-size: 24px;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: .5em;
-  text-align: center;
-  text-align-last: center;
-  font-variant: small-caps;
-  color: white;
-  letter-spacing: 2px;
-  line-height: 1.25;
-  box-shadow: None;
-}
+
 span.left{
   display: block;
   position: relative;
@@ -379,6 +383,21 @@ span.right{
   right:-50%;
   width: 50%;
   line-height: 1.5;
+}
+h1 {
+  position:relative;
+  text-shadow: 3px 3px 3px grey;
+  font-size: 24px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  text-align: center;
+  text-align-last: center;
+  font-variant: small-caps;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  box-shadow: None;
 }
 h2 {
   position:relative;
@@ -422,7 +441,7 @@ h5 {
   margin-left: -3em;
   color: black;
   letter-spacing: 1.25;
-  text-shadow: 1px 2px 5px black;
+  text-shadow: 1px 2px 5px grey;
 }
 
 h6 {
@@ -574,14 +593,14 @@ footer:hover .contact {
 .resume-description {
   font-weight: 500;
   list-style: circle;
+  line-height: 1.1;
+  list-style-position:inside;
   margin-left: 3em;
   margin-right: 3em;
   word-spacing: .15em;
   text-align: left;
   text-shadow: 1px 2px 3px grey;
 }
-
-
 
 /*images etc */
 .square-logo {

@@ -8,9 +8,8 @@
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <script> function menu(x) {x.classList.toggle("menu-open");} </script>
 </head>
-<header onclick="menu(this)">
+<header onclick="menu(this)" id="header">
   <div class="header">
     <nav>
       <a href="index.html" type="button" class="nav">Home</a><br>
@@ -42,14 +41,12 @@
     <img src="img\me.JPG" class="image">
     <br>
     <br>
-    <p>My site offers up details on my own past, what I have done, and what I can show for it. I designed and developed this site from the bottom up. The menu above has links to my resume, my design work and sampling of my writings.
+    <p><strong>This website documents my work, what I have done, and what I have to show for it. I designed and developed this site from the bottom up. The menu above has links to my resume, my design work and a sample of my writings. Feedback is always welcome.</strong>
     </p>
   </div>
   <div class="card-quarter-left">
-    <p>Patriarchies and Matriarchies depend on age, gender, and standing for hierarchy, decisions and norms. My system would depend on respect, truth, and expertise.
+    <p><strong>Natriarch is my domain name. A not-so-creative pun on the patriarch and matriarch. May it evoke a relationship of mutual respect and mutual growth. Thank you for visiting.</strong>
     </p>
-    <br>
-    <br>
     <img src="img\city-painting.JPG" class="image">
     <h1>George Bellows, "New York" (1911)</h1>
   </div>
@@ -60,7 +57,7 @@
   <img src="img/contact-me.png" alt="contact-me" class="contact" onclick=""><br>
   <section class="footer-content">
       <h6> <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <span id="doublebar"> ║ </span>(202) 681-1138 ║
+        <span id="doublebar"> ║ </span><a href="tel:+2026811138" target="_blank">(202) 681-1138</a> ║
         <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
         <span id="doublebar2"> ║ </span>
           <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
@@ -69,8 +66,14 @@
   </section>
 </footer>
   <script type="text/javascript">
-      if (screen.width <= 800) {
-        doublebar.innerHTML = "<br>";
-        doublebar2.innerHTML = "<br>";};
+      function menu(x)
+        {
+          x.classList.toggle("menu-open");
+        };
+      if (screen.width <= 800)
+        {
+          doublebar.innerHTML = "<br>";
+          doublebar2.innerHTML = "<br>";
+        };
   </script>
 </html>
