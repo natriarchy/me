@@ -563,6 +563,7 @@ h6 {
   width:21%;
   z-index:1;
   float: left;
+  image-resolution: 72dpi;
   cursor:pointer;
   margin-top:5px;
   margin-bottom: 1em;
