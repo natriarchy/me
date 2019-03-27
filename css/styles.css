@@ -736,6 +736,9 @@ video {
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
 }
+.gifs {
+  display: none;
+}
 
 /* Screen Compatibility*/
 @media screen and (max-width: 800px) {
@@ -921,5 +924,16 @@ video {
     width: 100%;
     line-height: 1.5;
     margin-bottom: 1em;
+  }
+  .videos{
+    display:none;
+  }
+  .gifs{
+    display:block;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 25px;
+    border: 1px white solid;
   }
 }
