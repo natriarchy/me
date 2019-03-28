@@ -252,6 +252,14 @@
   00%  {padding-left: 3em; padding-right: 3em;  letter-spacing: 20px;}
   100%  {padding-left: 2em; padding-right: 2em;  letter-spacing: 10px;}
 }
+@keyframes alt {
+  00%  {opacity: 0;}
+  100%  {opacity: 1;}
+}
+@-webkit-keyframes alt {
+  00%  {opacity: 0;}
+  100%  {opacity: 1;}
+}
 .design-header {
   display: block;
   position:relative;
@@ -909,18 +917,45 @@ video {
 
   }
   .design-header {
-    margin-top: 5em;
-    width:90%;
+    width:100%;
+    margin-top:5em;
     display: flex;
     background-size: 100%;
   }
   .design-title {
     display: block;
     color: white;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: .75em;
     font-size: 41px;
+    top: -.5em;
+    animation-name: none;
+    -webkit-animation-name: none;
+  }
+  .design-title1 {
+    letter-spacing: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius:10px;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: alt;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    -webkit-animation-name:alt;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 0s;
+  }
+  .design-title2 {
+    padding: 5px;
+    letter-spacing: 1.25px;
+    animation-name: alt;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    -webkit-animation-name:alt;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 0s;
   }
   .square-logo {
     display: none;
