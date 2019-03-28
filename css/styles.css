@@ -284,6 +284,9 @@
   animation-duration: 3s;
   animation-delay: 0s;
   }
+.design-header:hover {
+  background-color: white;
+}
 @keyframes matterhorn {
   0% {background-color: white;}
   25%{background-color: white;}
