@@ -121,7 +121,23 @@
   -webkit-transition-duration: 0.1s;
   transition-duration: .1s;
   opacity: .5;
+  animation-name: menu;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  -webkit-animation-name: menu;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0s;
 }
+
+@keyframes menu {
+  00%  {color: white;  opacity: 1;}
+  100%  {color: orange;  opacity: .5;}
+}
+@-webkit-keyframes menu {
+  00%  {color: white;  opacity: 1;}
+  100%  {color: orange;  opacity: .5;}
+}
+
 .menu:hover {
   color: black;
   background-color: white;
@@ -143,7 +159,6 @@
   font-variant: small-caps;
   border-radius: 5px;
   padding: .1em;
-
   -webkit-transition-duration: 0.2s;
   transition-duration: .2s;
   opacity: .5;
@@ -167,35 +182,110 @@
 .design-title {
   font-family: "Century Gothic", sans-serif;
 	font-size: 46px;
-  text-shadow: 2px 2px 2px grey;
+  width:100%;
 	position:relative;
-  margin-left: 2em;
-	top:.75em;
-  text-align: left;
-  float: left;
+  top:-.75em;
+  text-align: center;
+  float: right;
   z-index: 0;
+  animation-name: name;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  -webkit-animation-name: name;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+}
+.design-title1 {
+  justify-content: center;
+  background: aquamarine;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 10px;
+  color: black;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-radius:10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.design-title2 {
+  justify-content: center;
+  background: brown;
+  font-weight: bold;
+  font-size: 24px;
+  font-variant: small-caps;
+  letter-spacing: 10px;
+  color: aquamarine;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-radius:8px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-animation-name: pagetitle;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .25s;
+  animation-name: pagetitle;
+  animation-duration: 1s;
+  animation-delay: .25s;
+}
+@keyframes name {
+  0%   {top:-5em}
+  100% {top:-.75em}
+}
+@-webkit-keyframes name {
+  0%   {top:-5em}
+  100% {top:-.75em}
+}
+@keyframes pagetitle {
+  00%  {padding-left: 3em; padding-right: 3em;  letter-spacing: 20px;}
+  100%  {padding-left: 2em; padding-right: 2em;  letter-spacing: 10px;}
+}
+@-webkit-keyframes pagetitle {
+  00%  {padding-left: 3em; padding-right: 3em;  letter-spacing: 20px;}
+  100%  {padding-left: 2em; padding-right: 2em;  letter-spacing: 10px;}
 }
 .design-header {
   display: block;
   position:relative;
   z-index:1;
-  background-image: url("https://www.transparenttextures.com/patterns/wood.png"), url("/img/matterhorn.jpg");
-  background-size:50% auto;
-  background-position:center, right;
+  background-image: url("/img/matterhorn.jpg");
+  background-size:100% auto;
+  background-position:center 25%;
   background-clip: padding-box;
   background-blend-mode:luminosity;
-  background-color: lavender;
-  background-repeat: repeat, no-repeat;
+  background-color: none;
+  background-repeat: no-repeat;
+  border-top: 4px black solid;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
-	border: 10px double white;
-  box-shadow: inset 5px 5px 25px 12px;
 	height: 15em;
-  margin-top: 1em;
+  box-shadow: 10px 5px 25px 5px;
+  margin-top: 1.5em;
   margin-bottom: 1em;
   max-width: 1500px;
+  animation-name: matterhorn;
+  animation-duration: 3s;
+  animation-delay: 0s;
   }
+@keyframes matterhorn {
+  0% {background-color: white;}
+  25%{background-color: white;}
+  100% {background-color: none;}
+}
+@-webkit-keyframes matterhorn {
+  0% {background-color: white;}
+  25%{background-color: white;}
+  100% {background-color: none;}
+}
 
 /*Main Building Blocks*/
 .card {
