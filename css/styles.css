@@ -959,6 +959,7 @@ video {
     margin-top:5em;
     display: flex;
     background-size: 100%;
+    background-image: url("/img/matterhorn-1.jpg");
   }
   .design-title {
     display: block;
