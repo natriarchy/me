@@ -212,6 +212,10 @@
   padding-right: 2em;
   margin-left: auto;
   margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .design-title2 {
   justify-content: center;
@@ -235,6 +239,10 @@
   animation-name: pagetitle;
   animation-duration: 1s;
   animation-delay: .25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 @keyframes name {
   0%   {top:-5em}
