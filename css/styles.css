@@ -309,9 +309,6 @@
   animation-duration: 3s;
   animation-delay: 0s;
   }
-.design-header:hover {
-  background-color: white;
-}
 .design-header:active .design-title1 {
   background-color: teal;
   color:aquamarine;
@@ -997,12 +994,6 @@ video {
     -webkit-animation-name:alt;
     -webkit-animation-duration: 2s;
     -webkit-animation-delay: 0s;
-  }
-  .design-header:hover {
-    background-color: none;
-  }
-  .design-header:active {
-    background-color: white;
   }
   .square-logo {
     display: none;
