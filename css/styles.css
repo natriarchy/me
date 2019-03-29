@@ -194,6 +194,10 @@
   -webkit-animation-name: name;
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 0s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .design-title1 {
   justify-content: center;
