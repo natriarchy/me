@@ -985,6 +985,12 @@ video {
     -webkit-animation-duration: 2s;
     -webkit-animation-delay: 0s;
   }
+  .design-header:hover {
+    background-color: none;
+  }
+  .design-header:active {
+    background-color: white;
+  }
   .square-logo {
     display: none;
   }
