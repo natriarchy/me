@@ -322,6 +322,23 @@
 .design-header:active .design-title2::after {
   content: " - Welcome!";
 }
+.matterhorn-title {
+  display: none;
+  position: absolute;
+  color:yellow;
+  font-variant:small-caps;
+  font-weight: bold;
+  bottom:.25em;
+  right: .25em;
+  text-align: center;
+  background: black;
+  padding:.25em;
+  border-radius: 3px;
+  opacity: .75;
+}
+.design-header:active .matterhorn-title {
+  display: block;
+}
 @keyframes matterhorn {
   0% {background-color: white;}
   25%{background-color: white;}

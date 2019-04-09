@@ -38,6 +38,7 @@
     <span class="design-title1"><strong>Nathan Erwin</strong></span><br>
     <span class="design-title2"><script>document.write(document.title);</script></span>
   </textbox>
+  <span class="matterhorn-title">Taken by me<br>The Matterhorn, Switzerland (2016)</span>
 </section>
 <section class="leftside">
 </section>
@@ -46,11 +47,13 @@
 <br>
 <section class="column-main">
   <div class="card" style="background-color: black">
-    <video autoplay controls class="videos">
-     <source src="files\CamdenAnim.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-   </video>
-   <img src="files\CamdenGif.gif" class="gifs">
+    <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
+      <img src="img\View-Birds.png">
+      <img src="img\CamdenAerial_before.png">
+    </div>
+    <style>#juxtapose-wrapper {width:100%;} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
   </div>
   <br>
   <div class="card-quarter-right">
@@ -67,13 +70,14 @@
     <img src="img\city-painting.JPG" class="image">
     <h1>George Bellows, "New York" (1911)</h1>
   </div>
-  <div class="card" style="background-color: black">
-    <video autoplay controls class="videos">
-     <source src="files\DaytonAnim.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-     </video>
-     <img src="files\DaytonGif.gif" class="gifs">
-   </div>
+  <div class="card" style="background-color:black;">
+    <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
+      <img src="img\4_DaytonAerial3dFilter.png">
+      <img src="img\1_DaytonAerial.png">
+    </div>
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+  </div>
   <br>
   <br>
 </section>
