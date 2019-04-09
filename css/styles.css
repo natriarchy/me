@@ -335,6 +335,10 @@
   padding:.25em;
   border-radius: 3px;
   opacity: .75;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .design-header:active .matterhorn-title {
   display: block;
