@@ -890,9 +890,6 @@ video {
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
 }
-.gifs {
-  display: none;
-}
 
 /* Screen Compatibility*/
 @media screen and (max-width: 800px) {
