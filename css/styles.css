@@ -322,7 +322,7 @@
 .design-header:active .design-title2::after {
   content: " - Welcome!";
 }
-.matterhorn-title {
+span.matterhorn-title {
   display: none;
   position: absolute;
   color:yellow;
@@ -340,6 +340,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .design-header:active .matterhorn-title {
   display: block;
 }
@@ -360,14 +361,17 @@
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-top: 1em;
-  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  background-image: url("arches.png");
   background-size: 4em auto;
 }
+.show {
+  display: none;
+}
+
 .card-quarter-left {
   display: block;
   position: relative;
   width: 48%;
-  height: 38em;
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-top: 1em;
@@ -375,22 +379,27 @@
   margin-bottom: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
+  height: 38em;
   background-color: lightcoral;
+  background-image: url("arches.png");
+  background-size: 4em auto;
 }
 .card-quarter-right {
   display: block;
   position: relative;
   float:right;
   width: 48%;
-  height: 38em;
-  padding-top: 1em;
-  padding-bottom: 1em;
   box-shadow: 10px 5px 25px 5px;
   border-radius: 15px;
   margin-top: 1em;
   margin-left: .5em;
   margin-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  height: 38em;
   background-color: darkgoldenrod;
+  background-image: url("arches.png");;
+  background-size: 4em auto;
 }
 .card-link {
   margin-top: 2em;
@@ -402,7 +411,7 @@
   position: fixed;
   float: left;
   left:0;
-  background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");
+  background-image: url("iron-grip.png");
   background-color: tan;
   box-shadow: inset -10px 0px 50px 10px black;
   border-right: 2px ridge white;
@@ -416,7 +425,7 @@
   position: fixed;
   float: right;
   right:0;
-  background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");
+  background-image: url("iron-grip.png");
   background-color: tan;
   box-shadow: inset 10px 0px 50px 10px black;
   height: 100%;
@@ -456,7 +465,7 @@
   }
 .column-main hr {
   background-clip: padding-box;
-  background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+  background-image: url("light-wool.png");
   background-color: teal;
   height: 2.5em;
   margin-top: 5em;
@@ -464,18 +473,6 @@
   border-right: 1em black solid;
   box-shadow: inset 0 0 10px #000000;
   }
-.inset {
-  box-shadow: inset 0 0 10px #000000;
-  position: relative;
-  padding-top: .5em;
-  padding-bottom: .5em;
-  border: 2px solid black;
-  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
-  background-color: beige;
-  width: 75%;
-  left: 12.5%;
-  border-radius: 20px;
-}
 article {
   background-color: thistle;
 }
@@ -506,7 +503,7 @@ body {
   font-family: "Century Gothic", sans-serif;
   font-size: 18px;
   text-align: left;
-  background-image:url("https://www.transparenttextures.com/patterns/wood.png");
+  background-image:url("wood.png");
   background-color: lightcyan;
 }
 
@@ -692,7 +689,53 @@ h6 {
   -webkit-filter: invert(1);
   filter: invert(1);
 }
-
+.other-links:hover {
+  color: aquamarine;
+  cursor:pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+}
+.show-hide {
+  display:block;
+  width:100%;
+  font-size: 20px;
+  color:grey;
+  text-shadow: none;
+  position: absolute;
+  line-height: .5;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  cursor:pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.other-links:hover .show-hide {
+  display:block;
+  color:inherit;
+  text-decoration: overline;
+  width:100%;
+  position: absolute;
+  line-height: .5;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  cursor:pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 video {
   width: 100%;
   border:10px double white;
