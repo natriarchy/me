@@ -365,7 +365,7 @@ span.matterhorn-title {
   background-size: 4em auto;
 }
 .show {
-  display: none;
+  display:none;
 }
 
 .card-quarter-left {
@@ -463,6 +463,59 @@ span.matterhorn-title {
   text-decoration: overline;
   text-emphasis-position: above;
   }
+.slider-button {
+  width: 100%;
+  height: 100%;
+  margin:auto;
+  cursor: pointer;
+  float: left;
+}
+.slider-button figcaption {
+  display:block;
+  position: relative;
+  float: left;
+  top:-5em;
+  z-index: 0;
+  color: white;
+  text-shadow: 1px 2px 1px black;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  font-variant:small-caps;
+  letter-spacing:8px;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.slider-button:hover img {
+  filter:blur(0px) saturate(100%);
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+  }
+.slider-button:hover figcaption {
+  color: magenta;
+  border-color: black;
+  text-shadow: 3px 3px 5px black;
+  text-decoration: overline;
+  text-emphasis-position: above;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+.slider-button img {
+  width:100%;
+  filter:blur(1.5px) saturate(300%);
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+}
 .column-main hr {
   background-clip: padding-box;
   background-image: url("light-wool.png");

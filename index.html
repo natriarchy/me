@@ -47,11 +47,15 @@
 <br>
 <section class="column-main">
   <div class="card" style="background-color: black">
+    <figure class="slider-button" onclick="slidershow(this)">
+      <img src="img\slidercut.png" width="39em">
+      <figcaption>Click to see slider</figcaption>
+    </figure>
     <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
       <img src="img\View-Birds.png">
       <img src="img\CamdenAerial_before.png">
     </div>
-    <style>#juxtapose-wrapper {width:100%;} .jx-image {z-index: 0;} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
+    <style>#juxtapose-wrapper {visibility:hidden;width:100%;top:0;} .jx-image {z-index: 0;} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
   </div>
@@ -98,5 +102,11 @@
         {
           document.getElementById("footer").classList.toggle("contact-open");
         };
+      function slidershow(x) {
+        document.getElementById("juxtapose-wrapper").style.visibility = "visible";
+        document.getElementById("juxtapose-wrapper").style.float =  "none";
+        document.getElementById("juxtapose-wrapper").style.position =  "";
+        x.style.display = "none";
+      };
   </script>
 </html>
