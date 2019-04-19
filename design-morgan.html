@@ -72,7 +72,11 @@
 	</div>
 <br>
 	<div class="portfoliopg-show">
-		<img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" onclick="transformer(this)" width=100%>
+		<img src="img\portfolio1.png" alt="PortfolioPg1" id="showcase" onclick="transformer(this)" width=100%>
+		<img src="img\portfolio8.png" alt="PortfolioPg8" id="showcase1" onclick="transformer(this)" width=100%>
+		<img src="img\portfolio9.png" alt="PortfolioPg9" id="showcase2" onclick="transformer(this)" width=100%>
+		<img src="img\portfolio10.png" alt="PortfolioPg10" id="showcase3" onclick="transformer(this)" width=100%>
+		<img src="img\portfolio11.png" alt="PortfolioPg11" id="showcase4" onclick="transformer(this)" width=100%>
 	</div>
 <br>
 	<div>
@@ -105,13 +109,37 @@
         document.getElementById("footer").classList.toggle("contact-open");
       };
 		function portfolio1(x)
-			{document.getElementById("showcase").src="img/portfolio8.png"};
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="block";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="none";
+			};
 		function portfolio2(x)
-			{document.getElementById("showcase").src="img/portfolio9.png"};
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="block";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="none";
+			};
 		function portfolio3(x)
-			{document.getElementById("showcase").src="img/portfolio10.png"};
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="block";
+				document.getElementById("showcase4").style.display="none";
+			};
 		function portfolio4(x)
-			{document.getElementById("showcase").src="img/portfolio11.png"};
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="block";
+			};
 		function transformer(x)
 			{x.classList.toggle("showcase-zoom");};
 </script>

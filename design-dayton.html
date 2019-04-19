@@ -63,8 +63,10 @@
     </div>
 <br>
     <div class="portfoliopg-show">
-      <img src="img\portfolio1.png" alt="PortfolioPg2" id="showcase" onclick="transformer(this)" width=100%>
-    </div>
+			<img src="img\portfolio1.png" alt="PortfolioPg1" id="showcase" onclick="transformer(this)" width=100%>
+			<img src="img\portfolio6.png" alt="PortfolioPg6" id="showcase1" onclick="transformer(this)" width=100%>
+			<img src="img\portfolio7.png" alt="PortfolioPg7" id="showcase2" onclick="transformer(this)" width=100%>
+		</div>
 <br>
 		<div>
 				<a href="design.html" class="leftbutton">Back to Overview</a>
@@ -96,10 +98,18 @@
       {
         document.getElementById("footer").classList.toggle("contact-open");
       };
-		function portfolio1(x)
-			{document.getElementById("showcase").src="img/portfolio6.png"};
-		function portfolio2(x)
-			{document.getElementById("showcase").src="img/portfolio7.png"};
+			function portfolio1(x)
+				{
+					document.getElementById("showcase").style.display="none";
+					document.getElementById("showcase1").style.display="block";
+					document.getElementById("showcase2").style.display="none";
+				};
+			function portfolio2(x)
+				{
+					document.getElementById("showcase").style.display="none";
+					document.getElementById("showcase1").style.display="none";
+					document.getElementById("showcase2").style.display="block";
+				};
 			function transformer(x)
 				{x.classList.toggle("showcase-zoom");};
 </script>
