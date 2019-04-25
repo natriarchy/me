@@ -16,14 +16,11 @@
  }
  .header {
    z-index: 2;
-   background-color: black;
    position: fixed;
+   background-color: RGB(128,128,128,.75);
    top: 5%;
    width:20em;
    left: -21em;
-   border-top-right-radius: 25px;
-   border-bottom-right-radius: 25px;
-   box-shadow: 0px 5px 2px 1px black;
    -webkit-transition-duration: 0.1s;
    transition-duration: .1s;
  }
@@ -43,7 +40,6 @@
      }
      .menu-open .menu-title{
        color:white;
-       background-color: black;
        opacity: 1;
        -webkit-transition-duration: 0.2s;
        transition-duration: .2s;
@@ -52,7 +48,7 @@
        border-color: maroon;
        background-color: maroon;
        transform-origin: left;
-       transform:  translate(0px, 0px) rotate(45deg);
+       transform:  translate(3px, 2px) rotate(45deg);
        margin:0;
        width: 3em;
        height: .4em;
@@ -69,7 +65,7 @@
        border-color: maroon;
        background-color: maroon;
        transform-origin: right;
-       transform: translate(-11px, -21px) rotate(-45deg);
+       transform: translate(-8px, -18px) rotate(-45deg);
        margin:0;
        width:3em;
        height: .4em;
@@ -80,12 +76,12 @@
 
  nav {
    text-align: center;
-   width: 75%;
+   width: 100%;
+   height: 100%;
    padding: 2em;
-   margin: 1em;
-   margin-left: 5em;
-   background-image: linear-gradient(225deg, paleturquoise, palegoldenrod, aquamarine, orchid);
-   box-shadow: inset 0 0 10px #000000;
+   padding-left: 5em;
+   margin-left: 0em;
+   box-shadow: 0 0 10px #000000;
  }
 
  nav a {
@@ -101,11 +97,9 @@
    margin-right: auto;
    background: white;
    text-decoration: overline;
-   text-transform: uppercase;
-   font-size: 1rem;
-   font-weight: 900;
+   text-transform: lowercase;
+   font-size: 20px;
    color: black;
-   border: 5px solid black;
    border-radius: 20px 20px 20px 0;
    padding: .7em;
    box-shadow: 8px 5px 1px 1px black;
@@ -122,14 +116,14 @@
 .menu {
   display:block;
   position: fixed;
-  left: 1em;
-  top: 10%;
-  color: orange;
+  left: 1.75em;
+  top: 10.5%;
+  color: white;
   background: black;
   line-height: 1px;
-  padding: 1em;
+  padding: .5em;
   border-radius: 10px;
-  border: 3px solid goldenrod;
+  border: 3px solid white;
   box-shadow: inset 0px 0px 10px 0px black;
   -webkit-transition-duration: 0.1s;
   transition-duration: .1s;
@@ -142,15 +136,6 @@
   -webkit-animation-delay: 0s;
 }
 
-@keyframes menu {
-  00%  {color: white;  opacity: 1;}
-  100%  {color: orange;  opacity: .5;}
-}
-@-webkit-keyframes menu {
-  00%  {color: white;  opacity: 1;}
-  100%  {color: orange;  opacity: .5;}
-}
-
 .menu:hover {
   color: black;
   background-color: white;
@@ -160,21 +145,18 @@
 }
 
 .menu-title {
-  display:flex;
+  writing-mode: vertical-lr;
   position:fixed;
-  top:5%;
+  top:10%;
+  font-weight: bold;
   justify-content: center;
-  left: .9em;
-  color: grey;
-  background-color: white;
-  font-size: 20px;
-  font-weight:600;
-  font-variant: small-caps;
+  left: 0em;
+  color: white;
+  font-size: 24px;
   border-radius: 5px;
-  padding: .1em;
   -webkit-transition-duration: 0.2s;
   transition-duration: .2s;
-  opacity: .5;
+  opacity: .85;
 }
 
 .menu .hr1,.hr2,.hr3{
@@ -195,10 +177,11 @@
 .design-title {
   font-family: "Century Gothic", sans-serif;
 	font-size: 46px;
+  text-transform: lowercase;
   width:100%;
 	position:relative;
-  top:-.75em;
-  text-align: center;
+  text-align: right;
+  top:.5em;
   float: right;
   z-index: 0;
   animation-name: name;
@@ -213,78 +196,65 @@
   user-select: none;
 }
 .design-title1 {
-  justify-content: center;
-  background: aquamarine;
-  font-weight: bold;
-  font-variant: small-caps;
+  font-size: 30px;
   letter-spacing: 10px;
-  color: black;
-  border-bottom: 4px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  border-radius:10px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  padding-left: 2em;
-  padding-right: 2em;
-  margin-left: auto;
-  margin-right: auto;
+  color: white;
+  background-color: steelblue;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 5px 1px black;
+  padding-left: 1em;
+  padding-right: .5em;
+  padding-top: .25em;
+  padding-bottom: .25em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 .design-title2 {
-  justify-content: center;
-  background: brown;
-  font-weight: bold;
-  font-size: 24px;
-  font-variant: small-caps;
+  font-size: 30px;
   letter-spacing: 10px;
-  color: aquamarine;
-  border-bottom: 4px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  border-radius:8px;
-  padding-left: 2em;
-  padding-right: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-animation-name: pagetitle;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: .25s;
-  animation-name: pagetitle;
-  animation-duration: 1s;
-  animation-delay: .25s;
+  color: white;
+  background-color: steelblue;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 5px 1px black;
+  padding-left: 1em;
+  padding-right: .5em;
+  padding-top: .25em;
+  padding-bottom: .25em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+.matterhorn-title {
+	position:absolute;
+  font-size: 15px;
+  width:100%;
+  text-align: right;
+  letter-spacing: 5px;
+  color: white;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  top: -1em;
+  right: 1em;
+  opacity: .5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @keyframes name {
   0%   {top:-5em}
-  100% {top:-.75em}
+  100% {top:.5em}
 }
 @-webkit-keyframes name {
   0%   {top:-5em}
-  100% {top:-.75em}
+  100% {top:.5}
 }
-@keyframes pagetitle {
-  00%  {padding-left: 3em; padding-right: 3em;  letter-spacing: 20px;}
-  100%  {padding-left: 2em; padding-right: 2em;  letter-spacing: 10px;}
-}
-@-webkit-keyframes pagetitle {
-  00%  {padding-left: 3em; padding-right: 3em;  letter-spacing: 20px;}
-  100%  {padding-left: 2em; padding-right: 2em;  letter-spacing: 10px;}
-}
-@keyframes alt {
-  00%  {opacity: 0;}
-  100%  {opacity: 1;}
-}
-@-webkit-keyframes alt {
-  00%  {opacity: 0;}
-  100%  {opacity: 1;}
-}
+
 .design-header {
   display: block;
   position:relative;
@@ -294,56 +264,25 @@
   background-position:center 25%;
   background-clip: padding-box;
   background-blend-mode:luminosity;
-  background-color: none;
+  background-color: lavender;
   background-repeat: no-repeat;
-  border-top: 4px tan solid;
+  border-bottom: 6px steelblue solid;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-left: 2px steelblue solid;
+  border-right: 2px steelblue solid;
+  box-shadow: inset 0px 0px 20px 10px black;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
 	height: 15em;
-  box-shadow: 10px 5px 25px 5px;
-  margin-top: 1.5em;
   margin-bottom: 1em;
   max-width: 1500px;
   animation-name: matterhorn;
   animation-duration: 3s;
   animation-delay: 0s;
   }
-.design-header:active .design-title1 {
-  background-color: teal;
-  color:aquamarine;
-  border-color: orange;
-}
-.design-header:active .design-title2 {
-  background-color: teal;
-  color:aquamarine;
-  border-color: orange;
-}
-.design-header:active .design-title2::after {
-  content: " - Welcome!";
-}
-span.matterhorn-title {
-  display: none;
-  position: absolute;
-  color:yellow;
-  font-variant:small-caps;
-  font-weight: bold;
-  bottom:.25em;
-  right: .25em;
-  text-align: center;
-  background: black;
-  padding:.25em;
-  border-radius: 3px;
-  opacity: .75;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 
-.design-header:active .matterhorn-title {
-  display: block;
-}
 @keyframes matterhorn {
   0% {background-color: white;}
   25%{background-color: white;}
