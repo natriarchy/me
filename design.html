@@ -32,6 +32,7 @@
     <textbox class="menu-title" onclick="">menu</textbox>
   </div>
 </header>
+<hr class="header-hr">
 <section class="design-header">
 	<img src="img\logo2.png" alt="squarelogo" class="square-logo">
 	<textbox class="design-title">
@@ -50,24 +51,20 @@
   <div class="card-link">
     <a href="files\DesignPortfolio.pdf" class="general-link">full portfolio pdf</a>
   </div>
-  <hr style="background-color: purple;">
+  <hr style="background-color: mistyrose;">
   <br>
-	<div class="card" style="background-color: salmon">
+	<div class="card" style="background-color: darkseagreen">
     <h2>Camden Waterfront Project</h2>
 		<p>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</strong>.</p>
     <a  href="design-camden.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
 	</div>
   <br>
-  <div class="card" style="background-color: black">
-    <figure class="slider-button" onclick="slidershow(this)">
-      <img src="img\slidercut2.png" width="39em">
-      <figcaption>Click to see slider</figcaption>
-    </figure>
+  <div class="card" style="background-color: silver">
     <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
       <img src="img\4_DaytonAerial3dFilter.png">
       <img src="img\1_DaytonAerial.png">
     </div>
-    <style>#juxtapose-wrapper {visibility:hidden;width:100%;top:0;} .jx-slider {z-index: 0;}.jx-image {z-index: 0;filter:saturate(120%);} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
+    <style>#juxtapose-wrapper {width:100%;top:0;border:2px black dotted;border-radius: 5px;} .jx-slider {z-index: 0;}.jx-image {z-index: 0;filter:saturate(120%);} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
   </div>
@@ -103,21 +100,21 @@
   </div>
   </section>
 </footer>
-  <script type="text/javascript">
-      function menu() {
-          document.getElementById("header").classList.toggle("menu-open");
-        };
-      function contactme()
-        {
-          document.getElementById("footer").classList.toggle("contact-open");
-        };
-      function slidershow(x) {
-        document.getElementById("juxtapose-wrapper").style.visibility = "visible";
-        document.getElementById("juxtapose-wrapper").style.float =  "none";
-        document.getElementById("juxtapose-wrapper").style.position =  "";
-        x.style.display = "none";
-      };
-      var colors = ['darkseagreen', 'thistle'];
-      var colors2 = ['salmon', 'lightblue'];
-</script>
 </html>
+<script type="text/javascript">
+    function menu() {
+        document.getElementById("header").classList.toggle("menu-open");
+      };
+    function contactme()
+      {
+        document.getElementById("footer").classList.toggle("contact-open");
+      };
+    function slidershow(x) {
+      document.getElementById("juxtapose-wrapper").style.visibility = "visible";
+      document.getElementById("juxtapose-wrapper").style.float =  "none";
+      document.getElementById("juxtapose-wrapper").style.position =  "";
+      x.style.display = "none";
+    };
+    var colors = ['darkseagreen', 'thistle'];
+    var colors2 = ['salmon', 'lightblue'];
+</script>

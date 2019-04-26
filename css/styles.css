@@ -115,19 +115,20 @@
 }
 .menu {
   display:block;
+  cursor:pointer;
   position: fixed;
-  left: 1.75em;
-  top: 10.5%;
-  color: white;
-  background: black;
+  left: 1%;
+  top: 2.5%;
+  color: black;
+  background: orange;
   line-height: 1px;
   padding: .5em;
   border-radius: 10px;
-  border: 3px solid white;
+  border: 3px solid black;
   box-shadow: inset 0px 0px 10px 0px black;
   -webkit-transition-duration: 0.1s;
   transition-duration: .1s;
-  opacity: .5;
+  opacity: 1;
   animation-name: menu;
   animation-duration: 2s;
   animation-delay: 0s;
@@ -148,15 +149,17 @@
   writing-mode: vertical-lr;
   position:fixed;
   top:10%;
-  font-weight: bold;
   justify-content: center;
-  left: 0em;
-  color: white;
-  font-size: 24px;
+  left: 1%;
+  color: black;
+  font-size: 48px;
   border-radius: 5px;
   -webkit-transition-duration: 0.2s;
   transition-duration: .2s;
-  opacity: .85;
+  opacity: 1;
+  user-select: none;
+  -webkit-user-select: none;
+
 }
 
 .menu .hr1,.hr2,.hr3{
@@ -266,22 +269,33 @@
   background-blend-mode:luminosity;
   background-color: lavender;
   background-repeat: no-repeat;
-  border-bottom: 6px steelblue solid;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-left: 2px steelblue solid;
-  border-right: 2px steelblue solid;
+  border-bottom: 6px white solid;
+  border-radius: 15px;
+  border-left: 2px white solid;
+  border-right: 2px white solid;
   box-shadow: inset 0px 0px 20px 10px black;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
 	height: 15em;
   margin-bottom: 1em;
+  margin-top: .75em;
   max-width: 1500px;
   animation-name: matterhorn;
   animation-duration: 3s;
   animation-delay: 0s;
   }
+.header-hr {
+  float: left;
+  position: absolute;
+  margin-top: 0;
+  width:100%;
+  top:0;
+  z-index: 1;
+  height: 17em;
+  background-image: linear-gradient(to right, rgb(0,0,0,.5) 0%, rgb(143,188,143,.5) 7.5%,rgb(143,188,143,.5) 92.5%, rgb(0,0,0,0) 100%););
+  box-shadow: 0px 0px 20px 5px rgb(0,0,0,.75);
+}
 
 @keyframes matterhorn {
   0% {background-color: white;}
@@ -297,12 +311,17 @@
 /*Main Building Blocks*/
 .card {
   padding: 20px;
-  box-shadow: 10px 5px 25px 5px;
-  border-radius: 15px;
   margin-top: 1em;
-  background-image: url("arches.png");
-  background-size: 4em auto;
+  border-radius: 10px;
+  border-top: 5px double black;
+  border-bottom: 5px double black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  box-shadow: 0px 0px 10px 1px;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
+  background-size: auto auto, 1em 100em;
 }
+
 .show {
   display:none;
 }
@@ -311,34 +330,40 @@
   display: block;
   position: relative;
   width: 48%;
-  box-shadow: 10px 5px 25px 5px;
-  border-radius: 15px;
+  box-shadow: 0px 0px 10px 1px;
+  border-top: 5px double black;
+  border-bottom: 5px double black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
   margin-top: 1em;
   margin-right: .5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
   height: 38em;
-  background-color: lightcoral;
-  background-image: url("arches.png");
-  background-size: 4em auto;
+  background-color:  lightblue;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
+  background-size: auto auto, 1em 100em;
 }
 .card-quarter-right {
   display: block;
   position: relative;
   float:right;
   width: 48%;
-  box-shadow: 10px 5px 25px 5px;
-  border-radius: 15px;
+  box-shadow: 0px 0px 10px 1px;
+  border-top: 5px double black;
+  border-bottom: 5px double black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
   margin-top: 1em;
   margin-left: .5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
   height: 38em;
-  background-color: darkgoldenrod;
-  background-image: url("arches.png");;
-  background-size: 4em auto;
+  background-color: tan;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
+  background-size: auto auto, 1em 100em;
 }
 .card-link {
   margin-top: 2em;
@@ -349,28 +374,26 @@
   display: block;
   position: fixed;
   float: left;
+  z-index: 0;
   left:0;
-  background-image: url("iron-grip.png");
-  background-color: tan;
-  box-shadow: inset -10px 0px 50px 10px black;
-  border-right: 2px ridge white;
+  background-image:repeating-linear-gradient(antiquewhite, grey .25%, antiquewhite .5%);
+  border-right: 2px dashed grey;
   height: 100%;
-  width: 12vw;
-  top:0;
+  width: 7vw;
+  top:0%
 }
 
 .rightside {
   display: block;
   position: fixed;
   float: right;
+  z-index: 0;
   right:0;
-  background-image: url("iron-grip.png");
-  background-color: tan;
-  box-shadow: inset 10px 0px 50px 10px black;
+  background-image:repeating-linear-gradient(antiquewhite, grey .25%, antiquewhite .5%);
   height: 100%;
-  width: 12vw;
-  bottom:0;
-  border-left: 2px ridge white;
+  width: 7vw;
+  top:0%;
+  border-left: 2px dashed grey;
 }
 
 .general-link {
@@ -387,7 +410,7 @@
   border-left: 1px aqua solid;
   border-right: 1px aqua solid;
   border-radius:15px;
-  box-shadow: -5px -5px 20px 10px;
+  box-shadow: -5px -5px 20px 10px white;
   width: 66%;
   padding: .25em;
   padding-left: 2em;
@@ -396,67 +419,29 @@
   margin-right: auto;
   }
 .general-link:hover {
-  color: white;
-  border-color: orange;
-  text-shadow: 3px 3px 5px orange;
+  color: black;
+  border-color: black;
+  text-shadow: 0px 0px 5px orange;
+  box-shadow: inset 1px 1px 5px 1px black;
   text-decoration: overline;
   text-emphasis-position: above;
   }
-.slider-button {
-  width: 100%;
-  height: 100%;
-  margin:auto;
-  cursor: pointer;
-  float: left;
-}
-.slider-button figcaption {
-  display:block;
-  position: relative;
-  float: left;
-  top:-10em;
-  z-index: 0;
-  color: white;
-  text-shadow: 1px 2px 1px black;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-  font-variant:small-caps;
-  letter-spacing:8px;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.slider-button:hover img {
+
+#juxtapose-wrapper:hover img {
   filter:blur(0px) saturate(120%);
   -webkit-transition-duration: 2s;
   transition-duration: 2s;
   }
-.slider-button:hover figcaption {
-  color: magenta;
-  border-color: black;
-  text-shadow: 3px 3px 5px black;
-  text-decoration: overline;
-  text-emphasis-position: above;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  }
-.slider-button img {
-  width:100%;
+
+#juxtapose-wrapper img {
   filter:blur(1.5px) saturate(300%);
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
 }
 .column-main hr {
   background-clip: padding-box;
-  background-image: url("light-wool.png");
+  background-image: url("iron-grip.png");
+  background-size: 20em 25em;
   background-color: teal;
   height: 2.5em;
   margin-top: 5em;
@@ -465,10 +450,11 @@
   box-shadow: inset 0 0 10px #000000;
   }
 article {
-  background-color: thistle;
+  background-color: silver;
 }
 article h3{
   color: aquamarine;
+  text-transform: lowercase;
   text-shadow: 3px 3px 3px grey;
 }
 
@@ -478,7 +464,7 @@ article h3{
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  margin-bottom: 5em;
+  margin-bottom: 2.5em;
 }
 
 * {
@@ -493,9 +479,9 @@ body {
   margin: 0;
   font-family: "Century Gothic", sans-serif;
   font-size: 18px;
-  text-align: left;
-  background-image:url("wood.png");
-  background-color: lightcyan;
+  background-image: url("wood.png");;
+  background-color: antiquewhite;
+  background-size:1em 100em;
 }
 
 p {
@@ -534,15 +520,15 @@ h1 {
   position:relative;
   text-shadow: 3px 3px 3px grey;
   font-size: 24px;
+  font-weight: lighter;
   margin-left: 1em;
   margin-right: 1em;
   margin-bottom: .5em;
-  text-align: center;
+  text-align:justify;
   text-align-last: center;
-  font-variant: small-caps;
   color: white;
   letter-spacing: 2px;
-  line-height: 1.25;
+  line-height: 1.5;
   box-shadow: None;
 }
 h2 {
@@ -553,7 +539,7 @@ h2 {
   font-size: 28px;
   margin-bottom: .5em;
   text-align: center;
-  font-variant: small-caps;
+  text-transform: lowercase;
   color: white;
   letter-spacing: 8px;
   box-shadow: None;
@@ -567,7 +553,6 @@ h3 {
   font-size: 28px;
   margin-bottom: .5em;
   text-align: center;
-  font-variant: small-caps;
   color: white;
   letter-spacing: 8px;
   box-shadow: None;
@@ -594,7 +579,6 @@ h5 {
 
 h6 {
   text-align: center;
-  font-variant: small-caps;
   font-size: 18px;
   margin-top: .75em;
   font-weight: bolder;
@@ -610,10 +594,10 @@ h6 {
   width: 100%;
   background-color:dimgray;
   box-shadow: inset 2px 8px 10px 0px black;
-  font-variant: small-caps;
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
 }
+
 .contact-open .footer {
   transform: translateY(-3em);
   -webkit-transition-duration: 0.25s;
@@ -727,16 +711,20 @@ h6 {
   -ms-user-select: none;
   user-select: none;
 }
-video {
-  width: 100%;
-  border:10px double white;
-}
 .image {
-  width: 100%;
-  border: 5px black double;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border: 5px gray solid;
 }
-.portfoliopg:after {
+.portfoliopg {
+  display: block;
+  position:relative;
+  padding-top: .1em;
+  background-color: dimgrey;
+  border-radius:10px;
   width: 100%;
+  height: 11em;
 }
 .portfoliopg figcaption {
   display:table-row;
@@ -752,7 +740,7 @@ video {
   font-size: 24px;
   border-radius: 100px;
   border:1px solid white;
-  background: dimgray;
+  background: black;
   color:white;
   text-shadow: 1px 1px 3px;
 }
@@ -762,20 +750,18 @@ video {
   float: left;
   cursor:pointer;
   margin-top:5px;
-  margin-bottom: 1em;
-  border-radius: 15px;
-  border-top: 4px aqua solid;
-  border-left: 2px aqua solid;
-  border-right: 2px aqua solid;
-  box-shadow: 2px 5px 10px 3px black;
+  border-radius: 5px;
+  filter:grayscale(1);
+  user-select: none;
+  -webkit-user-select: none;
 }
 .portfoliopg figure:hover img{
-  opacity: .75;
   border-color: orange;
+  filter:grayscale(0);
 }
 .portfoliopg figure:hover figcaption{
-  opacity: .75;
   color: orange;
+  background-color: white;
   border-color:orange;
 }
 
@@ -880,35 +866,6 @@ video {
   box-shadow: 2px 5px 10px 3px;
 }
 
-.aboutme-rutgerslogo {
-  border-radius: 0px;
-  display: block;
-  position: relative;
-  float: left;
-  z-index: 1;
-  margin-right: 1em;
-  margin-left: -8em;
-  box-shadow: 1px 1px 10px 1px;
-  width: 8em;
-  border-radius: 15px;
-  border-top-right-radius: 0px;
-}
-
-.aboutme-gwlogo {
-  border-radius: 0px;
-  display: block;
-  position: relative;
-  float: left;
-  z-index: 1;
-  margin-right: 1em;
-  margin-left: -6em;
-  box-shadow: 1px 1px 10px 1px;
-  width: 6em;
-  background:white;
-  border: .25em solid white;
-  border-radius: 15px;
-  border-top-right-radius: 0px;
-}
 .look-button {
   display: block;
   width: 25%;
@@ -939,37 +896,29 @@ video {
     top:0;
     margin-left: 10px;
     margin-right: auto;
-    transform: rotate(90deg);
-    opacity: .5;
+    transform: rotate(-90deg);
+    opacity: .75;
   }
   .menu-title {
-    top: .5em;
-    left: 4.4em;
+    top: -.95em;
+    left:2.25em;
     border-radius:5px;
-    padding: .5em;
-    padding-right: .5em;
-    transform: rotate(0);
-    text-align: center;
-    opacity: .5;
+    transform: rotate(-90deg);
+    opacity: .75;
   }
   .card {
     margin-left: 0em;
     margin-right: 0em;
+    border-right: 0px;
+    border-left: 0px;
     padding-left: 0;
     padding-right: 0;
   }
-  .card-quarter-left {
+  .card-quarter-left,.card-quarter-right{
     width:100%;
     float: none;
-    margin-left: 0em;
-    margin-right: 0em;
-    padding-left: 1em;
-    padding-right: 1em;
-    height:auto;
-  }
-  .card-quarter-right {
-    width:100%;
-    float:none;
+    border-right: 0px;
+    border-left: 0px;
     margin-left: 0em;
     margin-right: 0em;
     padding-left: 1em;
@@ -983,29 +932,28 @@ video {
     display:none;
   }
   p {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: .75em;
+    margin-right: .75em;
   }
   .header {
     width:100%;
     left: -101%;
-    top: 2.75em;
+    top: 2.55em;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
   h1,h2,h3,h4 {
-    margin-left: .75em;
-    margin-right: .75em;
-
-  }
-  h5 {
-    margin-left: -.5em;
-    margin-right: .75em;
-
+    margin-left: .5em;
+    margin-right: .5em;
+    text-align: center;
+    line-height: 1.25;
   }
   .design-header {
     width:100%;
-    margin-top:5em;
+    border-radius: 0;
+    border-right: 0px;
+    border-left: 0px;
+    margin-top:4em;
     display: flex;
     background-size: 100%;
     background-image: url("/img/matterhorn-1.jpg");
@@ -1017,41 +965,34 @@ video {
     margin-right: auto;
     padding-bottom: .75em;
     font-size: 41px;
-    top: -.5em;
+    top: .5em;
     animation-name: none;
     -webkit-animation-name: none;
   }
   .design-title1 {
     letter-spacing: 5px;
-    padding-left: 2px;
-    padding-right: 2px;
-    border-radius:10px;
-    margin-left: auto;
-    margin-right: auto;
-    animation-name: alt;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    -webkit-animation-name:alt;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-delay: 0s;
+    font-size: 24px;
   }
   .design-title2 {
-    padding: 5px;
-    letter-spacing: 1.25px;
-    animation-name: alt;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    -webkit-animation-name:alt;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-delay: 0s;
+    letter-spacing: 5px;
+    font-size: 24px;
+  }
+  .header-hr {
+    width:100%;
+    top:0;
+    z-index: 1;
+    background-image: none;
+    background-color:rgb(143,188,143);
   }
   .square-logo {
     display: none;
   }
   nav {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
     }
   nav a {
     margin-bottom: 1em;
@@ -1062,23 +1003,11 @@ video {
   .general-link {
     width: auto;
     margin:.5em;
-    letter-spacing: .5;
-  }
-  .aboutme-rutgerslogo {
-    display: none;
-  }
-
-  .aboutme-gwlogo {
-    display: none;
-  }
-  .inset {
-    width: 95%;
-    left: 2.5%;
+    font-size: 18px;
   }
   .resume-description {
     margin-left: 1em;
     margin-right: 1em;
-    font-weight: normal;
   }
   .leftbutton {
     display: block;
@@ -1139,13 +1068,20 @@ video {
     line-height: 1.5;
     margin-bottom: 1em;
   }
-  .videos{
-    display:none;
-  }
   .slider-button {
     display:block;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+  }
+  .portfoliopg {
+    height: 5em;
+  }
+  .portfoliopg figcaption {
+    font-size: 18px;
+  }
+  #showcase,#showcase1,#showcase2,#showcase3,#showcase4 {
+    border: none;
+    border-radius: 0px;
   }
 }

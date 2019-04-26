@@ -32,6 +32,7 @@
     <textbox class="menu-title" onclick="">menu</textbox>
   </div>
 </header>
+<hr class="header-hr">
 <section class="design-header">
 	<img src="img\logo2.png" alt="squarelogo" class="square-logo">
 	<textbox class="design-title">
@@ -43,37 +44,33 @@
 </section>
 <section class="rightside">
 </section>
-<br>
 <section class="column-main">
-  <div class="card" style="background-color: black">
-    <figure class="slider-button" onclick="slidershow(this)">
-      <img src="img\slidercut.png" width="39em">
-      <figcaption>Click to see slider</figcaption>
-    </figure>
+  <br>
+  <div class="card-quarter-right">
+    <h2>Welcome</h2>
+    <img src="img\me.JPG" class="image">
+    <br>
+    <br>
+    <p>This website documents my work, what I have done, and what I have to show for it. I designed and developed this site from the bottom up. The menu above has links to my resume, my design work and a sample of my writings. Feedback is always welcome.
+    </p>
+  </div>
+  <div class="card-quarter-left">
+    <p>Natriarch is my domain name. A not-so-creative pun on the patriarch and matriarch. May it evoke a relationship of mutual respect and mutual growth. Thank you for visiting.
+    </p>
+    <img src="img\city-painting.JPG" class="image">
+    <h2>George Bellows, "New York" (1911)</h2>
+  </div>
+</section>
+<section class="column-main">
+  <div class="card" style="background-color: silver">
     <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
       <img src="img\View-Birds.png">
       <img src="img\CamdenAerial_before.png">
     </div>
-    <style>#juxtapose-wrapper {visibility:hidden;width:100%;top:0;} .jx-slider {z-index: 0;} .jx-image {z-index: 0;  filter:saturate(120%);} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
+    <style>#juxtapose-wrapper {width:100%;top:0;border:2px black dotted;border-radius: 5px;} .jx-slider {z-index: 0;} .jx-image {z-index: 0;  filter:saturate(120%);} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:90%;margin-left: auto;margin-right: auto;}}</style>
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
   </div>
-  <br>
-  <div class="card-quarter-right">
-    <h1>Welcome</h1>
-    <img src="img\me.JPG" class="image">
-    <br>
-    <br>
-    <p><strong>This website documents my work, what I have done, and what I have to show for it. I designed and developed this site from the bottom up. The menu above has links to my resume, my design work and a sample of my writings. Feedback is always welcome.</strong>
-    </p>
-  </div>
-  <div class="card-quarter-left">
-    <p><strong>Natriarch is my domain name. A not-so-creative pun on the patriarch and matriarch. May it evoke a relationship of mutual respect and mutual growth. Thank you for visiting.</strong>
-    </p>
-    <img src="img\city-painting.JPG" class="image">
-    <h1>George Bellows, "New York" (1911)</h1>
-  </div>
-  <br>
   <br>
 </section>
 </body>
@@ -93,19 +90,19 @@
   </div>
   </section>
 </footer>
-  <script type="text/javascript">
-      function menu() {
-          document.getElementById("header").classList.toggle("menu-open");
-        };
-      function contactme()
-        {
-          document.getElementById("footer").classList.toggle("contact-open");
-        };
-      function slidershow(x) {
-        document.getElementById("juxtapose-wrapper").style.visibility = "visible";
-        document.getElementById("juxtapose-wrapper").style.float =  "none";
-        document.getElementById("juxtapose-wrapper").style.position =  "";
-        x.style.display = "none";
-      };
-  </script>
 </html>
+<script type="text/javascript">
+    function menu() {
+        document.getElementById("header").classList.toggle("menu-open");
+      };
+    function contactme()
+      {
+        document.getElementById("footer").classList.toggle("contact-open");
+      };
+    function slidershow(x) {
+      document.getElementById("juxtapose-wrapper").style.visibility = "visible";
+      document.getElementById("juxtapose-wrapper").style.float =  "none";
+      document.getElementById("juxtapose-wrapper").style.position =  "";
+      x.style.display = "none";
+    };
+</script>
