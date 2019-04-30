@@ -893,14 +893,14 @@ h6 {
   .menu {
     display:block;
     position: fixed;
-    top:0;
+    top:.5em;
     margin-left: 10px;
     margin-right: auto;
     transform: rotate(-90deg);
     opacity: .75;
   }
   .menu-title {
-    top: -.95em;
+    top: -.75em;
     left:2.25em;
     border-radius:5px;
     transform: rotate(-90deg);
@@ -953,8 +953,9 @@ h6 {
     border-radius: 0;
     border-right: 0px;
     border-left: 0px;
-    margin-top:4em;
+    margin-top:3.5em;
     display: flex;
+    box-shadow: 0px 0px 15px 8px;
     background-size: 100%;
     background-image: url("/img/matterhorn-1.jpg");
   }
@@ -979,10 +980,12 @@ h6 {
   }
   .header-hr {
     width:100%;
+    height: 3.5em;
     top:0;
+    opacity: .5;
     z-index: 1;
     background-image: none;
-    background-color:rgb(143,188,143);
+    background-color: lightgreen;
   }
   .square-logo {
     display: none;
@@ -1073,6 +1076,15 @@ h6 {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+  }
+  #juxtapose-wrapper:hover img {
+    filter:saturate(150%);
+    }
+
+  #juxtapose-wrapper img {
+    filter:blur(0px) saturate(150%);
+    -webkit-transition-duration: 0.25s;
+    transition-duration: .25s;
   }
   .portfoliopg {
     height: 5em;
