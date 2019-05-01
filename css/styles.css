@@ -492,6 +492,13 @@ article h3{
   margin-right: auto;
   width: 70%;
   margin-bottom: 2.5em;
+  animation-name: columnenter;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+@keyframes columnenter {
+  0% {filter: blur(100px);opacity:.25}
+  100% {filter: blur(0px);opacity:1}
 }
 
 * {
@@ -748,6 +755,16 @@ h6 {
   align-items: center;
   justify-content:space-around;
   height: 15em;
+}
+.image-title h2 {
+  animation-name: title;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+@keyframes title {
+0% {color:salmon}
+50% {color:salmon;transform:scale(1.5)}
+100% {color:white}
 }
 .image-title img{
   width: 50%;
