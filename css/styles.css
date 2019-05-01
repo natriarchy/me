@@ -1,6 +1,3 @@
-
-
- /* Sidebar/nav Elements*/
  .menu-button {
    z-index: 2;
    background-color: black;
@@ -318,58 +315,89 @@
   border-right: 2px solid black;
   border-left: 2px solid black;
   box-shadow: 0px 0px 10px 1px;
-  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
-  background-size: auto auto, 1em 100em;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
+  background-size: auto auto, 6em auto;
 }
 
 .show {
   display:none;
 }
 
-.card-quarter-left {
-  display: block;
-  position: relative;
+.card-left {
   width: 48%;
-  box-shadow: 0px 0px 10px 1px;
-  border-top: 5px double black;
-  border-bottom: 5px double black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
+  height:38em;
+  display: block;
+  float: right;
+  position: relative;
+  padding-top: 2.5%;
+  padding-bottom:2.5%;
+  background-color: black;
+  box-shadow: inset 0px 0px 10px 1px black;
+  border-radius: 10px;
   margin-top: 1em;
   margin-right: .5em;
   margin-bottom: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  height: 38em;
-  background-color:  lightblue;
-  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
-  background-size: auto auto, 1em 100em;
 }
-.card-quarter-right {
+.card-left h1 {
+  color: white;
+  text-shadow:none;
+  font-size: 22px;
+  margin-top: 20%;
+  margin-bottom: auto;
+  text-align:justify;
+  text-align-last:right;
+  line-height: 1.5;
+}
+.card-right {
   display: block;
   position: relative;
-  float:right;
   width: 48%;
-  box-shadow: 0px 0px 10px 1px;
-  border-top: 5px double black;
-  border-bottom: 5px double black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
+  height:38em;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: papayawhip;
+  box-shadow: inset 0px 0px 10px 1px black;
+  border-radius: 10px;
   margin-top: 1em;
   margin-left: .5em;
   margin-bottom: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  height: 38em;
-  background-color: tan;
-  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("arches.png");
-  background-size: auto auto, 1em 100em;
 }
-.card-link {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  text-align: center;
+.card-right a {
+    display: block;
+    text-align: center;
+    background: none;
+    font-size: 24px;
+    text-shadow: 3px 3px 5px rgb(55, 250, 150,.75);
+    text-transform: lowercase;
+    letter-spacing: 6px;
+    color: dimgrey;
+    border-top: 4px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    border-radius: 8px;
+    box-shadow: 0px -5px 8px 0px rgb(55, 250, 150,.75);
+    width: 90%;
+    padding: .2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.card-right a:hover {
+    color: rgb(200, 250, 0);
+    background-color: grey;
+    border-top: 4px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    text-shadow:0px 0px 10px yellow;
+    box-shadow: inset 0px 5px 5px 1px black;
+    }
+.card-right h1 {
+  color:dimgrey;
+  font-weight: bold;
+  text-transform: lowercase;
+  text-shadow: 3px 3px 5px;
+  text-decoration: overline;
 }
+
 .leftside {
   display: block;
   position: fixed;
@@ -397,34 +425,34 @@
 }
 
 .general-link {
-  display: flex;
-  justify-content: center;
-  background: none;
-  font-weight: bold;
-  font-size: 24px;
-  text-shadow: 3px 3px 5px aqua;
-  font-variant: small-caps;
-  letter-spacing: 10px;
-  color: white;
-  border-top: 4px aqua solid;
-  border-left: 1px aqua solid;
-  border-right: 1px aqua solid;
-  border-radius:15px;
-  box-shadow: -5px -5px 20px 10px white;
-  width: 66%;
-  padding: .25em;
-  padding-left: 2em;
-  padding-right: 2em;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    text-align: center;
+    background: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgb(55, 250, 150,.25);
+    text-transform: lowercase;
+    letter-spacing: 6px;
+    color: dimgrey;
+    background-color: papayawhip;
+    border-top: 4px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    border-radius: 8px;
+    box-shadow: 0px -10px 15px 0px rgb(55, 250, 150,.25);
+    width: 90%;
+    padding: .2em;
+    margin-left: auto;
+    margin-right: auto;
   }
 .general-link:hover {
-  color: black;
-  border-color: black;
-  text-shadow: 0px 0px 5px orange;
-  box-shadow: inset 1px 1px 5px 1px black;
-  text-decoration: overline;
-  text-emphasis-position: above;
+    color: rgb(200, 250, 0);
+    background-color: dimgrey;
+    border-top: 4px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    text-shadow:0px 0px 10px yellow;
+    box-shadow: inset 0px 5px 5px 1px black;
   }
 
 #juxtapose-wrapper:hover img {
@@ -444,7 +472,6 @@
   background-size: 20em 25em;
   background-color: teal;
   height: 2.5em;
-  margin-top: 5em;
   border-left: 1em black solid;
   border-right: 1em black solid;
   box-shadow: inset 0 0 10px #000000;
@@ -469,10 +496,6 @@ article h3{
 
 * {
   box-sizing: border-box;
-}
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 body {
@@ -715,7 +738,19 @@ h6 {
   width: 95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
-  border: 5px gray solid;
+  border: 5px lightsteelblue inset;
+}
+.image-title {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content:space-around;
+  height: 15em;
+}
+.image-title img{
+  width: 50%;
 }
 .portfoliopg {
   display: block;
@@ -914,7 +949,10 @@ h6 {
     padding-left: 0;
     padding-right: 0;
   }
-  .card-quarter-left,.card-quarter-right{
+  .image-title img{
+    width: 75%;
+  }
+  .card-left,.card-right{
     width:100%;
     float: none;
     border-right: 0px;
