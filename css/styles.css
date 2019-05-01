@@ -1106,6 +1106,9 @@ h6 {
   .contact {
       display: none;
   }
+  .contact-open .footer {
+    transform: translateY(0);
+  }
   .look-button {
       width: 50%;
   }
