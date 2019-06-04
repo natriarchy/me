@@ -362,7 +362,7 @@
   margin-left: .5em;
   margin-bottom: 1em;
 }
-.card-right a {
+.card-right .link {
     display: block;
     text-align: center;
     background: none;
@@ -381,7 +381,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-.card-right a:hover {
+.card-right .link:hover {
     color: rgb(200, 250, 0);
     background-color: grey;
     border-top: 4px black solid;
@@ -397,7 +397,6 @@
   text-shadow: 3px 3px 5px;
   text-decoration: overline;
 }
-
 .leftside {
   display: block;
   position: fixed;
@@ -751,6 +750,7 @@ h6 {
   margin-right: 2.5%;
   border: 5px lightsteelblue inset;
 }
+
 .image-title {
   display: flex;
   position: relative;
@@ -772,6 +772,73 @@ h6 {
 }
 .image-title img{
   width: 50%;
+}
+.plan p {
+  margin-right:38%
+}
+#plan-img img {
+  border-top: 4px salmon inset;
+  border-left: 2px salmon inset;
+  border-right: 2px salmon inset;
+  border-bottom: 2px salmon inset;
+  margin-bottom:-15em;
+  box-shadow: 1px 1px 10px;
+  border-radius:10px 10px 0px 0px;
+  width: 50%;
+  margin:auto;
+  z-index: -1;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
+}
+#button1 {
+  position: relative;
+  background-color: salmon;
+  width:25%;
+  float: left;
+  margin-left:25%;
+  text-align: center;
+  box-shadow: inset 0px 5px 5px 1px black;
+  border-bottom-left-radius: 10px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px black;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: white;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
+}
+  #button1:hover {
+    color: white;
+    border: 3px magenta inset;
+  }
+#button2 {
+  position: relative;
+  background-color: skyblue;
+  width:25%;
+  margin-right:25%;
+  float: right;
+  text-align: center;
+  border-bottom-right-radius: 10px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px black;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: white;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
+}
+  #button2:hover {
+    color: white;
+    border: 3px magenta inset;
+  }
+
+#plan_before {
+  display: block;
+}
+#plan_after {
+  display: none;
 }
 .portfoliopg {
   display: block;
@@ -899,6 +966,7 @@ h6 {
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
 }
+
 
 .resume-description {
   list-style: circle;

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Design Work-Passaic</title>
+	  <meta name="description" content="My academic design project on Sayreville, NJ.">
+	  <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+		<link href="css/styles.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" href="img\logo2.png">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'UA-136760833-1');
+			</script>
+	</head>
+	<header id="header">
+	  <div class="header" onmouseleave="menu()">
+	    <nav>
+	      <a href="index.html" type="button" class="nav">Home</a><br>
+	      <a href="aboutme.html" type="button" class="nav">About Me</a><br>
+	      <a href="design.html" type="button" class="nav">Design Work</a><br>
+	      <a href="writings.html" type="button" class="nav">Writings</a>
+	    </nav>
+	  </div>
+	  <div class="menu-button">
+	    <button class="menu" onclick="menu()"><hr class="hr1"  onclick=""><hr class="hr2" onclick=""><hr class="hr3" onclick=""></button>
+	    <textbox class="menu-title" onclick="">menu</textbox>
+	  </div>
+	</header>
+	<hr class="header-hr">
+	<section class="design-header">
+		<img src="img\logo2.png" alt="squarelogo" class="square-logo">
+		<textbox class="design-title">
+	    <span class="design-title1">nathan erwin</span><br>
+	    <span class="design-title2"><script>document.write(document.title);</script></span>
+	    <span class="matterhorn-title">The Matterhorn | original</textbox>
+	</section>
+	<section class="leftside">
+	</section>
+	<section class="rightside">
+	</section>
+<section class="column-main">
+	<br>
+	<div class="card-link">
+		<h1>Choose a page to see it below. Click to zoom in/out.</h1>
+	</div>
+	<br>
+	<div class="portfoliopg">
+		<figure onclick="portfolio1(this)">
+			<img src="img\portfolio8_tn.jpg" alt="PortfolioPg8" width=100%>
+			<figcaption>8</figcaption>
+		</figure>
+		<figure onclick="portfolio2(this)">
+			<img src="img\portfolio9_tn.jpg" alt="PortfolioPg9" width=100%>
+			<figcaption>9</figcaption>
+		</figure>
+	</div>
+<br>
+	<div class="portfoliopg-show">
+		<img src="portfolio_img\DesignPortfolio2_Page_01.png" alt="PortfolioPg1" id="showcase" onclick="transformer(this)" width=100%>
+    <img src="portfolio_img\DesignPortfolio2_Page_08.png" alt="PortfolioPg6" id="showcase1" onclick="transformer(this)" width=100%>
+    <img src="portfolio_img\DesignPortfolio2_Page_09.png" alt="PortfolioPg7" id="showcase2" onclick="transformer(this)" width=100%>
+	<div>
+	<br>
+	<div>
+			<a href="design.html" class="leftbutton">Back to Overview</a>
+			<a href="design-morgan.html" class="rightbutton">Next Project</a>
+	</div>
+</section>
+</body>
+<footer id="footer">
+  <section class="footer">
+  <img src="img/contact-me.png" alt="contact-me" class="contact" onclick="contactme()"><br>
+  <div class="footer-content" onmouseleave="contactme()">
+      <h6>
+        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
+        <texbox id="doublebar"><span><br></span></textbox>
+        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a> ║
+        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
+        <texbox id="doublebar2"><span><br></span></textbox>
+        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
+        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
+      </h6>
+  </div>
+  </section>
+</footer>
+  <script type="text/javascript">
+    function menu() {
+        document.getElementById("header").classList.toggle("menu-open");
+      };
+    function contactme()
+      {
+        document.getElementById("footer").classList.toggle("contact-open");
+      };
+		function portfolio1(x)
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="block";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="none";
+			};
+		function portfolio2(x)
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="block";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="none";
+			};
+		function portfolio3(x)
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="block";
+				document.getElementById("showcase4").style.display="none";
+			};
+		function portfolio4(x)
+			{
+				document.getElementById("showcase").style.display="none";
+				document.getElementById("showcase1").style.display="none";
+				document.getElementById("showcase2").style.display="none";
+				document.getElementById("showcase3").style.display="none";
+				document.getElementById("showcase4").style.display="block";
+			};
+		function transformer(x)
+			{x.classList.toggle("showcase-zoom");};
+</script>
+</html>
