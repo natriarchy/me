@@ -766,16 +766,14 @@ h6 {
   animation-delay: 1s;
 }
 @keyframes title {
-0% {color:salmon}
-50% {color:salmon;transform:scale(1.5)}
+0% {color:aquamarine}
+50% {color:aquamarine;transform:scale(1.5)}
 100% {color:white}
 }
 .image-title img{
   width: 50%;
 }
-.plan p {
-  margin-right:38%
-}
+
 #plan-img img {
   border-top: 4px salmon inset;
   border-left: 2px salmon inset;
@@ -1094,8 +1092,6 @@ h6 {
     padding-bottom: .75em;
     font-size: 41px;
     top: .5em;
-    animation-name: none;
-    -webkit-animation-name: none;
   }
   .design-title1 {
     letter-spacing: 5px;
@@ -1225,5 +1221,19 @@ h6 {
   #showcase,#showcase1,#showcase2,#showcase3,#showcase4 {
     border: none;
     border-radius: 0px;
+  }
+  #plan-img img {
+    margin-bottom:-15em;
+    border-radius:10px 10px 0px 0px;
+    width: 90%;
+    margin:auto;
+  }
+  #button1 {
+    width:45%;
+    margin-left:5%;
+  }
+  #button2 {
+    width:45%;
+    margin-right:5%;
   }
 }
