@@ -32,19 +32,27 @@
   </div>
 </header>
 <body>
-<figure class="camdenviews">
-  <figcaption>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</strong>
-    <img class="viewstreet" src="img/View-Streetfront.jpg">
-  </figcaption>
-  <img class="view" src="img/BackViewCamden.jpg">
-  <span>Camden Waterfront Building Concept</span>
-  <object >&#10170;</object>
-</figure>
-<br>
-<video class="buildvid" width=100% id="buildfly" loop onmouseover="buildplay(this)" onmouseout="buildstop(this)">
-  <source src="files\camdenFly.mp4" type="video/mp4">
-</video>
-<section class="column-main" style="margin-top:4em;width:85%;">
+<section>
+  <figure class="view">
+    <img src="img/BackViewCamden.jpg">
+    <span>Camden Waterfront Building Concept</span>
+    <figcaption>&#10170;</figcaption>
+  </figure>
+</section>
+<section class="planimgs">
+  <video id="buildfly" loop onmouseover="buildplay(this)" onmouseout="buildstop(this)">
+    <source src="files\camdenFly.mp4" type="video/mp4">
+  </video>
+  <figure>
+    <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
+    <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
+    <figcaption>
+      <button onclick="portfolio1()" onmouseover="planblur()" onmouseout="planunblur()" id="button1">before</button>
+      <button onclick="portfolio2()" onmouseover="planblur()" onmouseout="planunblur()" id="button2">after</button>
+    </figcaption>
+  </figure>
+</section><br>
+<section class="column-main">
   <hr style="background-color:aquamarine">
 </section>
 <div class="buttonarray">
@@ -59,6 +67,10 @@
   <img id="view3" src="img/View-Streetfront.jpg">
   <img id="view4" src="img/View-Birds.png">
 </figure>
+<div>
+    <a href="design.html" class="leftbutton">Back to Overview</a>
+    <a href="design-dayton.html" class="rightbutton">Next Project</a>
+</div>
 </body>
 <footer id="footer">
   <section class="footer">
@@ -118,5 +130,29 @@
   				document.getElementById("view3").style.display="none";
   				document.getElementById("view4").style.display="block";
   			};
+      function portfolio1(x)
+        {
+          document.getElementById("plan_before").style.display="block";
+          document.getElementById("plan_after").style.display="none";
+          document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button2").style.boxShadow = "none";
+        };
+      function portfolio2(x)
+        {
+          document.getElementById("plan_before").style.display="none";
+          document.getElementById("plan_after").style.display="block";
+          document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button1").style.boxShadow = "none";
+        };
+      function planblur ()
+        {
+          document.getElementById("plan_before").style.borderColor = "magenta";
+          document.getElementById("plan_after").style.borderColor = "magenta";
+        };
+      function planunblur ()
+        {
+          document.getElementById("plan_before").style.borderColor = "salmon";
+          document.getElementById("plan_after").style.borderColor = "skyblue";
+        };
 </script>
 </html>

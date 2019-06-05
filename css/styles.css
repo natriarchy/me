@@ -774,70 +774,6 @@ h6 {
   width: 50%;
 }
 
-#plan-img img {
-  border-top: 4px salmon inset;
-  border-left: 2px salmon inset;
-  border-right: 2px salmon inset;
-  border-bottom: 2px salmon inset;
-  margin-bottom:-15em;
-  box-shadow: 1px 1px 10px;
-  border-radius:10px 10px 0px 0px;
-  width: 50%;
-  margin:auto;
-  z-index: -1;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
-}
-#button1 {
-  position: relative;
-  background-color: salmon;
-  width:25%;
-  float: left;
-  margin-left:25%;
-  text-align: center;
-  box-shadow: inset 0px 5px 5px 1px black;
-  border-bottom-left-radius: 10px;
-  font-weight: bold;
-  text-shadow: 3px 3px 5px black;
-  text-transform: lowercase;
-  letter-spacing: 2px;
-  color: white;
-  cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
-}
-  #button1:hover {
-    color: white;
-    border: 3px magenta inset;
-  }
-#button2 {
-  position: relative;
-  background-color: skyblue;
-  width:25%;
-  margin-right:25%;
-  float: right;
-  text-align: center;
-  border-bottom-right-radius: 10px;
-  font-weight: bold;
-  text-shadow: 3px 3px 5px black;
-  text-transform: lowercase;
-  letter-spacing: 2px;
-  color: white;
-  cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
-}
-  #button2:hover {
-    color: white;
-    border: 3px magenta inset;
-  }
-
-#plan_before {
-  display: block;
-}
-#plan_after {
-  display: none;
-}
 .portfoliopg {
   display: block;
   position:relative;
@@ -912,73 +848,92 @@ h6 {
   z-index: 1;
 }
 .leftbutton {
-  text-align:center;
   float: left;
-  background: black;
-  color:white;
   width: 45%;
   padding: 1em;
-  border-radius: 12px;
   text-decoration: none;
-  margin-bottom: 5em;
-  box-shadow: 0 9px #999;
-  cursor: pointer;
+  margin-left:2em;
+  margin-bottom: 3em;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
+  cursor: pointer;
+  color: dimgrey;
+  text-align: center;
+  font-size: 20px;
+  font-weight:lighter;
+  text-shadow: 1px 1px 2px grey;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  background-color: papayawhip;
+  border-top: 4px dimgray solid;
+  border-bottom: 4px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
+  border-radius: 15px;
+  box-shadow: 0px -5px 10px 0px;
 }
 
 .rightbutton {
   float: right;
-  background: black;
-  color:white;
-  width: 45%;
+  width: 40%;
   padding: 1em;
-  border-radius: 12px;
   text-decoration: none;
-  text-align: center;
-  margin-bottom: 5em;
-  box-shadow: 0 9px #999;
+  margin-right:2em;
+  margin-bottom: 3em;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
   cursor: pointer;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
+  color: dimgrey;
+  text-align: center;
+  font-size: 20px;
+  font-weight:lighter;
+  text-shadow: 1px 1px 2px grey;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  background-color: papayawhip;
+  border-top: 4px dimgray solid;
+  border-bottom: 4px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
+  border-radius: 15px;
+  box-shadow: 0px -5px 10px 0px;
 }
+
 .rightbutton:hover {
-  font-weight: 900;
-  background: white;
-  color: black;
-  border: 1px solid black;
-  box-shadow: 0 0px #999;
-  transform:translateY(.5em);
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
+  color: rgb(200, 250, 0);
+  background-color: dimgrey;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  text-shadow:0px 0px 10px yellow;
+  box-shadow: inset 0px 5px 5px 1px black;
   }
 
 .leftbutton:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  font-weight: 900;
-  background: white;
-  color: black;
-  border: 1px solid black;
-  box-shadow: 0 0px #999;
-  transform:translateY(.5em);
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
+  color: rgb(200, 250, 0);
+  background-color: dimgrey;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  text-shadow:0px 0px 10px yellow;
+  box-shadow: inset 0px 5px 5px 1px black;
 }
-.buildvid {
-    filter: contrast(115%);
-  }
-.camdenviews {
-  width:100%;
+
+.view {
+  width:100vw;
   height:100vh;
   margin:0;
   background-color: black;
+  overflow:hidden;
 }
-.view {
+.view img {
   width: 100%;
   position: absolute;
-  top:25%;
+  bottom:-5%;
 }
-.camdenviews span {
+.view span {
   color:orange;
   position: absolute;
   width: 40%;
@@ -994,39 +949,9 @@ h6 {
   margin-right: 5%;
   animation-name: droptitle1;
   animation-duration: 3s;
+  overflow: hidden;
 }
-.camdenviews figcaption {
-  color:black;
-  float:left;
-  z-index: 1;
-  position: absolute;
-  max-height: 33%;
-  max-width:50%;
-  text-align: justify;
-  text-align-last: center;
-  left:0%;
-  top:0%;
-  margin:0;
-  background-color: white;
-  padding-left: 5em;
-  padding-right: 2em;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  border-radius: 0px 0px 15px 0px;
-  animation-name: figdesc1;
-  animation-duration: 3s;
-}
-.viewstreet {
-  display: none;
-  position: absolute;
-  z-index: 0;
-  left:0;
-  top:100%;
-  max-height: 66vh;
-  max-width: 100%;
-  border-radius: 0px 0px 15px 0px;
-}
-.camdenviews object {
+.view figcaption {
   position:absolute;
   bottom:1em;
   right:1em;
@@ -1040,9 +965,96 @@ h6 {
   transform-origin: bottom;
 }
 
+.planimgs {
+  z-index: -1;
+  margin-top: 4em;
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+}
+.planimgs figure {
+  height: 40vw;
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+}
+.planimgs figcaption {
+  position:relative;
+  width:100%;
+  bottom:5em;
+  }
+.planimgs img {
+  max-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-top: 4px salmon inset;
+  border-left: 2px salmon inset;
+  border-right: 2px salmon inset;
+  border-bottom: 2px salmon inset;
+  border-radius:15px;
+  }
+#button1,#button2 {
+  color:white;
+  height:3em;
+  width: 25%;
+  writing-mode:;
+  margin: 2em;
+  justify-content:center;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: .5s;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 5px black;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-family: "Century Gothic", sans-serif;
+  border-top: 1px grey solid;
+  border-bottom: 4px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
+  border-radius: 10px;
+}
+  #button1:hover,#button2:hover {
+    color: rgb(200, 250, 0);
+    background-color: darkslategray;
+    border-top: 4px black solid;
+    border-bottom: 1px black solid;
+    border-left: 2px black solid;
+    border-right: 1px black solid;
+    text-shadow:0px 0px 10px yellow;
+  }
+#button1 {
+  float: left;
+  background-color: salmon;
+}
+#button2 {
+  float: right;
+  background-color: skyblue;
+}
+#buildfly {
+  float: right;
+  margin-right: 5%;
+  margin-left: 60%;
+  margin-top: 2em;
+  position:absolute;
+  width:33%;
+  z-index: 2;
+  filter: contrast(115%);
+  border-radius:15px;
+  border: 4px orange inset;
+  box-shadow: 2px 2px 20px 2px orange;
+}
 @keyframes droptitle1 {
-  0% {margin-left: 100%;margin-right: 0%;color:white}
-  100% {margin-left: 55%;margin-right: 5%;color:orange}
+  0% {margin-left: 100%;margin-right: 0%;color:white;}
+  100% {margin-left: 55%;margin-right: 5%;color:orange;}
 }
 @keyframes figdesc1 {
   0% {opacity: 0;}
@@ -1051,6 +1063,15 @@ h6 {
 @keyframes emphasize {
   0% {opacity: 0;transform: scale(0);}
   50% {opacity: .5;transform: scale(5);color:red}
+  100% {opacity: 1;transform: scale(1)}
+}
+@keyframes droptitle-mini {
+  0% {margin-left: 100%;margin-right: 0%;color:white}
+  100% {margin-left: 0%;margin-right: 0%;color:orange}
+}
+@keyframes emphasize-mini {
+  0% {opacity: .25;transform: scale(0);}
+  95% {opacity: .5;transform: scale(2);color:red}
   100% {opacity: 1;transform: scale(1)}
 }
 .droptitle2 {
@@ -1067,8 +1088,8 @@ figure:hover .droptitle2{
   animation-duration: 3s;
 }
 @keyframes droptitle2 {
-0% {left:0%;color:green}
-100% {left:22%;}
+  0% {left:0%;color:green}
+  100% {left:22%;}
 }
 .resume-description {
   list-style: circle;
@@ -1289,6 +1310,8 @@ figure:hover .droptitle2{
   }
   .leftbutton {
     display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-right: auto;
     margin-left: auto;
     width: 80%;
@@ -1296,6 +1319,8 @@ figure:hover .droptitle2{
   }
   .rightbutton {
     display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-right: auto;
     margin-left: auto;
     width: 80%;
@@ -1374,33 +1399,88 @@ figure:hover .droptitle2{
     border: none;
     border-radius: 0px;
   }
-  #plan-img img {
-    margin-bottom:-15em;
-    border-radius:10px 10px 0px 0px;
-    width: 90%;
+  .view {
+    width:100%;
+    height:100vh;
+    margin:0;
+    background-color: black;
+  }
+  .view img {
+    width: 100%;
+    top:66%;
+  }
+  .view span {
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    text-align-last: center;
+    line-height: 125%;
+    margin-top: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    animation-name: droptitle-mini;
+  }
+  .planimgs {
+    float: none;
+    display: block;
+    border-radius: 0px 0px 15px 15px;
     margin:auto;
+    width:100%;
+    max-width:none;
+    max-height: 75vh;
+    background: none;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 4em;
+    padding-bottom:0em;
   }
-  #button1 {
-    width:45%;
-    margin-left:5%;
+  .planimgs img {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 50vh;
+    border-top: 4px salmon inset;
+    border-left: 2px salmon inset;
+    border-right: 2px salmon inset;
+    border-bottom: 2px salmon inset;
+    border-radius:10px 10px 0px 0px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: .5s;
+    }
+  .planimgs figcaption {
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  .view figcaption {
+    bottom:.5em;
+    right:0;
+    font-size:80px;
+    animation-name: emphasize-mini;
   }
-  #button2 {
-    width:45%;
-    margin-right:5%;
+  .buttonarray {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-bottom: 1em
   }
   .buttonarray button {
     border-radius: 5px;
     padding:.15em;
-    margin-left: auto;
-    margin-right: auto;
-    height:5em;
-    font-size:10px;
+    width: 33%;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-size:14px;
   }
   .imgarray {
     height:50vh;
   }
   .imgarray img {
     border:none;
+    border-top: 1em double black;
+    border-bottom: 1em double black;
     height:50vh;
   }
 }

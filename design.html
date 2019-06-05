@@ -51,18 +51,11 @@
   <br>
   <hr style="background-color: mistyrose;">
   <br>
-	<div class="card" style="background-color: darkseagreen;">
+  <div class="card" style="background-color: darkseagreen;">
     <h2>Camden Waterfront Project</h2><br>
     <p>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</strong></p>
     <a href="design-camden.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
 	</div>
-  <br>
-  <figure id="plan-img">
-    <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" width=100%>
-    <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" width=100%>
-    <figcaption onclick="portfolio1()" onmouseover="planblur()" onmouseout="planunblur()" id="button1">before</figcaption>
-    <figcaption onclick="portfolio2()" onmouseover="planblur()" onmouseout="planunblur()" id="button2">after</figcaption>
-  </figure>
   <br>
 	<div class="card" style="background-color:thistle">
     <h2>Dayton-Aerotropolis Project</h2>
@@ -109,29 +102,5 @@
     function contactme()
       {
         document.getElementById("footer").classList.toggle("contact-open");
-      };
-    function portfolio1(x)
-      {
-        document.getElementById("plan_before").style.display="block";
-        document.getElementById("plan_after").style.display="none";
-        document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
-        document.getElementById("button2").style.boxShadow = "none";
-      };
-    function portfolio2(x)
-      {
-        document.getElementById("plan_before").style.display="none";
-        document.getElementById("plan_after").style.display="block";
-        document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
-        document.getElementById("button1").style.boxShadow = "none";
-      };
-    function planblur ()
-      {
-        document.getElementById("plan_before").style.borderColor = "magenta";
-        document.getElementById("plan_after").style.borderColor = "magenta";
-      };
-    function planunblur ()
-      {
-        document.getElementById("plan_before").style.borderColor = "salmon";
-        document.getElementById("plan_after").style.borderColor = "skyblue";
       };
 </script>
