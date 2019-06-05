@@ -31,57 +31,34 @@
     <textbox class="menu-title" onclick="">menu</textbox>
   </div>
 </header>
-<hr class="header-hr">
-<section class="design-header">
-	<img src="img\logo2.png" alt="squarelogo" class="square-logo">
-	<textbox class="design-title">
-    <span class="design-title1">nathan erwin</span><br>
-    <span class="design-title2"><script>document.write(document.title);</script></span>
-    <span class="matterhorn-title">The Matterhorn | original</textbox>
-</section>
-<section class="leftside">
-</section>
-<section class="rightside">
-</section>
 <body>
+<figure class="camdenviews">
+  <figcaption>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</strong>
+    <img class="viewstreet" src="img/View-Streetfront.jpg">
+  </figcaption>
+  <img class="view" src="img/BackViewCamden.jpg">
+  <span>Camden Waterfront Building Concept</span>
+  <object >&#10170;</object>
+</figure>
 <br>
-<section class=column-main>
-  <div class="card-link">
-    <h1>Choose a page to see it below. Click to zoom in/out.</h1>
-  </div>
-  <br>
-  <div class="portfoliopg">
-    <figure onclick="portfolio1(this)">
-			<img src="img\portfolio8_tn.jpg" alt="PortfolioPg8" width=100%>
-			<figcaption>2</figcaption>
-		</figure>
-		<figure onclick="portfolio2(this)">
-			<img src="img\portfolio9_tn.jpg" alt="PortfolioPg9" width=100%>
-			<figcaption>3</figcaption>
-		</figure>
-		<figure onclick="portfolio3(this)">
-			<img src="img\portfolio10_tn.jpg" alt="PortfolioPg10" width=100%>
-			<figcaption>4</figcaption>
-		</figure>
-		<figure onclick="portfolio4(this)">
-			<img src="img\portfolio11_tn.jpg" alt="PortfolioPg11" width=100%>
-			<figcaption>5</figcaption>
-		</figure>
-  </div>
-<br>
-  <div class="portfoliopg-show">
-    <img src="portfolio_img\DesignPortfolio2_Page_01.png" alt="PortfolioPg1" id="showcase" onclick="transformer(this)" width=100%>
-    <img src="portfolio_img\DesignPortfolio2_Page_02.png" alt="PortfolioPg6" id="showcase1" onclick="transformer(this)" width=100%>
-    <img src="portfolio_img\DesignPortfolio2_Page_03.png" alt="PortfolioPg7" id="showcase2" onclick="transformer(this)" width=100%>
-    <img src="portfolio_img\DesignPortfolio2_Page_04.png" alt="PortfolioPg6" id="showcase3" onclick="transformer(this)" width=100%>
-    <img src="portfolio_img\DesignPortfolio2_Page_05.png" alt="PortfolioPg7" id="showcase4" onclick="transformer(this)" width=100%>
-  </div>
-<br>
-  <div>
-      <a href="design.html" class="leftbutton">Back to Overview</a>
-      <a href="design-dayton.html" class="rightbutton">Next Project</a>
-  </div>
+<video class="buildvid" width=100% id="buildfly" loop onmouseover="buildplay(this)" onmouseout="buildstop(this)">
+  <source src="files\camdenFly.mp4" type="video/mp4">
+</video>
+<section class="column-main" style="margin-top:4em;width:85%;">
+  <hr style="background-color:aquamarine">
 </section>
+<div class="buttonarray">
+  <button onclick="view1()">waterfront</button>
+  <button onclick="view2()">streetfront</button>
+  <button onclick="view3()">waterfront-day</button>
+  <button onclick="view4()">birds-eye view</button>
+</div>
+<figure class="imgarray">
+  <img id="view1" src="img/ViewCamden.png" style="width:100%;display:block">
+  <img id="view2" src="img/View-Waterfront-Day2.jpg">
+  <img id="view3" src="img/View-Streetfront.jpg">
+  <img id="view4" src="img/View-Birds.png">
+</figure>
 </body>
 <footer id="footer">
   <section class="footer">
@@ -103,43 +80,43 @@
       function menu() {
           document.getElementById("header").classList.toggle("menu-open");
         };
-      function contactme()
-        {
+      function contactme() {
           document.getElementById("footer").classList.toggle("contact-open");
         };
-  		function portfolio1(x)
+      document.getElementById("buildfly").playbackRate = .75;
+      function buildplay(x) {
+          x.play();
+        }
+      function buildstop(x) {
+          x.pause();
+        }
+  		function view1(x)
   			{
-  				document.getElementById("showcase").style.display="none";
-  				document.getElementById("showcase1").style.display="block";
-  				document.getElementById("showcase2").style.display="none";
-  				document.getElementById("showcase3").style.display="none";
-  				document.getElementById("showcase4").style.display="none";
+  				document.getElementById("view1").style.display="block";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
   			};
-  		function portfolio2(x)
+      function view2(x)
   			{
-  				document.getElementById("showcase").style.display="none";
-  				document.getElementById("showcase1").style.display="none";
-  				document.getElementById("showcase2").style.display="block";
-  				document.getElementById("showcase3").style.display="none";
-  				document.getElementById("showcase4").style.display="none";
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="block";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
   			};
-  		function portfolio3(x)
+      function view3(x)
   			{
-  				document.getElementById("showcase").style.display="none";
-  				document.getElementById("showcase1").style.display="none";
-  				document.getElementById("showcase2").style.display="none";
-  				document.getElementById("showcase3").style.display="block";
-  				document.getElementById("showcase4").style.display="none";
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="block";
+  				document.getElementById("view4").style.display="none";
   			};
-  		function portfolio4(x)
+      function view4(x)
   			{
-  				document.getElementById("showcase").style.display="none";
-  				document.getElementById("showcase1").style.display="none";
-  				document.getElementById("showcase2").style.display="none";
-  				document.getElementById("showcase3").style.display="none";
-  				document.getElementById("showcase4").style.display="block";
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="block";
   			};
-  		function transformer(x)
-  			{x.classList.toggle("showcase-zoom");};
 </script>
 </html>
