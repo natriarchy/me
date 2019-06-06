@@ -964,7 +964,6 @@ h6 {
   animation-fill-mode: backwards;
   transform-origin: bottom;
 }
-
 .planimgs {
   z-index: -1;
   margin-top: 4em;
@@ -977,6 +976,9 @@ h6 {
 .planimgs figure {
   height: 40vw;
   width: 90vw;
+  background-color: tan;
+  background-image: url(light-wool.png);
+  background-size: auto auto, 6em auto;
   display: flex;
   flex-wrap: wrap;
   padding-left: auto;
@@ -984,39 +986,41 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   overflow:hidden;
-}
-.planimgs figcaption {
-  position:relative;
-  width:100%;
-  bottom:5em;
-  }
-.planimgs img {
-  max-height: 100%;
-  width: 100%;
-  overflow: hidden;
   border-top: 4px salmon inset;
   border-left: 2px salmon inset;
   border-right: 2px salmon inset;
   border-bottom: 2px salmon inset;
-  border-radius:15px;
+  border-radius:30px;
+}
+.planimgs figcaption {
+  position:relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  width:26%;
+  bottom:37%;
+  margin-left: 72%;
+  }
+.planimgs img {
+  max-height: 100%;
+  border-right: 1em aquamarine double;
+  overflow: hidden;
   }
 #button1,#button2 {
   color:white;
-  height:3em;
-  width: 25%;
-  writing-mode:;
-  margin: 2em;
-  justify-content:center;
+  height: 2em;
+  margin-bottom: 2em;
   cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: .5s;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
   font-weight: bold;
   text-align: center;
   text-shadow: 3px 3px 5px black;
   text-transform: lowercase;
   letter-spacing: 2px;
+  font-size: 24px;
   font-family: "Century Gothic", sans-serif;
-  border-top: 1px grey solid;
+  border-top: 2px grey solid;
   border-bottom: 4px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
@@ -1032,7 +1036,7 @@ h6 {
     text-shadow:0px 0px 10px yellow;
   }
 #button1 {
-  float: left;
+  float: right;
   background-color: salmon;
 }
 #button2 {
@@ -1041,11 +1045,11 @@ h6 {
 }
 #buildfly {
   float: right;
-  margin-right: 5%;
-  margin-left: 60%;
-  margin-top: 2em;
+  margin-right: 0%;
+  margin-left: 70%;
+  margin-top: 4em;
   position:absolute;
-  width:33%;
+  width:23%;
   z-index: 2;
   filter: contrast(115%);
   border-radius:15px;
@@ -1100,29 +1104,29 @@ figure:hover .droptitle2{
   text-align: left;
 }
 .buttonarray {
-  display: flex;
-  justify-content:space-around;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
   align-items: center;
   width:100%;
 }
 .buttonarray button {
-  cursor: pointer;
-  color: dimgrey;
+  cursor: pointer;;
+  margin:1em;
+  color: aquamarine;
   text-align: center;
   font-size: 20px;
-  font-weight:lighter;
   text-shadow: 1px 1px 2px grey;
-  text-transform: lowercase;
+  text-transform:full-width;
+  font-variant: small-caps;
   letter-spacing: 3px;
-  background-color: papayawhip;
+  background-color: grey;
   border-top: 4px dimgray solid;
   border-bottom: 4px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
   border-radius: 15px;
   box-shadow: 0px -5px 10px 0px;
-  padding: .5em;
-  margin: 2em;
 }
   .buttonarray button:hover {
     color: rgb(200, 250, 0);
@@ -1135,6 +1139,8 @@ figure:hover .droptitle2{
     box-shadow: inset 0px 5px 5px 1px black;
   }
 .imgarray {
+  display: flex;
+  justify-content: center;
   margin:0px;
   height:85vh;
   margin-bottom: 3em;
@@ -1467,9 +1473,6 @@ figure:hover .droptitle2{
   .buttonarray button {
     border-radius: 5px;
     padding:.15em;
-    width: 33%;
-    margin-left: 2em;
-    margin-right: 2em;
     margin-top: .5em;
     margin-bottom: 1em;
     font-size:14px;
