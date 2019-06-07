@@ -156,7 +156,6 @@
   opacity: 1;
   user-select: none;
   -webkit-user-select: none;
-
 }
 
 .menu .hr1,.hr2,.hr3{
@@ -1246,9 +1245,9 @@ figure:hover .droptitle2{
     opacity: .75;
   }
   .menu-title {
-    top: -.75em;
+    top: -.5em;
     font-size: 2em;
-    left:3em;
+    left:3.5em;
     border-radius:5px;
     transform: rotate(-90deg);
     opacity: .75;
