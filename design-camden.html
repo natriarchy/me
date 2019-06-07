@@ -7,15 +7,15 @@
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'UA-136760833-1');
-    </script>
+    gtag('config', 'UA-136760833-1');
+  </script>
 </head>
 <header id="header">
   <div class="header" onmouseleave="menu()">
@@ -34,21 +34,21 @@
 <body>
 <section>
   <figure class="view">
-    <img src="img/BackViewCamden.jpg">
-    <span>Camden Waterfront Building Concept</span>
+    <video id="buildfly" onended="change()" autoplay muted>
+      <source src="files\anim.mp4" type="video/mp4">
+    </video>
+    <h1 id="title">Camden Waterfront Building Concept</h1>
+    <img src="files\Animation3099.png" id="artistic" style="display:none">
     <figcaption>&#10170;</figcaption>
   </figure>
 </section>
 <section class="planimgs">
-  <video id="buildfly" loop onmouseover="buildplay(this)" onmouseout="buildstop(this)">
-    <source src="files\camdenFly.mp4" type="video/mp4">
-  </video>
   <figure>
     <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
     <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
     <figcaption>
-      <button onclick="portfolio1()" onmouseover="planblur()" onmouseout="planunblur()" id="button1">before</button>
-      <button onclick="portfolio2()" onmouseover="planblur()" onmouseout="planunblur()" id="button2">after</button>
+      <button onclick="portfolio1()" id="button1">before</button>
+      <button onclick="portfolio2()" id="button2">after</button>
     </figcaption>
   </figure>
 </section><br>
@@ -95,14 +95,7 @@
       function contactme() {
           document.getElementById("footer").classList.toggle("contact-open");
         };
-      document.getElementById("buildfly").playbackRate = .75;
-      function buildplay(x) {
-          x.play();
-        }
-      function buildstop(x) {
-          x.pause();
-        }
-  		function view1(x)
+      function view1(x)
   			{
   				document.getElementById("view1").style.display="block";
   				document.getElementById("view2").style.display="none";
@@ -144,15 +137,13 @@
           document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button1").style.boxShadow = "none";
         };
-      function planblur ()
-        {
-          document.getElementById("plan_before").style.borderColor = "magenta";
-          document.getElementById("plan_after").style.borderColor = "magenta";
-        };
-      function planunblur ()
-        {
-          document.getElementById("plan_before").style.borderColor = "salmon";
-          document.getElementById("plan_after").style.borderColor = "skyblue";
-        };
+      document.getElementById("buildfly").playbackRate = 0.35;
+      document.getElementById("buildfly").currentTime = .75;
+      function change(){
+        $(document).ready(function(){
+            $("#buildfly").fadeOut(2500);
+            $("#artistic").fadeIn(5000);
+            $("#title").fadeIn(5000);
+        });};
 </script>
 </html>

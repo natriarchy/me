@@ -1,3 +1,8 @@
+#my-scrollbar {
+  width: 5000px;
+  height: 5000px;
+  overflow: auto;
+}
  .menu-button {
    z-index: 2;
    background-color: black;
@@ -922,34 +927,58 @@ h6 {
 }
 
 .view {
-  width:100vw;
+  width:100%;
   height:100vh;
   margin:0;
-  background-color: black;
+  padding: 0;
+  overflow:hidden;
+}
+.view video {
+  display: flex;
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: auto;
+  top:2em;
+  align-content: center;
+  z-index: 1;
+  background-color: orange;
+  border: 4px orange inset;
+  box-shadow: 2px 2px 20px 2px orange;
   overflow:hidden;
 }
 .view img {
-  width: 100%;
+  display: flex;
   position: absolute;
-  bottom:-5%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: auto;
+  top:2em;
+  align-content: center;
+  z-index: 1;
+  background-color: orange;
+  border: 4px orange inset;
+  box-shadow: 2px 2px 20px 2px orange;
+  overflow:hidden;
 }
-.view span {
-  color:orange;
+.view h1 {
+  float: right;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
   position: absolute;
-  width: 40%;
+  bottom: 2em;
+  margin-left: 25%;
+  margin-right: 25%;
+  z-index: 2;
+  color:orange;
   font-size: 48px;
   text-transform: lowercase;
   text-shadow: 3px 3px 3px red;
-  letter-spacing: .33em;
-  text-align: right;
-  text-align-last: right;
+  letter-spacing: .3em;
   line-height: 150%;
-  margin-top: 1em;
-  margin-left: 55%;
-  margin-right: 5%;
-  animation-name: droptitle1;
-  animation-duration: 3s;
-  overflow: hidden;
 }
 .view figcaption {
   position:absolute;
@@ -959,10 +988,10 @@ h6 {
   writing-mode:vertical-rl;
   color:white;
   animation-name: emphasize;
-  animation-duration: 5s;
-  animation-delay: 5s;
+  animation-duration: 1s;
+  animation-delay: 3s;
   animation-fill-mode: backwards;
-  transform-origin: bottom;
+  transform-origin: center;
 }
 .planimgs {
   z-index: -1;
@@ -1043,19 +1072,7 @@ h6 {
   float: right;
   background-color: skyblue;
 }
-#buildfly {
-  float: right;
-  margin-right: 0%;
-  margin-left: 70%;
-  margin-top: 4em;
-  position:absolute;
-  width:23%;
-  z-index: 2;
-  filter: contrast(115%);
-  border-radius:15px;
-  border: 4px orange inset;
-  box-shadow: 2px 2px 20px 2px orange;
-}
+
 @keyframes droptitle1 {
   0% {margin-left: 100%;margin-right: 0%;color:white;}
   100% {margin-left: 55%;margin-right: 5%;color:orange;}
@@ -1409,61 +1426,58 @@ figure:hover .droptitle2{
     width:100%;
     height:100vh;
     margin:0;
-    background-color: black;
-  }
-  .view img {
-    width: 100%;
-    top:66%;
-  }
-  .view span {
-    width: 100%;
-    font-size: 24px;
-    text-align: center;
-    text-align-last: center;
-    line-height: 125%;
-    margin-top: 100%;
-    margin-left: 0%;
-    margin-right: 0%;
-    animation-name: droptitle-mini;
-  }
-  .planimgs {
-    float: none;
-    display: block;
-    border-radius: 0px 0px 15px 15px;
-    margin:auto;
-    width:100%;
-    max-width:none;
-    max-height: 75vh;
-    background: none;
-    padding-left: 0em;
-    padding-right: 0em;
-    padding-top: 4em;
-    padding-bottom:0em;
-  }
-  .planimgs img {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 50vh;
-    border-top: 4px salmon inset;
-    border-left: 2px salmon inset;
-    border-right: 2px salmon inset;
-    border-bottom: 2px salmon inset;
-    border-radius:10px 10px 0px 0px;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: .5s;
     }
-  .planimgs figcaption {
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
+  .view video,.view img {
+    top:15%;
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
     }
-  .view figcaption {
-    bottom:.5em;
-    right:0;
-    font-size:80px;
-    animation-name: emphasize-mini;
-  }
+    .view h1 {
+      font-size: 36px;
+      width:100%;
+      top:50%;
+      margin:auto;
+      color: brown;
+      text-shadow: 2px 2px 3px aquamarine;
+    }
+    .view figcaption {
+      width:100%;
+      right:0;
+      bottom:.25em;
+      margin:auto;
+    }
+    .planimgs {
+      z-index: -1;
+      margin-top: 2em;
+      overflow:hidden;
+    }
+    .planimgs figure {
+      height: 80vw;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      border:none;
+      border-radius:0px;
+    }
+    .planimgs figcaption {
+      flex-flow: row;
+      justify-content:space-around;
+      width:100%;
+      bottom:-.5em;
+      margin-left: 0%;
+      }
+    .planimgs img {
+      border:none;
+      overflow: hidden;
+      }
+    #button1,#button2 {
+      color:white;
+      font-size: 18px;
+      width: 33%;
+      height:2.25em;
+    }
   .buttonarray {
     width: 100%;
     flex-wrap: wrap;
@@ -1485,5 +1499,8 @@ figure:hover .droptitle2{
     border-top: 1em double black;
     border-bottom: 1em double black;
     height:50vh;
+  }
+  #view4{
+    margin-left:10em
   }
 }

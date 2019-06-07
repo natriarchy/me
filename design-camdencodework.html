@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Work-Camden</title>
+  <meta name="description" content="My academic design project on Camden, NJ.">
+  <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <script src="jQuery.min.js"></script>
+  <script src="jQuery.scrollSpeed.js"></script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="img\logo2.png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136760833-1');
+  </script>
+  <script src="dist/smooth-scrollbar.js"></script>
+</head>
+<header id="header">
+  <div class="header" onmouseleave="menu()">
+    <nav>
+      <a href="index.html" type="button" class="nav">Home</a><br>
+      <a href="aboutme.html" type="button" class="nav">About Me</a><br>
+      <a href="design.html" type="button" class="nav">Design Work</a><br>
+      <a href="writings.html" type="button" class="nav">Writings</a>
+    </nav>
+  </div>
+  <div class="menu-button">
+    <button class="menu" onclick="menu()"><hr class="hr1"  onclick=""><hr class="hr2" onclick=""><hr class="hr3" onclick=""></button>
+    <textbox class="menu-title" onclick="">menu</textbox>
+  </div>
+</header>
+<body>
+<section>
+  <figure class="view" id="view">
+    <video id="buildfly" autoplay onwheel="scrollnum(this)">
+      <source src="files\anim.mp4" type="video/mp4">
+    </video>
+    <img src="files\Animation3099.png" style="display:none">
+    <p>Camden Waterfront Building Concept</p>
+    <figcaption>&#10170;</figcaption>
+  </figure>
+</section>
+<section class="planimgs">
+  <figure>
+    <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
+    <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
+    <figcaption>
+      <button onclick="portfolio1()" id="button1">before</button>
+      <button onclick="portfolio2()" id="button2">after</button>
+    </figcaption>
+  </figure>
+</section><br>
+<section class="column-main">
+  <hr style="background-color:aquamarine">
+</section>
+<div class="buttonarray">
+  <button onclick="view1()">waterfront</button>
+  <button onclick="view2()">waterfront-day</button>
+  <button onclick="view3()">streetfront</button>
+  <button onclick="view4()">birds-eye view</button>
+</div>
+<figure class="imgarray">
+  <img id="view1" src="img/ViewCamden.png" style="width:100%;display:block">
+  <img id="view2" src="img/View-Waterfront-Day2.jpg">
+  <img id="view3" src="img/View-Streetfront.jpg">
+  <img id="view4" src="img/View-Birds.png">
+</figure>
+<div>
+    <a href="design.html" class="leftbutton">Back to Overview</a>
+    <a href="design-dayton.html" class="rightbutton">Next Project</a>
+</div>
+</body>
+<footer id="footer">
+  <section class="footer">
+  <img src="img/contact-me.png" alt="contact-me" class="contact" onclick="contactme()"><br>
+  <div class="footer-content" onmouseleave="contactme()">
+      <h6>
+        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
+        <texbox id="doublebar"><span><br></span></textbox>
+        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a> ║
+        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
+        <texbox id="doublebar2"><span><br></span></textbox>
+        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
+        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
+      </h6>
+  </div>
+  </section>
+</footer>
+<script type="text/javascript">
+      function menu() {
+          document.getElementById("header").classList.toggle("menu-open");
+        };
+      function contactme() {
+          document.getElementById("footer").classList.toggle("contact-open");
+        };
+      function view1(x)
+  			{
+  				document.getElementById("view1").style.display="block";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view2(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="block";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view3(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="block";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view4(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="block";
+  			};
+      function portfolio1(x)
+        {
+          document.getElementById("plan_before").style.display="block";
+          document.getElementById("plan_after").style.display="none";
+          document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button2").style.boxShadow = "none";
+        };
+      function portfolio2(x)
+        {
+          document.getElementById("plan_before").style.display="none";
+          document.getElementById("plan_after").style.display="block";
+          document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button1").style.boxShadow = "none";
+        };
+      function scrollnum()
+      {
+        var scrolls = event.deltaY,
+        now = buildfly.currentTime,
+        increment = buildfly.duration/50,
+        newmore = now + increment,
+        newless = now - increment;
+        event.preventDefault();
+        if (scrolls > 0 && newmore < (increment * 50))
+        {
+          return buildfly.currentTime += increment;
+        }
+        else if (scrolls < 0 && newless > increment)
+        {
+          return buildfly.currentTime -= increment;
+        }};
+</script>
+</html>
