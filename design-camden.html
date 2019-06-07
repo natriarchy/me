@@ -38,15 +38,18 @@
     </video>
     <h1 id="title">Camden Waterfront Building Concept</h1>
     <img src="files\Animation3099.png" id="artistic" style="display:none">
-    <span>&#10170;</figcaption>
+    <span>&#10170;</span>
 </section>
 <section class="planimgs">
-  <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
-  <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
-  <div class="buttons">
+  <span>Site Plan</span>
+  <div>
     <button onclick="portfolio1()" id="button1">before</button>
     <button onclick="portfolio2()" id="button2">after</button>
   </div>
+  <figure>
+    <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before">
+    <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
+  <figure>
 </section><br>
 <section class="column-main">
   <hr style="background-color:aquamarine">
@@ -86,8 +89,10 @@
 </footer>
 <script type="text/javascript">
       function menu() {
-          document.getElementById("header").classList.toggle("menu-open");
-        };
+          $(document).ready(function(){
+              $("#header").toggleClass("menu-open");
+              });
+            };
       function contactme() {
           document.getElementById("footer").classList.toggle("contact-open");
         };
@@ -121,15 +126,15 @@
   			};
       function portfolio1(x)
         {
-          $("#plan_before").fadeIn(1000);
-          $("#plan_after").fadeOut(1000);
+          $("#plan_before").fadeIn(500);
+          $("#plan_after").fadeOut(0);
           document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button2").style.boxShadow = "none";
         };
       function portfolio2(x)
         {
-          document.getElementById("plan_before").style.display="none";
-          document.getElementById("plan_after").style.display="block";
+          $("#plan_after").fadeIn(500);
+          $("#plan_before").fadeOut(0);
           document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button1").style.boxShadow = "none";
         };
