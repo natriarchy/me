@@ -32,25 +32,21 @@
   </div>
 </header>
 <body>
-<section>
-  <figure class="view">
+<section id="view">
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\anim.mp4" type="video/mp4">
     </video>
     <h1 id="title">Camden Waterfront Building Concept</h1>
     <img src="files\Animation3099.png" id="artistic" style="display:none">
-    <figcaption>&#10170;</figcaption>
-  </figure>
+    <span>&#10170;</figcaption>
 </section>
 <section class="planimgs">
-  <figure>
-    <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
-    <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
-    <figcaption>
-      <button onclick="portfolio1()" id="button1">before</button>
-      <button onclick="portfolio2()" id="button2">after</button>
-    </figcaption>
-  </figure>
+  <img src="portfolio_img\1-plan.png" alt="Plan-Before" id="plan_before" style="display:block">
+  <img src="portfolio_img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
+  <div class="buttons">
+    <button onclick="portfolio1()" id="button1">before</button>
+    <button onclick="portfolio2()" id="button2">after</button>
+  </div>
 </section><br>
 <section class="column-main">
   <hr style="background-color:aquamarine">
@@ -125,8 +121,8 @@
   			};
       function portfolio1(x)
         {
-          document.getElementById("plan_before").style.display="block";
-          document.getElementById("plan_after").style.display="none";
+          $("#plan_before").fadeIn(1000);
+          $("#plan_after").fadeOut(1000);
           document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button2").style.boxShadow = "none";
         };
