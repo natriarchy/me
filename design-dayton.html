@@ -1,88 +1,75 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Design Work-Dayton</title>
-	  <meta name="description" content="My academic design project on Newark, NJ.">
-	  <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
-		<link href="css/styles.css" rel="stylesheet" type="text/css">
-		<link rel="shortcut icon" href="img\logo2.png">
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Work-Dayton</title>
+  <meta name="description" content="My academic design project on Dayton-Newark, NJ.">
+  <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="img\logo2.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-				gtag('config', 'UA-136760833-1');
-			</script>
-	</head>
-	<header id="header">
-	  <div class="header" onmouseleave="menu()">
-	    <nav>
-	      <a href="index.html" type="button" class="nav">Home</a><br>
-	      <a href="aboutme.html" type="button" class="nav">About Me</a><br>
-	      <a href="design.html" type="button" class="nav">Design Work</a><br>
-	      <a href="writings.html" type="button" class="nav">Writings</a>
-	    </nav>
-	  </div>
-	  <div class="menu-button">
-	    <button class="menu" onclick="menu()"><hr class="hr1"  onclick=""><hr class="hr2" onclick=""><hr class="hr3" onclick=""></button>
-	    <textbox class="menu-title" onclick="">menu</textbox>
-	  </div>
-	</header>
-	<hr class="header-hr">
-	<section class="design-header">
-		<img src="img\logo2.png" alt="squarelogo" class="square-logo">
-		<textbox class="design-title">
-	    <span class="design-title1">nathan erwin</span><br>
-	    <span class="design-title2"><script>document.write(document.title);</script></span>
-	    <span class="matterhorn-title">The Matterhorn | original</textbox>
-	</section>
-	<section class="leftside">
-	</section>
-	<section class="rightside">
-	</section>
-	<body>
-	<section class="column-main">
-		<br>
-	  <div class="card" style="background-color: silver">
-	    <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
-	      <img src="img\4_DaytonAerial3dFilter.png">
-	      <img src="img\1_DaytonAerial.png">
-	    </div>
-	    <style>#juxtapose-wrapper {width:100%;top:0;border:2px black dotted;border-radius: 5px} .jx-slider {z-index: 0;} .jx-image {z-index: 0;  filter:saturate(120%)} @media screen and (max-width: 800px) {#juxtapose-wrapper {width:95%;margin-left: auto;margin-right: auto}}</style>
-	    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-	    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
-	  </div>
-		<br>
-		<div class="card-link">
-      <h1>Choose a page to see it below. Click to zoom in/out.</h1>
-    </div>
-    <br>
-		<div class="portfoliopg">
-      <figure onclick="portfolio1(this)">
-        <img src="img\portfolio6_tn.jpg" alt="PortfolioPg2" width=100%>
-        <figcaption>6</figcaption>
-      </figure>
-      <figure onclick="portfolio2(this)">
-        <img src="img\portfolio7_tn.jpg" alt="PortfolioPg3" width=100%>
-        <figcaption>7</figcaption>
-      </figure>
-    </div>
-<br>
-    <div class="portfoliopg-show">
-			<img src="portfolio_img\DesignPortfolio2_Page_01.png" alt="PortfolioPg1" id="showcase" onclick="transformer(this)" width=100%>
-			<img src="portfolio_img\DesignPortfolio2_Page_06.png" alt="PortfolioPg6" id="showcase1" onclick="transformer(this)" width=100%>
-			<img src="portfolio_img\DesignPortfolio2_Page_07.png" alt="PortfolioPg7" id="showcase2" onclick="transformer(this)" width=100%>
-		</div>
-<br>
-		<div>
-				<a href="design.html" class="leftbutton">Back to Overview</a>
-				<a href="design-passaic.html" class="rightbutton">Next Project</a>
-		</div>
-	</section>
+    gtag('config', 'UA-136760833-1');
+  </script>
+</head>
+<header id="header">
+  <div class="header" onmouseleave="menu()">
+    <nav>
+      <a href="index.html" type="button" class="nav">Home</a><br>
+      <a href="aboutme.html" type="button" class="nav">About Me</a><br>
+      <a href="design.html" type="button" class="nav">Design Work</a><br>
+      <a href="writings.html" type="button" class="nav">Writings</a>
+    </nav>
+  </div>
+  <div class="menu-button">
+    <button class="menu" onclick="menu()"><hr class="hr1"  onclick=""><hr class="hr2" onclick=""><hr class="hr3" onclick=""></button>
+    <textbox class="menu-title" onclick="">menu</textbox>
+  </div>
+</header>
+<body>
+<section id="view">
+    <video id="buildfly" onended="change()" autoplay muted>
+      <source src="files\flythroughcut.mp4" type="video/mp4">
+    </video>
+    <h1 id="title" style="color:aquamarine;background-color: dimgray;text-shadow:2px 2px 5px purple;">Dayton-Aerotropolis Redevelopment</h1>
+    <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;filter:grayscale(1)">
+    <span>&#10170;</span>
+</section>
+<section class="planimgs" style="background-color:grey">
+  <span style="color:aquamarine;text-shadow:2px 2px 5px purple;font-size:3em;">Dayton Vision</span>
+  <div>
+    <button onclick="dayton_b()" id="button1">before</button>
+    <button onclick="dayton_a()" id="button2">after</button>
+  </div>
+  <figure>
+    <img src="img\1_DaytonAerial.png" id="daytonbefore" alt="dayton-before" style="border-color:aquamarine">
+    <img src="img\4_DaytonAerial3dFilter.png" id="daytonafter" alt="dayton-after" style="display:none;border-color:aquamarine">
+  <figure>
+</section><br>
+<section class="column-main">
+  <hr style="background-color:yellow">
+</section>
+<div class="buttonarray">
+  <button onclick="view1()">study area</button>
+  <button onclick="view2()">transit</button>
+  <button onclick="view3()">transit proposal</button>
+  <button onclick="view4()">site plan</button>
+</div>
+<figure class="imgarray">
+  <img id="view1" src="img/PlainMap.png" style="display:block">
+  <img id="view2" src="img/ExistTransit.png">
+  <img id="view3" src="img/PropTransit.png">
+  <img id="view4" src="img/PropSitePlan.png">
+</figure>
+<div>
+    <a href="design.html" class="leftbutton">Back to Overview</a>
+    <a href="design-passaic.html" class="rightbutton">Next Project</a>
+</div>
 </body>
 <footer id="footer">
   <section class="footer">
@@ -101,26 +88,62 @@
   </section>
 </footer>
 <script type="text/javascript">
-    function menu() {
-        document.getElementById("header").classList.toggle("menu-open");
-      };
-    function contactme()
-      {
-        document.getElementById("footer").classList.toggle("contact-open");
-      };
-			function portfolio1(x)
-				{
-					document.getElementById("showcase").style.display="none";
-					document.getElementById("showcase1").style.display="block";
-					document.getElementById("showcase2").style.display="none";
-				};
-			function portfolio2(x)
-				{
-					document.getElementById("showcase").style.display="none";
-					document.getElementById("showcase1").style.display="none";
-					document.getElementById("showcase2").style.display="block";
-				};
-			function transformer(x)
-				{x.classList.toggle("showcase-zoom");};
+      function menu() {
+          $(document).ready(function(){
+              $("#header").toggleClass("menu-open");
+              });
+            };
+      function contactme() {
+          document.getElementById("footer").classList.toggle("contact-open");
+        };
+      function view1(x)
+  			{
+  				document.getElementById("view1").style.display="block";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view2(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="block";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view3(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="block";
+  				document.getElementById("view4").style.display="none";
+  			};
+      function view4(x)
+  			{
+  				document.getElementById("view1").style.display="none";
+  				document.getElementById("view2").style.display="none";
+  				document.getElementById("view3").style.display="none";
+  				document.getElementById("view4").style.display="block";
+  			};
+      function dayton_b()
+        {
+          $("#daytonbefore").fadeIn(500);
+          $("#daytonafter").fadeOut(0);
+          document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button2").style.boxShadow = "none";
+        };
+      function dayton_a()
+        {
+          $("#daytonbefore").fadeOut(0);
+          $("#daytonafter").fadeIn(500);
+          document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
+          document.getElementById("button1").style.boxShadow = "none";
+        };
+      document.getElementById("buildfly").playbackRate = 1.75;
+      function change(){
+        $(document).ready(function(){
+            $("#buildfly").fadeOut(2500);
+            $("#artistic").fadeIn(5000);
+            $("#title").fadeIn(5000);
+        });};
 </script>
 </html>
