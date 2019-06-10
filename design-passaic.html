@@ -54,14 +54,14 @@
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\passaicprocess.mp4" type="video/mp4">
     </video>
-    <h1 id="title" style="color:black;background-color:aquamarine;text-shadow:2px 2px 5px orange;">Passaic Downtown Redevelopment</h1>
+    <div class="arrow"></div>
+    <h1 id="title" style="color:black;">Passaic Downtown Redevelopment</h1>
     <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;">
-    <span>&#10170;</span>
 </section>
 <section class="planimgs" style="background-color:grey">
-  <span style="color:white;text-shadow:2px 2px 5px aquamarine;font-size:2.5em;">Passaic Vision</span>
+  <span>Passaic Vision</span>
   <div>
-    <button onclick="dayton_b()" id="button1">before</button>
+    <button onclick="dayton_b()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
     <button onclick="dayton_a()" id="button2">after</button>
   </div>
   <figure>
@@ -73,9 +73,9 @@
   <hr style="background-color:brown">
 </section>
 <div class="buttonarray">
-  <button onclick="view1()">illustrative plan</button>
-  <button onclick="view2()">circulation</button>
-  <button onclick="view3()">artistic render</button>
+  <button id="but1" onclick="view1()" style="color:yellow">illustrative plan</button>
+  <button id="but2"onclick="view2()">circulation</button>
+  <button id="but3" onclick="view3()">artistic render</button>
 </div>
 <figure class="imgarray">
   <img id="view1" src="img/passaicpg22.png" style="display:block">
@@ -130,37 +130,36 @@
         document.documentElement.style.setProperty('--rightsize', '5vw');
         document.documentElement.style.setProperty('--leftsize', '5vw');
       }};
-    function view1(x)
-			{
-				document.getElementById("view1").style.display="block";
-				document.getElementById("view2").style.display="none";
-				document.getElementById("view3").style.display="none";
-				document.getElementById("view4").style.display="none";
-			};
-    function view2(x)
-			{
-				document.getElementById("view1").style.display="none";
-				document.getElementById("view2").style.display="block";
-				document.getElementById("view3").style.display="none";
-				document.getElementById("view4").style.display="none";
-			};
-    function view3(x)
-			{
-				document.getElementById("view1").style.display="none";
-				document.getElementById("view2").style.display="none";
-				document.getElementById("view3").style.display="block";
-				document.getElementById("view4").style.display="none";
-			};
-    function view4(x)
-			{
-				document.getElementById("view1").style.display="none";
-				document.getElementById("view2").style.display="none";
-				document.getElementById("view3").style.display="none";
-				document.getElementById("view4").style.display="block";
-			};
+      function view1(x)
+  			{
+  				document.getElementById("view1").style.display="block";
+          document.getElementById("but1").style.color="yellow";
+  				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
+  				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
+  			};
+      function view2(x)
+  			{
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
+  				document.getElementById("view2").style.display="block";
+          document.getElementById("but2").style.color="yellow";
+  				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
+  			};
+      function view3(x)
+  			{
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
+  				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
+  				document.getElementById("view3").style.display="block";
+          document.getElementById("but3").style.color="yellow";
+  			};
     function dayton_b()
       {
-        $("#daytonbefore").fadeIn(500);
+        $("#daytonbefore").fadeIn(0);
         $("#daytonafter").fadeOut(0);
         document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
         document.getElementById("button2").style.boxShadow = "none";
@@ -168,7 +167,7 @@
     function dayton_a()
       {
         $("#daytonbefore").fadeOut(0);
-        $("#daytonafter").fadeIn(500);
+        $("#daytonafter").fadeIn(0);
         document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
         document.getElementById("button1").style.boxShadow = "none";
       };

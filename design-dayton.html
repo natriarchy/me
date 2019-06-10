@@ -61,22 +61,22 @@
 <section class="planimgs" style="background-color:grey">
   <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
   <div>
-    <button onclick="dayton_b()" id="button1">before</button>
+    <button onclick="dayton_b()" id="button1" style="box-shadow:inset 0px 5px 5px 1px black">before</button>
     <button onclick="dayton_a()" id="button2">after</button>
   </div>
   <figure>
     <img src="img\1_DaytonAerial.png" id="daytonbefore" alt="dayton-before" style="border-color:aquamarine">
     <img src="img\4_DaytonAerial3dFilter.png" id="daytonafter" alt="dayton-after" style="display:none;border-color:aquamarine">
   <figure>
-</section><br>
-<section class="column-main">
+</section>
+<section class="column-main" style="margin-bottom:0;">
   <hr style="background-color:yellow">
 </section>
 <div class="buttonarray">
-  <button onclick="view1()">study area</button>
-  <button onclick="view2()">transit</button>
-  <button onclick="view3()">transit proposal</button>
-  <button onclick="view4()">site plan</button>
+  <button id="but1" onclick="view1(this)" style="color:yellow">study area</button>
+  <button id="but2" onclick="view2(this)">transit</button>
+  <button id="but3" onclick="view3(this)">transit proposal</button>
+  <button id="but4" onclick="view4(this)">site plan</button>
 </div>
 <figure class="imgarray">
   <img id="view1" src="img/PlainMap.png" style="display:block">
@@ -135,34 +135,50 @@
       function view1(x)
   			{
   				document.getElementById("view1").style.display="block";
+          document.getElementById("but1").style.color="yellow";
   				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view2(x)
   			{
-  				document.getElementById("view1").style.display="none";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
   				document.getElementById("view2").style.display="block";
+          document.getElementById("but2").style.color="yellow";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view3(x)
   			{
-  				document.getElementById("view1").style.display="none";
-  				document.getElementById("view2").style.display="none";
-  				document.getElementById("view3").style.display="block";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
+  				document.getElementById("view2").style.display="block";
+          document.getElementById("but2").style.color="aquamarine";
+  				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="yellow";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view4(x)
   			{
-  				document.getElementById("view1").style.display="none";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
   				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="block";
+          document.getElementById("but4").style.color="yellow";
   			};
       function dayton_b()
         {
-          $("#daytonbefore").fadeIn(500);
+          $("#daytonbefore").fadeIn(0);
           $("#daytonafter").fadeOut(0);
           document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button2").style.boxShadow = "none";
@@ -170,7 +186,7 @@
       function dayton_a()
         {
           $("#daytonbefore").fadeOut(0);
-          $("#daytonafter").fadeIn(500);
+          $("#daytonafter").fadeIn(0);
           document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button1").style.boxShadow = "none";
         };

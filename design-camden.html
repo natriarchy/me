@@ -54,14 +54,14 @@
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\anim.mp4" type="video/mp4">
     </video>
+    <div class="arrow"></div>
     <h1 id="title">Camden Waterfront Building Concept</h1>
     <img src="files\Animation3099.png" id="artistic" style="display:none">
-    <span>&#10170;</span>
 </section>
 <section class="planimgs">
   <span>Site Plan</span>
   <div>
-    <button onclick="portfolio1()" id="button1">before</button>
+    <button onclick="portfolio1()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
     <button onclick="portfolio2()" id="button2">after</button>
   </div>
   <figure>
@@ -73,16 +73,16 @@
   <hr style="background-color:aquamarine">
 </section>
 <div class="buttonarray">
-  <button onclick="view1()">waterfront</button>
-  <button onclick="view2()">waterfront-day</button>
-  <button onclick="view3()">streetfront</button>
-  <button onclick="view4()">birds-eye view</button>
+  <button id="but1" onclick="view1()" style="color:yellow">waterfront</button>
+  <button id="but2"onclick="view2()">waterfront-day</button>
+  <button id="but3" onclick="view3()">streetfront</button>
+  <button id="but4" onclick="view4()">birds-eye view</button>
 </div>
 <figure class="imgarray">
-  <img id="view1" src="img/ViewCamden.png" style="width:100%;display:block">
+  <img id="view1" src="img/ViewCamden.png" style="display:block;object-position:11vw top;">
   <img id="view2" src="img/View-Waterfront-Day2.jpg">
   <img id="view3" src="img/View-Streetfront.jpg">
-  <img id="view4" src="img/View-Birds.png">
+  <img id="view4" src="img/View-Birds.png" style="object-position:11vw top;">
 </figure>
 <div>
     <a href="design.html" class="leftbutton">Back to Overview</a>
@@ -135,41 +135,57 @@
       function view1(x)
   			{
   				document.getElementById("view1").style.display="block";
+          document.getElementById("but1").style.color="yellow";
   				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view2(x)
   			{
-  				document.getElementById("view1").style.display="none";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
   				document.getElementById("view2").style.display="block";
+          document.getElementById("but2").style.color="yellow";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view3(x)
   			{
-  				document.getElementById("view1").style.display="none";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
   				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
   				document.getElementById("view3").style.display="block";
+          document.getElementById("but3").style.color="yellow";
   				document.getElementById("view4").style.display="none";
+          document.getElementById("but4").style.color="aquamarine";
   			};
       function view4(x)
   			{
-  				document.getElementById("view1").style.display="none";
+          document.getElementById("view1").style.display="none";
+          document.getElementById("but1").style.color="aquamarine";
   				document.getElementById("view2").style.display="none";
+          document.getElementById("but2").style.color="aquamarine";
   				document.getElementById("view3").style.display="none";
+          document.getElementById("but3").style.color="aquamarine";
   				document.getElementById("view4").style.display="block";
+          document.getElementById("but4").style.color="yellow";
   			};
       function portfolio1(x)
         {
-          $("#plan_before").fadeIn(500);
+          $("#plan_before").fadeIn(0);
           $("#plan_after").fadeOut(0);
           document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button2").style.boxShadow = "none";
         };
       function portfolio2(x)
         {
-          $("#plan_after").fadeIn(500);
+          $("#plan_after").fadeIn(0);
           $("#plan_before").fadeOut(0);
           document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
           document.getElementById("button1").style.boxShadow = "none";
