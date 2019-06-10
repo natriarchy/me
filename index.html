@@ -4,45 +4,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
-  <meta name="description" content="Nathan Erwin's personal website. Including his experiences and his accomplishments.">
+  <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'UA-136760833-1');
-    </script>
+    gtag('config', 'UA-136760833-1');
+  </script>
 </head>
 <header id="header">
-  <div class="header" onmouseleave="menu()">
+  <section class="design-header">
+  	<textbox class="design-title">
+      <span class="design-title2">The Matterhorn | original</span>
+      <img class="matterhorn" src="/img/matterhorn.jpg"><br>
+      <span class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></span>
+    </textbox>
+  </section>
+  <section class="nav">
     <nav>
-      <a href="index.html" type="button" class="nav">Home</a><br>
-      <a href="aboutme.html" type="button" class="nav">About Me</a><br>
-      <a href="design.html" type="button" class="nav">Design Work</a><br>
-      <a href="writings.html" type="button" class="nav">Writings</a>
+      <ol id="topnav">
+        <li><a href="index.html" type="button" >Home</a></li>
+        <li><a href="aboutme.html" type="button">About Me</a></li>
+        <li id="dropdown-title"><a href="design.html" type="button">Design Work</a>
+          <div id="dropdown">
+            <a href="design-camden.html" type="button">camden</a><br>
+            <a href="design-dayton.html" type="button">dayton-newark</a><br>
+            <a href="design-passaic.html" type="button">passaic</a><br>
+            <a href="design-morgan.html" type="button">morgan-Sayreville</a>
+          </div>
+        </li>
+        <li><a href="writings.html" type="button">Writings</a></li>
+      </ol>
     </nav>
-  </div>
-  <div class="menu-button">
-    <button class="menu" onclick="menu()"><hr class="hr1"  onclick=""><hr class="hr2" onclick=""><hr class="hr3" onclick=""></button>
-    <textbox class="menu-title" onclick="">menu</textbox>
-  </div>
+  </section>
+  <section class="leftside">
+  </section>
+  <section class="rightside">
+  </section>
 </header>
-<hr class="header-hr">
-<section class="design-header">
-	<textbox class="design-title">
-    <span class="design-title1">nathan erwin</span><br>
-    <span class="design-title2"><script>document.write(document.title);</script></span>
-    <span class="matterhorn-title">The Matterhorn | original</textbox>
-</section>
-<section class="leftside">
-</section>
-<section class="rightside">
-</section>
 <section class="column-main">
   <br>
   <div class="card"  style="background-color:black">
@@ -88,11 +95,30 @@
 </footer>
 </html>
 <script type="text/javascript">
-    function menu() {
-        document.getElementById("header").classList.toggle("menu-open");
-      };
-    function contactme()
-      {
-        document.getElementById("footer").classList.toggle("contact-open");
-      };
+  function contactme()
+    {
+      document.getElementById("footer").classList.toggle("contact-open");
+    };
+    window.onscroll = function() {myFunction()};
+    var topnav = document.getElementById("topnav");
+    var sticky = topnav.offsetTop;
+    var title1 = document.getElementById("titlea");
+    var title = title1.offsetTop
+    var dropper = document.getElementById("dropdown");
+    function myFunction() {
+      if (window.pageYOffset > title && window.pageYOffset > sticky) {
+        topnav.classList.add("sticky");
+        title1.classList.add("stickytitle");
+        dropper.classList.add("stickydrop");
+        document.documentElement.style.setProperty('--topsize', '5vh');
+        document.documentElement.style.setProperty('--rightsize', '0');
+        document.documentElement.style.setProperty('--leftsize', '0');
+      } else {
+        topnav.classList.remove("sticky");
+        title1.classList.remove("stickytitle");
+        dropper.classList.remove("stickydrop");
+        document.documentElement.style.setProperty('--topsize', '26.5vh');
+        document.documentElement.style.setProperty('--rightsize', '5vw');
+        document.documentElement.style.setProperty('--leftsize', '5vw');
+      }};
 </script>
