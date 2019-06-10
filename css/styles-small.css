@@ -118,6 +118,7 @@
 }
 .nav {
   top:0em;
+  width: 100vw;
   position: fixed;
   border-width: 0px 0px 0px 0px;
   z-index: 99;
@@ -143,8 +144,8 @@ nav ol {
   padding-left: 0;
   padding-right: 0;
   margin: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 nav ol li {
   cursor: pointer;
@@ -693,71 +694,120 @@ h6 a:hover {
   text-shadow:0px 0px 10px yellow;
   box-shadow: inset 0px 5px 5px 1px black;
 }
+
 #view {
-  width:100%;
   height:100vh;
-  margin:0;
+  width: 100vw;
+  -ms-scroll-snap-type: both mandatory;
+  scroll-snap-destination: 50% 50%;
+  -webkit-scroll-snap-align:center;
+  -ms-scroll-snap-align:center;
   overflow:hidden;
 }
-#view video,#view img {
-  top:15%;
-  width:90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 10px;
-  display: flex;
+#view::after{
   position: absolute;
-  height: auto;
+  display: block;
+  content: "";
+  background-color: aquamarine;
+  border-radius: 0px;
+  width: 80%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 28vh;
+  top: 100vh;
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  border: 4px aqua inset;
+  box-shadow:inset 2px 2px 20px 2px;
+}
+#view video {
+  display: block;
+  position: absolute;
+  width: 80%;
+  object-fit: cover;
+  object-position: center;
+  max-height: 66vh;
+  margin-top: 1em;
+  margin-left:10%;
+  margin-right:10%;
   align-content: center;
   z-index: 0;
   background-color: orange;
-  border: 4px orange inset;
-  box-shadow: 2px 2px 20px 2px orange;
+  border: 4px aquamarine inset;
+  box-shadow: 2px 2px 20px 2px aqua;
+  overflow:hidden;
+}
+#view img {
+  display: none;
+  position: absolute;
+  width: 95vw;
+  object-fit: cover;
+  object-position: center;
+  max-height: 66vh;
+  margin-top: 0vh;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  align-content: center;
+  z-index: 0;
+  border: 4px aquamarine inset;
+  box-shadow: 2px 2px 20px 2px aqua;
   overflow:hidden;
 }
 #view h1 {
-  background-color:inherit;
-  box-shadow: none;
-  float: right;
   display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  text-align-last: center;
+  background-image: url("iron-grip.png");
+  background-size: 20em .5em;
+  background-color: rgba(0,255,255,.75);
+  box-shadow: inset 2px 2px 10px 1px black;
+  align-items: center;
+  justify-content:center;
   position: absolute;
-  top: 40vh;
-  padding:0;
+  text-align: center;
+  top:70vh;
+  width: 95vw;
+  height: 13vh;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
   z-index: 1;
-  color: brown;
-  font-size: 3em;
+  color: white;
+  font-size: 3.5vh;
   text-transform: lowercase;
-  text-shadow: 2px 2px 3px aquamarine;
-  letter-spacing: .1em;
-  line-height: 125%;
+  text-shadow: 2px 2px 1px salmon;
+  letter-spacing: .25em;
 }
-#view span {
-  right:0;
-  bottom:.25em;
+.arrow::after {
+  content: "\21E3";
   position:absolute;
-  float: right;
-  font-size:6em;
-  writing-mode:vertical-rl;
-  color:white;
-  overflow: hidden;
-  animation-name: emphasize;
-  animation-duration: 1s;
-  animation-delay: 3s;
-  animation-fill-mode: backwards;
-  transform-origin: center;
+  color: aqua;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight:lighter;
+  text-shadow: 2px 2px 1px yellow;
+  letter-spacing: 3px;
+  bottom:0em;
+  right: 1em;
+  font-size:4em;
+}
+.arrow::before {
+  content: "\21E3";
+  position:absolute;
+  color: aqua;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight:lighter;
+  text-shadow: 2px 2px 1px yellow;
+  bottom:0em;
+  left: 1em;
+  font-size:4em;
 }
 .planimgs {
-  z-index: -1;
-  width: 90vw;
   background-color: tan;
   background-image: url(light-wool.png);
-  margin-top: 8em;
-  margin-bottom: 4em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 5em;
+  width: 95%;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
   overflow:hidden;
   border-top: 4px salmon inset;
   border-left: 2px salmon inset;
@@ -767,25 +817,19 @@ h6 a:hover {
 }
 .planimgs figure {
   top:0;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  border:none;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 1.5em;
-  border-radius:0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   overflow: hidden;
   }
 .planimgs img {
   display: flex;
   width:100%;
-  padding: 0;
-  margin: 0;
+  margin: auto;
   border-radius:15px;
   background-color: orange;
-  border:none;
-  border-bottom: .5em double aquamarine;
+  border: 4px orange inset;
   overflow:hidden;
   }
 .planimgs span  {
@@ -795,36 +839,33 @@ h6 a:hover {
   position: absolute;
   float: right;
   width:100%;
-  margin-left: 0em;
-  margin-right: 0em;
-  margin-top: -2em;
+  margin-left: 0%;
+  margin-top: -15%;
   text-align: center;
   text-align-last: center;
   color:white;
   text-shadow: 3px 3px 3px red;
-  font-size: 2.5em;
+  font-size: 10vw;
   text-transform: lowercase;
-  letter-spacing: .3em;
-  font-variant: small-caps;
+  letter-spacing: .13em;
   }
 .planimgs div {
   display: flex;
-  flex-wrap: wrap;
   flex-flow: row;
+  justify-content: space-around;
+  align-self:stretch;
   position: absolute;
   float: right;
-  width:70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  justify-content:space-between;
-  left: 0%;
-  padding-top:61%;
+  bottom:-90vh;
+  width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
   }
 #button1,#button2 {
   color:white;
-  height:2.25em;
+  height: 8vh;
+  flex-basis: 35%;
+  margin-bottom: .5em;
   cursor: pointer;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
@@ -833,7 +874,7 @@ h6 a:hover {
   text-shadow: 3px 3px 5px black;
   text-transform: lowercase;
   letter-spacing: 2px;
-  font-size: 1em;
+  font-size: 1.5em;
   font-family: "Century Gothic", sans-serif;
   border-top: 2px grey solid;
   border-bottom: 4px dimgrey solid;

@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design-Dayton</title>
+  <title>Dayton</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
@@ -54,12 +54,12 @@
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\flythroughcut.mp4" type="video/mp4">
     </video>
-    <h1 id="title" style="color:aquamarine;background-color: dimgray;text-shadow:2px 2px 5px purple;">Dayton-Aerotropolis Redevelopment</h1>
-    <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;filter:grayscale(1)">
-    <span>&#10170;</span>
+    <div class="arrow"></div>
+    <h1 id="title" style="">Dayton-Aerotropolis Redevelopment</h1>
+    <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;filter:grayscale(0)">
 </section>
 <section class="planimgs" style="background-color:grey">
-  <span style="color:aquamarine;text-shadow:2px 2px 5px purple;font-size:3em;">Dayton Vision</span>
+  <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
   <div>
     <button onclick="dayton_b()" id="button1">before</button>
     <button onclick="dayton_a()" id="button2">after</button>
@@ -177,9 +177,8 @@
       document.getElementById("buildfly").playbackRate = 1.75;
       function change(){
         $(document).ready(function(){
-            $("#buildfly").fadeOut(2500);
-            $("#artistic").fadeIn(5000);
-            $("#title").fadeIn(5000);
+            $("#buildfly").fadeOut(0);
+            $("#artistic").fadeIn(500);
         });};
 </script>
 </html>

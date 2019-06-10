@@ -917,86 +917,117 @@ h6 a:hover {
 
 #view {
   height:100vh;
+  width: 100vw;
   -ms-scroll-snap-type: both mandatory;
   scroll-snap-destination: 50% 50%;
   -webkit-scroll-snap-align:center;
   -ms-scroll-snap-align:center;
   overflow:hidden;
 }
+#view::after{
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: aquamarine;
+  border-radius: 0px;
+  width: 80%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 28vh;
+  top: 100vh;
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  border: 4px aqua inset;
+  box-shadow:inset 2px 2px 20px 2px;
+}
 #view video {
-  display: flex;
+  display: block;
   position: absolute;
   width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  height: auto;
-  top:2em;
+  object-fit: cover;
+  object-position: center;
+  max-height: 66vh;
+  margin-top: 0em;
+  margin-left:10%;
+  margin-right:10%;
   align-content: center;
   z-index: 0;
   background-color: orange;
-  border: 4px orange inset;
-  box-shadow: 2px 2px 20px 2px orange;
+  border: 4px aquamarine inset;
+  box-shadow: 2px 2px 20px 2px aqua;
   overflow:hidden;
 }
 #view img {
-  display: flex;
+  display: none;
   position: absolute;
   width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  height: auto;
-  top:2em;
+  object-fit: cover;
+  object-position: center;
+  max-height: 66vh;
+  margin-top: 0em;
+  margin-left:10%;
+  margin-right:10%;
   align-content: center;
   z-index: 0;
-  background-color: orange;
-  border: 4px orange inset;
-  box-shadow: 2px 2px 20px 2px orange;
+  border: 4px aquamarine inset;
+  box-shadow: 2px 2px 20px 2px aqua;
   overflow:hidden;
 }
 #view h1 {
-  background-color: tan;
-  box-shadow: 2px 2px 20px 2px;
-  float: right;
   display: flex;
-  flex-wrap: wrap;
-  text-align: left;
-  text-align-last: right;
+  background-image: url("iron-grip.png");
+  background-size: 20em .5em;
+  background-color: rgba(0,255,255,.75);
+  box-shadow: inset 2px 2px 10px 1px black;
+  align-items: center;
+  justify-content:center;
   position: absolute;
-  bottom: 4em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: .25em;
+  text-align: center;
+  top:78vh;
+  width: 60vw;
+  height: 10vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
   z-index: 1;
-  color: darkslategray;
-  font-size: 3em;
+  color: white;
+  font-size: 3.5vh;
   text-transform: lowercase;
-  text-shadow: 3px 3px 3px aquamarine;
-  letter-spacing: .3em;
-  line-height: 150%;
+  text-shadow: 2px 2px 1px salmon;
+  letter-spacing: .25em;
 }
-#view span {
+.arrow::after {
+  content: "\21E3";
   position:absolute;
-  float: right;
-  bottom:1em;
+  color: aqua;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight:lighter;
+  text-shadow: 2px 2px 1px yellow;
+  letter-spacing: 3px;
+  bottom:0em;
   right: 1em;
   font-size:6em;
-  writing-mode:vertical-rl;
-  color:white;
-  overflow: hidden;
-  animation-name: emphasize;
-  animation-duration: 1s;
-  animation-delay: 3s;
-  animation-fill-mode: backwards;
-  transform-origin: center;
+}
+.arrow::before {
+  content: "\21E3";
+  position:absolute;
+  color: aqua;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight:lighter;
+  text-shadow: 2px 2px 1px yellow;
+  bottom:0em;
+  left: 1em;
+  font-size:6em;
 }
 .planimgs {
-  width: 90vw;
   background-color: tan;
   background-image: url(light-wool.png);
-  margin-top: 3em;
-  margin-bottom: 4em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 4em;
+  margin-bottom: 3em;
+  width: 80%;
+  margin-left: 10vw;
+  margin-right: 10vw;
   overflow:hidden;
   border-top: 4px salmon inset;
   border-left: 2px salmon inset;
@@ -1029,7 +1060,7 @@ h6 a:hover {
   position: absolute;
   float: right;
   width:20%;
-  margin-left: 68%;
+  margin-left: 59%;
   margin-top: 5%;
   text-align: center;
   text-align-last: center;
@@ -1037,7 +1068,7 @@ h6 a:hover {
   text-shadow: 3px 3px 3px red;
   font-size: 5vw;
   text-transform: lowercase;
-  letter-spacing: .3em;
+  letter-spacing: .13em;
   }
 .planimgs div {
   display: flex;
@@ -1046,13 +1077,13 @@ h6 a:hover {
   position: absolute;
   float: right;
   width:20%;
-  margin-left: 68%;
-  margin-top: 23%;
+  margin-left: 59%;
+  margin-top: 17%;
   }
 #button1,#button2 {
   color:white;
-  height: 3em;
-  margin-bottom: 2em;
+  height: 8vh;
+  margin-bottom: .5em;
   cursor: pointer;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
@@ -1203,381 +1234,4 @@ figure:hover .droptitle2{
   transform: scale(1.1);
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
-}
-
-/* Screen Compatibility*/
-@media screen and (max-width: 800px) {
-  .column-main {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-  header {
-    height: 33vh;
-    width: 100vw;
-    width:initial;
-    margin-bottom: 3vh;
-    padding: initial;
-  }
-  .design-header {
-    padding-top: 10vh;
-    padding-bottom: 1em;
-    width: 100vw;
-    box-shadow: inset 0px 0px 20px 0px black;
-    }
-  .matterhorn {
-    top:-3em;
-    width:55%;
-    margin-left:40%;
-    }
-  .design-title {
-    margin-top: 3vh;
-    width: 100vw;
-    padding-top: .5em;
-    top:.5em;
-  }
-  .design-title1 {
-    height:5vh;
-    white-space:nowrap;
-    position: absolute;
-    text-align:center;
-    top:12vh;
-    letter-spacing: .3em;
-    font-size: 3vh;
-    width:100vw;
-    padding: initial;
-    margin-left: initial;
-    margin-right:initial;
-  }
-  .design-title2 {
-    height:5vh;
-    width:100%;
-    border-radius: 5px;
-    margin-left: 8%;
-    margin-right: 8%;
-    padding-left: 4%;
-    padding-right: 15%;
-    padding-top: .5em;
-    padding-bottom: 0;
-  }
-  .nav {
-    top:0em;
-    width: 100%;
-    position: fixed;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    border-width: 0px 0px 0px 0px;
-  }
-  nav ol {
-    width:100%;
-    justify-content:space-around;
-    align-items:stretch;
-    border-width: 10px 0px 0px 0px;
-    padding-top:.5em;
-    padding-bottom:.5em;
-    padding-left: auto;
-    padding-right: auto;
-    margin: auto;
-    height: 12vh;
-  }
-  nav ol li {
-    font-size: 1.25em;
-    border: .5px black solid;
-    border-radius: 10px 10px 10px 0;
-    padding: .5em;
-    box-shadow: none;
-  }
-  #topnav:after {
-    display: none;
-  }
-   #topnav:before {
-    display:none;
-  }
-  #dropdown:hover {
-    display: none;
-  }
-  #dropdown-title:hover #dropdown{
-    display: none;
-  }
-  .sticky {
-    position: fixed;
-    width: 100vw;
-    top: 1.5em;
-    height: 11%;
-    left: auto;
-    right: auto;
-    box-shadow: 0px 0px 10px 1px;
-  }
-  .stickytitle {
-    position: fixed;
-    text-align: center;
-    border: 0px black solid;
-    background-color: black;
-    color: aquamarine;
-    letter-spacing: .25em;
-    height: 4vh;
-    padding-top: .2em;
-    padding-bottom: 0em;
-    padding-left: ;
-    padding-right:100%;
-    z-index: 100;
-    font-size: 1.5em;
-    top: -.2em;
-    left:auto;
-    margin: 0 0 0 0;
-  }
-  .card {
-    margin-left: 0em;
-    margin-right: 0em;
-    border-right: 0px;
-    border-left: 0px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .image-title img{
-    width: 75%;
-  }
-  .card-left,.card-right{
-    width:100%;
-    float: none;
-    border-right: 0px;
-    border-left: 0px;
-    margin-left: 0em;
-    margin-right: 0em;
-    padding-left: 1em;
-    padding-right: 1em;
-    height:auto;
-  }
-  .leftside {
-    display: none;
-  }
-  .rightside {
-    display:none;
-  }
-  p {
-    margin-left: 5.5vw;
-    margin-right: 5.5vw;
-  }
-  h1,h2,h3,h4 {
-    font-size: 1.25em;
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: center;
-    line-height: 1.25;
-  }
-  .general-link {
-    width: auto;
-    margin:.5em;
-    font-size: 18px;
-  }
-  .resume-description {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  .leftbutton {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    float: none;
-  }
-  .rightbutton {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    float: none;
-  }
-  .footer {
-    position:relative;
-    box-shadow: none;
-    background-color: black;
-    line-height:2em;
-    bottom: -5em;
-    padding-top: 2em;
-    margin:auto;
-    width:100%;
-    height: auto;
-  }
-  .footer:hover {
-    transform: none;
-  }
-  .footer-content {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .contact {
-      display: none;
-  }
-  .contact-open .footer {
-    transform: translateY(0);
-  }
-  .look-button {
-      width: 50%;
-  }
-  span.left{
-    display:inline-block;
-    position: inherit;
-    text-align: center;
-    top:none;
-    width: 100%;
-    line-height: 1.5;
-    font-weight: bolder;
-    margin-bottom: 1em;
-  }
-  span.right{
-    display: inline-block;
-    position:inherit;
-    text-align: center;
-    font-weight: bolder;
-    top:none;
-    right:none;
-    width: 100%;
-    line-height: 1.5;
-    margin-bottom: 1em;
-  }
-  .slider-button {
-    display:block;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  #juxtapose-wrapper {
-    width:95%;
-    margin-left: auto;
-    margin-right: auto
-    }
-  .jx-image {
-    width:95%
-    }
-  #juxtapose-wrapper:hover img {
-    filter:saturate(150%);
-    }
-
-  #juxtapose-wrapper {
-    filter:blur(0px) saturate(150%);
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
-  }
-  .portfoliopg {
-    height: 5em;
-  }
-  .portfoliopg figcaption {
-    font-size: 18px;
-  }
-  #showcase,#showcase1,#showcase2,#showcase3,#showcase4 {
-    border: none;
-    border-radius: 0px;
-  }
-  #view {
-    width:100%;
-    height:100vh;
-    margin:0;
-    }
-  #view video,#view img {
-    top:15%;
-    width:90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 10px;
-    }
-    #view h1 {
-      background-color:inherit;
-      box-shadow: none;
-      text-align: center;
-      text-align-last: center;
-      top: 40vh;
-      bottom:none;
-      padding:0;
-      font-size: 3em;
-      letter-spacing: .1em;
-      line-height: 125%;
-      color: brown;
-      text-shadow: 2px 2px 3px aquamarine;
-    }
-    #view span {
-      right:0;
-      bottom:.25em;
-    }
-    .planimgs {
-      z-index: -1;
-      margin-top: 8em;
-      overflow:hidden;
-    }
-    .planimgs span  {
-      position:absolute;
-      width:100%;
-      color:white;
-      text-shadow: 3px 3px 3px red;
-      font-variant: small-caps;
-      margin-left: 0em;
-      margin-right: 0em;
-      margin-top: -2em;
-      font-size: 2.5em;
-    }
-    .planimgs figure {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      border:none;
-      padding: 0;
-      margin: 0;
-      padding-bottom: 1.5em;
-      border-radius:0px;
-    }
-    .planimgs div {
-      position: absolute;
-      justify-content:space-between;
-      width:70%;
-      left: 0%;
-      padding-top:61%;
-      margin-left: 15%;
-      margin-right: 15%;
-      margin-top: 0%;
-      margin-bottom: 0%;
-      flex-flow: row;
-      }
-    .planimgs img {
-      border:none;
-      border-bottom: .5em double aquamarine;
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-      }
-    #button1,#button2 {
-      color:white;
-      font-size: 1em;
-      margin: 0;
-      height:2.25em;
-    }
-  .buttonarray {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content:center;
-    margin-bottom: 1em
-  }
-  .buttonarray button {
-    border-radius: 5px;
-    padding:.15em;
-    margin-top: .5em;
-    margin-bottom: 1em;
-    font-size:14px;
-  }
-  .imgarray {
-    height:50vh;
-  }
-  .imgarray img {
-    border:none;
-    border-top: 1em double black;
-    border-bottom: 1em double black;
-    height:50vh;
-  }
-  #view4{
-    margin-left:10em
-  }
 }

@@ -925,7 +925,6 @@ h6 a:hover {
 }
 #view video {
   display: flex;
-  position: absolute;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
@@ -940,7 +939,6 @@ h6 a:hover {
 }
 #view img {
   display: flex;
-  position: absolute;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
