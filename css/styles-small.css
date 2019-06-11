@@ -1,7 +1,6 @@
  header {
    background-color: dimgray;
    height: 33vh;
-   width:initial;
    padding: 0;
    margin:0 0 3vh 0;
    background-image: url("iron-grip.png");
@@ -12,13 +11,13 @@
    height: 100%;
    float: left;
    top:0;
-   padding-top: 10vh;
+   padding-top: 9.25vh;
    padding-bottom: 1em;
    box-shadow: inset 0px 0px 20px 0px black;
    }
  .matterhorn {
    position: relative;
-   top:-3em;
+   top:-6.25vh;
    width:55%;
    float: right;
    object-fit: cover;
@@ -51,7 +50,7 @@
    align-items:stretch;
    margin-top: 3vh;
    top:.5em;
-   width: 100vw;
+   width: 100%;
    padding-top: .5em;
    animation-name: name;
    animation-duration: 1s;
@@ -81,7 +80,7 @@
    text-align:center;
    top:12vh;
    letter-spacing: .3em;
-   width:100vw;
+   width:100%;
    padding: initial;
    margin-left: initial;
    margin-right:initial;
@@ -118,7 +117,7 @@
 }
 .nav {
   top:0em;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   border-width: 0px 0px 0px 0px;
   z-index: 99;
@@ -127,8 +126,8 @@ nav ol {
   left: auto;
   right: auto;
   z-index: 99;
-  width: 100vw;
-  height: 10vh;
+  width: 100%;
+  height: 11vh;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -139,19 +138,17 @@ nav ol {
   background-image: url("iron-grip.png");
   background-size: 10em 10em;
   box-shadow: 0px 0px 10px 1px;
-  padding-top:.5em;
-  padding-bottom:.5em;
+  padding-top:.25em;
+  padding-bottom:.25em;
   padding-left: 0;
   padding-right: 0;
   margin: auto;
-  margin-left: 0;
-  margin-right: 0;
 }
 nav ol li {
   cursor: pointer;
-  flex-basis: 20%;
+  flex-basis: 21vw;
+  min-height: 6.75vh;
   background: white;
-  align-self:stretch;
   background-image: radial-gradient(white 0%,white 50%, gray 100%);
   text-decoration: overline;
   text-transform: lowercase;
@@ -159,7 +156,8 @@ nav ol li {
   color: black;
   border: .5px black solid;
   border-radius: 20px 20px 20px 20px;
-  padding: 1em;
+  padding: 2vw;
+  padding-top: 2vh;
   overflow: hidden;
   box-shadow: none;
   -webkit-transition-duration: 0.35s;
@@ -239,7 +237,7 @@ nav ol li:hover {
 }
 .sticky {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 2em;
   height: 10%;
   left: auto;
@@ -560,16 +558,16 @@ h6 {
 h6 a:hover {
   color:orange
 }
-.footer {
+footer {
   position:relative;
   background-color: black;
   line-height:2em;
-  padding-top: 2em;
-  margin:auto;
+  padding-top: 1em;
   width:100%;
+  margin-bottom: -2em;
   height: auto;
+  bottom:0vh;
   z-index: 1;
-  display: block;
   text-align: center;
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
@@ -593,7 +591,7 @@ h6 a:hover {
   vertical-align: baseline;
   position: relative;
   top: -4.5vh;
-  font-size: 1.15em;
+  font-size: 4.5vw;
 }
 .img-links {
   position: relative;
@@ -650,6 +648,17 @@ h6 a:hover {
   -ms-user-select: none;
   user-select: none;
 }
+#doublebar2:before {
+  content: " ║ ";
+}
+#doublebar span {
+  display: none;
+}
+#doublebar2 span {
+  display: none;
+}
+#doublebar2:before {
+  content: " ║ ";}
 .image {
   width: 95%;
   margin-left: 2.5%;
@@ -761,7 +770,7 @@ h6 a:hover {
 
 #view {
   height:100vh;
-  width: 100vw;
+  width: 100%;
   -ms-scroll-snap-type: both mandatory;
   scroll-snap-destination: 50% 50%;
   -webkit-scroll-snap-align:center;
