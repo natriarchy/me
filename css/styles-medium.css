@@ -121,10 +121,11 @@ nav ol {
  align-items:stretch;
  padding-top: .5em;
  padding-bottom: .5em;
+ padding-left: 7vw;
+ padding-right: 7vw;
  border: 2px black inset;
  border-width: 10px 2px 2px 2px;
- width: 90%;
- height: 100%;
+ width: 100%;
  background-color: white;
  background-image: url("iron-grip.png");
  background-size: 10em 10em;
@@ -132,8 +133,9 @@ nav ol {
 }
 nav ol li {
  cursor: pointer;
- margin-left: -2em;
- flex-basis: 20%;
+ margin-left: 3vw;
+ margin-right: 5vw;
+ flex-basis: 18%;
  background: white;
  text-decoration: overline;
  text-transform: lowercase;
@@ -157,31 +159,31 @@ nav ol li:hover {
   transition-duration: .35s;
 }
 :root {
- --topsize2: 26.3vh;
- --leftsize: 5vw;
- --rightsize: 5vw;
+ --topsize2: 26%;
+ --leftsize: 5%;
+ --rightsize: 5%;
 }
 #topnav:after {
- content: "";
- height: 0;
- width: 0;
- display: block;
- position:absolute;
- top: var(--topsize2);
- right: var(--rightsize);
- border-top: 1.5vw solid black;
- border-right:2vw solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position:relative;
+  top: 4.4vh;
+  right: -2.75vw;
+  border-top: 2.5vh solid black;
+  border-right:2.55vw solid transparent;
 }
 #topnav:before {
- display:block;
- position:absolute;
- content: "";
- width: 0;
- height: 0;
- top: var(--topsize2);
- left: var(--leftsize);
- border-top: 1.5vw solid black;
- border-left:2vw solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position:relative;
+  top: 4.4vh;
+  left: -2.75vw;
+  border-top: 2.5vh solid black;
+  border-left:2.55vw solid transparent;
 }
 
 #dropdown {
@@ -239,11 +241,10 @@ nav ol li:hover {
 }
 .sticky {
  position: fixed;
- width: 90%;
+ width: 100%;
  top: 1em;
- height: 6%;
- left: 5%;
- right: 5%;
+ padding-right: 7vw;
+ padding-left: 7vw;
  box-shadow: 0px 0px 10px 1px;
 }
 .stickytitle {

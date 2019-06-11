@@ -32,7 +32,7 @@
     <nav>
       <ol id="topnav">
         <li><a href="index.html" type="button" >Home</a></li>
-        <li><a href="aboutme.html" type="button">About Me</a></li>
+        <li><a href="aboutme.html" type="button">About</a></li>
         <li id="dropdown-title">Design
           <div id="dropdown">
             <a href="design.html" type="button">intro</a><br>
@@ -129,18 +129,10 @@ function myFunction() {
     topnav.classList.add("sticky");
     title1.classList.add("stickytitle");
     dropper.classList.add("stickydrop");
-    document.documentElement.style.setProperty('--topsize2', '5.15vh');
-    document.documentElement.style.setProperty('--topsize3', '5.15vh');
-    document.documentElement.style.setProperty('--rightsize', '0');
-    document.documentElement.style.setProperty('--leftsize', '0');
   } else {
     topnav.classList.remove("sticky");
     title1.classList.remove("stickytitle");
     dropper.classList.remove("stickydrop");
-    document.documentElement.style.setProperty('--topsize2', '26.3vh');
-    document.documentElement.style.setProperty('--topsize3', '26vh');
-    document.documentElement.style.setProperty('--rightsize', '5vw');
-    document.documentElement.style.setProperty('--leftsize', '5vw');
   }};
       function view1(x)
   			{
