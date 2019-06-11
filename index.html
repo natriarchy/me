@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Home</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
@@ -31,10 +31,11 @@
   <section class="nav">
     <nav>
       <ol id="topnav">
-        <li><a href="index.html" type="button" >Home</a></li>
+        <li><a href="index.html" type="button">Home</a></li>
         <li><a href="aboutme.html" type="button">About Me</a></li>
-        <li id="dropdown-title"><a href="design.html" type="button">Design Work</a>
+        <li id="dropdown-title">Design
           <div id="dropdown">
+            <a href="design.html" type="button">intro</a><br>
             <a href="design-camden.html" type="button">camden</a><br>
             <a href="design-dayton.html" type="button">dayton-newark</a><br>
             <a href="design-passaic.html" type="button">passaic</a><br>
@@ -50,6 +51,7 @@
   <section class="rightside">
   </section>
 </header>
+<body>
 <section class="column-main">
   <br>
   <div class="card"  style="background-color:black">
@@ -58,11 +60,10 @@
       <h2>Welcome</h2>
     </div>
     <br>
-    <p style="color:white">Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.<p>
+    <p style="color:white">Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.</p>
     <p style="color:white">Our communities have radically restructured multiple times in the last century—adapting to mass migrations, technological revolutions, etc. Now, technologists and leaders the world over are back at the gates sounding the alarm. Internet services, automation, and climate change are unravelling decades long consensuses; the creeping sense of disorder is pungent, spanning dating to employment. We can continue groping in the dark, or we can shape the new paradigm.</p>
     <p style="color:white">A century ago we responded to change by segregating communities, fleeing cities, and abandoning nature. Urban design must now think beyond the building envelope, visualizing cities as living organisms and narratives. Harness change by embedding human capital and sustainability into its logic. Pursuing dense walkable communities that feel spacious, mitigate pollution and runoff, improve mobility and provide space for people to grow and collaborate.</p>
     <p style="color:white">I built and coded this website from the ground up. Though unfinished, this space stands as testament to the works and story of my life. Check the menu for pages detailing my experiences, work and writings.</p>
-    </p>
   </div>
 </section>
 <section class="column-main">
@@ -79,14 +80,14 @@
 </body>
 <footer id="footer">
   <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact" onclick="contactme()"><br>
-  <div class="footer-content" onmouseleave="contactme()">
+  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
+  <div class="footer-content">
       <h6>
         <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <texbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a> ║
+        <textbox id="doublebar"><span><br></span></textbox>
+        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
         <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <texbox id="doublebar2"><span><br></span></textbox>
+        <textbox id="doublebar3"><span><br></span></textbox>
         <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
         <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
       </h6>
@@ -95,30 +96,40 @@
 </footer>
 </html>
 <script type="text/javascript">
-  function contactme()
-    {
-      document.getElementById("footer").classList.toggle("contact-open");
-    };
-    window.onscroll = function() {myFunction()};
-    var topnav = document.getElementById("topnav");
-    var sticky = topnav.offsetTop;
-    var title1 = document.getElementById("titlea");
-    var title = title1.offsetTop
-    var dropper = document.getElementById("dropdown");
-    function myFunction() {
-      if (window.pageYOffset > title && window.pageYOffset > sticky) {
-        topnav.classList.add("sticky");
-        title1.classList.add("stickytitle");
-        dropper.classList.add("stickydrop");
-        document.documentElement.style.setProperty('--topsize', '5vh');
-        document.documentElement.style.setProperty('--rightsize', '0');
-        document.documentElement.style.setProperty('--leftsize', '0');
-      } else {
-        topnav.classList.remove("sticky");
-        title1.classList.remove("stickytitle");
-        dropper.classList.remove("stickydrop");
-        document.documentElement.style.setProperty('--topsize', '26.5vh');
-        document.documentElement.style.setProperty('--rightsize', '5vw');
-        document.documentElement.style.setProperty('--leftsize', '5vw');
-      }};
+$(document).ready(function(){
+  $("#dropdown-title,#dropdown").hover(function(){
+    $("#dropdown").css("display", "flex");
+    }, function(){
+    $("#dropdown").css("display", "none");
+  });
+  $("#footer").hover(function(){
+    $("#footer").toggleClass("contact-open");
+    }, function(){
+    $("#footer").toggleClass("contact-open");
+  });
+});
+window.onscroll = function() {myFunction()};
+var topnav = document.getElementById("topnav");
+var sticky = topnav.offsetTop;
+var title1 = document.getElementById("titlea");
+var title = title1.offsetTop
+var dropper = document.getElementById("dropdown");
+function myFunction() {
+  if (window.pageYOffset > title && window.pageYOffset > sticky) {
+    topnav.classList.add("sticky");
+    title1.classList.add("stickytitle");
+    dropper.classList.add("stickydrop");
+    document.documentElement.style.setProperty('--topsize2', '5.15vh');
+    document.documentElement.style.setProperty('--topsize3', '5.25vh');
+    document.documentElement.style.setProperty('--rightsize', '0');
+    document.documentElement.style.setProperty('--leftsize', '0');
+  } else {
+    topnav.classList.remove("sticky");
+    title1.classList.remove("stickytitle");
+    dropper.classList.remove("stickydrop");
+    document.documentElement.style.setProperty('--topsize2', '26.3vh');
+    document.documentElement.style.setProperty('--topsize3', '26.3vh');
+    document.documentElement.style.setProperty('--rightsize', '4.45vw');
+    document.documentElement.style.setProperty('--leftsize', '4.45vw');
+  }};
 </script>

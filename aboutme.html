@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>About</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
@@ -16,7 +16,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-136760833-1');
   </script>
 </head>
@@ -31,10 +30,11 @@
   <section class="nav">
     <nav>
       <ol id="topnav">
-        <a href="index.html" type="button"><li>Home</li></a>
-        <a href="aboutme.html" type="button"><li>About Me</li></a>
-        <li id="dropdown-title"><a href="design.html" type="button">Design Work</a>
+        <li><a href="index.html" type="button" >Home</a></li>
+        <li><a href="aboutme.html" type="button">About Me</a></li>
+        <li id="dropdown-title">Design
           <div id="dropdown">
+            <a href="design.html" type="button">intro</a><br>
             <a href="design-camden.html" type="button">camden</a><br>
             <a href="design-dayton.html" type="button">dayton-newark</a><br>
             <a href="design-passaic.html" type="button">passaic</a><br>
@@ -60,12 +60,8 @@
   <br>
   <div  class="card" style="background-color:lightblue">
     <h3>nate</h3>
-    <p>
-      Passionate MCRP graduate eager to enhance how we connect with and experience our neighborhoods. Experienced creating and delivering public presentations, developing graphic content across several platforms, and working within a team. Extensive coursework taken in <strong>urban redevelopment, zoning, housing affordability, historic preservation, transit-oriented development and sustainability.</strong>
-      <br>
-      <br>
-      <em>Very interested in how emerging employment and lifestyle trends might intersect with urban design.</em>
-    </p>
+    <p>Passionate MCRP graduate eager to enhance how we connect with and experience our neighborhoods. Experienced creating and delivering public presentations, developing graphic content across several platforms, and working within a team. Extensive coursework taken in <strong>urban redevelopment, zoning, housing affordability, historic preservation, transit-oriented development and sustainability.</strong></p>
+    <p><em>Very interested in how emerging employment and lifestyle trends might intersect with urban design.</em></p>
   </div>
   <div  class="card" style="background-color:lightsalmon">
     <h3>who I am</h3>
@@ -81,14 +77,14 @@
 </body>
 <footer id="footer">
   <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact" onclick="contactme()"><br>
-  <div class="footer-content" onmouseleave="contactme()">
+  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
+  <div class="footer-content">
       <h6>
         <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <texbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a> ║
+        <textbox id="doublebar"><span><br></span></textbox>
+        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
         <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <texbox id="doublebar2"><span><br></span></textbox>
+        <textbox id="doublebar3"><span><br></span></textbox>
         <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
         <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
       </h6>
@@ -96,10 +92,18 @@
   </section>
 </footer>
 <script type="text/javascript">
-  function contactme()
-    {
-      document.getElementById("footer").classList.toggle("contact-open");
-    };
+    $(document).ready(function(){
+      $("#dropdown-title,#dropdown").hover(function(){
+        $("#dropdown").css("display", "flex");
+        }, function(){
+        $("#dropdown").css("display", "none");
+      });
+      $("#footer").hover(function(){
+        $("#footer").toggleClass("contact-open");
+        }, function(){
+        $("#footer").toggleClass("contact-open");
+      });
+    });
     window.onscroll = function() {myFunction()};
     var topnav = document.getElementById("topnav");
     var sticky = topnav.offsetTop;
@@ -111,14 +115,16 @@
         topnav.classList.add("sticky");
         title1.classList.add("stickytitle");
         dropper.classList.add("stickydrop");
-        document.documentElement.style.setProperty('--topsize', '5vh');
+        document.documentElement.style.setProperty('--topsize2', '5.15vh');
+        document.documentElement.style.setProperty('--topsize3', '5.15vh');
         document.documentElement.style.setProperty('--rightsize', '0');
         document.documentElement.style.setProperty('--leftsize', '0');
       } else {
         topnav.classList.remove("sticky");
         title1.classList.remove("stickytitle");
         dropper.classList.remove("stickydrop");
-        document.documentElement.style.setProperty('--topsize', '26.5vh');
+        document.documentElement.style.setProperty('--topsize2', '26.3vh');
+        document.documentElement.style.setProperty('--topsize3', '26vh');
         document.documentElement.style.setProperty('--rightsize', '5vw');
         document.documentElement.style.setProperty('--leftsize', '5vw');
       }};
