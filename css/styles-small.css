@@ -295,16 +295,23 @@ nav ol li:hover {
 }
 .card-left,.card-right{
   width:100%;
+  border-radius: 10px;
   float: none;
+  margin:1em;
   border-right: 0px;
   border-left: 0px;
   margin-left: 0em;
   margin-right: 0em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding:1.5em;
   height:auto;
 }
-
+.card-left {
+background-color: black;
+}
+.card-right {
+  background-color: papayawhip;
+  box-shadow: inset 0px 0px 10px 1px black;
+}
 .card-left h1 {
   color: white;
   text-shadow:none;
@@ -474,14 +481,15 @@ p {
   max-width: 95%;
   font-family: "Century Gothic", sans-serif;
   font-size:4.75vw;
-  word-spacing:.15em;
   text-indent: 10vw;
+  text-justify:center;
   line-height:1.5em;
   margin-bottom:1em;
-  margin-left:5%;
-  margin-right:5%;
+  margin-left:7%;
+  margin-right:7%;
   margin-top:1em;
   text-align: justify;
+  text-align-last: left;
 }
 h1,h2,h3,h4 {
   font-size: 1.25em;
