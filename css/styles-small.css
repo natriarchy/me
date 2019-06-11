@@ -8,7 +8,7 @@
    background-size: 10em 10em;
  }
  .design-header {
-   width: 100vw;
+   width: 100%;
    height: 100%;
    float: left;
    top:0;
@@ -128,19 +128,19 @@ nav ol {
   right: auto;
   z-index: 99;
   width: 100vw;
-  height: 12vh;
+  height: 10vh;
   list-style: none;
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content:space-around;
   border-top: 10px black inset;
-  background-color: white;
+  background-color: rgba(250,200,0,.75);
   background-image: url("iron-grip.png");
   background-size: 10em 10em;
   box-shadow: 0px 0px 10px 1px;
-  padding-top:.25em;
-  padding-bottom:.25em;
+  padding-top:.5em;
+  padding-bottom:.5em;
   padding-left: 0;
   padding-right: 0;
   margin: auto;
@@ -152,13 +152,14 @@ nav ol li {
   flex-basis: 20%;
   background: white;
   align-self:stretch;
+  background-image: radial-gradient(white 0%,white 50%, gray 100%);
   text-decoration: overline;
   text-transform: lowercase;
   font-size: 1em;
   color: black;
   border: .5px black solid;
-  border-radius: 10px 10px 10px 0;
-  padding: .3em;
+  border-radius: 20px 20px 20px 20px;
+  padding: 1em;
   overflow: hidden;
   box-shadow: none;
   -webkit-transition-duration: 0.35s;
@@ -170,6 +171,62 @@ nav ol li:hover {
    box-shadow: -20px 5px 10px 1px white;
    -webkit-transition-duration: 0.35s;
    transition-duration: .35s;
+}
+#dropdown {
+ z-index: 98;
+ list-style: none;
+ display: none;
+ flex-flow: column;
+ flex-direction: column;
+ justify-content:stretch;
+ text-align: center;
+ align-items:stretch;
+ padding-top: 1em;
+ padding-bottom: 1em;
+ background-color: white;
+ background-size: 10em 10em;
+ position:absolute;
+ width: 40%;
+ top:13vh;
+ right:18%;
+ border-radius: 0px 0px 5px 5px;
+ box-shadow: 0px 0px 5px 10px white;
+ -webkit-transition-duration:.35s;
+ transition-duration: .35s;
+}
+#dropdown a{
+ z-index: 99;
+ flex-basis: 18%;
+ background: white;
+ text-decoration: overline;
+ text-transform: lowercase;
+ font-size: 1em;
+ color: black;
+ border-radius: 12px 0px 12px 0px;
+ box-shadow: inset 0px 0px 5px 0px black;
+ padding: .25em;
+ padding-left: .15em;
+ padding-right: .15em;
+ -webkit-transition-duration: 0.35s;
+ transition-duration: .35s;
+}
+#dropdown a:hover {
+  color:red;
+  box-shadow: inset 0px 0px 20px 0px black;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+}
+#dropdown a:first-child{
+ background-color: dimgray;
+ color: white;
+}
+#dropdown:hover {
+ display: flex;
+ -webkit-transition-duration: .35s;
+ transition-duration: .35s;
+}
+#dropdown-title:hover {
+  box-shadow:none;
 }
 #topnav:after {
   display: none;
@@ -184,19 +241,24 @@ nav ol li:hover {
   position: fixed;
   width: 100vw;
   top: 2em;
-  height: 12%;
+  height: 10%;
   left: auto;
   right: auto;
-  border-top:10px solid dimgrey;
-  box-shadow: 0px 5px 6px 0px;
+  border-top:10px solid black;
+  box-shadow: 0px 5px 10px 0px;
+}
+#topnav li {
+  box-shadow: 2px 2px 1px 0px;
 }
 .stickytitle {
   z-index: 99;
   position: fixed;
   text-align: center;
   border: 0px black solid;
-  background-color: dimgray;
-  color: palegoldenrod;
+  background-color: rgba(250,200,0,.75);
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  color: white;
   letter-spacing: .25em;
   height: 8vh;
   padding-top: .2em;

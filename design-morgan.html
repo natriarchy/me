@@ -74,33 +74,33 @@
   </section>
 </footer>
 <script type="text/javascript">
-	function contactme()
-    {
-      document.getElementById("footer").classList.toggle("contact-open");
-    };
-    window.onscroll = function() {myFunction()};
-    var topnav = document.getElementById("topnav");
-    var sticky = topnav.offsetTop;
-    var title1 = document.getElementById("titlea");
-    var title = title1.offsetTop
-    var dropper = document.getElementById("dropdown");
-    function myFunction() {
-      if (window.pageYOffset > title && window.pageYOffset > sticky) {
-        topnav.classList.add("sticky");
-        title1.classList.add("stickytitle");
-        dropper.classList.add("stickydrop");
-        document.documentElement.style.setProperty('--topsize2', '5.15vh');
-        document.documentElement.style.setProperty('--topsize3', '5.15vh');
-        document.documentElement.style.setProperty('--rightsize', '0');
-        document.documentElement.style.setProperty('--leftsize', '0');
-      } else {
-        topnav.classList.remove("sticky");
-        title1.classList.remove("stickytitle");
-        dropper.classList.remove("stickydrop");
-        document.documentElement.style.setProperty('--topsize2', '26.3vh');
-        document.documentElement.style.setProperty('--topsize3', '26vh');
-        document.documentElement.style.setProperty('--rightsize', '5vw');
-        document.documentElement.style.setProperty('--leftsize', '5vw');
-      }};
+$(document).ready(function(){
+  $("#dropdown-title,#dropdown").hover(function(){
+    $("#dropdown").css("display", "flex");
+    }, function(){
+    $("#dropdown").css("display", "none");
+  });
+  $("#footer").hover(function(){
+    $("#footer").toggleClass("contact-open");
+    }, function(){
+    $("#footer").toggleClass("contact-open");
+  });
+});
+window.onscroll = function() {myFunction()};
+var topnav = document.getElementById("topnav");
+var sticky = topnav.offsetTop;
+var title1 = document.getElementById("titlea");
+var title = title1.offsetTop
+var dropper = document.getElementById("dropdown");
+function myFunction() {
+  if (window.pageYOffset > title && window.pageYOffset > sticky) {
+    topnav.classList.add("sticky");
+    title1.classList.add("stickytitle");
+    dropper.classList.add("stickydrop");
+  } else {
+    topnav.classList.remove("sticky");
+    title1.classList.remove("stickytitle");
+    dropper.classList.remove("stickydrop");}
+  };
 </script>
 </html>
