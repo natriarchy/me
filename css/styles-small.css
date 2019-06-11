@@ -651,14 +651,6 @@ footer {
 #doublebar2:before {
   content: " ║ ";
 }
-#doublebar span {
-  display: none;
-}
-#doublebar2 span {
-  display: none;
-}
-#doublebar2:before {
-  content: " ║ ";}
 .image {
   width: 95%;
   margin-left: 2.5%;
