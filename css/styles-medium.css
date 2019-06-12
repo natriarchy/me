@@ -1,155 +1,155 @@
 header {
-  background-color: dimgray;
-  width: initial;
-  height: 20vh;
-  margin-bottom: 6em;
-  background-image: url("iron-grip.png");
-  background-size: 10em 10em;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -2vh;
+  overflow: hidden;
 }
 .design-header {
-  width: 100%;
-  height: 100%;
-  float: left;
+  display: grid;
+  grid-template-columns: 7vw 43vw 43vw 7vw;
+  grid-template-rows: 2vh 11vh 5vh 2vh;
+  justify-content: center;
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  background-color: dimgray;
+  width: 100vw;
   top:0;
-  padding-bottom: 1.5em;
+  margin: 0;
+  margin-bottom: -1em;
   box-shadow: inset 0px 0px 20px 0px black;
   }
 .matterhorn {
-  position: relative;
-  top:-3em;
-  width: 40%;
-  float: right;
-  object-fit: cover;
-  object-position: center 22%;
-  overflow-y: hidden;
-  height: 10vh;
-  margin-left:45%;
-  margin-bottom: -5em;
+  grid-area: 2 / 3 / span 1 / span 1;
+  vertical-align: top;
   border-radius: 10px;
-  box-shadow: 0px 15px 20px -10px black;
-  border: .15em inset aquamarine;
   animation-name: matterhorn;
   animation-duration: 3s;
   animation-delay: 0s;
+}
+.matterhorn img {
+  object-position: center 22%;
+  object-fit: cover;
+  width:43vw;
+  height: 11vh;
+  border: .2vw inset aquamarine;
+  border-radius: 0px 10px 10px 10px;
+  box-shadow: 0px 15px 20px -10px black;
 }
 @keyframes matterhorn {
 0% {background-color: white;}
 25% {background-color: white;}
 100% {background-color: none;}
 }
-.design-title {
+.design-title1 {
+  grid-area: 3 / 2 / span 1 / span 2;
   font-family: "Century Gothic", sans-serif;
   color: white;
   font-weight: bolder;
   text-transform: lowercase;
-  height: 15vh;
-  display: flex;
-  flex-direction: column;
-  position:relative;
-  align-items:stretch;
-  margin-top: 1.5em;
-  top:.5em;
+  user-select: none;
+  font-size: 5vh;
+  line-height: 5vh;
+  letter-spacing: 1vw;
+  text-shadow: 1px 1px 10px lightyellow;
   animation-name: name;
   animation-duration: 1s;
   animation-delay: 0s;
   -webkit-animation-name: name;
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 0s;
+  -webkit-transition-duration:.35s;
+  transition-duration: .35s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-}
-.design-title1 {
-  height:10vh;
-  font-size: 5vh;
-  text-justify:inter-character;
-  padding-left: 15%;
-  padding-top: .75em;
-  padding-bottom: .25em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-shadow: 1px 1px 10px lightyellow;
 }
 .design-title2 {
-  height:3vh;
-  width:80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100px;
-  font-weight: lighter;
+  grid-area: 2 / 2 / span 1 / span 1;
+  color:black;
+  align-self:top;
+  font-family: inherit;
+  text-align: center;
+  text-transform: lowercase;
+  font-weight:300;
   font-size: 1.5vh;
-  letter-spacing: .1em;
-  background-color: rgba(70, 130, 180,.25);
+  letter-spacing: .25vw;
+  width:75%;
+  word-break: break-all;
+  overflow: hidden;
+  margin-left: 25%;
+  max-height: 2em;
+  background-color: rgba(0, 255, 191,1);
   background-image: url("iron-grip.png");
   background-size: 10em 10em;
-  padding-left: 8%;
-  padding-top: .25em;
-  padding-bottom: .25em;
+  padding-left: 1vw;
+  padding-right: 1vw;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  box-shadow: 1px 1px 10px 1px black;
+  border: .2vw inset aquamarine;
+  border-right: none;
+  border-radius: 100px 0 0 100px;
+  box-shadow: 0px 15px 20px -5px black;
 }
 
 @keyframes name {
-  0%   {top:-5em}
-  100% {top:.5em}
+  0%   {color:salmon}
+  50% {color:tan}
 }
-@-webkit-keyframes name {
-  0%   {top:-5em}
-  100% {top:.5}
+-webkit-@keyframes name {
+  0%   {color:salmon}
+  50% {color:tan}
 }
- .nav {
+ nav {
+  display: grid;
+  grid-template-columns: 7% 86% 7%;
+  grid-template-rows: 7vh 7vh auto;
+  justify-content: center;
+  grid-row-gap: 0em;
   z-index: 99;
-  height: 7vh;
   width:100%;
+  padding-top: 0;
+  margin-left: auto;
+  margin-right: auto;
    }
 nav ol {
- margin-left: auto;
- margin-right: auto;
- list-style: none;
- z-index: 99;
- display: flex;
- flex-flow: row;
- flex-direction: row;
- justify-content:space-around;
- text-align: center;
- align-items:stretch;
- padding-top: .5em;
- padding-bottom: .5em;
- padding-left: 7vw;
- padding-right: 7vw;
- border: 2px black inset;
- border-width: 10px 2px 2px 2px;
- width: 100%;
- background-color: white;
- background-image: url("iron-grip.png");
- background-size: 10em 10em;
- box-shadow: 0px 0px 10px 1px;
+  list-style: none;
+  z-index: 99;
+  grid-area: 1 / 1 / span 1 / span 3;
+  display: flex;
+  justify-content:space-around;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: 7vw;
+  padding-right: 7vw;
+  border: 2px black inset;
+  border-width: 10px 2px 2px 2px;
+  height: 100%;
+  background-color: white;
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  box-shadow: 0px 0px 10px 1px;
 }
 nav ol li {
- cursor: pointer;
- margin-left: 3vw;
- margin-right: 5vw;
- flex-basis: 18%;
- background: white;
- text-decoration: overline;
- text-transform: lowercase;
- font-size: 1.2em;
- color: black;
- border: 2px black solid;
- border-width: 2px 2px 2px 2px;
- border-radius: 12px 12px 12px 0;
- padding: .25em;
- padding-left: .25em;
- padding-right: .25em;
- box-shadow: 8px 5px 1px 1px black;
- -webkit-transition-duration: 0.35s;
- transition-duration: .35s;
+  margin-left: 3vw;
+  margin-right: 5vw;
+  cursor: pointer;
+  flex-basis: 18vw;
+  background: white;
+  text-decoration: overline;
+  text-transform: lowercase;
+  font-size: 2vh;
+  color: black;
+  border: 2px black solid;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 12px 12px 12px 0;
+  padding: .25em;
+  box-shadow: 8px 5px 1px 1px black;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
 }
 nav ol li:hover {
   color: white;
@@ -158,59 +158,50 @@ nav ol li:hover {
   -webkit-transition-duration: 0.35s;
   transition-duration: .35s;
 }
-:root {
- --topsize2: 26%;
- --leftsize: 5%;
- --rightsize: 5%;
+.flair-after {
+ content: "";
+ height:0;
+ width: 0;
+ margin-right: auto;
+ grid-area: 2 / 3 / span 1 / span 1;
+ border-top: 2em solid black;
+ border-right:2em solid transparent;
 }
-#topnav:after {
+.flair-before {
   content: "";
-  height: 0;
+  height:0;
   width: 0;
-  display: block;
-  position:relative;
-  top: 4.4vh;
-  right: -2.75vw;
-  border-top: 2.5vh solid black;
-  border-right:2.55vw solid transparent;
-}
-#topnav:before {
-  content: "";
-  height: 0;
-  width: 0;
-  display: block;
-  position:relative;
-  top: 4.4vh;
-  left: -2.75vw;
-  border-top: 2.5vh solid black;
-  border-left:2.55vw solid transparent;
+  margin-left: auto;
+  grid-area: 2 / 1 / span 1 / span 1;
+  border-top: 2em solid black;
+  border-left:2em solid transparent;
 }
 
 #dropdown {
  z-index: 98;
- list-style: none;
  display: none;
- flex-flow: column;
- flex-direction: column;
- justify-content:stretch;
+ list-style: none;
+ grid-area: 2/ 2 / span 1 / span 2;
+ justify-content:center;
  text-align: center;
- align-items:stretch;
+ align-items:center;
  padding-top: 1em;
  padding-bottom: 1em;
  background-color: white;
  background-size: 10em 10em;
  position:absolute;
- width: 14vw;
- top:26.5vh;
- right:35vw;
- border-radius: 0px 0px 5px 5px;
- box-shadow: 0px 0px 5px 10px white;
+ width: 15vw;
+ right: 33vw;
+ flex-direction: column;
+ margin-top: 1.25vh;
+ border-radius:15px;
+ box-shadow: -2px -2px 5px 0px black;
  -webkit-transition-duration:.35s;
  transition-duration: .35s;
 }
 #dropdown a{
  z-index: 99;
- flex-basis: 18%;
+ width: 90%;
  background: white;
  text-decoration: overline;
  text-transform: lowercase;
@@ -239,40 +230,41 @@ nav ol li:hover {
  -webkit-transition-duration: .35s;
  transition-duration: .35s;
 }
+#dropdown-title:hover {
+  box-shadow:none;
+}
 .sticky {
  position: fixed;
- width: 100%;
- top: 1em;
- padding-right: 7vw;
- padding-left: 7vw;
- box-shadow: 0px 0px 10px 1px;
+ top: 2vh;
+ width:100%;
 }
 .stickytitle {
- position: fixed;
- border: 2px black solid;
- background-color: black;
- color: aquamarine;
- letter-spacing: .1em;
- max-width: 45%;
- height: 3.5vh;
- padding-top: 0em;
- padding-bottom: 1em;
- padding-left: 1em;
- padding-right: 1em;
- z-index: 100;
- font-size: 1.5em;
- top: 0vh;
- left:0;
- margin-left: 5%;
- text-shadow: 2.5px 2.5px 1px red;
- box-shadow: 0px -10px 10px 1px black;
+  position: fixed;
+  background-color: black;
+  color: palegoldenrod;
+  letter-spacing: .5vw;
+  line-height: 0;
+  max-width: 66%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vh;
+  padding-top: 1.5vh;
+  z-index: 100;
+  font-size: 2.25vh;
+  top: 0%;
+  left:0;
+  margin-left: 5%;
+  height: 4vh;
+  text-shadow: 2px 2px red;
+  box-shadow: 0px -10px 10px 1px black;
+  -webkit-transition-duration:.35s;
+  transition-duration: .35s;
 }
 .stickydrop {
  z-index: 99;
  list-style: none;
  position: fixed;
  margin-top: -21vh;
- margin-right: -5vw;
  padding-top: 1em;
  padding-bottom: 1em;
  background-color: white;
@@ -283,18 +275,19 @@ nav ol li:hover {
  transition-duration: .35s;
 }
 
+
 /*Main Building Blocks*/
 .card {
- padding: 20px;
- margin-top: 1em;
- border-radius: 10px;
- border-top: 5px double black;
- border-bottom: 5px double black;
- border-right: 2px solid black;
- border-left: 2px solid black;
- box-shadow: 0px 0px 10px 1px;
- background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
- background-size: auto auto, 6em auto;
+  grid-column: 3/span 3;
+  padding: 20px;
+  border-radius: 10px;
+  border-top: 5px double black;
+  border-bottom: 5px double black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  box-shadow: 0px 0px 10px 1px;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
+  background-size: auto auto, 6em auto;
 }
 
 .show {
@@ -302,9 +295,9 @@ nav ol li:hover {
 }
 
 .card-left {
- width: 48%;
+  width: 100%;
+ grid-area: 1/5/span 1/span 1;
  height:38em;
- display: block;
  float: right;
  position: relative;
  padding-top: 2.5%;
@@ -327,9 +320,10 @@ nav ol li:hover {
  line-height: 1.5;
 }
 .card-right {
+  grid-area: 1/3/span 1/span 1;
  display: block;
  position: relative;
- width: 48%;
+ width: 100%;
  height:38em;
  padding-top: 10%;
  padding-bottom: 10%;
@@ -404,6 +398,7 @@ nav ol li:hover {
 
 .general-link {
    display: block;
+   grid-column: 3/span 3;
    text-align: center;
    background: none;
    font-size: 1.5em;
@@ -456,10 +451,12 @@ nav ol li:hover {
    filter:saturate(120%)
  }
 .column-main hr {
+  grid-column: 3/span 3;
  background-clip: padding-box;
  background-image: url("iron-grip.png");
  background-size: 20em 25em;
  background-color: teal;
+ width: 90%;
  height: 2.5em;
  border-left: 1em black solid;
  border-right: 1em black solid;
@@ -476,7 +473,11 @@ article h3{
 
 .column-main {
  max-width: 1000px;
- display: block;
+ display: grid;
+ grid-template-columns: 7vw 2vw 40vw 2vw 40vw 2vw 7vw;
+ grid-template-rows: auto auto auto auto;
+ grid-row-gap: 2em;
+ justify-content: center;
  margin-left: auto;
  margin-right: auto;
  width: 80%;
@@ -540,7 +541,7 @@ span.right{
  line-height: 1.5;
 }
 h1 {
- position:relative;
+  grid-column: 3/span 3;
  text-shadow: 3px 3px 3px grey;
  font-size: 3vw;
  font-weight: lighter;
