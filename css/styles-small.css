@@ -401,6 +401,7 @@ nav ol li:hover {
     z-index: 0;
     }
 .column-main hr {
+  grid-row: 2/ span 1;
   grid-column: 2/span 3;
   background-image: url("iron-grip.png");
   background-size: 20em 25em;
