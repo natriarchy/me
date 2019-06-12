@@ -20,7 +20,6 @@
     gtag('config', 'UA-136760833-1');
   </script>
 </head>
-
 <header id="header">
   <section class="design-header">
       <div class="design-title2">The Matterhorn | original</div>
@@ -53,15 +52,15 @@
   </section>
 </header>
 <body>
-<section id="view">
-    <video id="buildfly" onended="change()" autoplay muted>
-      <source src="files\passaicprocess.mp4" type="video/mp4">
-    </video>
-    <div class="arrow"></div>
-    <h1 id="title" style="color:black;">Passaic Downtown Redevelopment</h1>
-    <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;">
-</section>
-<section class="planimgs" style="background-color:grey">
+<section class="column-main">
+  <video id="buildfly" onended="change()" autoplay muted>
+    <source src="files\passaicprocess.mp4" type="video/mp4">
+  </video>
+  <h1 id="title" style="color:white;">Passaic Downtown Redevelopment</h1>
+  <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;">
+  <div class="arrow-1">&#8675;</div>
+  <div class="arrow-2">&#8675;</div>
+<div class="planimgs" style="background-color:grey">
   <span>Passaic Vision</span>
   <div>
     <button onclick="dayton_b()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
@@ -71,10 +70,8 @@
     <img src="img\NErwin-Passaic-003 pg1010.png" id="daytonbefore" alt="dayton-before" style="background-color: white;border-color:black">
     <img src="img\NErwin-Passaic-003 pg1016.png" id="daytonafter" alt="dayton-after" style="background-color: white;display:none;border-color:black">
   <figure>
-</section><br>
-<section class="column-main">
-  <hr style="background-color:brown">
-</section>
+</div><br>
+<hr style="background-color:brown;grid-row: 5 / span 1;grid-column: 1/span all;">
 <div class="buttonarray">
   <button id="but1" onclick="view1()" style="color:yellow">illustrative plan</button>
   <button id="but2" onclick="view2()">circulation</button>
@@ -89,6 +86,7 @@
     <a href="design.html" class="leftbutton">Back to Overview</a>
     <a href="design-morgan.html" class="rightbutton">Next Project</a>
 </div>
+</section>
 </body>
 <footer id="footer">
   <section class="footer">

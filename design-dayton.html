@@ -50,15 +50,15 @@
   </section>
 </header>
 <body>
-<section id="view">
+<section class="column-main">
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\flythroughcut.mp4" type="video/mp4">
     </video>
-    <div class="arrow"></div>
     <h1 id="title" style="">Dayton-Aerotropolis Redevelopment</h1>
     <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;">
-</section>
-<section class="planimgs" style="background-color:grey">
+    <div class="arrow-1">&#8675;</div>
+    <div class="arrow-2">&#8675;</div>
+<div class="planimgs" style="background-color:grey">
   <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
   <div>
     <button onclick="dayton_b()" id="button1" style="box-shadow:inset 0px 5px 5px 1px black">before</button>
@@ -68,10 +68,8 @@
     <img src="img\1_DaytonAerial.png" id="daytonbefore" alt="dayton-before" style="border-color:aquamarine">
     <img src="img\4_DaytonAerial3dFilter.png" id="daytonafter" alt="dayton-after" style="display:none;border-color:aquamarine">
   <figure>
-</section>
-<section class="column-main" style="margin-bottom:0;">
-  <hr style="background-color:yellow">
-</section>
+</div>
+  <hr style="background-color:aquamarine;grid-row: 5 / span 1;grid-column: 1/span all;">
 <div class="buttonarray">
   <button id="but1" onclick="view1(this)" style="color:yellow">study area</button>
   <button id="but2" onclick="view2(this)">transit</button>
@@ -88,6 +86,7 @@
     <a href="design.html" class="leftbutton">Back to Overview</a>
     <a href="design-passaic.html" class="rightbutton">Next Project</a>
 </div>
+</section>
 </body>
 <footer id="footer">
   <section class="footer">
