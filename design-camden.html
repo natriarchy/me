@@ -19,7 +19,6 @@
     gtag('config', 'UA-136760833-1');
   </script>
 </head>
-
 <header id="header">
   <section class="design-header">
       <div class="design-title2">The Matterhorn | original</div>
@@ -51,16 +50,16 @@
   <section class="rightside">
   </section>
 </header>
-<body>
-<section id="view">
-    <video id="buildfly" onended="change()" autoplay muted>
-      <source src="files\anim.mp4" type="video/mp4">
-    </video>
-    <div class="arrow"></div>
-    <h1 id="title">Camden Waterfront Building Concept</h1>
-    <img src="files\Animation3099.png" id="artistic" style="display:none">
-</section>
-<section class="planimgs">
+<body >
+<section class="column-main">
+  <video id="buildfly" onended="change()" autoplay muted>
+    <source src="files\anim.mp4" type="video/mp4">
+  </video>
+  <span id="title">Camden Waterfront Building Concept</span>
+  <img src="files\Animation3099.png" id="artistic" style="display:none">
+  <div class="arrow-1">&#8675;</div>
+  <div class="arrow-2">&#8675;</div>
+<div class="planimgs">
   <span>Site Plan</span>
   <div>
     <button onclick="before()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
@@ -70,10 +69,8 @@
     <img src="img\1-plan.png" alt="Plan-Before" id="plan_before">
     <img src="img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
   <figure>
-</section><br>
-<section class="column-main">
-  <hr style="background-color:aquamarine">
-</section>
+</div>
+<hr style="background-color:aquamarine;grid-row: 5 / span 1;grid-column: 1/span all;">
 <div class="buttonarray">
   <button id="but1" onclick="view1()" style="color:yellow">waterfront</button>
   <button id="but2" onclick="view2()">waterfront-day</button>
@@ -84,12 +81,13 @@
   <img id="view1" src="img/ViewCamden.png" style="display:block;object-position:11vw top;">
   <img id="view2" src="img/View-Waterfront-Day2.jpg">
   <img id="view3" src="img/View-Streetfront.jpg">
-  <img id="view4" src="img/View-Birds.png" style="object-position:11vw top;">
+  <img id="view4" src="img/View-Birds.png">
 </figure>
 <div class="bottomnav">
     <a href="design.html" class="leftbutton">Back to Overview</a>
     <a href="design-dayton.html" class="rightbutton">Next Project</a>
 </div>
+</section>
 </body>
 <footer id="footer">
   <section class="footer">
