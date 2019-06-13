@@ -116,6 +116,7 @@ header {
   margin-right: auto;
    }
 nav ol {
+  overflow-y: visible;
   list-style: none;
   z-index: 99;
   grid-area: 1 / 1 / span 1 / span 3;
