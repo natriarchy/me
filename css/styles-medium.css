@@ -293,83 +293,63 @@ nav ol li:hover {
 .show {
  display:none;
 }
-.card-left {
-  width: 100%;
- grid-area: 1/2/span 1/span 1;
- height:auto;
- float: right;
- position: relative;
- padding-top: 2.5%;
- padding-bottom:2.5%;
- background-color: black;
- box-shadow: inset 0px 0px 10px 1px black;
- border-radius: 10px;
- margin-top: 1em;
- margin-right: .5em;
- margin-bottom: 1em;
+.card-left,.card-right{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  font-size: 2vw;
+  border-radius: 5px;
+  text-align: left;
+  height:auto;
+  justify-content:center;
+  align-content:stretch;
 }
-.card-left h1 {
- color: white;
- text-shadow:none;
- font-size: 1.2em;
- margin-top: 20%;
- margin-bottom: auto;
- text-align:justify;
- text-align-last:left;
- line-height: 1.5;
+.card-left {
+  grid-column: 2/span 1;
+  background-color: black;
 }
 .card-right {
-  grid-area: 1/4/span 1/span 1;
- display: block;
- position: relative;
- width: 100%;
- padding-top: 10%;
- padding-bottom: 10%;
- background-color: papayawhip;
- box-shadow: inset 0px 0px 10px 1px black;
- border-radius: 10px;
- margin-top: 1em;
- margin-left: .5em;
- margin-bottom: 1em;
+  grid-column: 4/span 1;
+  background-color: papayawhip;
+  box-shadow: inset 0px 0px 10px 1px black;
+}
+.card-left p {
+  color: white;
+  font-size: 2.5vw;
+  text-align:left;
+  text-shadow:none;
 }
 .card-right .link {
-   display: block;
-   text-align: center;
-   background: none;
-   font-size: 24px;
-   text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
-   text-transform: lowercase;
-   letter-spacing: 6px;
-   color: dimgrey;
-   border-top: 4px dimgrey solid;
-   border-left: 1px dimgrey solid;
-   border-right: 1px dimgrey solid;
-   border-radius: 8px;
-   box-shadow: 0px -5px 8px 0px rgba(55, 250, 150,.75);
-   width: 90%;
-   padding: .2em;
-   margin-left: auto;
-   margin-right: auto;
- }
+    align-self: center;
+    text-align: center;
+    background: none;
+    text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
+    text-transform: lowercase;
+    color: dimgrey;
+    border-top: 4px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    border-radius: 8px;
+    box-shadow: 0px -5px 8px 0px rgba(55, 250, 150,.75);
+    width: 90%;
+    padding: .1em;
+  }
 .card-right .link:hover {
-   color: rgba(200, 250, 0);
-   background-color: grey;
-   border-top: 4px black solid;
-   border-left: 1px black solid;
-   border-right: 1px black solid;
-   text-shadow:0px 0px 10px yellow;
-   box-shadow: inset 0px 5px 5px 1px black;
-   }
+    color: rgba(200, 250, 0);
+    background-color: grey;
+    border-top: 4px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    text-shadow:0px 0px 10px yellow;
+    box-shadow: inset 0px 5px 5px 1px black;
+    }
 .card-right h1 {
- color:dimgrey;
- font-size: 1.5em;
- margin: 0;
- margin-bottom: 1em;
- text-align: center;
- font-weight: bold;
- text-transform: lowercase;
- text-shadow: 3px 3px 5px;
- text-decoration: overline;
+  color:dimgrey;
+  font-size: 3vw;
+  font-weight: bold;
+  text-transform: lowercase;
+  text-shadow: 3px 3px 5px;
+  text-decoration: overline;
 }
 .leftside {
  position:fixed;
@@ -602,9 +582,6 @@ h6 {
 }
 h6 a:hover {
  color:orange
-}
-footer {
-
 }
 .footer {
   z-index: 1;
@@ -848,20 +825,19 @@ footer {
   box-shadow: inset 0px 5px 5px 1px black;
 }
 #title {
+  display: flex;
   grid-row: 1;
   grid-column: 2/span 3;
   background-image: url("iron-grip.png");
   background-size: 20em .5em;
   background-color: rgba(0,255,255,.75);
   box-shadow: inset 2px 2px 10px 1px black;
-  align-items: center;
   justify-content:center;
   text-align: center;
-  width: 100%;
-  height: 10vh;
   z-index: 1;
   color: white;
-  font-size: 6vw;
+  font-size: 5vw;
+  margin-top: -1em;
   text-transform: lowercase;
   text-shadow: 2px 2px 1px salmon;
   letter-spacing: .15em;
@@ -893,6 +869,8 @@ footer {
   grid-column: 2/span 1;
   color: aqua;
   margin: auto;
+  margin-left: 0;
+  margin-top: -2vh;
   font-family: inherit;
   font-size: 11vw;
   text-shadow: 2px 2px 1px yellow;
@@ -902,6 +880,8 @@ footer {
   grid-column: 4/span 1;
   color: aqua;
   margin: auto;
+  margin-right: 0;
+  margin-top: -2vh;
   font-family: inherit;
   font-size: 11vw;
   text-shadow: 2px 2px 1px yellow;
@@ -1036,24 +1016,24 @@ footer {
   }
 .imgarray {
   grid-row: 7 / span 1;
-  grid-column: 1/span 5;
+  grid-column: 2/span 3;
   max-height:50vh;
-  width:auto;
+  width:100%;
   margin:0;
   padding: 0;
   overflow: hidden;
   margin-bottom: 3em;
+  border-top: 1em double black;
+  border-bottom: 1em double black;
 }
 .imgarray img {
   display:none;
   grid-row: 7 / span 1;
   grid-column: 1/span 5;
-  object-fit:cover;
+  object-fit:scale-down;
+  object-position: center;
   width:100%;
-  margin: 0;
-  border:none;
-  border-top: 1em double black;
-  border-bottom: 1em double black;
+  margin: auto;
 }
 
 .look-button {
