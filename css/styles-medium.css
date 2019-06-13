@@ -2,7 +2,8 @@ header {
   width: 100%;
   padding: 0;
   margin: 0;
-  margin-bottom: -2vh;
+  margin-bottom: 5vh;
+  height: 35vh;
   overflow: hidden;
 }
 .design-header {
@@ -276,7 +277,7 @@ nav ol li:hover {
 }
 .card {
   grid-column: 2/span 3;
-  padding: 20px;
+  padding: 1vw;
   border-radius: 10px;
   border-top: 5px double black;
   border-bottom: 5px double black;
@@ -390,17 +391,16 @@ nav ol li:hover {
  width: 7vw;
  top:0%;
 }
-
 .general-link {
-  display: block;
   grid-column: 2/span 3;
+  display: block;
   text-align: center;
   background: none;
   font-size: 1.5em;
   font-weight: bold;
   text-shadow: 3px 3px 5px rgba(55, 250, 150,.25);
   text-transform: lowercase;
-  letter-spacing: .25em;
+  letter-spacing: .5em;
   color: dimgrey;
   background-color: papayawhip;
   border-top: 4px dimgrey solid;
@@ -408,8 +408,10 @@ nav ol li:hover {
   border-right: 1px dimgrey solid;
   border-radius: 8px;
   box-shadow: 0px -10px 15px 0px rgba(55, 250, 150,.25);
-  width: 100%;
-  padding: .25em;
+  width: 80%;
+  padding: .2em;
+  margin-left: auto;
+  margin-right: auto;
  }
 .general-link:hover {
    color: rgba(200, 250, 0);
@@ -422,17 +424,19 @@ nav ol li:hover {
  }
  #juxtapose-wrapper {
    width:100%;
+   object-fit: cover;
+   object-position:center;
+   max-height:75vh;
    top:0;
    border:2px black dotted;
    border-radius: 5px
  }
  #juxtapose-wrapper:hover img {
-   filter:blur(0px) saturate(120%);
    -webkit-transition-duration: 2s;
    transition-duration: 2s;
    }
  #juxtapose-wrapper img {
-   filter:blur(1.5px) saturate(300%);
+   filter: saturate(150%);
    -webkit-transition-duration: 0.25s;
    transition-duration: .25s;
  }
@@ -442,6 +446,18 @@ nav ol li:hover {
  .jx-image {
    z-index: 0;
    filter:saturate(120%)
+ }
+ .column-main {
+   width:100%;
+   display: grid;
+   grid-template-columns: 10vw 38vw 4vw 38vw 10vw;
+   grid-template-rows: auto auto auto auto auto auto auto auto;
+   grid-row-gap: 5vh;
+   grid-column-gap: 0%;
+   justify-content: center;
+   animation-name: columnenter;
+   animation-duration: 1s;
+   animation-delay: 0s;
  }
 .column-main hr {
   grid-column: 2/ span 3;
@@ -454,33 +470,39 @@ nav ol li:hover {
  border-right: 1em black solid;
  box-shadow: inset 0 0 10px #000000;
  }
-article {
- background-color: silver;
-}
-article h3{
- color: aquamarine;
- text-transform: lowercase;
- text-shadow: 3px 3px 3px grey;
-}
-
-.column-main {
-  max-width: 1000px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 10vw 38vw 4vw 38vw 10vw;
-  grid-template-rows: auto auto auto auto auto auto auto auto;
-  grid-row-gap: 1.5em;
-  grid-column-gap: 0%;
-  justify-content: center;
-  animation-name: columnenter;
-  animation-duration: 1s;
-  animation-delay: 0s;
-}
 @keyframes columnenter {
  0% {filter: blur(100px);opacity:.25}
  100% {filter: blur(0px);opacity:1}
 }
-
+article p::first-line {
+  background-color: dimgray;
+  font-variant: small-caps;
+  color: white;
+  letter-spacing: .3vw;
+  text-shadow: 2px 2px 2px black;
+}
+article p::first-letter {
+  font-weight: 900;
+  font-size: 2vw;
+}
+article {
+  border-radius: 15px;
+  text-indent: .5em;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 1.5%, rgba(0,0,0,0) 98.5%,white 100%), url("light-wool.png");
+  background-color: tan;
+  column-count: 1;
+  column-gap: 1.5vw;
+  padding: 4em;
+  box-shadow: inset 2px 2px 10px 5px;
+}
+article h3 {
+  margin-top: 0;
+  box-shadow: inset 2px 2px 10px 1px black;
+  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
+  background-color: lightsalmon;
+  border-radius: 5px;
+  font-size: 5vh;
+}
 * {
  box-sizing: border-box;
 }
