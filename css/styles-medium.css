@@ -183,7 +183,7 @@ nav ol li:hover {
  z-index: 98;
  display: none;
  list-style: none;
- grid-area: 2/ 2 / span 1 / span 2;
+ grid-area: 2/ 2 / span 1 / span all;
  overflow-y: visible;
  justify-content:center;
  text-align: center;
