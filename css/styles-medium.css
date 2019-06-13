@@ -183,6 +183,7 @@ nav ol li:hover {
  display: none;
  list-style: none;
  grid-area: 2/ 2 / span 1 / span 2;
+ overflow-y: visible;
  justify-content:center;
  text-align: center;
  align-items:center;
@@ -263,6 +264,7 @@ nav ol li:hover {
 }
 .stickydrop {
  z-index: 99;
+ overflow-y: visible;
  list-style: none;
  position: fixed;
  margin-top: -21vh;
