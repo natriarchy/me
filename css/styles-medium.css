@@ -110,6 +110,7 @@ header {
   justify-content: center;
   grid-row-gap: 0em;
   z-index: 99;
+  overflow-y: visible;
   width:100%;
   padding-top: 0;
   margin-left: auto;
