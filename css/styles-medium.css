@@ -4,7 +4,6 @@ header {
   margin: 0;
   margin-bottom: 5vh;
   height: 35vh;
-  overflow: hidden;
 }
 .design-header {
   display: grid;
