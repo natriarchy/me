@@ -58,12 +58,13 @@
     <div class="image-title">
       <img src="img\me.JPG" class="image">
       <h2>Welcome</h2>
-    </div>
-    <br>
-    <p style="color:white">Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.</p>
-    <p style="color:white">Our communities have radically restructured multiple times in the last century—adapting to mass migrations, technological revolutions, etc. Now, technologists and leaders the world over are back at the gates sounding the alarm. Internet services, automation, and climate change are unravelling decades long consensuses; the creeping sense of disorder is pungent, spanning dating to employment. We can continue groping in the dark, or we can shape the new paradigm.</p>
-    <p style="color:white">A century ago we responded to change by segregating communities, fleeing cities, and abandoning nature. Urban design must now think beyond the building envelope, visualizing cities as living organisms and narratives. Harness change by embedding human capital and sustainability into its logic. Pursuing dense walkable communities that feel spacious, mitigate pollution and runoff, improve mobility and provide space for people to grow and collaborate.</p>
-    <p style="color:white">I built and coded this website from the ground up. Though unfinished, this space stands as testament to the works and story of my life. Check the menu for pages detailing my experiences, work and writings.</p>
+    </div><br>
+    <article>
+    <p>Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.</p>
+    <p>Our communities have radically restructured multiple times in the last century—adapting to mass migrations, technological revolutions, etc. Now, technologists and leaders the world over are back at the gates sounding the alarm. Internet services, automation, and climate change are unravelling decades long consensuses; the creeping sense of disorder is pungent, spanning dating to employment. We can continue groping in the dark, or we can shape the new paradigm.</p>
+    <p>A century ago we responded to change by segregating communities, fleeing cities, and abandoning nature. Urban design must now think beyond the building envelope, visualizing cities as living organisms and narratives. Harness change by embedding human capital and sustainability into its logic. Pursuing dense walkable communities that feel spacious, mitigate pollution and runoff, improve mobility and provide space for people to grow and collaborate.</p>
+    <p>I built and coded this website from the ground up. Though unfinished, this space stands as testament to the works and story of my life. Check the menu for pages detailing my experiences, work and writings.</p>
+  </article>
   </div>
   <div class="card" style="background-color: silver">
     <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
@@ -107,15 +108,15 @@ $(document).ready(function(){
 });
 window.onscroll = function() {myFunction()};
 var topnav = document.getElementById("topnav");
-var sticky = topnav.offsetTop;
+var sticky = topnav.offsetTop + topnav.height;
 var title1 = document.getElementById("titlea");
-var title = title1.offsetTop
+var title = title1.offsetTop + title1.offsetHeight;
 var dropper = document.getElementById("dropdown");
 function myFunction() {
-  if (window.pageYOffset > title && window.pageYOffset > sticky) {
+  if (window.pageYOffset > title){
     topnav.classList.add("sticky");
-    title1.classList.add("stickytitle");
     dropper.classList.add("stickydrop");
+    title1.classList.add("stickytitle");
   } else {
     topnav.classList.remove("sticky");
     title1.classList.remove("stickytitle");
