@@ -44,14 +44,11 @@
       <div class="flair-before"></div>
       <div class="flair-after"></div>
     </nav>
-  </section>
-  <section class="leftside">
-  </section>
-  <section class="rightside">
-  </section>
 </header>
-<body >
+<body>
 <section class="column-main">
+  <div class="leftside"></div>
+  <div class="rightside"></div>
   <video id="buildfly" onended="change()" autoplay muted>
     <source src="files\anim.mp4" type="video/mp4">
   </video>
@@ -59,17 +56,17 @@
   <img src="files\Animation3099.png" id="artistic" style="display:none">
   <div class="arrow-1">&#8675;</div>
   <div class="arrow-2">&#8675;</div>
-<div class="planimgs">
-  <span>Site Plan</span>
-  <div>
-    <button onclick="before()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
-    <button onclick="after()" id="button2">after</button>
+  <div class="planimgs">
+    <span>Site Plan</span>
+    <div>
+      <button onclick="before()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
+      <button onclick="after()" id="button2">after</button>
+    </div>
+    <figure>
+      <img src="img\1-plan.png" alt="Plan-Before" id="plan_before">
+      <img src="img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
+    <figure>
   </div>
-  <figure>
-    <img src="img\1-plan.png" alt="Plan-Before" id="plan_before">
-    <img src="img\2-plan.png" alt="Plan-After" id="plan_after" style="display:none">
-  <figure>
-</div>
 <hr style="background-color:aquamarine;grid-row: 5 / span 1;">
 <div class="buttonarray">
   <button id="but1" onclick="view1()" style="color:yellow">waterfront</button>
@@ -84,26 +81,24 @@
   <img id="view4" src="img/View-Birds.png">
 </figure>
 <div class="bottomnav">
-    <a href="design.html" class="leftbutton">Back to Overview</a>
-    <a href="design-dayton.html" class="rightbutton">Next Project</a>
+    <a href="design-morgan.html">Last</a>
+    <a href="design.html">Back to Overview</a>
+    <a href="design-dayton.html">Next</a>
 </div>
 </section>
 </body>
 <footer id="footer">
-  <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
-  <div class="footer-content">
-      <h6>
-        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <textbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <textbox id="doublebar3"><span><br></span></textbox>
-        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
-      </h6>
+  <div class="top">
+    <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
-  </section>
+  <div class="top-line">
+    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+    <a href="tel:+12026811138" target="_blank" class="tel"></a>
+  </div>
+  <div class="middle">
+    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+  </div>
 </footer>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -113,16 +108,22 @@
         $("#dropdown").css("display", "none");
       });
       $("#footer").hover(function(){
-        $("#footer").toggleClass("contact-open");
+        $("#footer").css("transform","translateY(-9vh)");
         }, function(){
-        $("#footer").toggleClass("contact-open");
+        $("#footer").css("transform","translateY(0vh)");
       });
     });
+    $(window).scroll(function(){
+      if (window.innerWidth >= 1024){
+         $("article").mousewheel(function(event, delta) {
+            this.scrollLeft -= (delta * 500);
+            this.scrollRight -= (delta * 500);
+            event.preventDefault();
+          })}
+      });
     window.onscroll = function() {myFunction()};
     var topnav = document.getElementById("topnav");
-    var sticky = topnav.offsetTop;
     var title1 = document.getElementById("titlea");
-    var title = title1.offsetTop
     var dropper = document.getElementById("dropdown");
     function myFunction() {
       if (window.pageYOffset > (window.innerHeight * .155)){

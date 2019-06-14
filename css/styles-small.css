@@ -277,10 +277,7 @@ nav ol li:hover {
   background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
   background-size: auto auto, 6em auto;
 }
-.show {
-  display:none;
-}
-.card-left,.card-right{
+.card-left, .card-right {
   width:100%;
   display:flex;
   flex-direction: column;
@@ -291,33 +288,29 @@ nav ol li:hover {
   border-left: 0px;
   padding: 2vw;
   height:auto;
+  color:white;
   justify-content:center;
   align-content:stretch;
+  letter-spacing: .1vw;
 }
 .card-left {
-  grid-column: 2/span 1;
-  background-color: black;
+  grid-column: left/span 3;
+  background-color: grey;
+  box-shadow: inset 0px 0px 10px 1px black;
+  clear:both;
 }
+
 .card-right {
-  grid-column: 4/span 1;
+  grid-column: left/span 3;
   background-color: papayawhip;
   box-shadow: inset 0px 0px 10px 1px black;
 }
-.card-left p {
-  color: white;
-  font-size: 4vw;
-  line-height: 1.5;
-  text-align:left;
-  text-shadow:none;
-  letter-spacing: normal;
-}
 .card-right .link {
-    display: block;
+    align-self: center;
     text-align: center;
     background: none;
     text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
     text-transform: lowercase;
-    letter-spacing: 1.5;
     color: dimgrey;
     border-top: 4px dimgrey solid;
     border-left: 1px dimgrey solid;
@@ -345,25 +338,38 @@ nav ol li:hover {
   text-decoration: overline;
 }
 .leftside {
-  display: none;
+  position: fixed;
+  z-index: -1;
+  top:0;
+  left:0;
+  grid-column: l-gutter / span 1;
+  grid-row: 1 / span 8;
+  background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
+  height: 100%;
+  width: 3vw;
 }
 .rightside {
-  display:none;
+  position: fixed;
+  right:0;
+  top:0;
+  z-index: -1;
+  grid-column: r-gutter / span 1;
+  grid-row: 1 / span 8;
+  background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
+  height: 100%;
+  width: 3vw;
 }
 
 .general-link {
-  display: flex;
-  justify-content: center;
-  grid-column: 2/span 3;
-  grid-row: 2;
+  grid-column: left/span 3;
+  display: block;
+  text-align: center;
   background: none;
-  font-size: 5vw;
-  margin: auto;
-  max-height: 12vh;
+  font-size: 1em;
   font-weight: bold;
   text-shadow: 3px 3px 5px rgba(55, 250, 150,.25);
   text-transform: lowercase;
-  letter-spacing: .15em;
+  letter-spacing: .5em;
   color: dimgrey;
   background-color: papayawhip;
   border-top: 4px dimgrey solid;
@@ -372,7 +378,9 @@ nav ol li:hover {
   border-radius: 8px;
   box-shadow: 0px -10px 15px 0px rgba(55, 250, 150,.25);
   width: 80%;
-  padding: .25em;
+  padding: .2em;
+  margin-left: auto;
+  margin-right: auto;
   }
 .general-link:hover {
     color: rgba(200, 250, 0);
@@ -433,26 +441,32 @@ nav ol li:hover {
     border-radius: 5px;
     font-size: 5vw;
   }
+  #pagetog {
+    display: none;
+  }
 .column-main {
-  display: grid;
-  grid-template-columns: 1vw 43.5vw 1vw 43.5vw 1vw;
-  grid-template-rows: auto auto auto auto auto auto auto auto;
-  grid-row-gap: 1.5em;
-  grid-column-gap: 0%;
-  justify-content: center;
-  animation-name: columnenter;
-  animation-duration: 1s;
-  animation-delay: 0s;
-}
-.column-main hr {
-  grid-column: 2/span 3;
-  background-image: url("iron-grip.png");
-  background-size: 20em 25em;
-  background-color: teal;
-  width: 80vw;
-  height: 6vh;
-  border-left: 1em black solid;
-  border-right: 1em black solid;
+    width:100%;
+    display: grid;
+    grid-template-columns:[l-gutter] 3fr [useless-l] 0fr [left] 94fr [c-gutter] 0fr [right] 0fr [useless-r] 0fr [r-gutter] 3fr;
+    grid-template-rows: [splash] auto [splash-b] auto repeat(6, auto);
+    grid-row-gap: 5vh;
+    grid-column-gap: 0%;
+    justify-content: center;
+    animation-name: columnenter;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    margin-bottom: 5vh;
+  }
+ .column-main hr {
+   grid-column: left / span 3;
+   grid-row: 3;
+   background-image: url("iron-grip.png");
+   background-size: 20em 25em;
+   background-color: teal;
+   width: 80vw;
+   height: 6vh;
+   border-left: 1em black solid;
+   border-right: 1em black solid;
   box-shadow: inset 0 0 10px #000000;
   }
 @keyframes columnenter {
@@ -482,168 +496,96 @@ body {
   max-width: 100%;
 }
 
+body {
+ margin:0;
+ font-family: "Century Gothic", sans-serif;
+ font-size: 100%;
+ background-image: url("wood.png");;
+ background-color: antiquewhite;
+ background-size:10em 100em;
+}
+
 p {
-  font-family: "Century Gothic", sans-serif;
-  font-size:4.5vw;
-  text-indent: 1vw;
-  line-height:1.3em;
-  margin-bottom:1em;
-  margin-left:3%;
-  margin-right:1%;
-  margin-top:1em;
-  text-align: left;
+ font-family: "Century Gothic", sans-serif;
+ font-size:1em;
+ line-height:130%;
+ margin:.5em;
+ text-align: left;
+ text-align-last: left;
 }
 h1 {
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
  text-shadow: 3px 3px 3px grey;
- font-size: 5vw;
- font-weight:bold;
- letter-spacing: 1vw;
+ font-size: 3vh;
+ font-weight: lighter;
+ margin-left: 1em;
+ margin-right: em;
  text-align:center;
+ text-align-last: center;
  color: white;
+ letter-spacing:.15em;
  line-height: 1.25;
- box-shadow: None;
+ scroll-snap-align: start; /* latest (Chrome 69+) */
+scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
+-webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
 h2 {
-  position:relative;
-  font-size: 7vw;
-  text-align:center;
-  text-shadow: 3px 3px 3px grey;
-  background-color: none;
-  margin-bottom: .5em;
-  text-transform: lowercase;
-  color: white;
-  letter-spacing:2vw;
-  box-shadow: None;
+ position:relative;
+ text-shadow: 3px 3px 3px grey;
+ font-size: 2em;
+ margin-bottom: .5em;
+ text-align: left;
+ text-transform: lowercase;
+ color: white;
+ letter-spacing:.15em;
+ scroll-snap-align: start; /* latest (Chrome 69+) */
+scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
+-webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
 
 h3 {
-  font-size: 7vw;
-  position:relative;
-  text-align:center;
-  text-shadow: 3px 3px 3px grey;
-  border-radius: 25px;
-  background-color: none;
-  margin-bottom: .5em;
-  color: white;
-  letter-spacing: .2em;
-  box-shadow: None;
+ position:relative;
+ text-shadow: 3px 3px 3px grey;
+ border-radius: 25px;
+ background-color: none;
+ font-size: 2em;
+ margin-bottom: .5em;
+ text-align: center;
+ color: white;
+ letter-spacing: .2em;
+ box-shadow: None;
 }
 
 h4 {
-  font-weight: 400;
-  font-variant: small-caps;
+ font-weight: 400;
+ text-align: left;
+ font-variant: small-caps;
+ font-size: 1.5em;
+ margin-left:1.5em;
+ margin-right:1.5em;
 }
+
+h5 {
+ font-size: 1em;
+ font-weight: 600;
+ font-variant: small-caps;
+ margin-left: -3em;
+ color: black;
+ letter-spacing: 1.25;
+ text-shadow: 1px 2px 5px grey;
+}
+
 h6 {
-  text-align: center;
-  font-size: 1em;
-  margin-top: .75em;
-  font-weight:normal;
+ text-align: center;
+ font-size: 1em;
+ margin-top: .25em;
+ font-weight:normal;
 }
 h6 a:hover {
-  color:orange
-}
-.footer {
-  position:relative;
-  background-color: black;
-  line-height:2em;
-  padding-top: 1em;
-  width:100%;
-  margin: 0;
-  margin-bottom: -2em;
-  height: auto;
-  bottom:0vh;
-  z-index: 1;
-  text-align: center;
-  -webkit-transition-duration: 0.35s;
-  transition-duration: .35s;
-}
-footer {
-  max-width:100%;
-  margin: 0;
-  overflow: hidden;
-}
-.contact-open .footer {
-  transform: translateY(0);
-}
-.footer:hover .contact {
-    background-color: darkslategray;
-    transform: none;
-}
-.contact {
-    display: none;
-}
-.contact-open {
-  display: none;
-}
-.footer-content {
-  color: white;
-  display: block;
-  max-width:100%;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: baseline;
-  position: relative;
-  top: -4.5vh;
-  font-size: 4.5vw;
-}
-.img-links {
-  position: relative;
-  vertical-align: middle;
-  width: 6em;
-  color: white;
-  -webkit-filter: invert(1);
-  filter: invert(1);
-}
-.other-links:hover {
-  color: aquamarine;
-  cursor:pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-}
-.show-hide {
-  display:block;
-  width:100%;
-  font-size: 2em;
-  color:grey;
-  text-shadow: none;
-  position: absolute;
-  line-height: .5;
-  float: left;
-  cursor:pointer;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.other-links:hover .show-hide {
-  display:block;
-  color:inherit;
-  text-decoration: overline;
-  width:100%;
-  position: absolute;
-  line-height: .5;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-  cursor:pointer;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-#doublebar2:before {
-  content: " ║ ";
+ color:orange
 }
 .image {
+  grid-column: left/span 1;
   width: 95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
@@ -651,6 +593,9 @@ footer {
 }
 
 .image-title {
+  grid-column: left/span 1;
+  grid-row: 1;
+  margin: 0;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -672,94 +617,20 @@ footer {
 .image-title img{
   width: 75%;
 }
-.bottomnav {
-  width: 100%;
-  grid-row: 8 / span 1;
-  grid-column: 2/span 3;
-  display: flex;
-  text-align: center;
-  align-items: stretch;
-  flex-direction: column;
-}
-.leftbutton {
-  padding: .5em;
-  margin: 1em;
-  text-decoration: none;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  cursor: pointer;
-  color: dimgrey;
-  font-size: 1.5em;
-  font-weight:lighter;
-  text-shadow: 1px 1px 2px grey;
-  text-transform: lowercase;
-  letter-spacing: 3px;
-  background-color: papayawhip;
-  border-top: 4px dimgray solid;
-  border-bottom: 4px dimgrey solid;
-  border-left: 1px dimgrey solid;
-  border-right: 1px dimgrey solid;
-  border-radius: 15px;
-  box-shadow: 0px -5px 10px 0px;
-}
-.rightbutton {
-  padding: .5em;
-  margin: 1em;
-  text-decoration: none;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  cursor: pointer;
-  color: dimgrey;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight:lighter;
-  text-shadow: 1px 1px 2px grey;
-  text-transform: lowercase;
-  letter-spacing: 3px;
-  background-color: papayawhip;
-  border-top: 4px dimgray solid;
-  border-bottom: 4px dimgrey solid;
-  border-left: 1px dimgrey solid;
-  border-right: 1px dimgrey solid;
-  border-radius: 15px;
-  box-shadow: 0px -5px 10px 0px;
-}
-
-.rightbutton:hover {
-  color: rgba(200, 250, 0);
-  background-color: dimgrey;
-  border-top: 4px black solid;
-  border-bottom: 4px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  text-shadow:0px 0px 10px yellow;
-  box-shadow: inset 0px 5px 5px 1px black;
-  }
-
-.leftbutton:hover {
-  color: rgba(200, 250, 0);
-  background-color: dimgrey;
-  border-top: 4px black solid;
-  border-bottom: 4px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  text-shadow:0px 0px 10px yellow;
-  box-shadow: inset 0px 5px 5px 1px black;
-}
 #title {
   grid-row: 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   display: flex;
-  flex-wrap: wrap;
   background-image: url("iron-grip.png");
   background-size: 20em .5em;
   background-color: rgba(0,255,255,.75);
   box-shadow: inset 2px 2px 10px 1px black;
-  align-self: center;
-  justify-content:center;
+  align-self: stretch;
+  justify-content:stretch;
   text-align: center;
-  width: 100%;
+  width: 96%;
   min-height: 10vh;
+  margin: auto;
   z-index: 1;
   color: white;
   font-size: 6vw;
@@ -934,7 +805,7 @@ footer {
   }
 .imgarray {
   grid-row: 7 / span 1;
-  grid-column: 1/span 5;
+  grid-column: left/span 1;
   max-height:50vh;
   width:auto;
   margin:0;
@@ -969,4 +840,138 @@ footer {
   transform: scale(1.1);
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
+}
+.bottomnav {
+  width: 100%;
+  grid-row: 8 / span 1;
+  grid-column: left/span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bottomnav a {
+  padding: .25em;
+  min-width: 50%;
+  margin: auto;
+  margin-bottom: 1em;
+  text-decoration: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  cursor: pointer;
+  color: dimgrey;
+  text-align: center;
+  font-size: 1em;
+  font-weight:lighter;
+  text-shadow: 1px 1px 2px grey;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  background-color: papayawhip;
+  border-top: 4px dimgray solid;
+  border-bottom: 4px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
+  border-radius: 50px;
+  box-shadow: 0px -5px 10px 0px;
+}
+.bottomnav a:hover {
+  color: rgba(200, 250, 0);
+  background-color: dimgrey;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  text-shadow:0px 0px 10px yellow;
+  box-shadow: inset 0px 5px 5px 1px black;
+  }
+footer {
+  position: fixed;
+  display: grid;
+  grid-template-columns: [l-garbage] 1vw [content] 100vw [r-garbage] 1vw;
+  grid-template-rows: [top] 2fr [top-line] 3fr [middle] 6fr 8fr;
+  max-width: 100%;
+  width: 100vw;
+  height: 30vh;
+  color: white;
+  justify-content:center;
+  align-items: flex-start;
+  text-align: center;
+  font-size: 1.7vh;
+  letter-spacing: .15vw;
+  line-height: 120%;
+  word-break: keep-all;
+  margin: 0;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+  bottom:-26vh;
+}
+footer::after {
+  content:"";
+  z-index: -1;
+  grid-row: top-line/span 3;
+  grid-column: content;
+  background-color: dimgrey;
+  box-shadow: inset 2px 8px 10px 0px black;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+.top  {
+  grid-row: top/span 1;
+  grid-column: content;
+  margin-bottom: 0;
+}
+.top img {
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  justify-content:center;
+  padding: .3em;
+  padding-bottom: .5em;
+  height: 4vh;
+  background: grey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: inset 0px 5px 10px 0px white;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+}
+.top img:hover {
+  background-color: darkslategray;
+ -webkit-transition-duration: 0.35s;
+ transition-duration: .35s;
+ filter: contrast(140%);
+}
+.top-line {
+  grid-row: top-line/span 1;
+  grid-column: content;
+  align-self:flex-end;
+  padding: 0;
+}
+.address::before {
+  content:"521 Washington St #3, Hoboken, NJ 07030";
+}
+.tel::before {
+  content: " ║ (202) 681-1138";
+}
+.middle {
+  grid-row: middle/span 1;
+  grid-column: content;
+  align-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.email:before {
+  content: "nterwin714@gmail.com";
+}
+.email:after {
+  content: " ║ ";
+}
+.linked img {
+  position: relative;
+  filter: invert(1);
+  height: 1.5em;
+  bottom: -.5em;
+}
+.linked::after {
+  content:"|nterwin714";
 }

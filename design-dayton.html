@@ -43,14 +43,12 @@
       <div class="flair-before"></div>
       <div class="flair-after"></div>
     </nav>
-  </section>
-  <section class="leftside">
-  </section>
-  <section class="rightside">
-  </section>
+</section>
 </header>
 <body>
 <section class="column-main">
+  <div class="leftside"></div>
+  <div class="rightside"></div>
     <video id="buildfly" onended="change()" autoplay muted>
       <source src="files\flythroughcut.mp4" type="video/mp4">
     </video>
@@ -69,7 +67,7 @@
     <img src="img\4_DaytonAerial3dFilter.png" id="daytonafter" alt="dayton-after" style="display:none;border-color:aquamarine">
   <figure>
 </div>
-  <hr style="background-color:aquamarine;grid-row: 5 / span 1;grid-column: 1/span all;">
+  <hr style="background-color:aquamarine;grid-row: 5;grid-column: left/span 3;">
 <div class="buttonarray">
   <button id="but1" onclick="view1(this)" style="color:yellow">study area</button>
   <button id="but2" onclick="view2(this)">transit</button>
@@ -83,26 +81,24 @@
   <img id="view4" src="img/PropSitePlan.png">
 </figure>
 <div class="bottomnav">
-    <a href="design.html" class="leftbutton">Back to Overview</a>
-    <a href="design-passaic.html" class="rightbutton">Next Project</a>
+    <a href="design-camden.html">Last</a>
+    <a href="design.html">Back to Overview</a>
+    <a href="design-passaic.html">Next</a>
 </div>
 </section>
 </body>
 <footer id="footer">
-  <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
-  <div class="footer-content">
-      <h6>
-        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <textbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <textbox id="doublebar3"><span><br></span></textbox>
-        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-      <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
-      </h6>
+  <div class="top">
+    <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
-  </section>
+  <div class="top-line">
+    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+    <a href="tel:+12026811138" target="_blank" class="tel"></a>
+  </div>
+  <div class="middle">
+    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+  </div>
 </footer>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -112,16 +108,14 @@
         $("#dropdown").css("display", "none");
       });
       $("#footer").hover(function(){
-        $("#footer").toggleClass("contact-open");
+        $("#footer").css("transform","translateY(-9vh)");
         }, function(){
-        $("#footer").toggleClass("contact-open");
+        $("#footer").css("transform","translateY(0vh)");
       });
     });
     window.onscroll = function() {myFunction()};
     var topnav = document.getElementById("topnav");
-    var sticky = topnav.offsetTop;
     var title1 = document.getElementById("titlea");
-    var title = title1.offsetTop
     var dropper = document.getElementById("dropdown");
     function myFunction() {
       if (window.pageYOffset > (window.innerHeight * .155)){

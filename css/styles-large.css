@@ -94,7 +94,6 @@ header {
   border-radius: 100px 0 0 100px;
   box-shadow: 0px 15px 20px -5px black;
 }
-
 @keyframes name {
   0%   {color:salmon}
   50% {color:tan}
@@ -144,7 +143,7 @@ nav ol li {
   margin-right: 5vw;
   cursor: pointer;
   flex-basis: 18vw;
-  min-height: 4vh;
+  min-height: 2em;
   background: white;
   text-decoration: overline;
   text-transform: lowercase;
@@ -284,7 +283,7 @@ nav ol li:hover {
  transition-duration: .35s;
 }
 .card {
-  grid-column: 2/span 3;
+  grid-column: left /span 3;
   padding: 1vw;
   border-radius: 10px;
   border-top: 5px double black;
@@ -296,11 +295,10 @@ nav ol li:hover {
   background-size: auto auto, 6em auto;
 }
 .toobig {
-  width:66%;
-  text-align-last: center;
-  margin:auto;
-  margin-bottom: 2em;
+  margin-right: 10vw;
+  margin-left: 10vw;
 }
+
 article p::first-line {
   background-color: dimgray;
   font-variant: small-caps;
@@ -330,115 +328,92 @@ article h3 {
   border-radius: 5px;
   font-size: 5vh;
 }
-.show {
- display:none;
+#pagetog {
+  display: none;
 }
 
-.card-left {
-  width: 100%;
- grid-area: 1/2/span 1/span 1;
- height:38em;
- float: right;
- position: relative;
- padding-top: 2.5%;
- padding-bottom:2.5%;
- background-color: black;
- box-shadow: inset 0px 0px 10px 1px black;
- border-radius: 10px;
- margin-top: 1em;
- margin-right: .5em;
- margin-bottom: 1em;
+.card-left, .card-right {
+  max-width:38vw;
+  letter-spacing: .1vw;
+  text-align:left;
+  display:flex;
+  flex-direction: column;
+  padding: 1em;
+  font-size: 1.25em;
+  border-radius: 10px;
+  text-align: left;
+  justify-content:center;
+  align-content:stretch;
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  background-blend-mode:screen;
 }
-.card-left h1 {
- color: white;
- text-shadow:none;
- font-size: 1.2em;
- margin-top: 20%;
- margin-bottom: auto;
- text-align:justify;
- text-align-last:left;
- line-height: 1.5;
+.card-left {
+  grid-column: left/span 1;
+  background-color: grey;
+  box-shadow: inset 0px 0px 10px 1px black;
 }
 .card-right {
-  grid-area: 1/4/span 1/span 1;
- display: block;
- position: relative;
- width: 100%;
- height:38em;
- padding-top: 10%;
- padding-bottom: 10%;
- background-color: papayawhip;
- box-shadow: inset 0px 0px 10px 1px black;
- border-radius: 10px;
- margin-top: 1em;
- margin-left: .5em;
- margin-bottom: 1em;
+  grid-column: right/span 1;
+  background-color: papayawhip;
+  box-shadow: inset 0px 0px 10px 1px black;
 }
 .card-right .link {
-   display: block;
-   text-align: center;
-   background: none;
-   font-size: 24px;
-   text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
-   text-transform: lowercase;
-   letter-spacing: 6px;
-   color: dimgrey;
-   border-top: 4px dimgrey solid;
-   border-left: 1px dimgrey solid;
-   border-right: 1px dimgrey solid;
-   border-radius: 8px;
-   box-shadow: 0px -5px 8px 0px rgba(55, 250, 150,.75);
-   width: 90%;
-   padding: .2em;
-   margin-left: auto;
-   margin-right: auto;
- }
+    align-self: center;
+    text-align: center;
+    background: none;
+    text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
+    text-transform: lowercase;
+    color: dimgrey;
+    border-top: 4px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    border-radius: 8px;
+    box-shadow: 0px -5px 8px 0px rgba(55, 250, 150,.75);
+    width: 95%;
+    padding: .1em;
+  }
 .card-right .link:hover {
-   color: rgba(200, 250, 0);
-   background-color: grey;
-   border-top: 4px black solid;
-   border-left: 1px black solid;
-   border-right: 1px black solid;
-   text-shadow:0px 0px 10px yellow;
-   box-shadow: inset 0px 5px 5px 1px black;
-   }
+    color: rgba(200, 250, 0);
+    background-color: grey;
+    border-top: 4px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    text-shadow:0px 0px 10px yellow;
+    box-shadow: inset 0px 5px 5px 1px black;
+    }
 .card-right h1 {
- color:dimgrey;
- font-size: 1.5em;
- margin: 0;
- margin-bottom: 1em;
- text-align: center;
- font-weight: bold;
- text-transform: lowercase;
- text-shadow: 3px 3px 5px;
- text-decoration: overline;
+  color:dimgrey;
+  font-size: 1.75em;
+  font-weight: bold;
+  text-transform: lowercase;
+  text-shadow: 3px 3px 5px;
+  text-decoration: overline;
 }
 .leftside {
- position:fixed;
- float: left;
- z-index: -1;
- left:0;
- background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
- height: 100vh;
- width: 7vw;
- top:0%;
- margin: 0;
+  position: fixed;
+  z-index: -1;
+  top:0;
+  left:0;
+  grid-column: l-gutter / span 1;
+  grid-row: 1 / span 8;
+  background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
+  height: 100%;
+  width: 7vw;
 }
-
 .rightside {
- position: fixed;
- float: right;
- z-index: -1;
- right:0;
- background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
- height: 100vh;
- width: 7vw;
- top:0%;
- margin: 0;
+  position: fixed;
+  right:0;
+  top:0;
+  z-index: -1;
+  grid-column: r-gutter / span 1;
+  grid-row: 1 / span 8;
+  background-image:repeating-linear-gradient(white, grey .25%, antiquewhite .5%);
+  height: 100%;
+  width: 7vw;
 }
-
 .general-link {
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   display: block;
   text-align: center;
   background: none;
@@ -498,31 +473,32 @@ article h3 {
  .column-main {
    width:100%;
    display: grid;
-   grid-template-columns: 10vw 38vw 4vw 38vw 10vw;
-   grid-template-rows: auto auto auto auto auto auto auto auto;
+   grid-template-columns:[l-gutter] 7fr [useless-l] 3fr [left] 38fr [c-gutter] 4fr [right] 38fr [useless-r] 3fr [r-gutter] 7fr;
+   grid-template-rows: [splash] auto [splash-b] auto repeat(6, auto);
    grid-row-gap: 5vh;
    grid-column-gap: 0%;
    justify-content: center;
    animation-name: columnenter;
    animation-duration: 1s;
    animation-delay: 0s;
+   margin-bottom: 5vh;
  }
 .column-main hr {
-  grid-column: 2/ span 3;
- background-image: url("iron-grip.png");
- background-size: 20em 25em;
- background-color: teal;
- width: 90%;
- height: 2.5em;
- border-left: 1em black solid;
- border-right: 1em black solid;
- box-shadow: inset 0 0 10px #000000;
+  grid-column: left / span 3;
+  grid-row: 3;
+  background-image: url("iron-grip.png");
+  background-size: 20em 25em;
+  background-color: teal;
+  width: 90%;
+  height: 2.5em;
+  border-left: 1em black solid;
+  border-right: 1em black solid;
+  box-shadow: inset 0 0 10px #000000;
  }
 @keyframes columnenter {
  0% {filter: blur(100px);opacity:.25}
  100% {filter: blur(0px);opacity:1}
 }
-
 * {
  box-sizing: border-box;
 }
@@ -550,7 +526,7 @@ p {
  text-align-last: left;
 }
 h1 {
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
  text-shadow: 3px 3px 3px grey;
  font-size: 3vh;
  font-weight: lighter;
@@ -562,7 +538,6 @@ h1 {
  color: white;
  letter-spacing:.15em;
  line-height: 1.25;
- box-shadow: None;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
@@ -570,15 +545,12 @@ scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 h2 {
  position:relative;
  text-shadow: 3px 3px 3px grey;
- border-radius: 25px;
- background-color: none;
  font-size: 2em;
  margin-bottom: .5em;
- text-align: center;
+ text-align: left;
  text-transform: lowercase;
  color: white;
- letter-spacing:.5em;
- box-shadow: None;
+ letter-spacing:.15em;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
@@ -625,158 +597,13 @@ h6 {
 h6 a:hover {
  color:orange
 }
-footer {
-  margin-top: 6vh;
-}
-.footer {
- z-index: 1;
- text-align: center;
- position: fixed;
- bottom: -9vh;
- height: 9vh;
- width: 100%;
- padding-left: 5%;
- padding-right: 5%;
- word-break: keep-all;
- background-color:dimgray;
- box-shadow: inset 2px 8px 10px 0px black;
- -webkit-transition-duration: 0.35s;
- transition-duration: .35s;
-}
-
-.contact-open .footer {
- transform: translateY(-9vh);
- -webkit-transition-duration: 0.25s;
- transition-duration: .25s;
-}
-.footer:hover .contact {
-   background-color: darkslategray;
-   -webkit-filter: invert(0);
-   filter: invert(0);
-}
-#doublebar span {
-  display: none;
-}
-#doublebar:before {
-  content: " ║ ";
-}
-#doublebar2 span {
-  display: none;
-}
-#doublebar2:before {
-  content: "";
-}
-#doublebar3:before {
-  content: " ║ ";
-}
-.contact {
-   height: 3.75vh;
-   display: block;
-   position: relative;
-   margin-left: auto;
-   margin-right: auto;
-   background: grey;
-   border-top-left-radius: 5px;
-   border-top-right-radius: 5px;
-   box-shadow: inset 0px 5px 10px 0px white;
-   padding-top:1vh;
-   padding-bottom: .5em;
-   padding-left: 2vw;
-   padding-right: 2vw;
-   top: -3.75vh;
-   -webkit-transition-duration: 0.35s;
-   transition-duration: .35s;
-}
-.contact:hover {
- background-color: black;
- -webkit-transition-duration: 0.35s;
- transition-duration: .35s;
-}
-
-.footer-content {
- color: white;
- display: flex;
- justify-content: center;
- position: relative;
- top: -4.5vh;
- font-size: 2vh;
- letter-spacing: .25vw;
- line-height: 130%;
- width: 100%;
-}
-
-.img-links {
- position: relative;
- vertical-align: middle;
- width: 9vw;
- color: white;
- -webkit-filter: invert(1);
- filter: invert(1);
-}
-.other-links:hover {
- color: aquamarine;
- cursor:pointer;
- -webkit-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
- -webkit-transition-duration: 0.25s;
- transition-duration: .25s;
-}
-.show-hide {
- display:block;
- width:100%;
- font-size: 2em;
- color:grey;
- text-shadow: none;
- position: absolute;
- line-height: .5;
- float: left;
- margin-left: auto;
- margin-right: auto;
- cursor:pointer;
- -webkit-transition-duration: 0.25s;
- transition-duration: .25s;
- -webkit-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
-}
-.other-links:hover .show-hide {
- display:block;
- color:inherit;
- text-decoration: overline;
- width:100%;
- position: absolute;
- line-height: .5;
- float: left;
- margin-left: auto;
- margin-right: auto;
- cursor:pointer;
- -webkit-transition-duration: 0.25s;
- transition-duration: .25s;
- -webkit-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
-}
-.image {
- width: 95%;
- margin-left: 2.5%;
- margin-right: 2.5%;
- border: 5px lightsteelblue inset;
-}
-
 .image-title {
- display: flex;
- position: relative;
- flex-direction: row;
- flex-wrap:wrap;
+  grid-row: splash;
+  grid-column: left/span 3;
  align-items: center;
  justify-content:space-around;
  height: 100%;
-}
-.image-title h2 {
+  grid-column: right/span 1;
  animation-name: title;
  animation-duration: 2s;
  animation-delay: 1s;
@@ -786,23 +613,27 @@ footer {
 50% {color:aquamarine;transform:scale(1.5)}
 100% {color:white}
 }
-.image-title img{
- width: 50%;
+.image {
+  grid-column: left/span 1;
+  width: 100%;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border: 5px lightsteelblue inset;
 }
 
 .bottomnav {
   width: 100%;
   grid-row: 8 / span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-  align-self: center;
+  flex-direction: row;
+  align-items:center;
 }
-.leftbutton {
+.bottomnav a {
   width: 50%;
   padding: 1em;
+  margin: 1em;
   text-decoration: none;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
@@ -819,34 +650,10 @@ footer {
   border-bottom: 4px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
-  border-radius: 15px;
+  border-radius: 50px;
   box-shadow: 0px -5px 10px 0px;
 }
-.rightbutton {
-  margin:2vh;
-  width: 50%;
-  padding: 1em;
-  text-decoration: none;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  cursor: pointer;
-  color: dimgrey;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight:lighter;
-  text-shadow: 1px 1px 2px grey;
-  text-transform: lowercase;
-  letter-spacing: 3px;
-  background-color: papayawhip;
-  border-top: 4px dimgray solid;
-  border-bottom: 4px dimgrey solid;
-  border-left: 1px dimgrey solid;
-  border-right: 1px dimgrey solid;
-  border-radius: 15px;
-  box-shadow: 0px -5px 10px 0px;
-}
-
-.rightbutton:hover {
+.bottomnav a:hover {
   color: rgba(200, 250, 0);
   background-color: dimgrey;
   border-top: 4px black solid;
@@ -856,20 +663,9 @@ footer {
   text-shadow:0px 0px 10px yellow;
   box-shadow: inset 0px 5px 5px 1px black;
   }
-
-.leftbutton:hover {
-  color: rgba(200, 250, 0);
-  background-color: dimgrey;
-  border-top: 4px black solid;
-  border-bottom: 4px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  text-shadow:0px 0px 10px yellow;
-  box-shadow: inset 0px 5px 5px 1px black;
-}
 #title {
-  grid-row: 1;
-  grid-column: 2/span 3;
+  grid-row: splash;
+  grid-column: left/span 3;
   background-image: url("iron-grip.png");
   background-size: 20em .5em;
   background-color: rgba(0,255,255,.75);
@@ -887,12 +683,12 @@ footer {
   letter-spacing: .15em;
 }
 #buildfly {
-  grid-row: 1;
-  grid-column: 2/span 3;
+  grid-row: splash;
+  grid-column: left/span 3;
   margin: auto;
   display: block;
   max-height: 66vh;
-  max-width: 66%;
+  max-width: 66vw;
   align-content: center;
   z-index: 0;
   background-color: orange;
@@ -900,11 +696,11 @@ footer {
   box-shadow: 2px 2px 20px 2px aqua;
 }
 #artistic {
-  grid-row: 1;
-  grid-column: 2/span 3;
+  grid-row: splash;
+  grid-column: left/span 3;
   display: block;
   max-height: 66vh;
-  max-width: 66%;
+  max-width: 66vw;
   margin: auto;
   align-content: center;
   z-index: 0;
@@ -913,26 +709,27 @@ footer {
   box-shadow: 2px 2px 20px 2px aqua;
 }
 .arrow-1 {
-  grid-row: 3 / span 1;
-  grid-column: 2/span 1;
+  grid-row: splash / span 1;
+  grid-column: useless-l / span 1;
   color: aqua;
-  margin: auto;
+  margin-top: auto;
   font-family: inherit;
-  font-size: 11vw;
+  font-size: 9vw;
   text-shadow: 2px 2px 1px yellow;
 }
 .arrow-2 {
-  grid-row: 3 / span 1;
-  grid-column: 4/span 1;
+  grid-row: splash / span 1;
+  grid-column: useless-r / span 1;
   color: aqua;
-  margin: auto;
+  width: 100%;
+  margin-top: auto;
   font-family: inherit;
-  font-size: 11vw;
+  font-size:9vw;
   text-shadow: 2px 2px 1px yellow;
 }
 .planimgs {
   grid-row: 4 / span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: 50% 50%;
@@ -1029,7 +826,7 @@ footer {
 }
 .buttonarray {
   grid-row: 6 / span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   display:flex;
   font-style: inherit;
   justify-content: space-between;
@@ -1066,30 +863,27 @@ footer {
   }
 .imgarray {
   grid-row: 7 / span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 3;
   width:100%;
-  max-height: 66vh;
+  height: 66vh;
   margin:auto;
   padding: 0;
-  overflow: hidden;
   margin-bottom: 3em;
   border-top: 1em double black;
   border-bottom: 1em double black;
 }
 .imgarray img {
   display:none;
-  object-fit:contain;
   object-position: center;
-  grid-row: 7 / span 1;
-  grid-column: 2/span 3;
-  width: 100%;
+  object-fit:scale-down;
+  height: 100%;
+  max-width: 100%;
   margin: auto;
   border:none;
 }
-
 .look-button {
   display: block;
-  height: 8vh;
+  height: 5vh;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: .5em;
@@ -1103,41 +897,118 @@ footer {
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
 }
-@media screen and (min-width: 1024px) {
-  #doublebar2 {
-    display: block;
-  }
-  #doublebar2:before {
-    content: "";
-  }
-  #doublebar3 span {
-    display: none;
-    }
-  }
-@media screen and (min-width: 1125px) {
-  article p::first-line {
-    background-color: dimgray;
-    font-variant: small-caps;
-    color: white;
-    letter-spacing: .3vw;
-    text-shadow: 2px 2px 2px black;
-  }
-  article p::first-letter {
-    font-weight: 900;
-    font-size: 2vw;
-
-  }
+footer {
+  position: fixed;
+  display: grid;
+  grid-template-columns: [l-garbage] 5vw [content] 90vw [r-garbage] 5vw;
+  grid-template-rows: [top] 4vh [top-line] 4vh [middle] 4vh 1vh;
+  max-width: 100%;
+  height: 13vh;
+  color: white;
+  justify-content:space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 2vh;
+  letter-spacing: .25vw;
+  line-height: 130%;
+  word-break: keep-all;
+  margin: 0;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+  bottom:-9.5vh;
+}
+footer::after {
+  content:"";
+  z-index: -1;
+  grid-row: top-line/span 3;
+  grid-column: content;
+  background-color: dimgrey;
+  box-shadow: inset 2px 8px 10px 0px black;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+.top  {
+  grid-row: top/span 1;
+  grid-column: content;
+}
+.top img {
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  justify-content:center;
+  padding: .3em;
+  padding-bottom: .5em;
+  height: 4vh;
+  background: grey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: inset 0px 5px 10px 0px white;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: .35s;
+}
+.top img:hover {
+  background-color: darkslategray;
+ -webkit-transition-duration: 0.35s;
+ transition-duration: .35s;
+ filter: contrast(140%);
+}
+.top-line {
+  grid-row: top-line/span 1;
+  grid-column: content;
+  align-self:flex-end;
+}
+.address::before {
+  content:"521 Washington St #3, Hoboken, NJ 07030";
+}
+.tel::before {
+  content: " ║ (202) 681-1138";
+}
+.middle {
+  grid-row: middle/span 1;
+  grid-column: content;
+  align-self:flex-start;
+}
+.email:before {
+  content: "nterwin714@gmail.com";
+}
+.email:after {
+  content: " ║ ";
+}
+.linked img {
+  position: relative;
+  filter: invert(1);
+  height: 1.5em;
+  bottom: -.5em;
+}
+.linked::after {
+  content:"|nterwin714";
+}
+@media screen and (min-width: 1100px) {
   article {
-    max-height:80vh;
-    font-size: .72vw;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    font-size: 1.15em;
     border-radius: 15px;
     text-indent: .5em;
+    overflow-x: scroll;
     background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 1.5%, rgba(0,0,0,0) 98.5%,white 100%), url("light-wool.png");
     background-color: tan;
-    column-count: 3;
+    column-count: 2;
     column-gap: 1.5vw;
     padding: 2em;
+    padding-bottom: 1em;
     box-shadow: inset 2px 2px 10px 5px;
+    max-height: 66vh;
+  }
+  article::after{
+    content: "\26AB \26AB \26AB \26AB \26AB";
+    text-shadow: 2px 3px 1px salmon;
+    line-height: 5vh;
+    display: flex;
+    letter-spacing: 1vw;
+    padding-left: 20%;
+    flex-direction: row;
   }
   article h3 {
     margin-top: 0;
@@ -1147,7 +1018,43 @@ footer {
     border-radius: 5px;
     font-size: 2vw
   }
-  .img-links{
-    width:9vh
+  #pagetog {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #pagetog button {
+    height: auto;
+    width: 15%;
+    overflow: hidden;
+    text-shadow: 3px 3px 5px grey;
+    background-color:antiquewhite;
+    color: salmon;
+    border-color: salmon;
+    text-align: center;
+    border-radius:10px;
+    font-family: inherit;
+    font-size: 2.75em;
+    line-height:1;
+    cursor: pointer;
+    transform-origin: center;
+    -webkit-transition-duration:.7s;
+    transition-duration: .7s;
+    box-shadow: inset 2px 2px 10px 1px black;
+  }
+  #pagetog button:hover {
+    text-shadow: 0px 0px 0px white;
+    color: orange;
+    background-color: black;
+    border: 2px white solid;
+    -webkit-transition-duration:.7s;
+    transition-duration: .7s;
+  }
+  #pagetog-l {
+    left:12%;
+  }
+  #pagetog-r {
+    right:12%;
   }
 }

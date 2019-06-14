@@ -12,6 +12,7 @@
   <link rel="shortcut icon" href="img\logo2.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -45,15 +46,11 @@
       <div class="flair-before"></div>
       <div class="flair-after"></div>
     </nav>
-  </section>
-  <section class="leftside">
-  </section>
-  <section class="rightside">
-  </section>
 </header>
 <body>
 <section class="column-main">
-  <br>
+  <div class="leftside"></div>
+  <div class="rightside"></div>
   <div class="card-left">
     <p>Understand and get a feel for my writing style. See the links below for a report I produced during the summer of 2018, and an assessment of a redevelopment project in Washington, DC, from the Spring of 2017. You can also find some informal blog posts of mine, which will update every now and then.<br><br><span style="font-size:60px;writing-mode:vertical-rl">&#10170;</span></p>
   </div>
@@ -70,9 +67,8 @@
   </div>
   <hr>
   <h1 style="color:black;text-decoration:overline">Straight Outta the Noggin</h1>
-  <br>
   <div class="card" style="background-color:lightsalmon">
-  <article>
+  <article id="article">
     <h3>First Thoughts</h3>
     <h4>February 20th, 2019</h4>
       <p>I wake from another frustrating dream. Yes, I am a little sweaty again, and my head hurts. The glare of the sun illuminates the grime on my windows. Through them, a snapshot of a cityscape that has changed little in sixty years; dirty facades, decrepit husks of acceptable mid-century apartments. In the distance, there is a fashionable modern gym. The little specks of human constantly huff, guffaw, and vibrate. You can feel their quixotic zeal to get “in shape” from my worn-out apartment across the way. </p>
@@ -82,42 +78,32 @@
       <p>It is certainly true that these devices have also converted humans into intelligent machines. We have a heretofore unimaginable breadth of information at the push of a button (or simply by speaking a phrase—“Ok Google”) and can accomplish a wide variety of tasks and communications at the speed of light. Though, what is our relationship to this technology? Where is it headed? Is it an inevitable force, now?</p>
       <p>Starting with the latter, yes. Our world is so intertwined with digital devices it is unlikely we will drop our penchant for them. Even today, it is common for children to start carrying a personal smartphone at some point in elementary school. Thus, we need to start asking what our <strong>relationship <em>should be</em></strong> with this technology, and how to make it benefit us even more.
   </article>
-</div>
+  <div id="pagetog">
+    <button id="pagetog-l"><<<</button>
+    <button id="pagetog-r">>>></button>
+  </div>
+  </div>
 </section>
 </body>
 <footer id="footer">
-  <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
-  <div class="footer-content">
-      <h6>
-        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <textbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <textbox id="doublebar3"><span><br></span></textbox>
-        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
-      </h6>
+  <div class="top">
+    <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
-  </section>
+  <div class="top-line">
+    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+    <a href="tel:+12026811138" target="_blank" class="tel"></a>
+  </div>
+  <div class="middle">
+    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+  </div>
 </footer>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $("#dropdown-title,#dropdown").hover(function(){
-        $("#dropdown").css("display", "flex");
-        }, function(){
-        $("#dropdown").css("display", "none");
-      });
-      $("#footer").hover(function(){
-        $("#footer").toggleClass("contact-open");
-        }, function(){
-        $("#footer").toggleClass("contact-open");
-      });
-    });
-    window.onscroll = function() {myFunction()};
+    var art = document.getElementById("article");
     var topnav = document.getElementById("topnav");
     var title1 = document.getElementById("titlea");
     var dropper = document.getElementById("dropdown");
+    window.onscroll = function() {myFunction()};
     function myFunction() {
       if (window.pageYOffset > (window.innerHeight * .155)){
         topnav.classList.add("sticky");
@@ -128,5 +114,33 @@
         title1.classList.remove("stickytitle");
         dropper.classList.remove("stickydrop");
       }};
+$(document).ready(function(){
+  $("#dropdown-title,#dropdown").hover(function(){
+    $("#dropdown").css("display", "flex");
+    }, function(){
+    $("#dropdown").css("display", "none");
+  });
+  $("#footer").hover(function(){
+    $("#footer").css("transform","translateY(-9vh)");
+    }, function(){
+    $("#footer").css("transform","translateY(0vh)");
+  });
+  $("#pagetog-l").hover(function(){
+    $("#pagetog-l").text("<");
+    }, function(){
+      $("#pagetog-l").text("<<<");
+  });
+  $("#pagetog-r").hover(function(){
+    $("#pagetog-r").text(">");
+    }, function(){
+      $("#pagetog-r").text(">>>");
+  });
+  $("#pagetog-r").click(function(){
+    art.scrollLeft += (art.scrollWidth/2);
+  });
+  $("#pagetog-l").click(function(){
+    art.scrollLeft -= (art.scrollWidth/2);
+  });
+});
 </script>
 </html>

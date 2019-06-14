@@ -46,25 +46,25 @@
       <div class="flair-after"></div>
     </nav>
   </section>
-  <section class="leftside">
-  </section>
-  <section class="rightside">
-  </section>
 </header>
 <body>
 <section class="column-main">
-  <br>
+  <div class="leftside"></div>
+  <div class="rightside"></div>
+  <img src="img\me.JPG" class="image">
+  <h2 class="image-title">Welcome</h2>
   <div class="card"  style="background-color:black">
-    <div class="image-title">
-      <img src="img\me.JPG" class="image">
-      <h2>Welcome</h2>
-    </div><br>
     <article>
     <p>Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.</p>
     <p>Our communities have radically restructured multiple times in the last century—adapting to mass migrations, technological revolutions, etc. Now, technologists and leaders the world over are back at the gates sounding the alarm. Internet services, automation, and climate change are unravelling decades long consensuses; the creeping sense of disorder is pungent, spanning dating to employment. We can continue groping in the dark, or we can shape the new paradigm.</p>
     <p>A century ago we responded to change by segregating communities, fleeing cities, and abandoning nature. Urban design must now think beyond the building envelope, visualizing cities as living organisms and narratives. Harness change by embedding human capital and sustainability into its logic. Pursuing dense walkable communities that feel spacious, mitigate pollution and runoff, improve mobility and provide space for people to grow and collaborate.</p>
     <p>I built and coded this website from the ground up. Though unfinished, this space stands as testament to the works and story of my life. Check the menu for pages detailing my experiences, work and writings.</p>
-  </article>
+    </article>
+    <div id="pagetog">
+      <button id="pagetog-l"><<<</button>
+      <button id="pagetog-r">>>></button>
+    </div>
+  <button class="pagetog" id="pagetog"></button>
   </div>
   <div class="card" style="background-color: silver">
     <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="30%">
@@ -77,23 +77,20 @@
 </section>
 </body>
 <footer id="footer">
-  <section class="footer">
-  <img src="img/contact-me.png" alt="contact-me" class="contact"><br>
-  <div class="footer-content">
-      <h6>
-        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank">521 Washington St #3, Hoboken, NJ 07030</a>
-        <textbox id="doublebar"><span><br></span></textbox>
-        <a href="tel:+12026811138" target="_blank">(202) 681-1138</a><textbox id="doublebar2"></textbox>
-        <a href="mailto: nterwin714@gmail.com" target="_blank">nterwin714@gmail.com</a>
-        <textbox id="doublebar3"><span><br></span></textbox>
-        <a href="https://linkedin.com/in/nterwin714" class="home-links" target="_blank">
-        <img src="img\Logo-Black-128px-R.png" alt="linkedIn logo" class="img-links">|nterwin714</a>
-      </h6>
+  <div class="top">
+    <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
-  </section>
+  <div class="top-line">
+    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+    <a href="tel:+12026811138" target="_blank" class="tel"></a>
+  </div>
+  <div class="middle">
+    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+  </div>
 </footer>
-</html>
 <script type="text/javascript">
+var art = document.getElementById("article");
 $(document).ready(function(){
   $("#dropdown-title,#dropdown").hover(function(){
     $("#dropdown").css("display", "flex");
@@ -101,23 +98,40 @@ $(document).ready(function(){
     $("#dropdown").css("display", "none");
   });
   $("#footer").hover(function(){
-    $("#footer").toggleClass("contact-open");
+    $("#footer").css("transform","translateY(-9vh)");
     }, function(){
-    $("#footer").toggleClass("contact-open");
+    $("#footer").css("transform","translateY(0vh)");
+  });
+  $("#pagetog-l").hover(function(){
+    $("#pagetog-l").text("<");
+    }, function(){
+      $("#pagetog-l").text("<<<");
+  });
+  $("#pagetog-r").hover(function(){
+    $("#pagetog-r").text(">");
+    }, function(){
+      $("#pagetog-r").text(">>>");
+  });
+  $("#pagetog-r").click(function(){
+    art.scrollLeft += (art.scrollWidth/2);
+  });
+  $("#pagetog-l").click(function(){
+    art.scrollLeft -= (art.scrollWidth/2);
   });
 });
-window.onscroll = function() {myFunction()};
-var topnav = document.getElementById("topnav");
-var title1 = document.getElementById("titlea");
-var dropper = document.getElementById("dropdown");
-function myFunction() {
-  if (window.pageYOffset > (window.innerHeight * .155)){
-    topnav.classList.add("sticky");
-    dropper.classList.add("stickydrop");
-    title1.classList.add("stickytitle");
-  } else {
-    topnav.classList.remove("sticky");
-    title1.classList.remove("stickytitle");
-    dropper.classList.remove("stickydrop");
-  }};
+    window.onscroll = function() {myFunction()};
+    var topnav = document.getElementById("topnav");
+    var title1 = document.getElementById("titlea");
+    var dropper = document.getElementById("dropdown");
+    function myFunction() {
+      if (window.pageYOffset > (window.innerHeight * .155)){
+        topnav.classList.add("sticky");
+        title1.classList.add("stickytitle");
+        dropper.classList.add("stickydrop");
+      } else {
+        topnav.classList.remove("sticky");
+        title1.classList.remove("stickytitle");
+        dropper.classList.remove("stickydrop");
+      }};
 </script>
+</html>
