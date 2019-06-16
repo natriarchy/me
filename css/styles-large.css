@@ -1,4 +1,4 @@
-header {
+#header {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -17,7 +17,7 @@ header {
   width: 100vw;
   top:0;
   margin: 0;
-  margin-bottom: -1em;
+  margin-bottom: 0em;
   box-shadow: inset 0px 0px 20px 0px black;
   }
 .matterhorn {
@@ -102,7 +102,8 @@ header {
   0%   {color:salmon}
   50% {color:tan}
 }
- nav {
+#topnav {
+  all:unset;
   display: grid;
   grid-template-columns: 7% 86% 7%;
   grid-template-rows: 8vh 7vh auto;
@@ -239,9 +240,9 @@ nav ol li:hover {
 #dropdown-title:hover {
   box-shadow:none;
 }
-.sticky {
+#topnav.sticky {
  position: fixed;
- top: 2vh;
+ top: 3vh;
  width:100%;
  -webkit-transition-duration:.35s;
  transition-duration: .35s;
@@ -470,7 +471,8 @@ article h3 {
    z-index: 0;
    filter:saturate(120%)
  }
- .column-main {
+  #column-main {
+    all:unset;
    width:100%;
    display: grid;
    grid-template-columns:[l-gutter] 7fr [useless-l] 3fr [left] 38fr [c-gutter] 4fr [right] 38fr [useless-r] 3fr [r-gutter] 7fr;
@@ -483,7 +485,7 @@ article h3 {
    animation-delay: 0s;
    margin-bottom: 5vh;
  }
-.column-main hr {
+ #column-main hr {
   grid-column: left / span 3;
   grid-row: 3;
   background-image: url("iron-grip.png");
@@ -727,7 +729,7 @@ h6 a:hover {
   font-size:9vw;
   text-shadow: 2px 2px 1px yellow;
 }
-.planimgs {
+#planimgs {
   grid-row: 4 / span 1;
   grid-column: left/span 3;
   display: grid;
@@ -743,7 +745,7 @@ h6 a:hover {
   border-bottom: 2px salmon inset;
   border-radius:15px;
 }
-.planimgs figure {
+#planimgs figure {
   top:0;
   grid-area:1/1/span 2/span 1;
   width: 100%;
@@ -753,7 +755,7 @@ h6 a:hover {
   margin-bottom: 0;
   overflow: hidden;
   }
-.planimgs img {
+#planimgs img {
   display: flex;
   width:100%;
   border-radius:15px;
@@ -761,7 +763,7 @@ h6 a:hover {
   border: 4px orange inset;
   overflow:hidden;
   }
-.planimgs span  {
+#planimgs span  {
   grid-area:1/2/span 1/span 1;
   width:100%;
   display: flex;
@@ -771,11 +773,11 @@ h6 a:hover {
   text-align-last: center;
   color:white;
   text-shadow: 3px 3px 3px red;
-  font-size:5vw;
+  font-size:4vw;
   text-transform: lowercase;
   letter-spacing: .13em;
   }
-.planimgs div {
+#planimgs div {
   grid-area:2/2/span 1/span 1;
   display: flex;
   flex-flow: column;
@@ -787,7 +789,7 @@ h6 a:hover {
   margin-left: auto;
   margin-right: auto;
   }
-#button1,#button2 {
+#button1, #button2 {
   color:white;
   height: 8vh;
   flex-basis: 35%;
@@ -808,78 +810,100 @@ h6 a:hover {
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
   border-radius: 10px;
-}
+  }
   #button1:hover,#button2:hover {
     color: rgba(200, 250, 0);
-    background-color: darkslategray;
-    border-top: 4px black solid;
-    border-bottom: 1px black solid;
-    border-left: 2px black solid;
-    border-right: 1px black solid;
     text-shadow:0px 0px 10px yellow;
   }
-#button1 {
-  background-color: salmon;
+.activate {
+  box-shadow:inset 0px 5px 5px 1px black;
+  background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
+  color: mintcream;
+  text-shadow: 2px 2px 1px darkorange;
+  border-top: 4px black solid;
+  border-bottom: 1px black solid;
+  border-left: 2px black solid;
+  border-right: 1px black solid;
 }
-#button2 {
-  background-color: skyblue;
-}
-.buttonarray {
-  grid-row: 6 / span 1;
-  grid-column: left/span 3;
-  display:flex;
-  font-style: inherit;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 0;
-}
-.buttonarray button {
-  padding:.15em;
-  margin-top: .75em;
-  cursor: pointer;
-  color: aquamarine;
-  font-size: 2vw;
-  letter-spacing: .5vw;
-  text-shadow: 1px 1px 2px grey;
-  background-color: grey;
-  border-top: 4px dimgray solid;
-  border-bottom: 4px dimgrey solid;
+.deactivate {
+  background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
+  color:mintcream;
+  box-shadow:0px 5px 5px 1px black;
+  text-shadow: 2px 2px 1px purple;
+  border-top: 2px grey solid;
+  border-bottom: 4px black solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
-  border-radius: 5px;
-  box-shadow: 0px -5px 10px 0px;
 }
-  .buttonarray button:hover {
-    color: rgba(200, 250, 0);
-    background-color: dimgrey;
-    border-top: 4px black solid;
-    border-bottom: 4px black solid;
-    border-left: 1px black solid;
-    border-right: 1px black solid;
-    text-shadow:0px 0px 10px yellow;
-    box-shadow: inset 0px 5px 5px 1px black;
-  }
-.imgarray {
+#imgarray {
   grid-row: 7 / span 1;
   grid-column: left/span 3;
+  display: flex;
+  background-image: url("iron-grip.png");
+  box-shadow: inset 0px 5px 50px 10px black;
+  justify-content: center;
+  height:66vh;
   width:100%;
-  height: 66vh;
-  margin:auto;
+  margin:0;
   padding: 0;
+  border-radius: 15px;
+  background-image: linear-gradient();
   margin-bottom: 3em;
   border-top: 1em double black;
   border-bottom: 1em double black;
 }
-.imgarray img {
-  display:none;
-  object-position: center;
-  object-fit:scale-down;
+#imgarray img {
+  align-self: center;
+  max-width:100%;
+  max-height: 100%;
+}
+figcaption {
+  grid-row: 6/ span 2;
+  grid-column: left / span 3;
+  width:100%;
   height: 100%;
-  max-width: 100%;
-  margin: auto;
-  border:none;
+  margin:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#viewcap{
+  align-self:flex-end;
+  text-align: center;
+  text-indent: 0;
+  letter-spacing: .1em;
+  width:100%;
+  color: antiquewhite;
+  font-family: inherit;
+  font-size: 2em;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px red;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
+}
+#carrot1 {
+  text-align: left;
+  align-self:center;
+  color: aquamarine;
+  font-family: inherit;
+  font-size: 2.75em;
+  cursor: pointer;
+  transform: scaleY(1.75) scaleX(.75);
+  text-shadow: 2px 2px 2px black;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
+}
+#carrot2 {
+  text-align: right;
+  align-self:center;
+  color: aquamarine;
+  font-family: inherit;
+  font-size: 2.75em;
+  cursor: pointer;
+  transform: scaleY(1.75) scaleX(.75);
+  text-shadow: 2px 2px 2px black;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
 }
 .look-button {
   display: block;
@@ -897,6 +921,48 @@ h6 a:hover {
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
 }
+.bottomnav {
+  width: 100%;
+  grid-row: 8 / span 1;
+  grid-column: left/span 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.bottomnav a {
+  min-width: 25%;
+  padding: 1em;
+  margin: 1vw;
+  align-self: center;
+  text-decoration: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  cursor: pointer;
+  color: dimgrey;
+  text-align: center;
+  font-size: 2em;
+  font-weight:lighter;
+  text-shadow: 1px 1px 2px grey;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  background-color: papayawhip;
+  border-top: 4px dimgray solid;
+  border-bottom: 4px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
+  border-radius: 50px;
+  box-shadow: 0px -5px 10px 0px;
+}
+.bottomnav a:hover {
+  color: rgba(200, 250, 0);
+  background-color: dimgrey;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  text-shadow:0px 0px 10px yellow;
+  box-shadow: inset 0px 5px 5px 1px black;
+  }
 footer {
   position: fixed;
   display: grid;
@@ -979,7 +1045,6 @@ footer::after {
   position: relative;
   filter: invert(1);
   height: 1.5em;
-  bottom: -.5em;
 }
 .linked::after {
   content:"|nterwin714";

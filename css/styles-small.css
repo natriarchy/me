@@ -1,4 +1,4 @@
-header {
+#header {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -284,23 +284,22 @@ nav ol li:hover {
   font-size: 4vw;
   border-radius: 5px;
   text-align: left;
-  border-right: 0px;
-  border-left: 0px;
   padding: 2vw;
+  margin: unset;
   height:auto;
-  color:white;
+  color:black;
   justify-content:center;
   align-content:stretch;
   letter-spacing: .1vw;
 }
 .card-left {
-  grid-column: left/span 3;
+  grid-column: left/span 1;
   background-color: grey;
   box-shadow: inset 0px 0px 10px 1px black;
 }
 
 .card-right {
-  grid-column: left/span 3;
+  grid-column: left/span 1;
   background-color: papayawhip;
   box-shadow: inset 0px 0px 10px 1px black;
 }
@@ -360,7 +359,7 @@ nav ol li:hover {
 }
 
 .general-link {
-  grid-column: left/span 3;
+  grid-column: left/span 1;
   display: block;
   text-align: center;
   background: none;
@@ -443,8 +442,9 @@ nav ol li:hover {
   #pagetog {
     display: none;
   }
-.column-main {
-    width:100%;
+#column-main {
+    all:unset;
+    width:100vw;
     display: grid;
     grid-template-columns:[l-gutter] 3fr [useless-l] 0fr [left] 94fr [c-gutter] 0fr [right] 0fr [useless-r] 0fr [r-gutter] 3fr;
     grid-template-rows: [splash] auto [splash-b] auto repeat(6, auto);
@@ -456,8 +456,8 @@ nav ol li:hover {
     animation-delay: 0s;
     margin-bottom: 5vh;
   }
- .column-main hr {
-   grid-column: left / span 3;
+ #column-main hr {
+   grid-column: left;
    grid-row: 3;
    background-image: url("iron-grip.png");
    background-size: 20em 25em;
@@ -513,12 +513,11 @@ p {
  text-align-last: left;
 }
 h1 {
-  grid-column: left/span 3;
- text-shadow: 3px 3px 3px grey;
+  grid-column: left;
+  text-shadow: 3px 3px 3px grey;
  font-size: 3vh;
  font-weight: lighter;
- margin-left: 1em;
- margin-right: em;
+ margin:.5em;
  text-align:center;
  text-align-last: center;
  color: white;
@@ -584,7 +583,7 @@ h6 a:hover {
  color:orange
 }
 .image {
-  grid-column: left/span 1;
+  grid-column: left;
   width: 95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
@@ -592,7 +591,7 @@ h6 a:hover {
 }
 
 .image-title {
-  grid-column: left/span 1;
+  grid-column: left;
   grid-row: 1;
   margin: 0;
   display: flex;
@@ -618,7 +617,7 @@ h6 a:hover {
 }
 #title {
   grid-row: 1;
-  grid-column: left/span 3;
+  grid-column: left;
   display: flex;
   background-image: url("iron-grip.png");
   background-size: 20em .5em;
@@ -627,7 +626,7 @@ h6 a:hover {
   align-self: stretch;
   justify-content:stretch;
   text-align: center;
-  width: 96%;
+  width: 100%;
   min-height: 10vh;
   margin: auto;
   z-index: 1;
@@ -639,7 +638,7 @@ h6 a:hover {
 }
 #buildfly {
   grid-row: 2/ span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 1;
   width: 100%;
   height: 30vh;
   object-fit: fill;
@@ -649,7 +648,7 @@ h6 a:hover {
 }
 #artistic {
   grid-row: 2;
-  grid-column: 2/span 3;
+  grid-column: left/span 1;
   height: 30vh;
   width: 100%;
   z-index: 0;
@@ -658,7 +657,7 @@ h6 a:hover {
 }
 .arrow-1 {
   grid-row: 3 / span 1;
-  grid-column: 2/span 1;
+  grid-column: l-gutter/span 1;
   color: aqua;
   margin: auto;
   font-family: inherit;
@@ -667,16 +666,16 @@ h6 a:hover {
 }
 .arrow-2 {
   grid-row: 3 / span 1;
-  grid-column: 4/span 1;
+  grid-column: r-gutter/span 1;
   color: aqua;
   margin: auto;
   font-family: inherit;
   font-size: 11vw;
   text-shadow: 2px 2px 1px yellow;
 }
-.planimgs {
+#planimgs {
   grid-row: 4 / span 1;
-  grid-column: 2/span 3;
+  grid-column: left/span 1;
   background-color: tan;
   background-image: url(light-wool.png);
   width: 100%;
@@ -687,7 +686,7 @@ h6 a:hover {
   border-bottom: 2px salmon inset;
   border-radius:15px;
 }
-.planimgs figure {
+#planimgs figure {
   top:0;
   max-width: 100%;
   margin-left: auto;
@@ -696,7 +695,7 @@ h6 a:hover {
   margin-bottom: 0;
   overflow: hidden;
   }
-.planimgs img {
+#planimgs img {
   display: flex;
   width:100%;
   border-radius:15px;
@@ -704,7 +703,7 @@ h6 a:hover {
   border: 4px orange inset;
   overflow:hidden;
   }
-.planimgs span  {
+#planimgs span  {
   display: flex;
   flex-wrap: wrap;
   flex-flow: column;
@@ -717,7 +716,7 @@ h6 a:hover {
   text-transform: lowercase;
   letter-spacing: .13em;
   }
-.planimgs div {
+#planimgs div {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
@@ -728,10 +727,9 @@ h6 a:hover {
   margin-left: 10%;
   margin-right: 10%;
   }
-#button1,#button2 {
-  color:white;
+#button1, #button2 {
   height: 8vh;
-  flex-basis: 35%;
+  width: 45%;
   margin-top: .5em;
   margin-bottom: .5em;
   cursor: pointer;
@@ -739,91 +737,112 @@ h6 a:hover {
   transition-duration: .25s;
   font-weight: bold;
   text-align: center;
-  text-shadow: 3px 3px 5px black;
   text-transform: lowercase;
   letter-spacing: 2px;
   font-size: 1.5em;
   font-family: "Century Gothic", sans-serif;
-  border-top: 2px grey solid;
-  border-bottom: 4px dimgrey solid;
-  border-left: 1px dimgrey solid;
-  border-right: 1px dimgrey solid;
   border-radius: 10px;
-}
+  }
   #button1:hover,#button2:hover {
     color: rgba(200, 250, 0);
-    background-color: darkslategray;
-    border-top: 4px black solid;
-    border-bottom: 1px black solid;
-    border-left: 2px black solid;
-    border-right: 1px black solid;
     text-shadow:0px 0px 10px yellow;
   }
-#button1 {
-  background-color: salmon;
+.activate {
+  box-shadow:inset 0px 5px 5px 1px black;
+  background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
+  color: mintcream;
+  text-shadow: 2px 2px 1px darkorange;
+  border-top: 4px black solid;
+  border-bottom: 1px black solid;
+  border-left: 2px black solid;
+  border-right: 1px black solid;
 }
-#button2 {
-  background-color: skyblue;
-}
-.buttonarray {
-  grid-row: 6 / span 1;
-  grid-column: 2/span 3;
-  display:flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 0;
-}
-.buttonarray button {
-  padding:.15em;
-  margin-top: .75em;
-  margin-bottom: .75em;
-  cursor: pointer;
-  color: aquamarine;
-  font-size: 1.1em;
-  text-shadow: 1px 1px 2px grey;
-  font-variant: small-caps;
-  background-color: grey;
-  border-top: 4px dimgray solid;
-  border-bottom: 4px dimgrey solid;
+.deactivate {
+  background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
+  color:mintcream;
+  box-shadow:0px 5px 5px 1px black;
+  text-shadow: 2px 2px 1px purple;
+  border-top: 2px grey solid;
+  border-bottom: 4px black solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
-  border-radius: 5px;
-  box-shadow: 0px -5px 10px 0px;
 }
-  .buttonarray button:hover {
-    color: rgba(200, 250, 0);
-    background-color: dimgrey;
-    border-top: 4px black solid;
-    border-bottom: 4px black solid;
-    border-left: 1px black solid;
-    border-right: 1px black solid;
-    text-shadow:0px 0px 10px yellow;
-    box-shadow: inset 0px 5px 5px 1px black;
-  }
-.imgarray {
-  grid-row: 7 / span 1;
+#imgarray {
+  all:unset;
+  background-image: url("iron-grip.png");
+  border: 4px aquamarine inset;
+  box-shadow: 2px 2px 20px 2px aqua;  grid-row: 7 / span 1;
   grid-column: left/span 1;
-  max-height:50vh;
-  width:auto;
+  display: flex;
+  flex-direction: row;
+  height:50vh;
+  width:100%;
   margin:0;
   padding: 0;
-  overflow: hidden;
+  overflow: scroll;
   margin-bottom: 3em;
 }
-.imgarray img {
-  display:none;
+#imgarray img {
+  object-fit:fill;
+  object-position:center;
   grid-row: 7 / span 1;
   grid-column: 1/span 5;
-  object-fit:cover;
-  width:100%;
-  margin: 0;
-  border:none;
-  border-top: 1em double black;
-  border-bottom: 1em double black;
+  margin: auto;
+  min-height: 80%;
+  max-width: 100%
 }
-
+figcaption {
+  grid-row: 6/ span 2;
+  grid-column: left / span 1;
+  z-index: 1;
+  width:100%;
+  height: 100%;
+  margin:unset;
+  padding: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+#viewcap{
+  align-self:flex-start;
+  align-content:stretch;
+  text-align: center;
+  letter-spacing: .2em;
+  margin-left:-5em;
+  margin-right:-5em;
+  width:100%;
+  font-weight: bolder;
+  color: white;
+  font-family: inherit;
+  font-size: 1.75em;
+  text-shadow: 2px 2px 5px aqua;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
+}
+#carrot1 {
+  text-align: left;
+  align-self:center;
+  color: aquamarine;
+  font-family: inherit;
+  font-size: 2.75em;
+  cursor: pointer;
+  transform: scaleY(1.75) scaleX(.75);
+  text-shadow: 2px 2px 2px black;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
+}
+#carrot2 {
+  text-align: right;
+  align-self:center;
+  color: aquamarine;
+  font-family: inherit;
+  font-size: 2.75em;
+  cursor: pointer;
+  transform: scaleY(1.75) scaleX(.75);
+  text-shadow: 2px 2px 2px black;
+  -webkit-transition-duration:.7s;
+  transition-duration: .7s;
+}
 .look-button {
   display: block;
   width: 50%;
@@ -843,16 +862,16 @@ h6 a:hover {
 .bottomnav {
   width: 100%;
   grid-row: 8 / span 1;
-  grid-column: left/span 2;
+  grid-column: left/span 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
 .bottomnav a {
-  padding: .25em;
-  min-width: 50%;
-  margin: auto;
-  margin-bottom: 1em;
+  min-width: 25%;
+  padding: .2em;
+  margin: 1vw;
+  align-self: center;
   text-decoration: none;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
@@ -968,8 +987,8 @@ footer::after {
 .linked img {
   position: relative;
   filter: invert(1);
-  height: 1.5em;
-  bottom: -.5em;
+  height: 1.15em;
+  bottom: 0em;
 }
 .linked::after {
   content:"|nterwin714";

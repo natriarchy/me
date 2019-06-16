@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>passaic</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -21,35 +20,35 @@
     gtag('config', 'UA-136760833-1');
   </script>
 </head>
-<header id="header">
+<header id="header" class="container-fluid">
   <section class="design-header">
       <div class="design-title2">The Matterhorn | original</div>
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
-    <nav id="topnav">
+  <section>
+    <nav id="topnav" class="container-fluid">
       <ol>
-        <li><a href="index.html" type="button">Home</a></li>
-        <li><a href="aboutme.html" type="button">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
         <li id="dropdown-title">Design
           <div id="dropdown">
-            <a href="design.html" type="button">intro</a><br>
-            <a href="design-camden.html" type="button">camden</a><br>
-            <a href="design-dayton.html" type="button">dayton-newark</a><br>
-            <a href="design-passaic.html" type="button">passaic</a><br>
-            <a href="design-morgan.html" type="button">morgan-Sayreville</a>
+            <a href="design.html">intro</a><br>
+            <a href="design-camden.html">camden</a><br>
+            <a href="design-dayton.html">dayton-newark</a><br>
+            <a href="design-passaic.html">passaic</a><br>
+            <a href="design-morgan.html">morgan-Sayreville</a>
           </div>
         </li>
-        <li><a href="writings.html" type="button">Writings</a></li>
+        <li><a href="writings.html">Writings</a></li>
       </ol>
       <div class="flair-before"></div>
       <div class="flair-after"></div>
     </nav>
-  </section>
-  </header>
-  <body>
-  <section class="column-main">
+</section>
+</header>
+<body>
+<section id="column-main" class="container-fluid">
     <div class="leftside"></div>
     <div class="rightside"></div>
   <video id="buildfly" onended="change()" autoplay muted>
@@ -59,36 +58,39 @@
   <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;">
   <div class="arrow-1">&#8675;</div>
   <div class="arrow-2">&#8675;</div>
-<div class="planimgs" style="background-color:grey">
+<div id="planimgs" style="background-color:grey">
   <span>Passaic Vision</span>
   <div>
-    <button onclick="dayton_b()" id="button1" style="box-shadow: inset 0px 5px 5px 1px black">before</button>
-    <button onclick="dayton_a()" id="button2">after</button>
+    <button onclick="" id="button1" class="activate" >before</button>
+    <button onclick="" id="button2" class="deactivate">after</button>
   </div>
   <figure>
-    <img src="img\NErwin-Passaic-003 pg1010.png" id="daytonbefore" alt="dayton-before" style="background-color: white;border-color:black">
-    <img src="img\NErwin-Passaic-003 pg1016.png" id="daytonafter" alt="dayton-after" style="background-color: white;display:none;border-color:black">
+    <img src="img\NErwin-Passaic-003 pg1010.png" id="passaic-b" alt="dayton-before" style="background-color: white;">
+    <img src="img\NErwin-Passaic-003 pg1016.png" id="passaic-a" alt="dayton-after" style="background-color: white;display:none;">
   <figure>
-</div><br>
-<hr style="background-color:brown;grid-row: 5 / span 1;grid-column: left/span 3;">
-<div class="buttonarray">
-  <button id="but1" onclick="view1()" style="color:yellow">illustrative plan</button>
-  <button id="but2" onclick="view2()">circulation</button>
-  <button id="but3" onclick="view3()">artistic render</button>
 </div>
-<figure class="imgarray">
-  <img id="view1" src="img/passaicpg22.png" style="display:block">
-  <img id="view2" src="img\NErwin-Massing-Final.jpg">
-  <img id="view3" src="img\NErwin-Perspective-006.png">
+<hr style="background-color:brown;grid-row:5/span 1;">
+<figure id="imgarray">
+  <img src="img/passaicpg22.png" title="illustrative plan">
+  <img src="img\NErwin-Massing-Final.jpg" title="circulation">
+  <img src="img\NErwin-Perspective-006.png" title="artistic render">
 </figure>
+<figcaption>
+  <div id="carrot1" onclick="plusSlide(-1)"><</div>
+  <div id="viewcap"></div>
+  <div id="carrot2" onclick="plusSlide(1)">></div>
+</figcaption>
 <div class="bottomnav">
     <a href="design-dayton.html">Last</a>
     <a href="design.html">Back to Overview</a>
     <a href="design-morgan.html">Next</a>
 </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-<footer id="footer">
+<footer id="footer" class="container-fluid">
   <div class="top">
     <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
@@ -102,79 +104,66 @@
   </div>
 </footer>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $("#dropdown-title,#dropdown").hover(function(){
-        $("#dropdown").css("display", "flex");
-        }, function(){
-        $("#dropdown").css("display", "none");
-      });
-      $("#footer").hover(function(){
-        $("#footer").css("transform","translateY(-9vh)");
-        }, function(){
-        $("#footer").css("transform","translateY(0vh)");
-      });
-    });
-    window.onscroll = function() {myFunction()};
-    var topnav = document.getElementById("topnav");
-    var title1 = document.getElementById("titlea");
-    var dropper = document.getElementById("dropdown");
-    function myFunction() {
-      if (window.pageYOffset > (window.innerHeight * .155)){
-        topnav.classList.add("sticky");
-        title1.classList.add("stickytitle");
-        dropper.classList.add("stickydrop");
-      } else {
-        topnav.classList.remove("sticky");
-        title1.classList.remove("stickytitle");
-        dropper.classList.remove("stickydrop");
-      }};
-      function view1(x)
-  			{
-  				document.getElementById("view1").style.display="block";
-          document.getElementById("but1").style.color="yellow";
-  				document.getElementById("view2").style.display="none";
-          document.getElementById("but2").style.color="aquamarine";
-  				document.getElementById("view3").style.display="none";
-          document.getElementById("but3").style.color="aquamarine";
-  			};
-      function view2(x)
-  			{
-          document.getElementById("view1").style.display="none";
-          document.getElementById("but1").style.color="aquamarine";
-  				document.getElementById("view2").style.display="block";
-          document.getElementById("but2").style.color="yellow";
-  				document.getElementById("view3").style.display="none";
-          document.getElementById("but3").style.color="aquamarine";
-  			};
-      function view3(x)
-  			{
-          document.getElementById("view1").style.display="none";
-          document.getElementById("but1").style.color="aquamarine";
-  				document.getElementById("view2").style.display="none";
-          document.getElementById("but2").style.color="aquamarine";
-  				document.getElementById("view3").style.display="block";
-          document.getElementById("but3").style.color="yellow";
-  			};
-    function dayton_b()
-      {
-        $("#daytonbefore").fadeIn(0);
-        $("#daytonafter").fadeOut(0);
-        document.getElementById("button1").style.boxShadow = "inset 0px 5px 5px 1px black";
-        document.getElementById("button2").style.boxShadow = "none";
-      };
-    function dayton_a()
-      {
-        $("#daytonbefore").fadeOut(0);
-        $("#daytonafter").fadeIn(0);
-        document.getElementById("button2").style.boxShadow = "inset 0px 5px 5px 1px black";
-        document.getElementById("button1").style.boxShadow = "none";
-      };
-    document.getElementById("buildfly").playbackRate = 1.3;
-    function change(){
-      $(document).ready(function(){
-          $("#buildfly").fadeOut(2500);
-          $("#artistic").fadeIn(5000);
-          $("#title").fadeIn(5000);
-      });};
+window.onscroll = function() {stickynav()};
+var topnav = document.getElementById("topnav");
+var title1 = document.getElementById("titlea");
+var dropper = document.getElementById("dropdown");
+document.getElementById("buildfly").playbackRate = 1.3;
+function stickynav() {
+  if (window.pageYOffset > (window.innerHeight * .155)){
+    topnav.classList.add("sticky");
+    title1.classList.add("stickytitle");
+    dropper.classList.add("stickydrop");
+  } else {
+    topnav.classList.remove("sticky");
+    title1.classList.remove("stickytitle");
+    dropper.classList.remove("stickydrop");
+  }};
+$(document).ready(function(){
+  $("#dropdown-title,#dropdown").hover(function(){
+    $("#dropdown").css("display", "flex");
+    }, function(){
+    $("#dropdown").css("display", "none");
+  });
+  $("#footer").hover(function(){
+    $("#footer").css("transform","translateY(-9vh)");
+    }, function(){
+    $("#footer").css("transform","translateY(0vh)");
+  });
+   $("#button1").on("click",function(){
+     $("#passaic-b").show(0);
+     $("#passaic-a").hide(0);
+     $("#button1,#button2").toggleClass("activate");
+     $("#button1,#button2").toggleClass("deactivate");
+   });
+   $("#button2").on("click",function(){
+     $("#passaic-a").show(0);
+     $("#passaic-b").hide(0);
+     $("#button1,#button2").toggleClass("activate");
+     $("#button1,#button2").toggleClass("deactivate");
+   });
+});
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlide(n) {
+  showSlides(slideIndex += n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementById("imgarray").children;
+  var imag = slides.img;
+  var caption = document.getElementById("viewcap");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
+  slides[slideIndex-1].style.display = "block";
+  caption.innerText = slides[slideIndex-1].title;
+  }
+function change(){
+  $(document).ready(function(){
+      $("#buildfly").hide(2500);
+      $("#artistic").show(5000);
+      $("#title").show(5000);
+  })};
 </script>
 </html>
