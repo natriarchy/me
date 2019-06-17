@@ -51,10 +51,15 @@
 <section id="column-main" class="container-fluid">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <img src="img\me.JPG" class="image">
-  <h2 class="image-title">Welcome</h2>
+  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-wrap rounded bg-danger" style="grid-column: left/span 3;border:unset; height: 55vh">
+    <img src="img\me.JPG" class="align-self-center m-auto rounded-lg" style="max-height: 33vh;max-width:100%">
+    <div class="d-flex flex-column justify-content-around align-content-center m-auto align-text-center">
+      <h2 class="display-4 text-warning">welcome</h2>
+      <a onclick="this.scrollIntoView();" class="btn btn-warning shadow-lg align-self-center">click me</a>
+    </div>
+  </div>
   <div class="card"  style="background-color:black">
-    <article>
+    <article id="article">
     <p>Biologists now recognize astounding complexity and intelligent design in nature. The flora and fauna of the worlds’ rainforests live and die on the design of their landscapes and interactions with neighbors; the densest hotbeds of life spare no resource nor spatial logic. Scientists can now trace these relationships into vibrant mosaics of cooperation. These systems need entire geological epochs to develop or adapt to change. Human environments are equally complex, but we now forge and reshape them over the course of decades.</p>
     <p>Our communities have radically restructured multiple times in the last century—adapting to mass migrations, technological revolutions, etc. Now, technologists and leaders the world over are back at the gates sounding the alarm. Internet services, automation, and climate change are unravelling decades long consensuses; the creeping sense of disorder is pungent, spanning dating to employment. We can continue groping in the dark, or we can shape the new paradigm.</p>
     <p>A century ago we responded to change by segregating communities, fleeing cities, and abandoning nature. Urban design must now think beyond the building envelope, visualizing cities as living organisms and narratives. Harness change by embedding human capital and sustainability into its logic. Pursuing dense walkable communities that feel spacious, mitigate pollution and runoff, improve mobility and provide space for people to grow and collaborate.</p>
@@ -136,5 +141,9 @@ $(document).ready(function(){
         title1.classList.remove("stickytitle");
         dropper.classList.remove("stickydrop");
       }};
+  function scroller() {
+    var spot = document.getElementById('article').previousElementSibling;
+    spot.scrollIntoView(true);
+  }
 </script>
 </html>

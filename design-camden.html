@@ -69,16 +69,18 @@
     <figure>
   </div>
 <hr style="background-color:aquamarine;grid-row: 5 / span 1;">
-<figure id="imgarray">
-  <img src="img/ViewCamden.png" title="waterfront">
-  <img src="img/View-Waterfront-Day2.jpg" title="waterfront-day">
-  <img src="img/View-Streetfront.jpg" title="streetfront">
-  <img src="img/View-Birds.png" title="birds-eye view">
+<figure id="imgarray" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <img src="img/ViewCamden.png" class="carousel-item active" title="waterfront">
+    <img src="img/View-Waterfront-Day2.jpg" class="carousel-item" title="waterfront-day">
+    <img src="img/View-Streetfront.jpg" class="carousel-item" title="streetfront">
+    <img src="img/View-Birds.png" class="carousel-item" title="birds-eye view">
+  </div>
 </figure>
-<figcaption>
-  <div id="carrot1" onclick="plusSlide(-1)"><</div>
-  <div id="viewcap"></div>
-  <div id="carrot2" onclick="plusSlide(1)">></div>
+<figcaption>"
+  <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
+  <span id="viewcap" href="#imgarray"></span>
+  <div id="carrot2" href="#imgarray" data-slide="next">></div>
 </figcaption>
 <div class="bottomnav">
     <a href="design-morgan.html">Last</a>
@@ -126,6 +128,11 @@ $(document).ready(function(){
     $("#dropdown").css("display", "none");
   });
   $("#footer").hover(function(){
+    $("#footer").css("transform","translateY(-9vh)");
+    }, function(){
+    $("#footer").css("transform","translateY(0vh)");
+  });
+  $("#carrot1").hover(function(){
     $("#footer").css("transform","translateY(-9vh)");
     }, function(){
     $("#footer").css("transform","translateY(0vh)");

@@ -615,7 +615,7 @@ h6 a:hover {
 50% {color:aquamarine;transform:scale(1.5)}
 100% {color:white}
 }
-.image {
+#image {
   grid-column: left/span 1;
   width: 100%;
   width: 95%;
