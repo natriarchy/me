@@ -496,7 +496,7 @@ article h3 {
   border-radius: 1px;
   box-shadow: 8px 8px 50px 0px lightyellow;
 }
-.img-comp-slider:active,.img-comp-slider:hover {
+.img-comp-slider:active{
   background-color: lightsalmon;
   border-color: salmon;
   box-shadow: 8px 8px 20px 1px lightsalmon;
