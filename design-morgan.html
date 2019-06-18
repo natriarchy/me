@@ -28,18 +28,18 @@
   <section class="nav">
     <nav id="topnav">
       <ol>
-        <li><a href="index.html" type="button">Home</a></li>
-        <li><a href="aboutme.html" type="button">About</a></li>
+        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
+        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
         <li id="dropdown-title">Design
           <div id="dropdown">
-            <a href="design.html" type="button">intro</a><br>
-            <a href="design-camden.html" type="button">camden</a><br>
-            <a href="design-dayton.html" type="button">dayton-newark</a><br>
-            <a href="design-passaic.html" type="button">passaic</a><br>
-            <a href="design-morgan.html" type="button">morgan-Sayreville</a>
+            <a href="design.html">intro</a><br>
+            <a href="design-camden.html">camden</a><br>
+            <a href="design-dayton.html">dayton-newark</a><br>
+            <a href="design-passaic.html">passaic</a><br>
+            <a href="design-morgan.html">morgan-Sayreville</a>
           </div>
         </li>
-        <li><a href="writings.html" type="button">Writings</a></li>
+        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
       </ol>
       <div class="flair-before"></div>
       <div class="flair-after"></div>
@@ -76,32 +76,26 @@
         $("#dropdown").css("display", "none");
       });
       $("#footer").hover(function(){
-        $("#footer").css("transform","translateY(-9vh)");
-        }, function(){
-        $("#footer").css("transform","translateY(0vh)");
+       $("#footer").css("transform","translateY(-9vh)");
+       }, function(){
+       $("#footer").css("transform","translateY(0vh)");
+      });
+      $(window).scroll(function() {
+        if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
+          $("#topnav").addClass("sticky");
+          $("#titlea").addClass("stickytitle");
+          $("#dropdown").addClass("stickydrop");
+        } else {
+          $("#topnav").removeClass("sticky");
+          $("#titlea").removeClass("stickytitle");
+          $("#dropdown").removeClass("stickydrop");
+        }
       });
     });
-    $(window).scroll(function(){
-      if (window.innerWidth >= 1024){
-         $("article").mousewheel(function(event, delta) {
-            this.scrollLeft -= (delta * 500);
-            this.scrollRight -= (delta * 500);
-            event.preventDefault();
-          })}
-      });
-    window.onscroll = function() {myFunction()};
-    var topnav = document.getElementById("topnav");
-    var title1 = document.getElementById("titlea");
-    var dropper = document.getElementById("dropdown");
-    function myFunction() {
-      if (window.pageYOffset > (window.innerHeight * .155)){
-        topnav.classList.add("sticky");
-        title1.classList.add("stickytitle");
-        dropper.classList.add("stickydrop");
-      } else {
-        topnav.classList.remove("sticky");
-        title1.classList.remove("stickytitle");
-        dropper.classList.remove("stickydrop");
-      }};
+    function innerURL (x) {
+      var navbut = x.firstChild;
+      var loc = navbut.href;
+      window.location = loc;
+    }
 </script>
 </html>

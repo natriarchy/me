@@ -156,5 +156,15 @@
         {
           return buildfly.currentTime -= increment;
         }};
+        var total = $("#slidercard").innerWidth();
+        var totalh = $("#slidercard").height();
+        $("#camden-b").innerWidth(total);
+        $("input").change(function() {
+          var posA = 1 - $("#slider").val();
+          var posB = $("#slider").val();
+          $(":root").css("--col-after",(total*posA));
+          $(":root").css("--col-before",(total*posB));
+        });
+      });
 </script>
 </html>

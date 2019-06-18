@@ -29,8 +29,8 @@
   <section class="nav" class="container-fluid">
     <nav id="topnav">
       <ol>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutme.html">About</a></li>
+        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
+        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
         <li id="dropdown-title">Design
           <div id="dropdown">
             <a href="design.html">intro</a><br>
@@ -40,7 +40,7 @@
             <a href="design-morgan.html">morgan-Sayreville</a>
           </div>
         </li>
-        <li><a href="writings.html">Writings</a></li>
+        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
       </ol>
       <div class="flair-before"></div>
       <div class="flair-after"></div>
@@ -64,8 +64,8 @@
     <br>
     <a class="link" href="files\NErwin-CSC-June2017.pdf">Redevelopment on H Street</a>
   </div>
-  <hr>
-  <h1 style="color:black;text-decoration:overline">Straight Outta the Noggin</h1>
+  <hr style="grid-row:2">
+  <h1 style="color:black;text-decoration:overline;grid-row:3">Straight Outta the Noggin</h1>
   <div class="card" style="background-color:lightsalmon">
   <article id="article">
     <h3>First Thoughts</h3>
@@ -78,8 +78,8 @@
       <p>Starting with the latter, yes. Our world is so intertwined with digital devices it is unlikely we will drop our penchant for them. Even today, it is common for children to start carrying a personal smartphone at some point in elementary school. Thus, we need to start asking what our <strong>relationship <em>should be</em></strong> with this technology, and how to make it benefit us even more.
   </article>
   <div id="pagetog">
-    <button id="pagetog-l"><<<</button>
-    <button id="pagetog-r">>>></button>
+    <button id="carrot1"><<<</button>
+    <button id="carrot2">>>></button>
   </div>
   </div>
 </section>
@@ -102,47 +102,49 @@
 </footer>
 <script type="text/javascript">
     var art = document.getElementById("article");
-    var topnav = document.getElementById("topnav");
-    var title1 = document.getElementById("titlea");
-    var dropper = document.getElementById("dropdown");
-    window.onscroll = function() {myFunction()};
-    function myFunction() {
-      if (window.pageYOffset > (window.innerHeight * .155)){
-        topnav.classList.add("sticky");
-        title1.classList.add("stickytitle");
-        dropper.classList.add("stickydrop");
-      } else {
-        topnav.classList.remove("sticky");
-        title1.classList.remove("stickytitle");
-        dropper.classList.remove("stickydrop");
-      }};
 $(document).ready(function(){
   $("#dropdown-title,#dropdown").hover(function(){
     $("#dropdown").css("display", "flex");
     }, function(){
     $("#dropdown").css("display", "none");
   });
+  $(window).scroll(function() {
+    if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
+      $("#topnav").addClass("sticky");
+      $("#titlea").addClass("stickytitle");
+      $("#dropdown").addClass("stickydrop");
+    } else {
+      $("#topnav").removeClass("sticky");
+      $("#titlea").removeClass("stickytitle");
+      $("#dropdown").removeClass("stickydrop");
+    }
+  });
   $("#footer").hover(function(){
     $("#footer").css("transform","translateY(-9vh)");
     }, function(){
     $("#footer").css("transform","translateY(0vh)");
   });
-  $("#pagetog-l").hover(function(){
-    $("#pagetog-l").text("<");
+  $("#carrot1").hover(function(){
+    $("#carrot1").text("<");
     }, function(){
-      $("#pagetog-l").text("<<<");
+      $("#carrot1").text("<<<");
   });
-  $("#pagetog-r").hover(function(){
-    $("#pagetog-r").text(">");
+  $("#carrot2").hover(function(){
+    $("#carrot2").text(">");
     }, function(){
-      $("#pagetog-r").text(">>>");
+      $("#carrot2").text(">>>");
   });
-  $("#pagetog-r").click(function(){
+  $("#carrot2").click(function(){
     art.scrollLeft += (art.scrollWidth/2);
   });
-  $("#pagetog-l").click(function(){
+  $("#carrot1").click(function(){
     art.scrollLeft -= (art.scrollWidth/2);
   });
 });
+function innerURL (x) {
+  var navbut = x.firstChild;
+  var loc = navbut.href;
+  window.location = loc;
+};
 </script>
 </html>
