@@ -201,11 +201,11 @@ li a:hover {
  background-color: white;
  background-size: 10em 10em;
  position:absolute;
- width: 12vw;
- right: 34vw;
+ width: 15vw;
+ right: 33vw;
  flex-direction: column;
  margin-top: .75em;
- border-radius: 0px 0px 15px 15px;
+ border-radius: 15px;
  box-shadow: -2px -2px 5px 0px black;
  -webkit-transition-duration:.35s;
  transition-duration: .35s;
@@ -462,6 +462,10 @@ article h3 {
   position: absolute;
   width:auto;
   height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   overflow: hidden;
 }
 .img-comp-img img {
@@ -557,7 +561,7 @@ p {
 h1 {
   grid-column: left/span 3;
  text-shadow: 3px 3px 3px grey;
- font-size: 3vh;
+ font-size: 2em;
  font-weight: lighter;
  margin-left: 1em;
  margin-right: 1em;
@@ -566,7 +570,6 @@ h1 {
  text-align-last: center;
  color: white;
  letter-spacing:.15em;
- line-height: 1.25;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
