@@ -475,6 +475,11 @@ article h3 {
   width:76vw;
   vertical-align: middle;
   filter:blur(2px) contrast(50%);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overflow: hidden;
 }
 .img-comp-slider {
   display: flex;
@@ -496,7 +501,7 @@ article h3 {
   border-radius: 1px;
   box-shadow: 8px 8px 50px 0px lightyellow;
 }
-.img-comp-slider:active{
+.img-comp-slider:active {
   background-color: lightsalmon;
   border-color: salmon;
   box-shadow: 8px 8px 20px 1px lightsalmon;
