@@ -451,11 +451,6 @@ article h3 {
   height: 50vh;
   width:77vw;
 }
-.img-comp-container:hover img {
-    filter:blur(0px) contrast(115%);
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
-}
 .img-comp-img {
   all:unset;
   display: block;
@@ -474,7 +469,6 @@ article h3 {
   height: 49vh;
   width:76vw;
   vertical-align: middle;
-  filter:blur(2px) contrast(50%);
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -501,7 +495,7 @@ article h3 {
   border-radius: 1px;
   box-shadow: 8px 8px 50px 0px lightyellow;
 }
-.img-comp-slider:active {
+.img-comp-slider:hover {
   background-color: lightsalmon;
   border-color: salmon;
   box-shadow: 8px 8px 20px 1px lightsalmon;
