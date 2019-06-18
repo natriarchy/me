@@ -294,7 +294,7 @@ nav ol li:hover {
 }
 .card-left {
   grid-column: left/span 1;
-  background-color: grey;
+  background-color: lightsalmon;
   box-shadow: inset 0px 0px 10px 1px black;
 }
 
@@ -389,56 +389,94 @@ nav ol li:hover {
     text-shadow:0px 0px 10px yellow;
     box-shadow: inset 0px 5px 5px 1px black;
   }
-  #juxtapose-wrapper {
-    filter:blur(0px) saturate(150%);
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
-    width:95%;
-    border:2px black dotted;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
+  .img-comp-container {
+    position:relative;
+    border: .5vw inset black;
+    border-width:  .5vh .5vw .5vh .5vw;
+    display: flex;
+    align-content: center;
+    height: 50vh;
+    width:90vw;
   }
-  #juxtapose-wrapper:hover img {
-    filter:saturate(150%);
-    -webkit-transition-duration: 2s;
-    transition-duration: 2s;
-    }
-  #juxtapose-wrapper img {
-    filter:blur(0px) saturate(120%);
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
+  .img-comp-img {
+    all:unset;
+    display: block;
+    position: absolute;
+    width:auto;
+    height: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    overflow: hidden;
   }
-  .jx-slider {
-    z-index: 0;
-    }
-  article p::first-line {
-    background-color: gray;
-    color: white;
-    letter-spacing:.5vw;
-    text-shadow: 2px 2px 2px black;
+  .img-comp-img img {
+    all:unset;
+    display: block;
+    height: 49vh;
+    width:88.5vw;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    overflow: hidden;
   }
-  article p::first-letter {
-    font-weight: 900;
-    font-size: 7vw;
+  .img-comp-slider {
+    display: flex;
+    position: absolute;
+    z-index: 9;
+    cursor:col-resize;
+    width: .75em;
+    height: 100%;
+    align-self:center;
+    justify-content: center;
+    background-color: aquamarine;
+    background-image: radial-gradient(dimgray 0%,dimgray 25%,white 100%);
+    background-size: 1em 10em;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: .1vw white solid;
+    border-width: 0px .1vw 0px .1vw;
+    opacity: 1;
+    border-radius: 1px;
+    box-shadow: 8px 8px 50px 0px lightyellow;
   }
-  article {
-    border-radius: 15px;
-    text-indent: 5vw;
-    background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 1.5%, rgba(0,0,0,0) 98.5%,white 100%), url("light-wool.png");
-    background-color: tan;
-    column-count: 1;
-    padding: 3vw;
-    box-shadow: inset 2px 2px 10px 5px;
-  }
-  article h3 {
-    margin-top: 2vh;
-    box-shadow: inset 2px 2px 10px 1px black;
-    background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
+  .img-comp-slider:hover {
     background-color: lightsalmon;
-    border-radius: 5px;
-    font-size: 5vw;
+    border-color: salmon;
+    box-shadow: 8px 8px 20px 1px lightsalmon;
   }
+    article p::first-line {
+      background-color: dimgray;
+      font-variant: small-caps;
+      color: white;
+      letter-spacing: .3vw;
+      text-shadow: 2px 2px 2px black;
+    }
+    article p::first-letter {
+      font-weight: 900;
+      font-size: 200%;
+    }
+    article {
+      border-radius: 15px;
+      text-indent: .5em;
+      background-color: white;
+      background-image: url("iron-grip.png");
+      background-size: auto 5em;
+      column-count: 1;
+      padding: .5em;
+      box-shadow: inset 2px 2px 10px 5px;
+    }
+    article h3 {
+      margin-top: 0;
+      box-shadow: inset 2px 2px 10px 1px black;
+      background-image: url("iron-grip.png");
+      background-size: auto auto;
+      background-color:lightsteelblue;
+      border-radius: 5px;
+      font-size: 5vh;
+    }
   #pagetog {
     display: none;
   }
@@ -456,9 +494,26 @@ nav ol li:hover {
     animation-delay: 0s;
     margin-bottom: 5vh;
   }
+.container {
+  padding-top: 1em;
+  grid-row: 1;
+  min-height:55vh;
+}
+.container img {
+  max-height:28vh;
+}
+.container h2 {
+  font-size: 3em;
+}
+.container a {
+  width:75%;
+  height: 1.75em;
+  padding: .1em;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
  #column-main hr {
    grid-column: left;
-   grid-row: 3;
    background-image: url("iron-grip.png");
    background-size: 20em 25em;
    background-color: teal;
@@ -540,7 +595,16 @@ h2 {
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
-
+.container h2{
+animation-name: title;
+animation-duration: 2s;
+animation-delay: 1s;
+}
+@keyframes title {
+0% {color:aquamarine}
+50% {color:aquamarine;transform:scale(1.25)}
+100% {color:white}
+}
 h3 {
  position:relative;
  text-shadow: 3px 3px 3px grey;
@@ -782,19 +846,14 @@ h6 a:hover {
   overflow: scroll;
   margin-bottom: 3em;
 }
-#imgarray img {
-  object-fit:fill;
-  object-position:center;
-  grid-row: 7 / span 1;
-  grid-column: 1/span 5;
-  margin: auto;
-  min-height: 80%;
-  max-width: 100%
+#imgarray div,img{
+  height: 100%;
+  max-width:100%;
 }
 figcaption {
   grid-row: 6/ span 2;
   grid-column: left / span 1;
-  z-index: 1;
+  z-index: 2;
   width:100%;
   height: 100%;
   margin:unset;
@@ -803,45 +862,50 @@ figcaption {
   flex-direction: row;
   justify-content:space-between;
 }
+figcaption span {
+  opacity: 1;
+}
 #viewcap{
   align-self:flex-start;
   align-content:stretch;
   text-align: center;
   letter-spacing: .2em;
-  margin-left:-5em;
-  margin-right:-5em;
+  margin-top: -1em;
+  margin-left:-4.75em;
+  margin-right:-4.75em;
   width:100%;
   font-weight: bolder;
   color: white;
   font-family: inherit;
   font-size: 1.75em;
-  text-shadow: 2px 2px 5px aqua;
+  text-shadow: 2px 2px 5px red;
   -webkit-transition-duration:.7s;
   transition-duration: .7s;
+  opacity: 1;
 }
 #carrot1 {
   text-align: left;
   align-self:center;
-  color: aquamarine;
+  color: white;
   font-family: inherit;
   font-size: 2.75em;
   cursor: pointer;
-  transform: scaleY(1.75) scaleX(.75);
-  text-shadow: 2px 2px 2px black;
-  -webkit-transition-duration:.7s;
-  transition-duration: .7s;
+  transform: scaleY(1.5) scaleX(.75) translateX(.15em);
+  text-shadow: 2px 2px 2px red;
+  -webkit-transition-duration:.25s;
+  transition-duration: .25s;
 }
 #carrot2 {
   text-align: right;
   align-self:center;
-  color: aquamarine;
+  color: white;
   font-family: inherit;
   font-size: 2.75em;
   cursor: pointer;
-  transform: scaleY(1.75) scaleX(.75);
-  text-shadow: 2px 2px 2px black;
-  -webkit-transition-duration:.7s;
-  transition-duration: .7s;
+  transform: scaleY(1.5) scaleX(.75);
+  text-shadow: 2px 2px 2px red;
+  -webkit-transition-duration:.25s;
+  transition-duration: .25s;
 }
 .look-button {
   display: block;

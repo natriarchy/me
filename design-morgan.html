@@ -6,11 +6,11 @@
   <title>Morgan</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,13 +19,13 @@
     gtag('config', 'UA-136760833-1');
   </script>
 </head>
-<header id="header">
+<header id="header" class="container-fluid">
   <section class="design-header">
       <div class="design-title2">The Matterhorn | original</div>
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section class="nav" class="container-fluid">
     <nav id="topnav">
       <ol>
         <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
@@ -47,13 +47,40 @@
 </section>
 </header>
 <body>
-<section class="column-main">
+<section id="column-main" class="container-fluid">
   <div class="leftside"></div>
   <div class="rightside"></div>
-	<div class="bottomnav">
-			<a href="design.html" class="leftbutton">Back to Overview</a>
-	</div>
+<hr style="background-color:aquamarine;grid-row: 5;grid-column: left/span 3;">
+<figure id="imgarray" class="carousel slide d-flex text-center" data-ride="carousel">
+  <div class="carousel-inner m-auto">
+    <div class="carousel-item active">
+      <img src="img/PlainMap.png" title="study area">
+    </div>
+    <div class="carousel-item">
+      <img src="img/ExistTransit.png" title="transit">
+    </div>
+    <div class="carousel-item">
+      <img src="img/PropTransit.png" title="transit proposal">
+    </div>
+    <div class="carousel-item">
+      <img src="img/PropSitePlan.png" title="site plan">
+    </div>
+  </div>
+</figure>
+<figcaption>
+  <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
+  <div id="viewcap"></div>
+  <div id="carrot2" href="#imgarray" data-slide="next">></div>
+</figcaption>
+<div class="bottomnav">
+    <a href="design-camden.html">Last</a>
+    <a href="design.html">Back to Overview</a>
+    <a href="design-passaic.html">Next</a>
+</div>
 </section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <footer id="footer">
   <div class="top">
@@ -69,33 +96,56 @@
   </div>
 </footer>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $("#dropdown-title,#dropdown").hover(function(){
-        $("#dropdown").css("display", "flex");
-        }, function(){
-        $("#dropdown").css("display", "none");
-      });
-      $("#footer").hover(function(){
-       $("#footer").css("transform","translateY(-9vh)");
-       }, function(){
-       $("#footer").css("transform","translateY(0vh)");
-      });
-      $(window).scroll(function() {
-        if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
-          $("#topnav").addClass("sticky");
-          $("#titlea").addClass("stickytitle");
-          $("#dropdown").addClass("stickydrop");
-        } else {
-          $("#topnav").removeClass("sticky");
-          $("#titlea").removeClass("stickytitle");
-          $("#dropdown").removeClass("stickydrop");
-        }
-      });
-    });
-    function innerURL (x) {
-      var navbut = x.firstChild;
-      var loc = navbut.href;
-      window.location = loc;
+$(document).ready(function(){
+  $("#dropdown-title,#dropdown").hover(function(){
+    $("#dropdown").css("display", "flex");
+    }, function(){
+    $("#dropdown").css("display", "none");
+  });
+  $("#button1").on("click",function(){
+   $("#plan-b").show();
+   $("#plan-a").hide();
+   $("#button1,#button2").toggleClass("activate");
+   $("#button1,#button2").toggleClass("deactivate");
+  });
+  $("#button2").on("click",function(){
+   $("#plan-a").show();
+   $("#plan-b").hide();
+   $("#button1,#button2").toggleClass("activate");
+   $("#button1,#button2").toggleClass("deactivate");
+  });
+  $("#imgarray").on('slide.bs.carousel', function(event){
+   var slider = event.relatedTarget;
+   var titler = $('img',slider).attr('title');
+   $("#viewcap").text(titler);
+  });
+  $("#footer").hover(function(){
+   $("#footer").css("transform","translateY(-9vh)");
+   }, function(){
+   $("#footer").css("transform","translateY(0vh)");
+  });
+  $(window).scroll(function() {
+    if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
+      $("#topnav").addClass("sticky");
+      $("#titlea").addClass("stickytitle");
+      $("#dropdown").addClass("stickydrop");
+    } else {
+      $("#topnav").removeClass("sticky");
+      $("#titlea").removeClass("stickytitle");
+      $("#dropdown").removeClass("stickydrop");
     }
+  });
+});
+function change(){
+  $(document).ready(function(){
+      $("#buildfly").hide();
+      $("#artistic").show();
+      $("#title").show();
+  })};
+function innerURL (x) {
+  var navbut = x.firstChild;
+  var loc = navbut.href;
+  window.location = loc;
+};
 </script>
 </html>

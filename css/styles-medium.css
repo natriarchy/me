@@ -317,8 +317,9 @@ article p::first-letter {
 article {
   border-radius: 15px;
   text-indent: .5em;
-  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 1.5%, rgba(0,0,0,0) 98.5%,white 100%), url("light-wool.png");
-  background-color: tan;
+  background-color: white;
+  background-image: url("iron-grip.png");
+  background-size: auto 5em;
   column-count: 1;
   padding: 2em;
   box-shadow: inset 2px 2px 10px 5px;
@@ -326,8 +327,9 @@ article {
 article h3 {
   margin-top: 0;
   box-shadow: inset 2px 2px 10px 1px black;
-  background-image: linear-gradient(to right,white 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,white 100%), url("light-wool.png");
-  background-color: lightsalmon;
+  background-image: url("iron-grip.png");
+  background-size: auto auto;
+  background-color:lightsteelblue;
   border-radius: 5px;
   font-size: 5vh;
 }
@@ -585,6 +587,8 @@ h2 {
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
+}
+.container h2{
 animation-name: title;
 animation-duration: 2s;
 animation-delay: 1s;
@@ -818,7 +822,6 @@ h6 a:hover {
   width:100%;
   margin:0;
   border-radius: 15px;
-  background-image: linear-gradient();
   margin-bottom: 3em;
   border-top: 1em double black;
   border-bottom: 1em double black;
