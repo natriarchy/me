@@ -466,6 +466,10 @@ article h3 {
   position: absolute;
   width:auto;
   height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   overflow: hidden;
 }
 .img-comp-img img {
@@ -474,6 +478,10 @@ article h3 {
   height: 59vh;
   width:76vw;
   vertical-align: middle;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   filter:blur(2px) contrast(50%);
 }
 .img-comp-slider {
