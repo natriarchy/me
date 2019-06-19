@@ -502,6 +502,7 @@ p {
  text-align-last: left;
 }
 h1 {
+  all:unset;
   grid-column: left/span 3;
  text-shadow: 3px 3px 3px grey;
  font-size: 3vh;
