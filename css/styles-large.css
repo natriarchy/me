@@ -351,7 +351,7 @@ article h3 {
 }
 .card-left {
   grid-column: left/span 1;
-  background-color: grey;
+  background-color: lightsalmon;
   box-shadow: inset 0px 0px 10px 1px black;
 }
 .card-right {
@@ -454,9 +454,9 @@ article h3 {
   width:77vw;
 }
 .img-comp-container:hover img {
-    filter:blur(0px) contrast(115%);
-    -webkit-transition-duration: 0.25s;
-    transition-duration: .25s;
+  filter:blur(0px) contrast(115%);
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 .img-comp-img {
   all:unset;
@@ -498,14 +498,52 @@ article h3 {
   background-repeat: no-repeat;
   border: .1vw white solid;
   border-width: 0px .1vw 0px .1vw;
-  opacity: 1;
-  border-radius: 1px;
-  box-shadow: 8px 8px 50px 0px lightyellow;
+  border-top:2vh black solid;
+  border-bottom:2vh black solid;
+  box-shadow: 0px 0px 50px 0px lightyellow;
+}
+.img-comp-slider:before{
+  content:"<";
+  cursor: pointer;
+  align-self:center;
+  color: aquamarine;
+  padding: .5em;
+  font-size: 4em;
+  text-shadow: 2px 2px 2px white;
+  -webkit-transition-duration:.25s;
+  transition-duration: .25s;
+}
+.img-comp-slider:after{
+  content:">";
+  cursor: pointer;
+  align-self:center;
+  color: aquamarine;
+  padding: .5em;
+  font-size: 4em;
+  text-shadow: 2px 2px 2px white;
+  -webkit-transition-duration:.25s;
+  transition-duration: .25s;
+}
+.img-comp-container:hover .img-comp-slider:before{
+  content:"<<";
+  color:yellow;
+  opacity:0;
+  -webkit-transition-duration:1s;
+  transition-duration: 1s;
+}
+.img-comp-container:hover .img-comp-slider:after {
+  content:">>";
+  color:yellow;
+  opacity:0;
+  -webkit-transition-duration:1s;
+  transition-duration: 1s;
 }
 .img-comp-slider:active,.img-comp-slider:hover {
   background-color: lightsalmon;
   border-color: salmon;
-  box-shadow: 8px 8px 20px 1px lightsalmon;
+  border-top:2vh black solid;
+  border-bottom:2vh black solid;
+  box-shadow: 0px 0px 20px 0px lightsalmon;
 }
 #column-main {
   all:unset;
@@ -1039,6 +1077,11 @@ footer::after {
   height: 100%;
   border-radius: 15px 15px 0px 0px;
 }
+footer a:hover,.linked:hover img {
+  color:orange;
+  text-decoration: none;
+  filter:invert(0);
+}
 .top  {
   grid-row: top/span 1;
   grid-column: content;
@@ -1070,10 +1113,10 @@ footer::after {
   align-self:flex-end;
 }
 .address::before {
-  content:"521 Washington St #3, Hoboken, NJ 07030";
+  content:"521 Washington St #3, Hoboken, NJ 07030  ║ ";
 }
 .tel::before {
-  content: " ║ (202) 681-1138";
+  content: "(202) 681-1138";
 }
 .middle {
   grid-row: middle/span 1;
@@ -1089,7 +1132,9 @@ footer::after {
 .linked img {
   position: relative;
   filter: invert(1);
-  height: 1.5em;
+  height: 1.15em;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
 }
 .linked::after {
   content:"|nterwin714";
@@ -1107,7 +1152,7 @@ footer::after {
     padding: 1em;
     padding-bottom: 1em;
     box-shadow: inset 2px 2px 10px 5px;
-    max-height: 70vh;
+    max-height: 66vh;
   }
 #pagetog {
   width:100%;
@@ -1115,10 +1160,16 @@ footer::after {
   display: flex;
   justify-content: space-between;
 }
-#pagetog button{
-  width:3em;
-  font-size: 3em;
+#pagetog button {
+  width:3.5em;
+  vertical-align: middle;
   text-align: center;
+  align-self:center;
+  padding: .4em;
+  font-size: 3em;
   opacity: 1;
+  border: 2px inset salmon;
+  border-radius: 10px;
+  line-height: 0em;
 }
 }

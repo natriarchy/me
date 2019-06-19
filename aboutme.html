@@ -69,8 +69,8 @@
       <p>I was lucky enough to get some travelling in just before classes began. I backpacked across Europe for more than a month, a perfect opportunity to marvel at the design of 13 great cities. It was a great intro to good and bad urban design. I graduated from Bloustein in December of 2018. In the time since, I have continued learning new computer skills, worked on myself, and developed more of my hobbies. I am an avid guitarist, and a general lover of all things music. In my life, I have read biographies on a third of the US presidents, amongst several other historical tomes. These days, I spend a lot of time thinking on and researching the trends that will come to shape our lives and environments as the next few decades unfold.</P>
     </article>
     <div id="pagetog">
-      <button id="pagetog-l"><<<</button>
-      <button id="pagetog-r">>>></button>
+      <button id="carrot1"><<<</button>
+      <button id="carrot2">>>></button>
     </div>
   </div>
 </section>
@@ -115,20 +115,20 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
-  $("#pagetog-l").hover(function(){
-    $("#pagetog-l").text("<");
+  $("#carrot1").hover(function(){
+    $("#carrot1").text("<");
     }, function(){
-      $("#pagetog-l").text("<<<");
+      $("#carrot1").text("<<<");
   });
-  $("#pagetog-r").hover(function(){
-    $("#pagetog-r").text(">");
+  $("#carrot2").hover(function(){
+    $("#carrot2").text(">");
     }, function(){
-      $("#pagetog-r").text(">>>");
+      $("#carrot2").text(">>>");
   });
-  $("#pagetog-r").click(function(){
+  $("#carrot2").click(function(){
     art.scrollLeft += (art.scrollWidth/2);
   });
-  $("#pagetog-l").click(function(){
+  $("#carrot1").click(function(){
     art.scrollLeft -= (art.scrollWidth/2);
   });
 });

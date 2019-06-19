@@ -149,6 +149,7 @@ function initComparisons() {
     window.addEventListener("touchstop", slideFinish);
     function slideReady(e) {
       e.preventDefault();
+      event.preventDefault();
       clicked = 1;
       window.addEventListener("mousemove", slideMove);
       window.addEventListener("touchmove", slideMove);
