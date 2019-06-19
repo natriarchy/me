@@ -67,14 +67,13 @@
     </article>
   </div>
   <div class="card" style="background-color:darkgoldenrod;">
-  <div class="img-comp-container" id="container"  style="border-radius:15;touch-action: none;">
-    <div class="img-comp-img">
-      <img src="img\View-Birds.png" style="border-radius:15px">
+    <div class="ba-slider" style="border-radius:15">
+      <img src="img\View-Birds.png" id="slider-a" style="border-radius:15px">
+      <div class="resize">
+        <img src="img\CamdenAerial_before.png" id="slider-b" style="border-radius:15px">
+      </div>
+      <span class="handle"></span>
     </div>
-    <div class="img-comp-img img-comp-overlay">
-      <img src="img\CamdenAerial_before.png"  style="border-radius:15px">
-    </div>
-  </div>
   </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -128,56 +127,55 @@ function innerURL (x) {
   var loc = navbut.href;
   window.location = loc;
 };
-function initComparisons() {
-  var x, i;
-  x = document.getElementsByClassName("img-comp-overlay");
-  for (i = 0; i < x.length; i++) {
-    compareImages(x[i]);
-  }
-  function compareImages(img) {
-    var slider, img, clicked = 0, w, h;
-    w = img.offsetWidth;
-    h = img.offsetHeight;
-    img.style.width = (w / 2) + "px";
-    slider = document.createElement("DIV");
-    slider.setAttribute("class", "img-comp-slider");
-    img.parentElement.insertBefore(slider, img);
-    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-    slider.addEventListener("mousedown", slideReady);
-    window.addEventListener("mouseup", slideFinish);
-    slider.addEventListener("touchstart", slideReady);
-    window.addEventListener("touchstop", slideFinish);
-    function slideReady(e) {
-      e.preventDefault();
-      clicked = 1;
-      window.addEventListener("mousemove", slideMove);
-      window.addEventListener("touchmove", slideMove);
-    }
-    function slideFinish() {
-      clicked = 0;
-    }
-    function slideMove(e) {
-      var pos;
-      if (clicked == 0) return false;
-      pos = getCursorPos(e)
-      if (pos < 0) pos = 0;
-      if (pos > w) pos = w;
-      slide(pos);
-    }
-    function getCursorPos(e) {
-      var a, x = 0;
-      e = e || window.event;
-      a = img.getBoundingClientRect();
-      x = e.pageX - a.left;
-      x = x - window.pageXOffset;
-      return x;
-    }
-    function slide(x) {
-      img.style.width = x + "px";
-      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-    }
-  }
+$(document).ready(function(){
+  $('.ba-slider').each(function(){
+    var cur = $(this);
+    var width = cur.width()+'px';
+    cur.find('.resize img').css('width', width);
+    drags(cur.find('.handle'), cur.find('.resize'), cur);
+  });
+});
+$(window).resize(function(){
+  $('.ba-slider').each(function(){
+    var cur = $(this);
+    var width = cur.width()+'px';
+    cur.find('.resize img').css('width', width);
+  });
+});
+function drags(dragElement, resizeElement, container) {
+  dragElement.on('mousedown touchstart', function(e) {
+    dragElement.addClass('draggable');
+    resizeElement.addClass('resizable');
+    var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+    var dragWidth = dragElement.outerWidth(),
+        posX = dragElement.offset().left + dragWidth - startX,
+        containerOffset = container.offset().left,
+        containerWidth = container.outerWidth();
+    minLeft = containerOffset + 10;
+    maxLeft = containerOffset + containerWidth - dragWidth - 10;
+    dragElement.parents().on("mousemove touchmove", function(e) {
+      var moveX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+      leftValue = moveX + posX - dragWidth;
+      if ( leftValue < minLeft) {
+        leftValue = minLeft;
+      } else if (leftValue > maxLeft) {
+        leftValue = maxLeft;
+      }
+      widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
+      $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+        $(this).removeClass('draggable');
+        resizeElement.removeClass('resizable');
+      });
+      $('.resizable').css('width', widthValue);
+    }).on('mouseup touchend touchcancel', function(){
+      dragElement.removeClass('draggable');
+      resizeElement.removeClass('resizable');
+    });
+    e.preventDefault();
+  }).on('mouseup touchend touchcancel', function(e){
+    dragElement.removeClass('draggable');
+    resizeElement.removeClass('resizable');
+  });
 }
-initComparisons();
 </script>
 </html>
