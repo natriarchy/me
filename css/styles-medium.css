@@ -156,6 +156,7 @@ nav {
    all:unset;
    position: relative;
    z-index: 99;
+   min-height: 1.25em;
    cursor: pointer;
    flex-basis: 15vw;
    background: white;
