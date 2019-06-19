@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
   <title>Camden</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
@@ -70,8 +70,8 @@
     <figure>
   </div>
 <hr style="background-color:aquamarine;grid-row:5/span 1">
-<div id="imgarray" class="carousel slide carousel-fade text-center" data-ride="false">
-  <div class="carousel-inner">
+<div id="imgarray" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner text-center" role="listbox">
     <div class="carousel-item active">
       <img src="img/ViewCamden.png" title="waterfront">
     </div>
@@ -91,11 +91,11 @@
     <li data-target="#imgarray" data-slide-to="2"></li>
     <li data-target="#imgarray" data-slide-to="3"></li>
   </ol>
-</div>
-<div id="carrot-cake">
-  <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
-  <span id="viewcap" href="#imgarray">waterfront</span>
-  <div id="carrot2" href="#imgarray" data-slide="next">></div>
+  <div id="carrot-cake">
+    <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+    <span id="viewcap" href="#imgarray">waterfront</span>
+    <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+  </div>
 </div>
 <div class="bottomnav">
     <a href="design-morgan.html">Last</a>
@@ -103,9 +103,9 @@
     <a href="design-dayton.html">Next</a>
 </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 </body>
 <footer id="footer">
   <div class="top">
@@ -123,6 +123,9 @@
 <script type="text/javascript">
 document.getElementById("buildfly").playbackRate = .3;
 $(document).ready(function(){
+  $('.carousel').carousel({
+    touch: true // default
+  });
   $("#dropdown-title,#dropdown").hover(function(){
     $("#dropdown").css("display", "flex");
     }, function(){

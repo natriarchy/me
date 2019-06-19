@@ -799,6 +799,7 @@ h6 a:hover {
 }
 #carrot-cake {
   all:unset;
+  position: absolute;
   grid-row: 6/ span 2;
   grid-column: left / span 3;
   width:100%;

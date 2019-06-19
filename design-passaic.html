@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
   <title>passaic</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
@@ -70,8 +70,8 @@
   <figure>
 </div>
 <hr style="background-color:brown;grid-row:5/span 1;">
-<div id="imgarray" class="carousel slide carousel-fade text-center" data-ride="false">
-  <div class="carousel-inner">
+<div id="imgarray" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner text-center">
     <div class="carousel-item active">
       <img src="img/passaicpg22.png" title="illustrative plan">
     </div>
@@ -87,11 +87,11 @@
       <li data-target="#imgarray" data-slide-to="2"></li>
     </ol>
   </div>
-</div>
-<div id="carrot-cake">
-  <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
-  <div id="viewcap">illustrative plan</div>
-  <div id="carrot2" href="#imgarray" data-slide="next">></div>
+  <div id="carrot-cake">
+    <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+    <span id="viewcap" href="#imgarray">waterfront</span>
+    <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+  </div>
 </div>
 <div class="bottomnav">
     <a href="design-dayton.html">Last</a>
