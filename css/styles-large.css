@@ -460,7 +460,6 @@ article h3 {
  }
  #column-main hr {
   grid-column: left / span 3;
-  grid-row: 3;
   background-image: url("iron-grip.png");
   background-size: 20em 25em;
   background-color: teal;
