@@ -24,7 +24,7 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav" class="container-fluid">
+  <section class="nav">
     <nav id="topnav">
       <ol>
         <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
@@ -40,13 +40,13 @@
         </li>
         <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
       </ol>
-      <div class="flair-before"></div>
-      <div class="flair-after"></div>
+      <div id="flair-before"></div>
+      <div id="flair-after"></div>
     </nav>
 </section>
 </header>
 <body>
-<section id="column-main" class="container-fluid">
+<section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
     <video id="buildfly" onended="change()" autoplay muted>
@@ -68,7 +68,7 @@
   <figure>
 </div>
 <hr style="background-color:aquamarine;grid-row: 5;grid-column: left/span 3;">
-<figure id="imgarray" class="carousel slide d-flex text-center" data-ride="carousel">
+<div id="imgarray" class="carousel slide carousel-fade text-center" data-ride="false">
   <div class="carousel-inner m-auto">
     <div class="carousel-item active">
       <img src="img/PlainMap.png" title="study area">
@@ -83,7 +83,13 @@
       <img src="img/PropSitePlan.png" title="site plan">
     </div>
   </div>
-</figure>
+  <ol class="carousel-indicators shadow m-auto w-25 bg-danger rounded-top border border-bottom-0" style="opacity:.75">
+    <li data-target="#imgarray" data-slide-to="0" class="active"></li>
+    <li data-target="#imgarray" data-slide-to="1"></li>
+    <li data-target="#imgarray" data-slide-to="2"></li>
+    <li data-target="#imgarray" data-slide-to="3"></li>
+  </ol>
+</div>
 <div id="carrot-cake">
   <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
   <div id="viewcap">study area</div>

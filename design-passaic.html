@@ -26,8 +26,8 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section>
-    <nav id="topnav" class="container-fluid">
+  <section class="nav">
+    <nav id="topnav">
       <ol>
         <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
         <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
@@ -42,15 +42,15 @@
         </li>
         <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
       </ol>
-      <div class="flair-before"></div>
-      <div class="flair-after"></div>
+      <div id="flair-before"></div>
+      <div id="flair-after"></div>
     </nav>
 </section>
 </header>
 <body>
-<section id="column-main" class="container-fluid">
-    <div class="leftside"></div>
-    <div class="rightside"></div>
+<section id="column-main">
+  <div class="leftside"></div>
+  <div class="rightside"></div>
   <video id="buildfly" onended="change()" autoplay muted>
     <source src="files\passaicprocess.mp4" type="video/mp4">
   </video>
@@ -70,8 +70,8 @@
   <figure>
 </div>
 <hr style="background-color:brown;grid-row:5/span 1;">
-<figure id="imgarray" class="carousel slide carousel-fade d-flex text-center" data-ride="carousel">
-  <div class="carousel-inner m-auto">
+<div id="imgarray" class="carousel slide carousel-fade text-center" data-ride="false">
+  <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="img/passaicpg22.png" title="illustrative plan">
     </div>
@@ -81,8 +81,13 @@
     <div class="carousel-item">
       <img src="img\NErwin-Perspective-006.png" title="artistic render">
     </div>
+    <ol class="carousel-indicators shadow m-auto w-25 bg-danger rounded-top border border-bottom-0" style="opacity:.75">
+      <li data-target="#imgarray" data-slide-to="0" class="active"></li>
+      <li data-target="#imgarray" data-slide-to="1"></li>
+      <li data-target="#imgarray" data-slide-to="2"></li>
+    </ol>
   </div>
-</figure>
+</div>
 <div id="carrot-cake">
   <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
   <div id="viewcap">illustrative plan</div>
@@ -131,6 +136,9 @@ $(document).ready(function(){
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
   });
+  $('.carousel').carousel({
+    touch: true
+    })
   $("#imgarray").on('slide.bs.carousel', function(event){
    var slider = event.relatedTarget;
    var titler = $('img',slider).attr('title');

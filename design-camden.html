@@ -26,7 +26,7 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section  class="nav">
     <nav id="topnav">
       <ol>
         <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
@@ -42,8 +42,8 @@
         </li>
         <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
       </ol>
-      <div class="flair-before"></div>
-      <div class="flair-after"></div>
+      <div id="flair-before"></div>
+      <div id="flair-after"></div>
     </nav>
   </section>
 </header>
@@ -70,7 +70,7 @@
     <figure>
   </div>
 <hr style="background-color:aquamarine;grid-row:5/span 1">
-<figure id="imgarray" class="carousel slide d-flex text-center" data-touch="true" data-ride="carousel">
+<div id="imgarray" class="carousel slide carousel-fade text-center" data-ride="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="img/ViewCamden.png" title="waterfront">
@@ -85,10 +85,16 @@
       <img src="img/View-Birds.png" title="birds-eye view">
     </div>
   </div>
-</figure>
+  <ol class="carousel-indicators shadow m-auto w-25 bg-danger rounded-top border border-bottom-0" style="opacity:.75">
+    <li data-target="#imgarray" data-slide-to="0" class="active"></li>
+    <li data-target="#imgarray" data-slide-to="1"></li>
+    <li data-target="#imgarray" data-slide-to="2"></li>
+    <li data-target="#imgarray" data-slide-to="3"></li>
+  </ol>
+</div>
 <div id="carrot-cake">
   <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
-  <span id="viewcap" href="#imgarray"></span>
+  <span id="viewcap" href="#imgarray">waterfront</span>
   <div id="carrot2" href="#imgarray" data-slide="next">></div>
 </div>
 <div class="bottomnav">
