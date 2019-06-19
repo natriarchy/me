@@ -67,7 +67,7 @@
     </article>
   </div>
   <div class="card" style="background-color:darkgoldenrod;">
-  <div class="img-comp-container" id="container"  style="border-radius:15px">
+  <div class="img-comp-container" id="container"  style="border-radius:15;touch-action: none;">
     <div class="img-comp-img">
       <img src="img\View-Birds.png" style="border-radius:15px">
     </div>
@@ -149,7 +149,6 @@ function initComparisons() {
     window.addEventListener("touchstop", slideFinish);
     function slideReady(e) {
       e.preventDefault();
-      event.preventDefault();
       clicked = 1;
       window.addEventListener("mousemove", slideMove);
       window.addEventListener("touchmove", slideMove);
