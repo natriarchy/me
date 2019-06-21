@@ -1168,3 +1168,35 @@ footer::after {
   -webkit-transition-duration:1s;
   transition-duration: 1s;
 }
+#map {
+  background-color: rgba(0, 100, 0, .25);
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  height: 100%;
+  padding: 0;
+  z-index: 0;
+}
+.leaflet-control-layers:first-child {
+  background-color: rgba(100, 100, 100, .5);
+  background-image: url("iron-grip.png");
+  background-size: 10em 10em;
+  border-radius: 10px;
+  color:white;
+  width:66%;
+  line-height: 1.25em;
+  top:1em;
+  font-size: .6em;
+  text-align:center;
+}
+.leaflet-control-layers img {
+  margin:0;
+}
+.leaflet-control-layers input {
+  display: none;
+}
+.leaflet-control-layers td {
+  padding: -2;
+}
