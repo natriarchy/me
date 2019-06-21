@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -9,17 +9,22 @@
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
-  <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
-  <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
-  <link rel="shortcut icon" href="img\logo2.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-136760833-1');
-  </script>
+  <link rel="stylesheet" media="screen and (max-width: 599px)" href="\css\styles-small.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="\css\styles-medium.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 901px)" href="\css\styles-large.css" type="text/css">
+  <link rel="shortcut icon" href="\img\logo2.png">
+    <link rel="stylesheet" href="/qg/css/leaflet.css">
+    <link rel="stylesheet" href="/qg/css/leaflet-measure.css">
+  <style>
+    #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      z-index: 0;
+      border-color:white;
+  }
+  </style>
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -52,33 +57,15 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-<hr style="background-color:aquamarine;grid-row: 5;grid-column: left/span 3;">
-<figure id="imgarray" class="carousel slide d-flex text-center" data-ride="carousel">
-  <div class="carousel-inner m-auto">
-    <div class="carousel-item active">
-      <img src="img/PlainMap.png" title="study area">
-    </div>
-    <div class="carousel-item">
-      <img src="img/ExistTransit.png" title="transit">
-    </div>
-    <div class="carousel-item">
-      <img src="img/PropTransit.png" title="transit proposal">
-    </div>
-    <div class="carousel-item">
-      <img src="img/PropSitePlan.png" title="site plan">
+  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-wrap rounded bg-danger" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
+    <img src="\img\me.JPG" class="align-self-center img-thumbnail m-auto rounded-lg" style="height: 33vh;max-width:100%">
+    <div class="d-flex flex-column justify-content-around align-content-center m-auto align-text-center">
+      <h2 class="display-4 text-warning">welcome</h2>
+      <a onclick="this.scrollIntoView()" class="btn btn-warning shadow-lg align-self-center">click me</a>
     </div>
   </div>
-</figure>
-<div id="carrot-cake">
-  <div id="carrot1" href="#imgarray" data-slide="prev"><</div>
-  <div id="viewcap"></div>
-  <div id="carrot2" href="#imgarray" data-slide="next">></div>
-</div>
-<div class="bottomnav">
-    <a href="design-passaic.html">Last</a>
-    <a href="design.html">Back to Overview</a>
-    <a href="design-camden.html">Next</a>
-</div>
+  <div id="map" class="card" style="height:66vh">
+  </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -86,7 +73,7 @@
 </body>
 <footer id="footer">
   <div class="top">
-    <img src="img/contact-me.png" alt="contact-me" class="contact">
+    <img src="\img\contact-me.png" alt="contact-me" class="contact">
   </div>
   <div class="top-line">
     <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
@@ -94,37 +81,15 @@
   </div>
   <div class="middle">
     <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
-    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="\img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
   </div>
 </footer>
-<script type="text/javascript">
+<script>
 $(document).ready(function(){
   $("#dropdown-title,#dropdown").hover(function(){
     $("#dropdown").css("display", "flex");
     }, function(){
     $("#dropdown").css("display", "none");
-  });
-  $("#button1").on("click",function(){
-   $("#plan-b").show();
-   $("#plan-a").hide();
-   $("#button1,#button2").toggleClass("activate");
-   $("#button1,#button2").toggleClass("deactivate");
-  });
-  $("#button2").on("click",function(){
-   $("#plan-a").show();
-   $("#plan-b").hide();
-   $("#button1,#button2").toggleClass("activate");
-   $("#button1,#button2").toggleClass("deactivate");
-  });
-  $("#imgarray").on('slide.bs.carousel', function(event){
-   var slider = event.relatedTarget;
-   var titler = $('img',slider).attr('title');
-   $("#viewcap").text(titler);
-  });
-  $("#footer").hover(function(){
-   $("#footer").css("transform","translateY(-9vh)");
-   }, function(){
-   $("#footer").css("transform","translateY(0vh)");
   });
   $(window).scroll(function() {
     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
@@ -137,17 +102,335 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
+  $("#footer").hover(function(){
+    $("#footer").css("transform","translateY(-9vh)");
+    }, function(){
+    $("#footer").css("transform","translateY(0vh)");
+  });
 });
-function change(){
-  $(document).ready(function(){
-      $("#buildfly").hide();
-      $("#artistic").show();
-      $("#title").show();
-  })};
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
-};
 </script>
+    <script src="/qg/js/qgis2web_expressions.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+    <script src="/qg/js/leaflet.rotatedMarker.js"></script>
+    <script src="/qg/js/leaflet.pattern.js"></script>
+    <script src="/qg/js/leaflet-hash.js"></script>
+    <script src="/qg/js/leaflet-providers.js"></script>
+    <script src="/qg/js/Autolinker.min.js"></script>
+    <script src="/qg/js/rbush.min.js"></script>
+    <script src="/qg/js/labelgun.min.js"></script>
+    <script src="/qg/js/labels.js"></script>
+    <script src="/qg/js/leaflet-measure.js"></script>
+    <script src="/qg/js/proj4.js"></script>
+    <script src="/qg/js/proj4leaflet.js"></script>
+    <script src="/qg/data/MorganProps_0.js"></script>
+    <script src="/qg/data/MorganSts_1.js"></script>
+    <script src="/qg/data/cb_2016_34_tract_500k_2.js"></script>
+    <script>
+    var highlightLayer;
+    function highlightFeature(e) {
+        highlightLayer = e.target;
+        highlightLayer.openPopup();
+    }
+    var crs = new L.Proj.CRS('EPSG:2260', '+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs', {
+        resolutions: [2800, 1400, 700, 350, 175, 84, 42, 21, 11.2, 5.6, 2.8, 1.4, 0.7, 0.35, 0.14, 0.07],
+    });
+    var map = L.map('map', {
+        crs: crs,
+        continuousWorld: false,
+        worldCopyJump: false,
+        zoomControl:false, maxZoom:10, minZoom:7.15,
+        maxBounds:true
+    })
+    var hash = new L.Hash(map);
+    map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+    var bounds_group = new L.featureGroup([]);
+    function setBounds() {
+        if (bounds_group.getLayers().length) {
+            map.fitBounds(bounds_group.getBounds());
+        }
+        map.setMaxBounds(map.getBounds());
+    }
+    function pop_MorganProps_0(feature, layer) {
+        layer.on({
+            mouseout: function(e) {
+                if (typeof layer.closePopup == 'function') {
+                    layer.closePopup();
+                } else {
+                    layer.eachLayer(function(feature){
+                        feature.closePopup()
+                    });
+                }
+            },
+            mouseover: highlightFeature,
+        });
+        var popupContent = '<table style="text-align:center;user-select:none;">\
+                <tr>\
+                    <td colspan="2">' + (feature.properties['ST_ADDRESS'] !== null ? Autolinker.link(String(feature.properties['ST_ADDRESS'])) : '') + '</td>\
+                </tr>\
+                <tr>\
+                    <td colspan="2">' + 'Land Value' + ' : '+(feature.properties['LAND_VAL'] !== null ? Autolinker.link(String(feature.properties['LAND_VAL'])) : '') + '</td>\
+                </tr>\
+                <tr>\
+                    <td colspan="2">' + 'Impr. Value' + ' : ' + (feature.properties['IMPRVT_VAL'] !== null ? Autolinker.link(String(feature.properties['IMPRVT_VAL'])) : '') + '</td>\
+                </tr>\
+                <tr style="text-decoration:overline;color:aquamarine;font-weight:bolder">\
+                    <th scope="row">NET VALUE</th>\
+                    <td>' + (feature.properties['NET_VALUE'] !== null ? Autolinker.link(String(feature.properties['NET_VALUE'])) : '') + '</td>\
+                </tr>\
+                <tr style="font-weight:bolder">\
+                    <td colspan="2">' + (feature.properties['ZONE'] !== null ? Autolinker.link(String(feature.properties['ZONE'])) : '') + '</td>\
+                </tr>\
+                <tr>\
+            </table>';
+        layer.bindPopup(popupContent, {maxHeight: 400});
+    }
+
+    function style_MorganProps_0_0(feature) {
+        switch(String(feature.properties['ZONE'])) {
+            case 'R-7':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(235,214,161,0.9)',
+        }
+                break;
+            case 'R-10':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(232,153,74,0.9)',
+        }
+                break;
+            case 'PD-10':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(212,111,15,0.9)',
+        }
+                break;
+            case 'B-3':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(243,126,140,0.9)',
+        }
+                break;
+            case 'P':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(166,202,243,0.9)',
+        }
+                break;
+            case 'MW':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(187,164,109,0.9)',
+        }
+                break;
+            case 'MW (PUD)':
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(133,97,7,0.9)',
+        }
+                break;
+            default:
+                return {
+            pane: 'pane_MorganProps_0',
+            opacity: 1,
+            color: 'rgba(80,80,80,0.9)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: .5,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(198,176,243,0.9)',
+        }
+                break;
+        }
+    }
+    map.createPane('pane_MorganProps_0');
+    map.getPane('pane_MorganProps_0').style.zIndex = 400;
+    map.getPane('pane_MorganProps_0').style['mix-blend-mode'] = 'normal';
+    var layer_MorganProps_0 = new L.geoJson(json_MorganProps_0, {
+        attribution: '',
+        pane: 'pane_MorganProps_0',
+        onEachFeature: pop_MorganProps_0,
+        style: style_MorganProps_0_0,
+    });
+    bounds_group.addLayer(layer_MorganProps_0);
+    map.addLayer(layer_MorganProps_0);
+    function pop_MorganSts_1(feature, layer) {
+        layer.on({
+            mouseout: function(e) {
+                if (typeof layer.closePopup == 'function') {
+                    layer.closePopup();
+                } else {
+                    layer.eachLayer(function(feature){
+                        feature.closePopup()
+                    });
+                }
+            },
+            mouseover: highlightFeature,
+        });
+        var popupContent = '<table>\
+                <tr>\
+                    <td colspan="2">' + (feature.properties['PRIME_NAME'] !== null ? Autolinker.link(String(feature.properties['PRIME_NAME'])) : '') + '</td>\
+                </tr>\
+            </table>';
+        layer.bindPopup(popupContent, {maxHeight: 200});
+    }
+
+    function style_MorganSts_1_0(feature) {
+        switch(String(feature.properties['SYMBOLTYPE'])) {
+            case '100':
+            case '108':
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: 1,
+            color: 'rgba(270,50,50,1.0)',
+            dashArray: '',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: 1.5,
+            fillOpacity: 0,
+        }
+                break;
+            case '300':
+            case '308':
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: 1,
+            color: 'rgba(239,206,74,1.0)',
+            dashArray: '',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: 2.0,
+            fillOpacity: 0,
+            smoothFactor:2,
+        }
+                break;
+            case '400':
+            case '408':
+            case '500':
+            case '508':
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: 1,
+            color: 'rgba(260,101,0,1.0)',
+            dashArray: '',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: 1.5,
+            fillOpacity: 0,
+        }
+                break;
+            case '600':
+            case '700':
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: .5,
+            color: 'rgba(260,260,260,1.0)',
+            dashArray: '2 0 0 2',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: .75,
+            fillOpacity: 0,
+        }
+                break;
+            default:
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: 1,
+            color: 'rgba(0,0,0,1.0)',
+            dashArray: '',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: 1,
+            fillOpacity: 0,
+        }
+                break;
+            case '900':
+                return {
+            pane: 'pane_MorganSts_1',
+            opacity: 1,
+            color:'rgba(0,0,0,1.0)',
+            dashArray: '',
+            lineCap: 'round',
+            lineJoin: 'round',
+            weight: 3.0,
+            fillOpacity: 1,
+        }
+                break;
+        }
+    }
+    map.createPane('pane_MorganSts_1');
+    map.getPane('pane_MorganSts_1').style.zIndex = 399;
+    map.getPane('pane_MorganSts_1').style['mix-blend-mode'] = 'normal';
+    var layer_MorganSts_1 = new L.geoJson(json_MorganSts_1, {
+        attribution: '',
+        pane: 'pane_MorganSts_1',
+        onEachFeature: pop_MorganSts_1,
+        style: style_MorganSts_1_0,
+    });
+    bounds_group.addLayer(layer_MorganSts_1);
+    map.addLayer(layer_MorganSts_1);
+    var baseMaps = {};
+    L.control.layers(baseMaps,{'Zoning Designations<br /><table><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(map);
+    setBounds();
+    </script>
 </html>
