@@ -1245,7 +1245,7 @@ footer a:hover,.linked:hover img {
   text-shadow: 1px 1px 2px aqua;
   border-radius: 5px;
 }
-.polylinetext::first-line{
+.polylinetext {
   font-size: 100px;
   color: aquamarine;
   text-shadow: 1px 1px 1px white;

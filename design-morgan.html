@@ -290,7 +290,6 @@ $(document).ready(function(){
         pos2 = [40.4673,-74.2811];
     var layer_polyName = L.polyline(([pos1, pos2]),{opacity:0}).setText('State Hwy 34', {center: true,attributes: {fill: 'white'}})
     mymap.addLayer(layer_polyName);
-    layer_polyName.bringToFront();
     function style_MorganSts_1_0(feature) {
         switch(String(feature.properties['SYMBOLTYPE'])) {
             case '100':

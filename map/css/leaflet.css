@@ -622,7 +622,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	pointer-events: none;
 	}
 .leaflet-tooltip:first-line {
-	text-rendering: geometricPrecision;
 	}
 .leaflet-tooltip.leaflet-clickable {
 	cursor:none;
