@@ -13,18 +13,12 @@
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="\css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="\css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="\img\logo2.png">
-    <link rel="stylesheet" href="/qg/css/leaflet.css">
-    <link rel="stylesheet" href="/qg/css/leaflet-measure.css">
-  <style>
-    #map {
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      z-index: 0;
-      border-color:white;
-  }
-  </style>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
+     <script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.0/leaflet.textpath.min.js"></script>
+     <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
+     <link rel="stylesheet" href="\map\css\gis2web.css" type="text/css">
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -57,18 +51,19 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-wrap rounded bg-danger" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
+  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-wrap rounded bg-warning" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
     <img src="\img\me.JPG" class="align-self-center img-thumbnail m-auto rounded-lg" style="height: 33vh;max-width:100%">
     <div class="d-flex flex-column justify-content-around align-content-center m-auto align-text-center">
-      <h2 class="display-4 text-warning">welcome</h2>
-      <a onclick="this.scrollIntoView()" class="btn btn-warning shadow-lg align-self-center">click me</a>
+      <h2 class="display-4 text-light">welcome</h2>
+      <a onclick="this.scrollIntoView()" class="btn btn-dark text-light shadow-lg align-self-center">click me</a>
     </div>
   </div>
-  <div id="map" class="card" style="height:66vh">
+  <div id="morganmap" class="card">
   </div>
+  <div id="coords" class="card">&nbsp;00.0000, -00.0000</div>
+  <div id="subtitle" class="card">Proof of concept</div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <footer id="footer">
@@ -109,49 +104,28 @@ $(document).ready(function(){
   });
 });
 </script>
-    <script src="/qg/js/qgis2web_expressions.js"></script>
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-      crossorigin=""></script>
-    <script src="/qg/js/leaflet.rotatedMarker.js"></script>
-    <script src="/qg/js/leaflet.pattern.js"></script>
-    <script src="/qg/js/leaflet-hash.js"></script>
-    <script src="/qg/js/leaflet-providers.js"></script>
-    <script src="/qg/js/Autolinker.min.js"></script>
-    <script src="/qg/js/rbush.min.js"></script>
-    <script src="/qg/js/labelgun.min.js"></script>
-    <script src="/qg/js/labels.js"></script>
-    <script src="/qg/js/leaflet-measure.js"></script>
-    <script src="/qg/js/proj4.js"></script>
-    <script src="/qg/js/proj4leaflet.js"></script>
-    <script src="/qg/data/MorganProps_0.js"></script>
-    <script src="/qg/data/MorganSts_1.js"></script>
-    <script src="/qg/data/cb_2016_34_tract_500k_2.js"></script>
-    <script>
+<script src="/map/Autolinker.min.js"></script>
+<script src="/map/data/MorganProps_0.js"></script>
+<script src="/map/data/MorganSts_1.js"></script>
+<script>
     var highlightLayer;
     function highlightFeature(e) {
         highlightLayer = e.target;
         highlightLayer.openPopup();
     }
-    var crs = new L.Proj.CRS('EPSG:2260', '+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs', {
-        resolutions: [2800, 1400, 700, 350, 175, 84, 42, 21, 11.2, 5.6, 2.8, 1.4, 0.7, 0.35, 0.14, 0.07],
+    var mymap = L.map('morganmap' , {
+    center: [40.466,-74.274],
+    zoom: 14,
+    continuousWorld: false,
+    worldCopyJump: false,
+    zoomControl:true, maxZoom:16.5, minZoom:14,
+    maxBounds:[[40.49,-74.30],[40.430,-74.2377]],
     });
-    var map = L.map('map', {
-        crs: crs,
-        continuousWorld: false,
-        worldCopyJump: false,
-        zoomControl:false, maxZoom:10, minZoom:7.15,
-        maxBounds:true
-    })
-    var hash = new L.Hash(map);
-    map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
-    var bounds_group = new L.featureGroup([]);
-    function setBounds() {
-        if (bounds_group.getLayers().length) {
-            map.fitBounds(bounds_group.getBounds());
-        }
-        map.setMaxBounds(map.getBounds());
-    }
+    mymap.on("mousemove", function (event) {
+      console.log(event.latlng.toString());
+      var spot = (event.latlng);
+      $('#coords').html("&nbsp;"+[(spot.lat).toFixed(4)]+', '+(spot.lng).toFixed(4));
+    });
     function pop_MorganProps_0(feature, layer) {
         layer.on({
             mouseout: function(e) {
@@ -163,21 +137,21 @@ $(document).ready(function(){
                     });
                 }
             },
-            mouseover: highlightFeature,
+            mouseclick: highlightFeature,
         });
         var popupContent = '<table style="text-align:center;user-select:none;">\
                 <tr>\
-                    <td colspan="2">' + (feature.properties['ST_ADDRESS'] !== null ? Autolinker.link(String(feature.properties['ST_ADDRESS'])) : '') + '</td>\
+                    <td colspan="2" style="font-weight:bolder">' + (feature.properties['ST_ADDRESS'] !== null ? Autolinker.link(String(feature.properties['ST_ADDRESS'])) : '') + '</td>\
                 </tr>\
                 <tr>\
-                    <td colspan="2">' + 'Land Value' + ' : '+(feature.properties['LAND_VAL'] !== null ? Autolinker.link(String(feature.properties['LAND_VAL'])) : '') + '</td>\
+                    <td colspan="2">' + 'Land Value' + ' : $'+(feature.properties['LAND_VAL'] !== null ? Autolinker.link(Number(feature.properties['LAND_VAL']).toLocaleString('en')) : '') + '</td>\
                 </tr>\
                 <tr>\
-                    <td colspan="2">' + 'Impr. Value' + ' : ' + (feature.properties['IMPRVT_VAL'] !== null ? Autolinker.link(String(feature.properties['IMPRVT_VAL'])) : '') + '</td>\
+                    <td colspan="2">' + 'Impr Value' + ' : $' + (feature.properties['IMPRVT_VAL'] !== null ? Autolinker.link(Number(feature.properties['IMPRVT_VAL']).toLocaleString('en')) : '') + '</td>\
                 </tr>\
-                <tr style="text-decoration:overline;color:aquamarine;font-weight:bolder">\
+                <tr style="color:palegoldenrod;text-shadow:1.5px 1.5px 1px red;font-weight:bold">\
                     <th scope="row">NET VALUE</th>\
-                    <td>' + (feature.properties['NET_VALUE'] !== null ? Autolinker.link(String(feature.properties['NET_VALUE'])) : '') + '</td>\
+                    <td>$' + (feature.properties['NET_VALUE'] !== null ? Autolinker.link(Number(feature.properties['NET_VALUE']).toLocaleString('en')) : '') + '</td>\
                 </tr>\
                 <tr style="font-weight:bolder">\
                     <td colspan="2">' + (feature.properties['ZONE'] !== null ? Autolinker.link(String(feature.properties['ZONE'])) : '') + '</td>\
@@ -186,7 +160,6 @@ $(document).ready(function(){
             </table>';
         layer.bindPopup(popupContent, {maxHeight: 400});
     }
-
     function style_MorganProps_0_0(feature) {
         switch(String(feature.properties['ZONE'])) {
             case 'R-7':
@@ -303,38 +276,21 @@ $(document).ready(function(){
                 break;
         }
     }
-    map.createPane('pane_MorganProps_0');
-    map.getPane('pane_MorganProps_0').style.zIndex = 400;
-    map.getPane('pane_MorganProps_0').style['mix-blend-mode'] = 'normal';
+    mymap.createPane('pane_MorganProps_0');
+    mymap.getPane('pane_MorganProps_0').style.zIndex = 400;
+    var svgrender = L.svg({ padding: 10 });
     var layer_MorganProps_0 = new L.geoJson(json_MorganProps_0, {
         attribution: '',
         pane: 'pane_MorganProps_0',
         onEachFeature: pop_MorganProps_0,
         style: style_MorganProps_0_0,
     });
-    bounds_group.addLayer(layer_MorganProps_0);
-    map.addLayer(layer_MorganProps_0);
-    function pop_MorganSts_1(feature, layer) {
-        layer.on({
-            mouseout: function(e) {
-                if (typeof layer.closePopup == 'function') {
-                    layer.closePopup();
-                } else {
-                    layer.eachLayer(function(feature){
-                        feature.closePopup()
-                    });
-                }
-            },
-            mouseover: highlightFeature,
-        });
-        var popupContent = '<table>\
-                <tr>\
-                    <td colspan="2">' + (feature.properties['PRIME_NAME'] !== null ? Autolinker.link(String(feature.properties['PRIME_NAME'])) : '') + '</td>\
-                </tr>\
-            </table>';
-        layer.bindPopup(popupContent, {maxHeight: 200});
-    }
-
+    mymap.addLayer(layer_MorganProps_0);
+    var pos1 = [40.4710,-74.2842],
+        pos2 = [40.4673,-74.2811];
+    var layer_polyName = L.polyline(([pos1, pos2]),{opacity:0}).setText('State Hwy 34', {center: true,attributes: {fill: 'white'}})
+    mymap.addLayer(layer_polyName);
+    layer_polyName.bringToFront();
     function style_MorganSts_1_0(feature) {
         switch(String(feature.properties['SYMBOLTYPE'])) {
             case '100':
@@ -348,6 +304,7 @@ $(document).ready(function(){
             lineJoin: 'round',
             weight: 1.5,
             fillOpacity: 0,
+            smoothFactor:2,
         }
                 break;
             case '300':
@@ -388,7 +345,7 @@ $(document).ready(function(){
             dashArray: '2 0 0 2',
             lineCap: 'round',
             lineJoin: 'round',
-            weight: .75,
+            weight: .5,
             fillOpacity: 0,
         }
                 break;
@@ -418,19 +375,23 @@ $(document).ready(function(){
                 break;
         }
     }
-    map.createPane('pane_MorganSts_1');
-    map.getPane('pane_MorganSts_1').style.zIndex = 399;
-    map.getPane('pane_MorganSts_1').style['mix-blend-mode'] = 'normal';
+    mymap.createPane('pane_MorganSts_1');
+    mymap.getPane('pane_MorganSts_1').style.zIndex = 399;
     var layer_MorganSts_1 = new L.geoJson(json_MorganSts_1, {
         attribution: '',
         pane: 'pane_MorganSts_1',
-        onEachFeature: pop_MorganSts_1,
         style: style_MorganSts_1_0,
     });
-    bounds_group.addLayer(layer_MorganSts_1);
-    map.addLayer(layer_MorganSts_1);
+    mymap.addLayer(layer_MorganSts_1);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    className: 'mapbox',
+    id: 'mapbox.satellite',
+    bounds:[[40.49,-74.30],[40.430,-74.2377]],
+    accessToken: 'sk.eyJ1IjoibnRlcndpbjcxNCIsImEiOiJjang2aXg1dXAwMDVvM3RreXQ0dzllczN3In0.Ur4AUGHzeMqCEAczqRik-w',
+    }).addTo(mymap);
     var baseMaps = {};
-    L.control.layers(baseMaps,{'Zoning Designations<br /><table><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td style="text-align: center;"><img src="/qg/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(map);
-    setBounds();
+    L.control.scale({imperial:true,metric:false}).addTo(mymap);
+    L.control.layers(baseMaps,{'<span class="legend-name">Zoning<br>Designations</span><table class="legend"><tr><td><img src="/map/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td><img src="/map/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td><img src="/map/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td><img src="/map/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td><img src="/map/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td><img src="/map/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(mymap);
     </script>
-</html>
+    var hwypoint = L.marker([40.4683,-74.2818]).addTo(mymap);
