@@ -14,11 +14,10 @@
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="\css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="\img\logo2.png">
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-     crossorigin=""></script>
-     <script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.0/leaflet.textpath.min.js"></script>
-     <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
-     <link rel="stylesheet" href="\map\css\gis2web.css" type="text/css">
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+   <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
+   <link rel="stylesheet" href="\map\css\gis2web.css" type="text/css">
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -106,6 +105,8 @@ $(document).ready(function(){
 });
 </script>
 <script src="/map/Autolinker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.0/leaflet.textpath.min.js"></script>
+<script src="/map/data/MorganLines.js"></script>
 <script src="/map/data/MorganProps_0.js"></script>
 <script src="/map/data/MorganSts_1.js"></script>
 <script>
@@ -127,6 +128,41 @@ $(document).ready(function(){
       var spot = (event.latlng);
       $('#coords').html("&nbsp;"+[(spot.lat).toFixed(4)]+', '+(spot.lng).toFixed(4));
     });
+    L.polyline([
+      [40.4801,-74.3012],[40.4765,-74.2994],
+      [40.4732,-74.2973],[40.4710,-74.2952],
+      [40.4694,-74.2934],[40.4659,-74.2884],
+      [40.4605,-74.2797],[40.4592,-74.2781],
+      [40.4575,-74.2763],[40.4516,-74.2713]
+    ],{opacity:0,weight:1,color:'white'}).addTo(mymap).setText('Garden State Pkwy',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '16','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    L.polyline([
+      [40.4776,-74.2907],[40.4756,-74.2881],
+      [40.4710,-74.2844],[40.4675,-74.2815],
+      [40.4664,-74.2802],[40.4658,-74.2792],
+      [40.4651,-74.2777],[40.4646,-74.2762],
+      [40.4643,-74.2744],[40.4644,-74.2710],
+      [40.4649,-74.2663],[40.4648,-74.2647],
+      [40.4638,-74.2612],[40.4609,-74.2550],
+      [40.4570,-74.2470]
+    ],{opacity:0,weight:1,color:'white'}).addTo(mymap).setText('State Hwy 35',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '16','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    var myIcon = L.icon({
+        iconUrl: "map/css/images/1920px-US_9.png",
+        iconSize: [15,15],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+    });
+    L.marker([40.4640,-74.2960],{opacity:85,icon:myIcon}).addTo(mymap);
+    L.polyline([
+      [40.4773,-74.2912],[40.47502,-74.2969],
+      [40.4681,-74.2976],[40.4642,-74.2959],[40.4581,-74.2957]
+    ],{opacity:1,weight:0,color:'white'}).addTo(mymap);
+    L.polyline([
+      [40.4774,-74.2833],[40.4754,-74.2821],
+      [40.4747,-74.2817],[40.4741,-74.2816],[40.4657,-74.2751]
+    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true,attributes:{fill: 'white','font-weight':'900','font-size': '14','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    L.polyline([
+      [40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]
+    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('Bordentown Ave',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '14','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
     function pop_MorganProps_0(feature, layer) {
         layer.on({
             mouseout: function(e) {
@@ -138,7 +174,7 @@ $(document).ready(function(){
                     });
                 }
             },
-            mouseclick: highlightFeature,
+            mouseover: highlightFeature,
         });
         var popupContent = '<table style="text-align:center;user-select:none;">\
                 <tr>\
@@ -278,8 +314,7 @@ $(document).ready(function(){
         }
     }
     mymap.createPane('pane_MorganProps_0');
-    mymap.getPane('pane_MorganProps_0').style.zIndex = 400;
-    var svgrender = L.svg({ padding: 10 });
+    mymap.getPane('pane_MorganProps_0').style.zIndex = 350;
     var layer_MorganProps_0 = new L.geoJson(json_MorganProps_0, {
         attribution: '',
         pane: 'pane_MorganProps_0',
@@ -287,10 +322,6 @@ $(document).ready(function(){
         style: style_MorganProps_0_0,
     });
     mymap.addLayer(layer_MorganProps_0);
-    var pos1 = [40.4710,-74.2842],
-        pos2 = [40.4673,-74.2811];
-    var layer_polyName = L.polyline(([pos1, pos2]),{opacity:0}).setText('State Hwy 34', {center: true,attributes: {fill: 'white'}})
-    mymap.addLayer(layer_polyName);
     function style_MorganSts_1_0(feature) {
         switch(String(feature.properties['SYMBOLTYPE'])) {
             case '100':
@@ -376,7 +407,7 @@ $(document).ready(function(){
         }
     }
     mymap.createPane('pane_MorganSts_1');
-    mymap.getPane('pane_MorganSts_1').style.zIndex = 399;
+    mymap.getPane('pane_MorganSts_1').style.zIndex = 375;
     var layer_MorganSts_1 = new L.geoJson(json_MorganSts_1, {
         attribution: '',
         pane: 'pane_MorganSts_1',
