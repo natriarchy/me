@@ -1209,9 +1209,7 @@ svg > text  {
   word-break: keep-all;
   font-family: "Century Gothic";
 }
-svg {
-  filter:url(#shadow);
-}
+
 img.centerbtn {
   display: block;
   filter:contrast(500%)grayscale(1);

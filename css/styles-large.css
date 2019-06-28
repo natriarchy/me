@@ -1254,9 +1254,9 @@ svg > text  {
   letter-spacing: .25em;
   word-break: keep-all;
   font-family: "Century Gothic";
+  filter:url(#shadow);
 }
 svg {
-  filter:url(#shadow);
 }
 img.centerbtn {
   display: block;
