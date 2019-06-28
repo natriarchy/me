@@ -413,6 +413,7 @@ $(document).ready(function(){
             var imgbutton = L.DomUtil.create('img');
             imgbutton.src = 'map/css/images/focus_@2X.png';
             imgbutton.className = 'centerbtn';
+            imgbutton.title = 'Reset View';
             imgbutton.addEventListener("click", function () {
               mymap.flyTo([40.466,-74.274], 14, {animate: true,duration: 2})});
             return imgbutton;
@@ -421,5 +422,4 @@ $(document).ready(function(){
     });
     L.control.centerbtn = function(opts) {return new L.Control.Centerbtn(opts);};
     L.control.centerbtn({position:'topleft'}).addTo(mymap);
-    L.control.centerbtn.bindTooltip('Reset View');
   </script>
