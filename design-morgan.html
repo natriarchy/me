@@ -158,7 +158,7 @@ $(document).ready(function(){
     L.polyline([[40.4774,-74.2833],[40.4754,-74.2821],[40.4747,-74.2817],[40.4741,-74.2816],[40.4657,-74.2751]
     ],{opacity:0}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true});
     L.polyline([[40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]],{opacity:0}).addTo(mymap).setText('Bordentown Ave',{center: true});
-    L.polygon([[40.4860,-74.2239],[40.4860,-74.2676],[40.4667,-74.2597],[40.4611,-74.2461],[40.4538,-74.2236]],{opacity:0,fillOpacity:0}).addTo(mymap).setText("Raritan Bay",{center:true,offset:-50,renderer:L.svg()});
+    L.polygon([[40.4860,-74.2239],[40.4860,-74.2676],[40.4667,-74.2597],[40.4611,-74.2461],[40.4538,-74.2236]],{opacity:0,fillOpacity:0}).addTo(mymap).setText("Raritan Bay",{center:true,orientation:0,offset:-100,renderer:L.svg()});
     function pop_MorganProps_0(feature, layer) {
         layer.on({
             mouseout: function(e) {
@@ -418,7 +418,7 @@ $(document).ready(function(){
     }).addTo(mymap);
     var baseMaps = {};
     L.control.scale({imperial:true,metric:false}).addTo(mymap);
-    L.control.layers(baseMaps,{'<span class="legend-name">Zoning<br>Designations</span><table class="legend"><tr><td><img src="/map/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td><img src="/map/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td><img src="/map/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td><img src="/map/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td><img src="/map/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td><img src="/map/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(mymap);
+    L.control.layers(baseMaps,{'<span id="legend-name">Zoning<br>Designations</span><table class="legend"><tr><td><img src="/map/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td><img src="/map/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td><img src="/map/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td><img src="/map/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td><img src="/map/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td><img src="/map/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(mymap);
     L.Control.Centerbtn = L.Control.extend({
         onAdd: function(mymap) {
             var imgbutton = L.DomUtil.create('img');

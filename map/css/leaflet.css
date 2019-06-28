@@ -2,45 +2,7 @@
 .mapbox {
   filter:opacity(.5)contrast(115%);
 }
-.leaflet-control-layers td {
-	all:unset;
-	padding-left:1.5em;
-	max-width: 10em;
-	vertical-align:text-top;
-	display:inline-table;
-}
-table {
-  all:unset;
-  text-align: left;
-  display: flex;
-  color: white;
-  font-size: 1.25em;
-  letter-spacing: .1em;
-  line-height: 1.75em;
-  top:1em;
-  text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
-  width: 100%;
-  padding: 0;
-  justify-content: center;
-}
 
-.legend-name {
-  color:white;
-	text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
-  font-size: 1.5em;
-  letter-spacing: .15em;
-}
-.leaflet-control-layers {
-  all:unset;
-  text-align: center;
-}
-.leaflet-control-layers img {
-  box-shadow: 2px 2px 2px 0px white;
-  margin: 0;
-}
-.leaflet-control-layers input {
-  display: none;
-}
 .leaflet-pane,
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -383,8 +345,44 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 
 /* layers control */
+#legend-name {
+  color:white;
+	text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
+  font-size: 1.5em;
+  letter-spacing: .15em;
+}
+table {
+  all:unset;
+  text-align: left;
+  display: flex;
+  color: white;
+  font-size: 1.25em;
+  letter-spacing: .1em;
+  line-height: 1.75em;
+  top:1em;
+  text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+}
+.leaflet-control-layers td {
+	all:unset;
+	padding-left:1.5em;
+	max-width: 10em;
+	vertical-align:text-top;
+	display:inline-table;
+}
+.leaflet-control-layers img {
+  box-shadow: 2px 2px 2px 0px white;
+  margin: 0;
+}
+.leaflet-control-layers input {
+  display: none;
+}
 
 .leaflet-control-layers {
+  all:unset;
+  text-align: center;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 	background: rgba(0,0,0,1);
 	border-radius:unset;
@@ -683,14 +681,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 
   /**gis2Web css stuff**/
-  th {
-      text-align: center;
-      vertical-align: top;
-      margin: 0;
-      padding: 0;
-  }
   .info {
-      padding: 1em;
       font: 1em Arial, Helvetica, sans-serif;
       background: rgba(255,255,255,0.8);
       box-shadow: none;
@@ -700,21 +691,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
       margin:unset;
       padding: unset;
   }
-  .leaflet-container {
-      background: #fff;
-      padding-right: 10px;
-  }
   .leaflet-popup-content {
       width:100% !important;
       padding-right:0px;
-  }
-  .leaflet-tooltip {
-      background: none;
-      box-shadow: none;
-      border: none;
-  }
-  .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
-      border: 0px;
   }
   .fa, .leaflet-container {
       color: #000000 !important;
@@ -741,37 +720,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
       border: 2px solid #f8f8f8 !important;
       border-top: none !important;
       color: white !important;
-  }
-  .leaflet-control-search .search-button,
-  .leaflet-container .leaflet-control-search,
-  .leaflet-control-measure {
-      box-shadow: none !important;
-  }
-  .leaflet-control-search .search-button {
-      width: 30px !important;
-      height: 30px !important;
-      font-size: 13px !important;
-      text-align: center !important;
-      line-height: 30px !important;
-  }
-  .leaflet-control-measure .leaflet-control {
-      width: 30px !important;
-      height: 30px !important;
-
-  }
-  .leaflet-container .leaflet-control-search{
-      background: none !important;
-  }
-  .leaflet-control-search .search-input {
-      margin: 0px 0px 0px 0px !important;
-      height: 30px !important;
-  }
-  .leaflet-control-measure {
-      background: none!important;
-      border-radius: 4px !important;
-  }
-  .leaflet-control-measure .leaflet-control-measure-interaction {
-      background-color: #f8f8f8 !important;
   }
   .leaflet-touch .leaflet-control-measure
   .leaflet-control-measure-toggle,
