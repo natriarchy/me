@@ -50,7 +50,8 @@
 .design-title1 {
   grid-area: 3 / 2 / span 1 / span 2;
   font-family: "Century Gothic", sans-serif;
-  color: white;
+  color: #fff!important;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   font-weight: bolder;
   text-transform: lowercase;
   user-select: none;
@@ -252,6 +253,7 @@ li a:hover {
 #dropdown a:first-child{
  background-color: dimgray;
  color: white;
+ -webkit-text-fill-color: white;
 }
 #dropdown:hover {
  display: flex;
@@ -273,6 +275,7 @@ li a:hover {
   position: fixed;
   background-color: black;
   color: palegoldenrod;
+  -webkit-text-fill-color: palegoldenrod;
   letter-spacing: .5vw;
   line-height: 0;
   max-width: 66%;
@@ -404,6 +407,7 @@ article h3 {
     }
 .card-right h1 {
   color:dimgrey;
+  -webkit-text-fill-color: dimgray;
   font-size: 1.75em;
   font-weight: bold;
   text-transform: lowercase;
@@ -445,6 +449,7 @@ article h3 {
   text-transform: lowercase;
   letter-spacing: .5em;
   color: dimgrey;
+  -webkit-text-fill-color: dimgray;
   background-color: papayawhip;
   border-top: 4px dimgrey solid;
   border-left: 1px dimgrey solid;
@@ -537,6 +542,7 @@ h1 {
  text-align:center;
  text-align-last: center;
  color: white;
+ -webkit-text-fill-color: rgba(260, 260, 260, 1);
  letter-spacing:.15em;
  line-height: 1.25;
  scroll-snap-align: start; /* latest (Chrome 69+) */
@@ -551,6 +557,7 @@ h2 {
  text-align: left;
  text-transform: lowercase;
  color: white;
+ -webkit-text-fill-color: rgba(260, 260, 260, 1);
  letter-spacing:.15em;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
@@ -575,6 +582,7 @@ h3 {
  margin-bottom: .5em;
  text-align: center;
  color: white;
+ -webkit-text-fill-color: rgba(260, 260, 260, 1);
  letter-spacing: .2em;
  box-shadow: None;
 }
@@ -623,6 +631,7 @@ h6 a:hover {
   text-align: center;
   z-index: 1;
   color: white;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   font-size: 2vw;
   text-transform: lowercase;
   text-shadow: 2px 2px 1px salmon;
@@ -943,6 +952,7 @@ footer {
   max-width: 100%;
   height: 13vh;
   color: white;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   justify-content:space-around;
   align-items: center;
   text-align: center;
@@ -968,6 +978,7 @@ footer::after {
 }
 footer a:hover,.linked:hover img {
   color:orange;
+  -webkit-text-fill-color: rgba(255, 165, 0, 1);
   text-decoration: none;
   filter:invert(0);
 }
@@ -1096,6 +1107,7 @@ footer a:hover,.linked:hover img {
   cursor: pointer;
   align-self:center;
   color: aquamarine;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   padding: .5em;
   font-size: 4em;
   text-shadow: 2px 2px 2px white;
@@ -1107,6 +1119,7 @@ footer a:hover,.linked:hover img {
   cursor: pointer;
   align-self:center;
   color: aquamarine;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   padding: .5em;
   font-size: 4em;
   text-shadow: 2px 2px 2px white;
@@ -1136,7 +1149,7 @@ footer a:hover,.linked:hover img {
   margin: 0;
   z-index: 0;
   background-image: url("iron-grip.png"), radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
-  -webkit-background-image: url("iron-grip.png"), radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
+  -webkit-background-image: url("iron-grip.png"), -webkit-radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
   background-size: 25em 10em, auto auto;
   background-blend-mode:luminosity;
 }
@@ -1149,6 +1162,7 @@ footer a:hover,.linked:hover img {
   margin-bottom: -2em;
   letter-spacing: .1em;
   color: aquamarine;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   text-transform: lowercase;
   grid-column: left/span 3;
   background-color: black;
@@ -1163,7 +1177,7 @@ footer a:hover,.linked:hover img {
   display: none
 }
 svg > text  {
-  fill:white;
+  fill:#fff!important;
   opacity: 1;
   fillOpacity:1;
   font-size: .8em;
@@ -1185,7 +1199,7 @@ img.centerbtn {
   filter:contrast(500%)grayscale(1);
   width:1.9em;
   height:1.9em;
-  background:white;
+  background:#fff!important;
   border:.5px grey solid;
   cursor:pointer;
   border-radius: 2.5px;
