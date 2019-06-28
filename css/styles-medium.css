@@ -670,6 +670,7 @@ h6 a:hover {
   grid-row: splash;
   grid-column: useless-l;
   color: aqua;
+  -webkit-text-fill-color: aqua;
   text-align: center;
   margin-top: 50vh;
   font-family: inherit;
@@ -679,6 +680,7 @@ h6 a:hover {
   grid-row: splash;
   grid-column: useless-r;
   color: aqua;
+  -webkit-text-fill-color: aqua;
   text-align: center;
   margin-top: 50vh;
   font-family: inherit;
@@ -727,6 +729,7 @@ h6 a:hover {
   text-align: center;
   text-align-last: center;
   color:white;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   text-shadow: 3px 3px 3px red;
   font-size:4vw;
   text-transform: lowercase;
@@ -739,13 +742,14 @@ h6 a:hover {
   justify-content: space-around;
   align-self:stretch;
   position: relative;
-  TOP:inherit;
+  top:inherit;
   width:80%;
   margin-left: auto;
   margin-right: auto;
   }
 #button1, #button2 {
   color:white;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   height: 8vh;
   flex-basis: 35%;
   margin-top: .5em;
@@ -768,12 +772,14 @@ h6 a:hover {
   }
   #button1:hover,#button2:hover {
     color: rgba(200, 250, 0);
+    -webkit-text-fill-color: rgba(200, 250, 0);
     text-shadow:0px 0px 10px yellow;
   }
 .activate {
   box-shadow:inset 0px 5px 5px 1px black;
   background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
   color: mintcream;
+  -webkit-text-fill-color: mintcream;
   text-shadow: 2px 2px 1px darkorange;
   border-top: 4px black solid;
   border-bottom: 1px black solid;
@@ -783,6 +789,7 @@ h6 a:hover {
 .deactivate {
   background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
   color:mintcream;
+  -webkit-text-fill-color: mintcream;
   box-shadow:0px 5px 5px 1px black;
   text-shadow: 2px 2px 1px purple;
   border-top: 2px grey solid;
@@ -832,6 +839,7 @@ h6 a:hover {
   width:100%;
   flex-wrap: nowrap;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   font-family: inherit;
   font-size: 1.75em;
   text-shadow: 2px 2px 2px red;
@@ -843,6 +851,7 @@ h6 a:hover {
   text-align: left;
   align-self:center;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   opacity: .5;
   padding: .15em;
   font-size: 3em;
@@ -860,6 +869,7 @@ h6 a:hover {
   text-align: right;
   align-self:center;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   opacity: .5;
   padding: .15em;
   font-size: 3em;
@@ -875,6 +885,7 @@ h6 a:hover {
 #carrot1:hover,#carrot2:hover {
   text-shadow: 3px 3px 5px aquamarine;
   color: yellow;
+  -webkit-text-fill-color: yellow;
   border-color:yellow;
   opacity: .5;
   -webkit-transition-duration:.25s;
