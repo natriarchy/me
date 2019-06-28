@@ -52,7 +52,7 @@
   grid-area: 3 / 2 / span 1 / span 2;
   font-family: "Century Gothic", sans-serif;
   color: #fff!important;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   font-weight: bolder;
   text-transform: lowercase;
   user-select: none;
@@ -1152,6 +1152,7 @@ footer a:hover,.linked:hover img {
   content:">";
   cursor: pointer;
   align-self:center;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   color: aquamarine;
   padding: .5em;
   font-size: 4em;
@@ -1163,6 +1164,7 @@ footer a:hover,.linked:hover img {
   content:"<";
   cursor: pointer;
   align-self:center;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   color: aquamarine;
   padding: .5em;
   font-size: 4em;
@@ -1173,6 +1175,7 @@ footer a:hover,.linked:hover img {
 .draggable:after {
   content:">>";
   color:yellow;
+  -webkit-text-fill-color: rgba(255,255,0,1)
   opacity:0;
   -webkit-transition-duration:1s;
   transition-duration: 1s;
@@ -1180,6 +1183,7 @@ footer a:hover,.linked:hover img {
 .draggable:before {
   content:"<<";
   color:yellow;
+  -webkit-text-fill-color: rgba(255,255,0,1)
   opacity:0;
   -webkit-transition-duration:1s;
   transition-duration: 1s;
