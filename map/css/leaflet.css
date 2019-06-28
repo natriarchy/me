@@ -356,6 +356,7 @@ table {
   text-align: left;
   display: flex;
   color: white;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
   font-size: 1.25em;
   letter-spacing: .1em;
   line-height: 1.75em;
