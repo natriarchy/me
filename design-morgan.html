@@ -47,8 +47,8 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-nowrap rounded bg-secondary" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
-    <div id="imgarray" class="carousel slide m-auto" data-ride="carousel" style="height:80%;width:48%">
+  <div class="container d-flex flex-fill flex-wrap m-auto justify-content-between flex-row rounded bg-secondary" style="grid-column: left/span 3;border:unset; padding: 1em;box-shadow:inset 0px 0px 20px 1px;">
+    <div id="imgarray" class="carousel slide m-auto align-self-center rounded-lg" data-ride="carousel" style="max-height:45vh">
       <div class="carousel-inner text-center">
         <div class="carousel-item active">
           <img src="img\Morgan_Inset.png" title="study area">
@@ -71,12 +71,12 @@
       </ol>
       <div id="carrot-cake">
         <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
-        <span id="viewcap" href="#imgarray">study area</span>
+        <span id="viewcap" href="#imgarray" style="opacity:0">study area</span>
         <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
       </div>
     </div>
-    <div class="d-flex flex-column justify-content-around align-content-center my-auto w-33">
-      <h2 class="display-5 text-light text-center">Morgan-Sayreville<br>GIS Work</h2>
+    <div class="d-flex flex-column justify-content-around align-content-center m-auto">
+      <span class="h3 text-light text-center">Morgan-Sayreville GIS Work</span>
       <a class="btn btn-primary shadow-lg align-self-center" data-toggle="popover" style="-webkit-text-fill-color: rgba(260, 260, 260, 1);cursor:pointer">click me</a>
     </div>
   </div>
@@ -140,11 +140,6 @@ $(document).ready(function(){
       $("#titlea").removeClass("stickytitle");
       $("#dropdown").removeClass("stickydrop");
     }
-  });
-  $("#imgarray").on('slide.bs.carousel', function(event){
-   var slider = event.relatedTarget;
-   var titler = $('img',slider).attr('title');
-   $("#viewcap").text(titler);
   });
   $("#footer").hover(function(){
    $("#footer").css("transform","translateY(-9vh)");
