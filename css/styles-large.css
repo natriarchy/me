@@ -319,6 +319,7 @@ li a:hover {
   border-left: 2px solid black;
   box-shadow: 0px 0px 10px 1px;
   background-image: linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,rgba(260,260,260,.75) 100%), url("light-wool.png");
+  -webkit-background-image: -webkit-linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,rgba(260,260,260,.75) 100%), url("light-wool.png");
   background-size: auto auto, 6em auto;
 }
 .toobig {
@@ -390,6 +391,7 @@ article h3 {
     text-shadow: 3px 3px 5px rgba(55, 250, 150,.75);
     text-transform: lowercase;
     color: dimgrey;
+    -webkit-text-fill-color: dimgray;
     border-top: 4px dimgrey solid;
     border-left: 1px dimgrey solid;
     border-right: 1px dimgrey solid;
@@ -776,6 +778,7 @@ h6 a:hover {
   box-shadow:inset 0px 5px 5px 1px black;
   background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
   color: mintcream;
+  -webkit-text-fill-color: mintcream;
   text-shadow: 2px 2px 1px darkorange;
   border-top: 4px black solid;
   border-bottom: 1px black solid;
@@ -785,6 +788,7 @@ h6 a:hover {
 .deactivate {
   background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
   color:mintcream;
+  -webkit-text-fill-color: mintcream;
   box-shadow:0px 5px 5px 1px black;
   text-shadow: 2px 2px 1px purple;
   border-top: 2px grey solid;
@@ -834,6 +838,7 @@ h6 a:hover {
   letter-spacing: .1em;
   width:100%;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   font-family: inherit;
   font-size: 2em;
   text-shadow: 2px 2px 2px red;
@@ -845,6 +850,7 @@ h6 a:hover {
   text-align: left;
   align-self:center;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   opacity: .5;
   padding: .15em;
   font-size: 4em;
@@ -862,6 +868,7 @@ h6 a:hover {
   text-align: right;
   align-self:center;
   color: antiquewhite;
+  -webkit-text-fill-color: antiquewhite;
   opacity: .5;
   padding: .15em;
   font-size: 4em;
@@ -877,6 +884,7 @@ h6 a:hover {
 #carrot1:hover,#carrot2:hover {
   text-shadow: 3px 3px 5px aquamarine;
   color: yellow;
+  -webkit-text-fill-color: yellow;
   border-color:yellow;
   opacity: 1;
   transform: scaleY(1) scaleX(.8);
@@ -924,6 +932,7 @@ h6 a:hover {
   transition-duration: .15s;
   cursor: pointer;
   color: dimgrey;
+  -webkit-text-fill-color: dimgray;
   text-align: center;
   font-size: 2em;
   font-weight:lighter;
@@ -940,6 +949,7 @@ h6 a:hover {
 }
 .bottomnav a:hover {
   color: rgba(200, 250, 0);
+  -webkit-text-fill-color: rgba(200, 250, 0);
   background-color: dimgrey;
   border-top: 4px black solid;
   border-bottom: 4px black solid;
@@ -1095,6 +1105,7 @@ footer a:hover,.linked:hover img {
   justify-content: center;
   background-color: aquamarine;
   background-image: radial-gradient(dimgray 0%,dimgray 25%,white 100%);
+  -webkit-background-image: -webkit-radial-gradient(dimgray 0%,dimgray 25%,white 100%);
   background-size: 1em 10em;
   background-position: center;
   background-repeat: no-repeat;
