@@ -718,6 +718,7 @@ table {
   }
   .leaflet-control-attribution a {
       color: RGBA(0,100,0,1) !important;
+      -webkit-text-fill-color: rgba(0,100,0,1);
   }
   .leaflet-control-scale-line {
       border: 2px solid #f8f8f8 !important;
