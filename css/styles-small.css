@@ -1177,7 +1177,6 @@ footer::after {
   background-image: url("iron-grip.png"), radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
   background-size: 25em 10em, auto auto;
   background-blend-mode:luminosity;
-  grid-column: left;
 }
 #morgantitle {
   all:unset;
@@ -1188,57 +1187,78 @@ footer::after {
   letter-spacing: .1em;
   color: aquamarine;
   text-transform: lowercase;
-  grid-column: left;
+  grid-column: left/span 3;
   background-color: black;
   box-shadow: 2px 8px 10px 0px black;
   text-shadow: 1px 1px 1px white;
   border-radius: 5px;
 }
 #coords {
-  all:unset;
-  align-self: center;
-  text-align: left;
-  font-family: "Century Gothic";
-  letter-spacing: .1em;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  flex-wrap: nowrap;
-  margin-top: -1em;
-  color:white;
-  position: relative;
-  grid-column: left;
-  background-color: black;
-  box-shadow: 2px 8px 10px 0px black;
-  text-shadow: 1px 1px 2px aqua;
-  border-radius: 5px;
-}
-#coords:before {
-  content:'Coordinates\0020\:';
+  display: none
 }
 #subtitle {
-  all:unset;
-  align-self: center;
-  text-align: left;
+  display: none;
+}
+svg > text  {
+  fill:white;
+  opacity: 1;
+  fillOpacity:1;
+  font-size: .8em;
+  font-weight: 700;
+  letter-spacing: .25em;
+  word-break: keep-all;
   font-family: "Century Gothic";
-  letter-spacing: .1em;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  flex-wrap: nowrap;
-  flex-flow: row;
-  margin-top: -1em;
-  color:white;
-  position: relative;
-  grid-column: left;
-  background-color: black;
-  box-shadow: 2px 8px 10px 0px black;
-  text-shadow: 1px 1px 2px aqua;
-  border-radius: 5px;
 }
-.polylinetext {
-  font-size: 100px;
-  color: aquamarine;
-  text-shadow: 1px 1px 1px white;
-  border-radius: 5px;
+svg {
+  filter:url(#shadow);
 }
+img.centerbtn {
+  display: block;
+  filter:contrast(500%)grayscale(1);
+  width:1.9em;
+  height:1.9em;
+  color: black;
+  background:white;
+  border:.5px grey solid;
+  cursor:pointer;
+  border-radius: 2.5px;
+}
+.leaflet-control table,td {
+  font-size: 1em;
+  width:auto
+}
+.leaflet-control {
+  transform: scale(.75)
+}
+.leaflet-top .leaflet-control {
+	margin-top: 0px;
+	}
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 3px;
+	}
+.leaflet-left .leaflet-control {
+	margin-left: 3px;
+	}
+.leaflet-right .leaflet-control {
+	margin-right: 3px;
+	}
+.legend-name {
+  font-size: 1em;
+}
+.leaflet-container .leaflet-control-attribution {
+	all:unset;
+  text-align:right;
+  font-size: .5em;
+	background: rgba(255, 255, 255, 1);
+	padding: .15em;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-radius: 5px 0px 0px 0px;
+	}
+.leaflet-control-attribution,
+.leaflet-control-scale-line {
+	padding: 0;
+  margin: 0;
+	color: white;
+  max-width:33vw;
+	}

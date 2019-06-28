@@ -1194,9 +1194,27 @@ footer a:hover,.linked:hover img {
   text-shadow: 1px 1px 2px aqua;
   border-radius: 5px;
 }
-.polylinetext {
-  font-size: 100px;
-  color: aquamarine;
-  text-shadow: 1px 1px 1px white;
-  border-radius: 5px;
+svg > text  {
+  fill:white;
+  opacity: 1;
+  fillOpacity:1;
+  font-size: .8em;
+  font-weight: 700;
+  letter-spacing: .25em;
+  word-break: keep-all;
+  font-family: "Century Gothic";
+}
+svg {
+  filter:url(#shadow);
+}
+img.centerbtn {
+  display: block;
+  filter:contrast(500%)grayscale(1);
+  width:1.9em;
+  height:1.9em;
+  color: black;
+  background:white;
+  border:.5px grey solid;
+  cursor:pointer;
+  border-radius: 2.5px;
 }

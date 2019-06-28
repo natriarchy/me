@@ -8,16 +8,12 @@
   <title>Morgan</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <link rel="shortcut icon" href="\img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="\css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="\css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="\css\styles-large.css" type="text/css">
-  <link rel="shortcut icon" href="\img\logo2.png">
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-   <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
-   <link rel="stylesheet" href="\map\css\gis2web.css" type="text/css">
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -57,12 +53,22 @@
       <a onclick="this.scrollIntoView()" class="btn btn-dark text-light shadow-lg align-self-center">click me</a>
     </div>
   </div>
-  <div id="morgantitle" class="card">Morgan-Sayreville Interactive Map</div>
+  <h1 id="morgantitle">Morgan-Sayreville Interactive Map</h1>
   <div id="morganmap" class="card">
   </div>
   <div id="coords" class="card">&nbsp;00.0000, -00.0000</div>
   <div id="subtitle" class="card">Proof of concept</div>
 </section>
+<svg height="0">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
+    </filter>
+  </defs>
+</svg>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
@@ -105,8 +111,7 @@ $(document).ready(function(){
 });
 </script>
 <script src="/map/Autolinker.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.0/leaflet.textpath.min.js"></script>
-<script src="/map/data/MorganLines.js"></script>
+<script src="/map/leaflet.textpath.js"></script>
 <script src="/map/data/MorganProps_0.js"></script>
 <script src="/map/data/MorganSts_1.js"></script>
 <script>
@@ -124,7 +129,6 @@ $(document).ready(function(){
     maxBounds:[[40.49,-74.30],[40.430,-74.2377]],
     });
     mymap.on("mousemove", function (event) {
-      console.log(event.latlng.toString());
       var spot = (event.latlng);
       $('#coords').html("&nbsp;"+[(spot.lat).toFixed(4)]+', '+(spot.lng).toFixed(4));
     });
@@ -134,7 +138,7 @@ $(document).ready(function(){
       [40.4694,-74.2934],[40.4659,-74.2884],
       [40.4605,-74.2797],[40.4592,-74.2781],
       [40.4575,-74.2763],[40.4516,-74.2713]
-    ],{opacity:0,weight:1,color:'white'}).addTo(mymap).setText('Garden State Pkwy',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '16','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    ],{opacity:0}).addTo(mymap).setText('Garden State Pkwy',{center: true});
     L.polyline([
       [40.4776,-74.2907],[40.4756,-74.2881],
       [40.4710,-74.2844],[40.4675,-74.2815],
@@ -144,25 +148,19 @@ $(document).ready(function(){
       [40.4649,-74.2663],[40.4648,-74.2647],
       [40.4638,-74.2612],[40.4609,-74.2550],
       [40.4570,-74.2470]
-    ],{opacity:0,weight:1,color:'white'}).addTo(mymap).setText('State Hwy 35',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '16','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    ],{opacity:0}).addTo(mymap).setText('State Hwy 35',{center: true});
     var myIcon = L.icon({
         iconUrl: "map/css/images/1920px-US_9.png",
         iconSize: [15,15],
         iconAnchor: [0, 0],
         popupAnchor: [0, 0],
     });
-    L.marker([40.4640,-74.2960],{opacity:85,icon:myIcon}).addTo(mymap);
-    L.polyline([
-      [40.4773,-74.2912],[40.47502,-74.2969],
-      [40.4681,-74.2976],[40.4642,-74.2959],[40.4581,-74.2957]
-    ],{opacity:1,weight:0,color:'white'}).addTo(mymap);
-    L.polyline([
-      [40.4774,-74.2833],[40.4754,-74.2821],
-      [40.4747,-74.2817],[40.4741,-74.2816],[40.4657,-74.2751]
-    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true,attributes:{fill: 'white','font-weight':'900','font-size': '14','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
-    L.polyline([
-      [40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]
-    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('Bordentown Ave',{center: true,attributes:{fill: 'white','font-weight':'900','font-size': '14','letter-spacing':'.1em','stroke':'black','stroke-width':'.5px','lineCap': 'butt','lineJoin':'miter'}});
+    L.marker([40.4640,-74.2960],{icon:myIcon}).addTo(mymap);
+    L.polyline([[40.4773,-74.2912],[40.47502,-74.2969],[40.4681,-74.2976],[40.4642,-74.2959],[40.4581,-74.2957]],{opacity:0,weight:0}).addTo(mymap);
+    L.polyline([[40.4774,-74.2833],[40.4754,-74.2821],[40.4747,-74.2817],[40.4741,-74.2816],[40.4657,-74.2751]
+    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true});
+    L.polyline([[40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('Bordentown Ave',{center: true});
+    L.polygon([[40.4860,-74.2239],[40.4860,-74.2676],[40.4667,-74.2597],[40.4611,-74.2461],[40.4538,-74.2236]],{opacity:0,fillOpacity:0}).addTo(mymap).setText("Raritan Bay",{center:true,offset:-50,renderer:L.svg()});
     function pop_MorganProps_0(feature, layer) {
         layer.on({
             mouseout: function(e) {
@@ -316,7 +314,7 @@ $(document).ready(function(){
     mymap.createPane('pane_MorganProps_0');
     mymap.getPane('pane_MorganProps_0').style.zIndex = 350;
     var layer_MorganProps_0 = new L.geoJson(json_MorganProps_0, {
-        attribution: '',
+        attribution: 'Data from NJGIN',
         pane: 'pane_MorganProps_0',
         onEachFeature: pop_MorganProps_0,
         style: style_MorganProps_0_0,
@@ -410,18 +408,31 @@ $(document).ready(function(){
     mymap.getPane('pane_MorganSts_1').style.zIndex = 375;
     var layer_MorganSts_1 = new L.geoJson(json_MorganSts_1, {
         attribution: '',
+        renderer:L.svg({pane:'pane_MorganSts_1'}),
         pane: 'pane_MorganSts_1',
         style: style_MorganSts_1_0,
     });
     mymap.addLayer(layer_MorganSts_1);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    className: 'mapbox',
-    id: 'mapbox.satellite',
-    bounds:[[40.49,-74.30],[40.430,-74.2377]],
+    className: 'mapbox',id: 'mapbox.satellite',bounds:[[40.49,-74.30],[40.430,-74.2377]],
     accessToken: 'sk.eyJ1IjoibnRlcndpbjcxNCIsImEiOiJjang2aXg1dXAwMDVvM3RreXQ0dzllczN3In0.Ur4AUGHzeMqCEAczqRik-w',
     }).addTo(mymap);
     var baseMaps = {};
     L.control.scale({imperial:true,metric:false}).addTo(mymap);
     L.control.layers(baseMaps,{'<span class="legend-name">Zoning<br>Designations</span><table class="legend"><tr><td><img src="/map/legend/MorganProps_0_R70.png" /></td><td>R-7</td></tr><tr><td><img src="/map/legend/MorganProps_0_R101.png" /></td><td>R-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_PD102.png" /></td><td>PD-10</td></tr><tr><td><img src="/map/legend/MorganProps_0_B33.png" /></td><td>B-3</td></tr><tr><td><img src="/map/legend/MorganProps_0_P4.png" /></td><td>P</td></tr><tr><td><img src="/map/legend/MorganProps_0_MW5.png" /></td><td>MW</td></tr><tr><td><img src="/map/legend/MorganProps_0_MWPUD6.png" /></td><td>MW (PUD)</td></tr><tr><td><img src="/map/legend/MorganProps_0_7.png" /></td><td>Train</td></tr></table>': layer_MorganProps_0,},{collapsed:false}).addTo(mymap);
-    </script>
+    L.Control.Centerbtn = L.Control.extend({
+        onAdd: function(mymap) {
+            var imgbutton = L.DomUtil.create('img');
+            imgbutton.src = 'map/css/images/focus_@2X.png';
+            imgbutton.className = 'centerbtn';
+            imgbutton.addEventListener("click", function () {
+              mymap.flyTo([40.466,-74.274], 14, {animate: true,duration: 2})});
+            return imgbutton;
+        },
+        onRemove: function(mymap) {null}
+    });
+    L.control.centerbtn = function(opts) {return new L.Control.Centerbtn(opts);};
+    L.control.centerbtn({position:'topleft'}).addTo(mymap);
+    L.control.centerbtn.bindTooltip('Reset View');
+  </script>
