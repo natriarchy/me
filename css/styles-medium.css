@@ -1116,6 +1116,7 @@ footer a:hover,.linked:hover img {
 .draggable:after {
   content:">>";
   color:yellow;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   opacity:0;
   -webkit-transition-duration:1s;
   transition-duration: 1s;
@@ -1123,6 +1124,7 @@ footer a:hover,.linked:hover img {
 .draggable:before {
   content:"<<";
   color:yellow;
+  -webkit-text-fill-color: rgba(127,255,212, 1);
   opacity:0;
   -webkit-transition-duration:1s;
   transition-duration: 1s;
