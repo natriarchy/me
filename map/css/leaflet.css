@@ -356,7 +356,7 @@ table {
   text-align: left;
   display: flex;
   color: white;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   font-size: 1.25em;
   letter-spacing: .1em;
   line-height: 1.75em;
@@ -613,6 +613,7 @@ table {
 	background-color: none;
 	border: none;
 	color: rgba(260,260,260,1);
+  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
 	font-size: 16px;
 	text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0,1);
 	white-space: nowrap;
