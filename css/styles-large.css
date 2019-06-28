@@ -1191,7 +1191,7 @@ footer a:hover,.linked:hover img {
   all:unset;
   align-self: center;
   text-align: center;
-  font-family: "Century Gothic";
+  font-family: "Century Gothic",sans-serif;
   font-size: 1.5em;
   margin-bottom: -2em;
   letter-spacing: .1em;
@@ -1207,7 +1207,7 @@ footer a:hover,.linked:hover img {
   all:unset;
   align-self: center;
   text-align: left;
-  font-family: "Century Gothic";
+  font-family: "Century Gothic",sans-serif;
   letter-spacing: .1em;
   display: flex;
   flex-direction: row;
@@ -1229,7 +1229,7 @@ footer a:hover,.linked:hover img {
   all:unset;
   align-self: center;
   text-align: left;
-  font-family: "Century Gothic";
+  font-family: "Century Gothic",sans-serif;
   letter-spacing: .1em;
   display: flex;
   flex-direction: row;
@@ -1253,7 +1253,7 @@ svg > text  {
   font-weight: 700;
   letter-spacing: .25em;
   word-break: keep-all;
-  font-family: "Century Gothic";
+  font-family: "Century Gothic",sans-serif;
   filter:url(#shadow);
 }
 img.centerbtn {
