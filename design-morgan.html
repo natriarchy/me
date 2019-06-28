@@ -47,11 +47,37 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-wrap rounded bg-warning" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
-    <img src="\img\me.JPG" class="align-self-center img-thumbnail m-auto rounded-lg" style="height: 33vh;max-width:100%">
-    <div class="d-flex flex-column justify-content-around align-content-center m-auto align-text-center">
-      <h2 class="display-4 text-light">welcome</h2>
-      <a onclick="this.scrollIntoView()" class="btn btn-dark text-light shadow-lg align-self-center" style="-webkit-text-fill-color: rgba(260, 260, 260, 1)">click me</a>
+  <div class="container d-flex p-100 m-auto justify-content-between flex-row flex-nowrap rounded bg-secondary" style="grid-column: left/span 3;border:unset; height: 55vh;box-shadow:inset 0px 0px 20px 1px;">
+    <div id="imgarray" class="carousel slide m-auto" data-ride="carousel" style="height:80%;width:48%">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <img src="img\Morgan_Inset.png" title="study area">
+        </div>
+        <div class="carousel-item">
+          <img src="img\BusMap.png" title="transit">
+        </div>
+        <div class="carousel-item">
+          <img src="img\MorganTopo.png" title="environmental constraints">
+        </div>
+        <div class="carousel-item">
+          <img src="img\ParkPotential.png" title="proposed park network">
+        </div>
+      </div>
+      <ol class="carousel-indicators shadow m-auto w-25 bg-danger rounded-top border border-bottom-0" style="opacity:.75">
+        <li data-target="#imgarray" data-slide-to="0" class="active"></li>
+        <li data-target="#imgarray" data-slide-to="1"></li>
+        <li data-target="#imgarray" data-slide-to="2"></li>
+        <li data-target="#imgarray" data-slide-to="3"></li>
+      </ol>
+      <div id="carrot-cake">
+        <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+        <span id="viewcap" href="#imgarray">study area</span>
+        <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+      </div>
+    </div>
+    <div class="d-flex flex-column justify-content-around align-content-center my-auto w-33">
+      <h2 class="display-5 text-light text-center">Morgan-Sayreville<br>GIS Work</h2>
+      <a class="btn btn-primary shadow-lg align-self-center" data-toggle="popover" style="-webkit-text-fill-color: rgba(260, 260, 260, 1);cursor:pointer">click me</a>
     </div>
   </div>
   <h1 id="morgantitle">Morgan-Sayreville Interactive Map</h1>
@@ -59,6 +85,11 @@
   </div>
   <div id="coords" class="card">&nbsp;00.0000, -00.0000</div>
   <div id="subtitle" class="card">Proof of concept</div>
+  <div class="bottomnav">
+      <a href="design-passaic.html">Last</a>
+      <a href="design.html">Back to Overview</a>
+      <a href="design-camden.html">Restart</a>
+  </div>
   <svg height="0">
     <defs>
       <filter id="shadow">
@@ -71,6 +102,7 @@
  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
  crossorigin=""></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <footer id="footer">
@@ -97,6 +129,7 @@ $(document).ready(function(){
     }, function(){
     $("#dropdown").css("display", "none");
   });
+  $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
   $(window).scroll(function() {
     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
       $("#topnav").addClass("sticky");
@@ -107,6 +140,11 @@ $(document).ready(function(){
       $("#titlea").removeClass("stickytitle");
       $("#dropdown").removeClass("stickydrop");
     }
+  });
+  $("#imgarray").on('slide.bs.carousel', function(event){
+   var slider = event.relatedTarget;
+   var titler = $('img',slider).attr('title');
+   $("#viewcap").text(titler);
   });
   $("#footer").hover(function(){
    $("#footer").css("transform","translateY(-9vh)");
