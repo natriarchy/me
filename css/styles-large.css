@@ -1198,7 +1198,7 @@ footer a:hover,.linked:hover img {
   margin-bottom: -2em;
   letter-spacing: .1em;
   color:#fff!important;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
   text-transform: lowercase;
   grid-column: left/span 3;
   background-color: black;
@@ -1218,6 +1218,7 @@ footer a:hover,.linked:hover img {
   flex-wrap: nowrap;
   margin-top: -3em;
   color:#fff!important;
+  -webkit-text-fill-color: rgba(0, 0, 0, 1); 
   position: relative;
   grid-column: left/span 1;
   background-color: black;
