@@ -716,7 +716,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
       border: 0px;
   }
-  .fa, .leaflet-container, a {
+  .fa, .leaflet-container {
       color: #000000 !important;
   }
   .leaflet-control-zoom-in, .leaflet-control-zoom-out,

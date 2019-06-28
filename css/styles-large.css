@@ -1256,14 +1256,11 @@ svg > text  {
   font-family: "Century Gothic";
   filter:url(#shadow);
 }
-svg {
-}
 img.centerbtn {
   display: block;
   filter:contrast(500%)grayscale(1);
   width:1.9em;
   height:1.9em;
-  color: black;
   background:white;
   border:.5px grey solid;
   cursor:pointer;

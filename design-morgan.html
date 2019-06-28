@@ -58,14 +58,14 @@
   </div>
   <div id="coords" class="card">&nbsp;00.0000, -00.0000</div>
   <div id="subtitle" class="card">Proof of concept</div>
+  <svg height="0">
+    <defs>
+      <filter id="shadow">
+        <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
+      </filter>
+    </defs>
+  </svg>
 </section>
-<svg height="0">
-  <defs>
-    <filter id="shadow">
-      <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
-    </filter>
-  </defs>
-</svg>
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
  crossorigin=""></script>
@@ -74,7 +74,7 @@
 </body>
 <footer id="footer">
   <div class="top">
-    <img src="\img\contact-me.png" alt="contact-me" class="contact">
+    <img src="img/contact-me.png" alt="contact-me" class="contact">
   </div>
   <div class="top-line">
     <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
@@ -82,9 +82,13 @@
   </div>
   <div class="middle">
     <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
-    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="\img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
   </div>
 </footer>
+<script src="/map/Autolinker.min.js"></script>
+<script src="/map/leaflet.textpath.js"></script>
+<script src="/map/data/MorganProps_0.js"></script>
+<script src="/map/data/MorganSts_1.js"></script>
 <script>
 $(document).ready(function(){
   $("#dropdown-title,#dropdown").hover(function(){
@@ -104,17 +108,11 @@ $(document).ready(function(){
     }
   });
   $("#footer").hover(function(){
-    $("#footer").css("transform","translateY(-9vh)");
-    }, function(){
-    $("#footer").css("transform","translateY(0vh)");
+   $("#footer").css("transform","translateY(-9vh)");
+   }, function(){
+   $("#footer").css("transform","translateY(0vh)");
   });
 });
-</script>
-<script src="/map/Autolinker.min.js"></script>
-<script src="/map/leaflet.textpath.js"></script>
-<script src="/map/data/MorganProps_0.js"></script>
-<script src="/map/data/MorganSts_1.js"></script>
-<script>
     var highlightLayer;
     function highlightFeature(e) {
         highlightLayer = e.target;
@@ -158,8 +156,8 @@ $(document).ready(function(){
     L.marker([40.4640,-74.2960],{icon:myIcon}).addTo(mymap);
     L.polyline([[40.4773,-74.2912],[40.47502,-74.2969],[40.4681,-74.2976],[40.4642,-74.2959],[40.4581,-74.2957]],{opacity:0,weight:0}).addTo(mymap);
     L.polyline([[40.4774,-74.2833],[40.4754,-74.2821],[40.4747,-74.2817],[40.4741,-74.2816],[40.4657,-74.2751]
-    ],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true});
-    L.polyline([[40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]],{opacity:1,weight:0,color:'white'}).addTo(mymap).setText('Bordentown Ave',{center: true});
+    ],{opacity:0}).addTo(mymap).setText('S Pine Ave',{offset:2.5,center: true});
+    L.polyline([[40.4627,-74.3013],[40.4789,-74.2814],[40.4801,-74.2780]],{opacity:0}).addTo(mymap).setText('Bordentown Ave',{center: true});
     L.polygon([[40.4860,-74.2239],[40.4860,-74.2676],[40.4667,-74.2597],[40.4611,-74.2461],[40.4538,-74.2236]],{opacity:0,fillOpacity:0}).addTo(mymap).setText("Raritan Bay",{center:true,offset:-50,renderer:L.svg()});
     function pop_MorganProps_0(feature, layer) {
         layer.on({
