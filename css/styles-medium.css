@@ -1153,46 +1153,10 @@ footer a:hover,.linked:hover img {
   border-radius: 5px;
 }
 #coords {
-  all:unset;
-  align-self: center;
-  text-align: left;
-  font-family: "Century Gothic";
-  letter-spacing: .1em;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  flex-wrap: nowrap;
-  margin-top: -3em;
-  color:white;
-  position: relative;
-  grid-column: left/span 1;
-  background-color: black;
-  box-shadow: 2px 8px 10px 0px black;
-  text-shadow: 1px 1px 2px aqua;
-  border-radius: 5px;
-}
-#coords:before {
-  content:'Coordinates\0020\:';
+  display: none
 }
 #subtitle {
-  all:unset;
-  align-self: center;
-  text-align: left;
-  font-family: "Century Gothic";
-  letter-spacing: .1em;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  flex-wrap: nowrap;
-  flex-flow: row;
-  margin-top: -3em;
-  color:white;
-  position: relative;
-  grid-column: right/span 1;
-  background-color: black;
-  box-shadow: 2px 8px 10px 0px black;
-  text-shadow: 1px 1px 2px aqua;
-  border-radius: 5px;
+  display: none
 }
 svg > text  {
   fill:white;
@@ -1205,16 +1169,38 @@ svg > text  {
   font-family: "Century Gothic";
   filter:url(#shadow);
 }
-svg {
+.leaflet-top .leaflet-control-layers {
+  font-size: .75em;
+  width:auto;
+  background-color: rgba(0,0,0,.25);
+  border-radius: 10px;
+  padding: 1em;
 }
 img.centerbtn {
   display: block;
   filter:contrast(500%)grayscale(1);
   width:1.9em;
   height:1.9em;
-  color: black;
   background:white;
   border:.5px grey solid;
   cursor:pointer;
   border-radius: 2.5px;
+}
+.leaflet-bottom .leaflet-control-attribution {
+	all:unset;
+  line-height: 1em;
+  display: block;
+  justify-content: center;
+  text-align:center;
+  font-size: .6em;
+	background: rgba(255, 255, 255, 1);
+	padding: .2em;
+	border-radius: 5px 0px 0px 0px;
+  width:60vw;
+	}
+.leaflet-control-attribution {
+  all:unset;
+  display: flex;
+	padding: 0;
+  margin: 0;
 }
