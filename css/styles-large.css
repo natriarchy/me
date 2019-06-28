@@ -1196,7 +1196,7 @@ footer a:hover,.linked:hover img {
   font-size: 1.5em;
   margin-bottom: -2em;
   letter-spacing: .1em;
-  color: aquamarine;
+  color:#fff!important
   text-transform: lowercase;
   grid-column: left/span 3;
   background-color: black;
@@ -1215,7 +1215,7 @@ footer a:hover,.linked:hover img {
   justify-content:center;
   flex-wrap: nowrap;
   margin-top: -3em;
-  color:white;
+  color:#fff!important
   position: relative;
   grid-column: left/span 1;
   background-color: black;
@@ -1238,7 +1238,7 @@ footer a:hover,.linked:hover img {
   flex-wrap: nowrap;
   flex-flow: row;
   margin-top: -3em;
-  color:white;
+  color:#fff!important
   position: relative;
   grid-column: right/span 1;
   background-color: black;
@@ -1247,7 +1247,7 @@ footer a:hover,.linked:hover img {
   border-radius: 5px;
 }
 svg > text  {
-  fill:white;
+  fill:color:#fff!important;
   opacity: 1;
   fillOpacity:1;
   font-size: .8em;
