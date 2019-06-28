@@ -1198,6 +1198,7 @@ footer a:hover,.linked:hover img {
   margin-bottom: -2em;
   letter-spacing: .1em;
   color:#fff!important;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
   text-transform: lowercase;
   grid-column: left/span 3;
   background-color: black;
