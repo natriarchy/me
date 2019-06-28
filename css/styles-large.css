@@ -52,6 +52,7 @@
   grid-area: 3 / 2 / span 1 / span 2;
   font-family: "Century Gothic", sans-serif;
   color: #fff!important;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1); 
   font-weight: bolder;
   text-transform: lowercase;
   user-select: none;
