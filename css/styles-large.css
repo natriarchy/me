@@ -539,7 +539,7 @@ h1 {
  margin-bottom: .5em;
  text-align:center;
  text-align-last: center;
- color: white;
+ color:#fff!important;
  letter-spacing:.15em;
  line-height: 1.25;
  scroll-snap-align: start; /* latest (Chrome 69+) */
@@ -1247,7 +1247,7 @@ footer a:hover,.linked:hover img {
   border-radius: 5px;
 }
 svg > text  {
-  fill:color:#fff!important;
+  fill:#fff!important;
   opacity: 1;
   fillOpacity:1;
   font-size: .8em;
