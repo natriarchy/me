@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="theme-color" content="#FAC800">
-  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
   <title>Morgan</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
-  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#FAC800">
+  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
   <link rel="shortcut icon" href="\img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
@@ -25,7 +24,7 @@
   <section class="nav">
     <nav id="topnav">
       <ol>
-        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
         <li id="dropdown-title">Design
           <div id="dropdown">
@@ -145,6 +144,11 @@ $(document).ready(function(){
    $("#footer").css("transform","translateY(-9vh)");
    }, function(){
    $("#footer").css("transform","translateY(0vh)");
+  });
+  $("nav li").click(function(event){
+   var navbut = event.relatedTarget;
+   var linker = $("navbut a").attr('href');
+   window.location.href = linker;
   });
 });
     var highlightLayer;

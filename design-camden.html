@@ -2,25 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
-  <meta name="theme-color" content="#FAC800">
-  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
   <title>Camden</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
+  <meta name="theme-color" content="#FAC800">
+  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
+  <link rel="shortcut icon" href="img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
-  <link rel="shortcut icon" href="img\logo2.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-136760833-1');
-  </script>
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -53,7 +45,7 @@
 <section id="column-main" class="container-fluid">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <video id="buildfly" onended="change()" autoplay muted>
+  <video id="buildfly" autoplay muted>
     <source src="files\anim.mp4" type="video/mp4">
   </video>
   <img src="files\Animation3099.png" id="artistic" style="display:none">
@@ -123,7 +115,12 @@
   </div>
 </footer>
 <script type="text/javascript">
-document.getElementById("buildfly").playbackRate = .3;
+document.getElementById("buildfly").playbackRate = .5;
+function innerURL (x) {
+  var navbut = x.firstChild;
+  var loc = navbut.href;
+  window.location = loc;
+};
 $(document).ready(function(){
   $('.carousel').carousel({
     touch: true // default
@@ -133,14 +130,18 @@ $(document).ready(function(){
     }, function(){
     $("#dropdown").css("display", "none");
   });
+  $('#buildfly').on('ended',function(){
+    $("#buildfly").fadeOut();
+    $("#artistic").fadeIn();
+  });
   $("#button1").on("click",function(){
-   $("#plan-b").show();
+   $("#plan-b").fadeIn();
    $("#plan-a").hide();
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
   });
   $("#button2").on("click",function(){
-   $("#plan-a").show();
+   $("#plan-a").fadeIn();
    $("#plan-b").hide();
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
@@ -167,16 +168,5 @@ $(document).ready(function(){
     }
   });
 });
-function change(){
-  $(document).ready(function(){
-      $("#buildfly").hide();
-      $("#artistic").show();
-      $("#title").show();
-  })};
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
-};
 </script>
 </html>

@@ -2,24 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
-  <meta name="theme-color" content="#FAC800">
-  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
   <title>Dayton</title>
   <meta name="description" content="My academic design project on Passaic, NJ.">
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
+  <meta name="theme-color" content="#FAC800">
+  <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
+  <link rel="shortcut icon" href="img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
-  <link rel="shortcut icon" href="img\logo2.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-136760833-1');
-  </script>
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -52,7 +45,7 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-    <video id="buildfly" onended="change()" autoplay muted>
+    <video id="buildfly" autoplay muted>
       <source src="files\flythroughcut.mp4" type="video/mp4">
     </video>
     <h1 id="title">Dayton-Aerotropolis Redevelopment</h1>
@@ -104,7 +97,7 @@
     <a href="design-passaic.html">Next</a>
 </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
@@ -123,20 +116,29 @@
 </footer>
 <script type="text/javascript">
 document.getElementById("buildfly").playbackRate = 1.3;
+function innerURL (x) {
+  var navbut = x.firstChild;
+  var loc = navbut.href;
+  window.location = loc;
+};
 $(document).ready(function(){
   $("#dropdown-title,#dropdown").hover(function(){
     $("#dropdown").css("display", "flex");
     }, function(){
     $("#dropdown").css("display", "none");
   });
+  $('#buildfly').on('ended',function(){
+    $("#buildfly").fadeOut();
+    $("#artistic").fadeIn();
+  });
   $("#button1").on("click",function(){
-   $("#dayton-b").show();
+   $("#dayton-b").fadeIn();
    $("#dayton-a").hide();
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
   });
   $("#button2").on("click",function(){
-   $("#dayton-a").show();
+   $("#dayton-a").fadeIn();
    $("#dayton-b").hide();
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
@@ -163,16 +165,5 @@ $(document).ready(function(){
     }
   });
 });
-function change(){
-  $(document).ready(function(){
-      $("#buildfly").hide();
-      $("#artistic").show();
-      $("#title").show();
-  })};
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
-}
 </script>
 </html>
