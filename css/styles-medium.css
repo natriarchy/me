@@ -798,10 +798,10 @@ h6 a:hover {
   border-right: 1px dimgrey solid;
 }
 #imgarray {
-  box-sizing: border-box;
   grid-row: 7 / span 1;
   grid-column: left/span 3;
   display: flex;
+  justify-content: center;
   background-image: url("iron-grip.png");
   box-shadow: inset 0px 5px 50px 10px black;
   height:50vh;
@@ -815,6 +815,7 @@ h6 a:hover {
 #imgarray div,img{
   height: 100%;
   max-width:100%;
+  border-radius: 10px;
 }
 #carrot-cake {
   all:unset;
