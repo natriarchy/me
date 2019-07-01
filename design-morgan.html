@@ -21,32 +21,34 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section id="nav">
     <nav id="topnav">
-      <ol>
-        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
-        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
-        <li id="dropdown-title">Design
-          <div id="dropdown">
-            <a href="design.html">intro</a><br>
-            <a href="design-camden.html">camden</a><br>
-            <a href="design-dayton.html">dayton-newark</a><br>
-            <a href="design-passaic.html">passaic</a><br>
-            <a href="design-morgan.html">morgan-Sayreville</a>
+      <ul class="nav nav-justified">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+        <li class="nav-item">
+          <button id="dropdown-title" type="button" class="active" onclick="window.location.href='design.html'">Design</button>
+          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <div id="dropdown" class="dropdown-menu" role="group">
+            <a class="dropdown-item" href="design.html" role="button">intro</a>
+            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+            <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
+            <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
+            <a class="dropdown-item active" href="design-morgan.html" role="button">morgan-Sayreville</a>
           </div>
         </li>
-        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
-      </ol>
+        <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+      </ul>
       <div id="flair-before"></div>
       <div id="flair-after"></div>
     </nav>
-</section>
+  </section>
 </header>
 <body>
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <div id="imgarray" class="container-fluid carousel w-auto m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;grid-row:1">
+  <div id="imgarray" class="container-fluid carousel bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;grid-row:1; max-height:60vh;">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
         <img src="img\Morgan_Inset.png" title="study area">
@@ -80,37 +82,37 @@
   <div id="subtitle" class="card" data-toggle="modal" data-target="#morganModal2">click for info</div>
   <div id="morganmap" class="card">
   </div>
-  <div class="bottomnav">
-      <a href="design-passaic.html">Last</a>
-      <a href="design.html">Back to Overview</a>
-      <a href="design-camden.html">Restart</a>
-  </div>
-  <svg height="0">
-    <defs>
-      <filter id="shadow">
-        <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
-      </filter>
-    </defs>
-  </svg>
-  <div class="modal fade" id="morganModal1" tabindex="-1" role="dialog" aria-labelledby="morganModal1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
-        <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
-          <span class="modal-title h2 text-white align-self-center">Morgan-Sayreville Project</span><br>
-      		<p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
-        <button type="button" class="btn btn-primary shadow align-self-end" data-dismiss="modal">Close</button>
-        </div>
-    </div>
-  </div>
-  <div class="modal fade" id="morganModal2" tabindex="-1" role="dialog" aria-labelledby="morganModal2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
-        <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
-          <span class="modal-title h2 text-white align-self-center">Interactive Zoning Map</span><br>
-          <p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
-        <button type="button" class="btn btn-primary shadow align-self-center" data-dismiss="modal">Close</button>
-        </div>
-    </div>
+  <div role="group" class="d-flex justify-content-around" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
+      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-passaic.html">Last</a>
+      <a role="button" class="btn btn-light btn-lg shadow" href="design.html">Back to Overview</a>
+      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-camden.html">Next</a>
   </div>
 </section>
+<svg height="0">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
+    </filter>
+  </defs>
+</svg>
+<div class="modal fade" id="morganModal1" tabindex="-1" role="dialog" aria-labelledby="morganModal1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+      <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
+        <span class="modal-title h2 text-white align-self-center">Morgan-Sayreville Project</span><br>
+        <p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
+      <button type="button" class="btn btn-primary shadow align-self-end" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="morganModal2" tabindex="-1" role="dialog" aria-labelledby="morganModal2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+      <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
+        <span class="modal-title h2 text-white align-self-center">Interactive Zoning Map</span><br>
+        <p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
+      <button type="button" class="btn btn-primary shadow align-self-center" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
  crossorigin=""></script>
@@ -136,18 +138,7 @@
 <script src="/map/data/MorganProps_0.js"></script>
 <script src="/map/data/MorganSts_1.js"></script>
 <script>
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
-};
 $(document).ready(function(){
-  $("#dropdown-title,#dropdown").hover(function(){
-    $("#dropdown").css("display", "flex");
-    }, function(){
-    $("#dropdown").css("display", "none");
-  });
-  $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
   $(window).scroll(function() {
     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
       $("#topnav").addClass("sticky");
@@ -159,6 +150,7 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
+  $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
   $("#footer").hover(function(){
    $("#footer").css("transform","translateY(-9vh)");
    }, function(){

@@ -28,22 +28,24 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section id="nav">
     <nav id="topnav">
-      <ol>
-        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
-        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
-        <li id="dropdown-title">Design
-          <div id="dropdown">
-            <a href="design.html">intro</a><br>
-            <a href="design-camden.html">camden</a><br>
-            <a href="design-dayton.html">dayton-newark</a><br>
-            <a href="design-passaic.html">passaic</a><br>
-            <a href="design-morgan.html">morgan-Sayreville</a>
+      <ul class="nav nav-justified">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+        <li class="nav-item">
+          <button id="dropdown-title" type="button" class="active" onclick="window.location.href='design.html'">Design</button>
+          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <div id="dropdown" class="dropdown-menu" role="group">
+            <a class="dropdown-item active" href="design.html" role="button">intro</a>
+            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+            <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
+            <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
+            <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
           </div>
         </li>
-        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
-      </ol>
+        <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+      </ul>
       <div id="flair-before"></div>
       <div id="flair-after"></div>
     </nav>
@@ -59,32 +61,31 @@
   </div>
   <hr style="background-color: mistyrose;">
   <div class="card-left" style="background-color: darkseagreen">
-    <h2>Camden Waterfront Project</h2>
+    <span class='h2 text-monospace text-white m-3' style='text-shadow: 3px 3px 3px grey'>Camden Waterfront Project</span>
     <br>
-    <p>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</strong></p>
+    <p>A project to imagine new development opportunities along the Camden, NJ, waterfront. The class developed a conceptual framework for the proposed site plan, where each student designed a set of buildings in Rhino to fit into it. We then separately rendered our own buildings, incorporating the massing of the other proposed buildings. The following images incorporate work from <mark><strong>Rhino 6, Maxwell, Google Earth, and Adobe Photoshop</mark></strong></p>
     <br>
-    <a href="design-camden.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
+    <a role="button" class="btn btn-light btn-md mx-auto mb-5 shadow" style="cursor:pointer" href="design-camden.html"><strong>Take a Look</strong></a>
 	</div>
   <div class="card-right" style="background-color:thistle">
-    <h2>Dayton-Aerotropolis Project</h2>
+    <span class='h2 text-monospace text-white m-3' style='text-shadow: 3px 3px 3px grey'>Dayton-Aerotropolis Project</span>
     <br>
-		<p>The project focused on the impact of the extension of PATH rail to Newark Airport, especially as it concerned the adjacent Dayton neighborhood. The studio examined the character of the existing community, and proposed a potential long-term development scenario. I developed several <strong>GIS graphics</strong> for our report and presentations, detailing characteristics of the study areas; some of the maps include the wequahic neighborhood to its West.</p>
+		<p>The project focused on the impact of the extension of PATH rail to Newark Airport, especially as it concerned the adjacent Dayton neighborhood. The studio examined the character of the existing community, and proposed a potential long-term development scenario. I developed several <mark><strong>GIS graphics</strong></mark> for our report and presentations, detailing characteristics of the study areas; some of the maps include the wequahic neighborhood to its West.</p>
     <br>
-    <a  href="design-dayton.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
+    <a role="button" class="btn btn-light btn-md mx-auto mb-5 shadow" style="cursor:pointer" href="design-dayton.html"><strong>Take a Look</strong></a>
 	</div>
   <div class="card-left" style="background-color: salmon">
-    <h2>Passaic Downtown Redevelopment</h2>
+    <span class='h2 text-monospace text-white m-3' style='text-shadow: 3px 3px 3px grey'>Passaic Downtown Redevelopment</span>
+    <p>A project to visualize redevelopment opportunities in downtown Passaic, NJ. I used <mark><strong>AutoCAD, Indesign, and SketchUp</mark></strong> to replicate the rights-of-way and built environment. Per the assignment, the site plan was altered to illustrate a potential redevelopment scenario; adding my own concepts east of the proposed circle. I detailed their massing in Sketchup, and developed an artistic rendering in Photoshop.</p>
     <br>
-    <p>A project to visualize redevelopment opportunities in downtown Passaic, NJ. I used AutoCAD, Indesign, and SketchUp to replicate the rights-of-way and built environment. Per the assignment, the site plan was altered to illustrate a potential redevelopment scenario; adding my own concepts east of the proposed circle. I detailed their massing in Sketchup, and developed an artistic rendering in Photoshop.</p>
-    <br>
-    <a  href="design-passaic.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
+    <a role="button" class="btn btn-light btn-md mx-auto mb-5 shadow" style="cursor:pointer" href="design-passaic.html"><strong>Take a Look</strong></a>
   </div>
 	<div class="card-right" style="background-color: lightblue">
-    <h2>Morgan-Sayreville Redevelopment Project</h2>
+    <span class='h2 text-monospace text-white m-3' style='text-shadow: 3px 3px 3px grey'>Morgan-Sayreville Redevelopment Project</span>
     <br>
-		<p>Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
+		<p>Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <mark><strong>GIS graphics</strong></mark> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
     <br>
-    <a href="design-morgan.html"><img src="img/look-button.png" alt="look-button" class="look-button"></a>
+    <a role="button" class="btn btn-light btn-md mx-auto mb-5 shadow" style="cursor:pointer" href="design-morgan.html"><strong>Take a Look</strong></a>
 	</div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -106,11 +107,6 @@
 </footer>
 <script type="text/javascript">
     $(document).ready(function(){
-      $("#dropdown-title,#dropdown").hover(function(){
-        $("#dropdown").css("display", "flex");
-        }, function(){
-        $("#dropdown").css("display", "none");
-      });
       $(window).scroll(function() {
         if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
           $("#topnav").addClass("sticky");
@@ -128,10 +124,5 @@
        $("#footer").css("transform","translateY(0vh)");
       });
     });
-    function innerURL (x) {
-      var navbut = x.firstChild;
-      var loc = navbut.href;
-      window.location = loc;
-    }
 </script>
 </html>

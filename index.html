@@ -13,14 +13,6 @@
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
   <link rel="shortcut icon" href="img\logo2.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136760833-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-136760833-1');
-  </script>
 </head>
 <header id="header" class="container-fluid">
   <section class="design-header">
@@ -28,22 +20,24 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section id="nav">
     <nav id="topnav">
-      <ol>
-        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
-        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
-        <li id="dropdown-title">Design
-          <div id="dropdown">
-            <a href="design.html">intro</a><br>
-            <a href="design-camden.html">camden</a><br>
-            <a href="design-dayton.html">dayton-newark</a><br>
-            <a href="design-passaic.html">passaic</a><br>
-            <a href="design-morgan.html">morgan-Sayreville</a>
+      <ul class="nav nav-justified">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+        <li class="nav-item">
+          <button id="dropdown-title" type="button" onclick="window.location.href='design.html'">Design</button>
+          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <div id="dropdown" class="dropdown-menu" role="group">
+            <a class="dropdown-item" href="design.html" role="button">intro</a>
+            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+            <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
+            <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
+            <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
           </div>
         </li>
-        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
-      </ol>
+        <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+      </ul>
       <div id="flair-before"></div>
       <div id="flair-after"></div>
     </nav>
@@ -98,11 +92,6 @@
 <script type="text/javascript">
 var art = document.getElementById("article");
 $(document).ready(function(){
-  $("#dropdown-title,#dropdown").hover(function(){
-    $("#dropdown").css("display", "flex");
-    }, function(){
-    $("#dropdown").css("display", "none");
-  });
   $(window).scroll(function() {
     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
       $("#topnav").addClass("sticky");
@@ -123,11 +112,6 @@ $(document).ready(function(){
 function scroller() {
   var spot = document.getElementById('article').previousElementSibling;
   spot.scrollIntoView(true);
-};
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
 };
 $(document).ready(function(){
   $('.ba-slider').each(function(){

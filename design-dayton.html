@@ -20,81 +20,84 @@
       <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
       <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
   </section>
-  <section class="nav">
+  <section id="nav">
     <nav id="topnav">
-      <ol>
-        <li onclick="innerURL(this)"><a href="index.html">Home</a></li>
-        <li onclick="innerURL(this)"><a href="aboutme.html">About</a></li>
-        <li id="dropdown-title">Design
-          <div id="dropdown">
-            <a href="design.html">intro</a><br>
-            <a href="design-camden.html">camden</a><br>
-            <a href="design-dayton.html">dayton-newark</a><br>
-            <a href="design-passaic.html">passaic</a><br>
-            <a href="design-morgan.html">morgan-Sayreville</a>
+      <ul class="nav nav-justified">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+        <li class="nav-item">
+          <button id="dropdown-title" type="button" class="active" onclick="window.location.href='design.html'">Design</button>
+          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <div id="dropdown" class="dropdown-menu" role="group">
+            <a class="dropdown-item" href="design.html" role="button">intro</a>
+            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+            <a class="dropdown-item active" href="design-dayton.html" role="button">dayton-newark</a>
+            <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
+            <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
           </div>
         </li>
-        <li onclick="innerURL(this)"><a href="writings.html">Writings</a></li>
-      </ol>
+        <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+      </ul>
       <div id="flair-before"></div>
       <div id="flair-after"></div>
     </nav>
-</section>
+  </section>
 </header>
 <body>
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-    <video id="buildfly" autoplay muted>
-      <source src="files\flythroughcut.mp4" type="video/mp4">
-    </video>
-    <h1 id="title">Dayton-Aerotropolis Redevelopment</h1>
-    <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;">
-    <div class="arrow-1">&#8675;</div>
-    <div class="arrow-2">&#8675;</div>
-<div id="planimgs" style="background-color:grey">
-  <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
-  <div>
-    <button onclick="" id="button1" class="activate" >before</button>
-    <button onclick="" id="button2" class="deactivate">after</button>
+  <video id="buildfly" autoplay muted>
+    <source src="files\flythroughcut.mp4" type="video/mp4">
+  </video>
+  <h1 id="title">Dayton-Aerotropolis Redevelopment</h1>
+  <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;">
+  <div class="arrow-1">&#8675;</div>
+  <div class="arrow-2">&#8675;</div>
+  <div id="planimgs" style="background-color:grey">
+    <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
+    <div>
+      <button onclick="" id="button1" class="activate" >before</button>
+      <button onclick="" id="button2" class="deactivate">after</button>
+    </div>
+    <figure>
+      <img src="img\1_DaytonAerial.png" id="dayton-b" alt="dayton-before" style="border-color:aquamarine">
+      <img src="img\4_DaytonAerial3dFilter.png" id="dayton-a" alt="dayton-after" style="display:none;border-color:aquamarine">
+    <figure>
   </div>
-  <figure>
-    <img src="img\1_DaytonAerial.png" id="dayton-b" alt="dayton-before" style="border-color:aquamarine">
-    <img src="img\4_DaytonAerial3dFilter.png" id="dayton-a" alt="dayton-after" style="display:none;border-color:aquamarine">
-  <figure>
-</div>
-<div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
-  <div class="carousel-inner text-center">
-    <div class="carousel-item active">
-      <img src="img/PlainMap.png" title="study area">
+  <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active">
+        <img src="img/PlainMap.png" title="study area">
+      </div>
+      <div class="carousel-item">
+        <img src="img/ExistTransit.png" title="transit">
+      </div>
+      <div class="carousel-item">
+        <img src="img/PropTransit.png" title="transit proposal">
+      </div>
+      <div class="carousel-item">
+        <img src="img/PropSitePlan.png" title="site plan">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="img/ExistTransit.png" title="transit">
+    <div id="carrot-cake" class='justify-content-center'>
+      <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+      <span id="viewcap" href="#imgarray">study area</span>
+      <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+      <a class="btn btn-warning p-1 align-self-end" data-toggle="modal" data-target="#morganModal1" style="cursor:pointer;position:absolute;bottom:.5em;">click for info</a>
     </div>
-    <div class="carousel-item">
-      <img src="img/PropTransit.png" title="transit proposal">
-    </div>
-    <div class="carousel-item">
-      <img src="img/PropSitePlan.png" title="site plan">
-    </div>
+    <ol class="carousel-indicators m-auto w-50 bg-success rounded-bottom border border-top-0" style="opacity: .75;position:absolute;height:1.25em;bottom:-1.25em;">
+      <li data-target="#imgarray" data-slide-to="0" class="active"></li>
+      <li data-target="#imgarray" data-slide-to="1"></li>
+      <li data-target="#imgarray" data-slide-to="2"></li>
+      <li data-target="#imgarray" data-slide-to="3"></li>
+    </ol>
   </div>
-  <ol class="carousel-indicators shadow m-auto w-25 bg-danger rounded-top border border-bottom-0" style="opacity:.75;padding-left:.5em;padding-right:.5em;">
-    <li data-target="#imgarray" data-slide-to="0" class="active"></li>
-    <li data-target="#imgarray" data-slide-to="1"></li>
-    <li data-target="#imgarray" data-slide-to="2"></li>
-    <li data-target="#imgarray" data-slide-to="3"></li>
-  </ol>
-  <div id="carrot-cake">
-    <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
-    <span id="viewcap" href="#imgarray">waterfront</span>
-    <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+  <div role="group" class="d-flex justify-content-around" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
+      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-camden.html">Last</a>
+      <a role="button" class="btn btn-light btn-lg shadow" href="design.html">Back to Overview</a>
+      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-passaic.html">Next</a>
   </div>
-</div>
-<div class="bottomnav">
-    <a href="design-camden.html">Last</a>
-    <a href="design.html">Back to Overview</a>
-    <a href="design-passaic.html">Next</a>
-</div>
 </section>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -115,16 +118,17 @@
 </footer>
 <script type="text/javascript">
 document.getElementById("buildfly").playbackRate = 1.3;
-function innerURL (x) {
-  var navbut = x.firstChild;
-  var loc = navbut.href;
-  window.location = loc;
-};
 $(document).ready(function(){
-  $("#dropdown-title,#dropdown").hover(function(){
-    $("#dropdown").css("display", "flex");
-    }, function(){
-    $("#dropdown").css("display", "none");
+  $(window).scroll(function() {
+    if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
+      $("#topnav").addClass("sticky");
+      $("#titlea").addClass("stickytitle");
+      $("#dropdown").addClass("stickydrop");
+    } else {
+      $("#topnav").removeClass("sticky");
+      $("#titlea").removeClass("stickytitle");
+      $("#dropdown").removeClass("stickydrop");
+    }
   });
   $('#buildfly').on('ended',function(){
     $("#buildfly").fadeOut();
@@ -151,17 +155,6 @@ $(document).ready(function(){
    $("#footer").css("transform","translateY(-9vh)");
    }, function(){
    $("#footer").css("transform","translateY(0vh)");
-  });
-  $(window).scroll(function() {
-    if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
-      $("#topnav").addClass("sticky");
-      $("#titlea").addClass("stickytitle");
-      $("#dropdown").addClass("stickydrop");
-    } else {
-      $("#topnav").removeClass("sticky");
-      $("#titlea").removeClass("stickytitle");
-      $("#dropdown").removeClass("stickydrop");
-    }
   });
 });
 </script>
