@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" media="screen and (max-width: 599px)" href="\css\styles-small.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="\css\styles-medium.css" type="text/css">
+  <link rel="stylesheet" media="screen and (min-width: 901px)" href="\css\styles-large.css" type="text/css">
+  <link rel="stylesheet" href="\map\css\leaflet.css" type="text/css">
+</head>
+<body>
+<div id="morganmap" style="height:100vh;margin:0">
+<svg height="0"width="0">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="1" dy="1" stdDeviation=".75"/>
+    </filter>
+  </defs>
+</svg>
+</div>
+</body>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
+<script src="/map/leaflet.textpath.js"></script>
+<script src="/map/data/MorganProps_0.js"></script>
+<script src="/map/data/MorganSts_1.js"></script>
+<script src="/map/myleaflet.js"></script>
+</html>
