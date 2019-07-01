@@ -119,27 +119,10 @@
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
  crossorigin=""></script>
- <script>
- $(document).ready(function(){
-   $(window).scroll(function() {
-     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
-       $("#topnav").addClass("sticky");
-       $("#titlea").addClass("stickytitle");
-       $("#dropdown").addClass("stickydrop");
-     } else {
-       $("#topnav").removeClass("sticky");
-       $("#titlea").removeClass("stickytitle");
-       $("#dropdown").removeClass("stickydrop");
-     }
-   });
-   $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
-   $("#footer").hover(function(){
-    $("#footer").css("transform","translateY(-9vh)");
-    }, function(){
-    $("#footer").css("transform","translateY(0vh)");
-   });
- });
- </script>
+ <script src="/map/Autolinker.min.js"></script>
+ <script src="/map/leaflet.textpath.js"></script>
+ <script src="/map/data/MorganProps_0.js"></script>
+ <script src="/map/data/MorganSts_1.js"></script>
 </body>
 <footer id="footer">
   <div class="top">
@@ -154,11 +137,26 @@
     <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
   </div>
 </footer>
-<script src="/map/Autolinker.min.js"></script>
-<script src="/map/leaflet.textpath.js"></script>
-<script src="/map/data/MorganProps_0.js"></script>
-<script src="/map/data/MorganSts_1.js"></script>
 <script>
+$(document).ready(function(){
+  $(window).scroll(function() {
+    if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
+      $("#topnav").addClass("sticky");
+      $("#titlea").addClass("stickytitle");
+      $("#dropdown").addClass("stickydrop");
+    } else {
+      $("#topnav").removeClass("sticky");
+      $("#titlea").removeClass("stickytitle");
+      $("#dropdown").removeClass("stickydrop");
+    }
+  });
+  $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
+  $("#footer").hover(function(){
+   $("#footer").css("transform","translateY(-9vh)");
+   }, function(){
+   $("#footer").css("transform","translateY(0vh)");
+  });
+});
     var highlightLayer;
     function highlightFeature(e) {
         highlightLayer = e.target;
