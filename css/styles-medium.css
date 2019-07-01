@@ -161,7 +161,7 @@
    text-decoration: overline;
    text-transform: lowercase;
    color: black;
-   border: 2px black inset;
+   border: 2px black solid;
    border-width: 2px 5px 5px 2px;
    border-radius: 12px 12px 12px 6px;
    -webkit-transition-duration: 0.35s;
