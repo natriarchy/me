@@ -1119,7 +1119,7 @@ footer a:hover,.linked:hover img {
 }
 #morganmap {
   width: 100%;
-	height: 66vh;
+	height: 60vh;
   padding: 0;
   margin: 0;
   z-index: 0;
@@ -1128,15 +1128,39 @@ footer a:hover,.linked:hover img {
   background-size: 25em 10em, auto auto;
   background-blend-mode:luminosity;
 }
+#morganmap-b {
+height:60vh;
+align-items:center;
+justify-content: center;
+width:100%;
+grid-column:left/span 3;
+padding:0;
+overflow:hidden;
+border-style: solid;
+background-image: url("iron-grip.png"), radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
+-webkit-background-image: url("iron-grip.png"), -webkit-radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
+background-size: 25em 10em, auto auto;
+background-blend-mode:luminosity;
+}
+#placeholder{
+  z-index: 0;
+  width:100%;
+  max-height:100%;
+  filter:blur(10px) grayscale(1);
+}
+#framebutton {
+z-index: 1;
+position:absolute;
+}
 #morgantitle {
   all:unset;
   align-self: center;
   text-align: center;
   font-family: "Century Gothic",sans-serif;
   font-size: 1.5em;
-  margin-bottom: -2em;
+  margin-bottom: -1em;
   letter-spacing: .1em;
-  color: aquamarine;
+  color:#fff!important;
   -webkit-text-fill-color: rgba(260, 260, 260, 1);
   text-transform: lowercase;
   grid-column: left/span 3;
@@ -1145,11 +1169,24 @@ footer a:hover,.linked:hover img {
   text-shadow: 1px 1px 1px white;
   border-radius: 5px;
 }
-#coords {
-  display: none
-}
 #subtitle {
-  display: none
+  width: 25%;
+  background-color: rgba(80,0,0,.5);
+  font-family: "Century Gothic",sans-serif;
+  letter-spacing: .1em;
+  justify-content:center;
+  grid-column: left/span 3;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: -1em;
+  box-shadow: 0px 0px 4px 2px;
+  transition-duration: .15s;
+  -webkit-transition-duration: .15s;
+}
+#subtitle:hover {
+  box-shadow: inset 1px 2px 4px 2px black;
+  transition-duration: .15s;
+  -webkit-transition-duration: .15s;
 }
 svg > text  {
   fill:#fff!important;

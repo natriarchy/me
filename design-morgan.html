@@ -77,10 +77,9 @@
   </div>
   <hr style="background-color:tan;">
   <h1 id="morgantitle">Morgan-Sayreville Interactive Map</h1>
-  <div id="coords" class="card">&nbsp;00.0000, -00.0000</div>
-  <div id="subtitle" class="card" data-toggle="modal" data-target="#morganModal2">click for info</div>
+  <button id="subtitle" role="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#morganModal2">click me</button>
   <div id="morganmap-b" class="card" name="leaflet map">
-    <button id='framebutton' onclick="this.style.display='hidden'" class='btn-lg btn-primary'>Click to Load Map!</button>
+    <button id='framebutton' onclick="this.style.display='hidden'" class='btn-lg btn-primary'>click to load</button>
     <img id='placeholder' src='img\Morgan_Inset.png'>
   </div>
   <div role="group" class="d-flex justify-content-around" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
@@ -147,7 +146,7 @@ $(document).ready(function(){
 $(function(){
     $('#framebutton').click(function(){
         if(!$('iframe').length) {
-          $('#morganmap-b').replaceWith("<iframe id='morganmap' src='/map/leaflet.html' class='card' name='leaflet map' style='height: 66vh;width:100%;grid-column:left/span 3;padding:0;overflow:hidden;'><iframe>");
+          $('#morganmap-b').replaceWith("<iframe id='morganmap' src='/map/leaflet.html' class='card' name='leaflet map'><iframe>");
         }
     });
 });

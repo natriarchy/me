@@ -11,10 +11,6 @@ var mymap = L.map('morganmap' , {
   zoomControl:true, maxZoom:16.5, minZoom:14,
   maxBounds:[[40.49,-74.30],[40.430,-74.2377]],
 });
-  mymap.on("mousemove", function (event) {
-    var spot = (event.latlng);
-    $('#coords').html("&nbsp;"+[(spot.lat).toFixed(4)]+', '+(spot.lng).toFixed(4));
-  });
 L.polyline([
   [40.4801,-74.3012],[40.4765,-74.2994],
   [40.4732,-74.2973],[40.4710,-74.2952],
