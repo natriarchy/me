@@ -659,10 +659,23 @@ h6 a:hover {
 #planimgs {
   grid-row: 5 / span 1;
   grid-column: left/span 3;
+  flex-direction: column;
   background-image: url('natural-paper.png'),linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(200,100,0,.5) 10%, rgba(200,100,0,.5) 90%,rgba(260,260,2600.75) 100%);
   background-size: 10em 10em,auto;
   box-shadow: inset 0px 0px 3px 0px black;
   overflow:hidden;
+}
+#planimgs h1 {
+  font-size: 4vh;
+}
+#planimgs-grp {
+  flex-direction: row;
+}
+#planimgs-grp img {
+  width:75%;
+}
+#buttongroup {
+  flex-direction: column;
 }
 #button1 {
   display: flex;
