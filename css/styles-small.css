@@ -513,15 +513,13 @@ article h3 {
   margin-bottom: 1em;
 }
  #column-main hr {
-   grid-column: left;
-   background-image: url("iron-grip.png");
-   background-size: 20em 25em;
-   background-color: teal;
-   width: 80vw;
-   height: 6vh;
-   border-left: 1em black solid;
-   border-right: 1em black solid;
-  box-shadow: inset 0 0 10px #000000;
+   grid-column: 3 / span 3;
+   background-image: linear-gradient(to right,rgba(0,100,100,1) 0%,aquamarine 20%, lightyellow 50%, aquamarine 80%,rgba(0,100,100,1) 100%);
+   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0,.5);
+   border-top:1px white solid;
+   border-radius: 20px;
+   width: 100%;
+   height: 1em;
   }
 @keyframes columnenter {
   0% {filter: blur(100px);opacity:.25}
@@ -693,84 +691,75 @@ h6 a:hover {
   display: none;
 }
 #planimgs {
-  grid-row: 4 / span 1;
-  grid-column: left/span 1;
-  background-color: tan;
-  background-image: url(light-wool.png);
-  width: 100%;
+  grid-row: 5 / span 1;
+  grid-column: left/span 3;
+  flex-direction: column;
+  background-image: url('natural-paper.png'),linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(200,100,0,.5) 10%, rgba(200,100,0,.5) 90%,rgba(260,260,2600.75) 100%);
+  background-size: 10em 10em,auto;
+  box-shadow: inset 0px 0px 3px 0px black;
   overflow:hidden;
-  border-top: 4px salmon inset;
-  border-left: 2px salmon inset;
-  border-right: 2px salmon inset;
-  border-bottom: 2px salmon inset;
-  border-radius:15px;
 }
-#planimgs figure {
-  top:0;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  overflow: hidden;
-  }
-#planimgs img {
-  display: flex;
+#planimgs h1 {
+  font-size: 4vh;
+}
+#planimgs-grp {
+  flex-direction: column;
+}
+#planimgs-grp img {
   width:100%;
-  border-radius:15px;
-  background-color: orange;
-  border: 4px orange inset;
-  overflow:hidden;
-  }
-#planimgs span  {
+}
+#buttongroup {
+  flex-direction: row;
+}
+#button1 {
+  margin-top: 1em;
   display: flex;
-  flex-wrap: wrap;
-  flex-flow: column;
-  width: 100%;
-  text-align: center;
-  text-align-last: center;
-  color:#fff!important;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1);
-  text-shadow: 3px 3px 3px red;
-  font-size: 10vw;
-  text-transform: lowercase;
-  letter-spacing: .13em;
-  }
-#planimgs div {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  align-self:stretch;
-  position: relative;
-  top:inherit;
-  width:80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  }
-#button1, #button2 {
-  height: 8vh;
-  width: 45%;
-  margin-top: .5em;
-  margin-bottom: .5em;
+  color:white;
+  justify-content: center;
+  width: 7em;
   cursor: pointer;
+  text-align: center;
+  text-shadow: 3px 3px 5px black;
+  text-transform: lowercase;
+  letter-spacing: .15em;
+  font-size: 1em;
+  font-family: "Century Gothic", sans-serif;
+  border-top: 2px grey solid;
+  border-bottom: 2px dimgrey solid;
+  border-left: 1px dimgrey solid;
+  border-right: 1px dimgrey solid;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
-  font-weight: bold;
-  text-align: center;
-  text-transform: lowercase;
-  letter-spacing: 2px;
-  font-size: 1.5em;
-  font-family: "Century Gothic", sans-serif;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   }
+  #button2 {
+    margin-top: 1em;
+    display: flex;
+    color:white;
+    justify-content: center;
+    width: 7em;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: 3px 3px 5px black;
+    text-transform: lowercase;
+    letter-spacing: .15em;
+    font-size: 1em;
+    font-family: "Century Gothic", sans-serif;
+    border-top: 2px grey solid;
+    border-bottom: 2px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: .25s;
+    border-radius: 0px 10px 10px 0px;
+    }
   #button1:hover,#button2:hover {
-    color:rgba(200, 250, 0, 1)!important;
-    -webkit-text-fill-color: rgba(200, 250, 0, 1);
+    color: rgba(200, 250, 0);
     text-shadow:0px 0px 10px yellow;
   }
 .activate {
   box-shadow:inset 0px 5px 5px 1px black;
-  background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
+  background-image:radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
   color: mintcream;
   -webkit-text-fill-color: mintcream;
   text-shadow: 2px 2px 1px darkorange;
@@ -778,17 +767,21 @@ h6 a:hover {
   border-bottom: 1px black solid;
   border-left: 2px black solid;
   border-right: 1px black solid;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 .deactivate {
-  background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
+  background-image:radial-gradient(dimgray 50%, rgba(0,0,0,.5) 100%);
   color:mintcream;
   -webkit-text-fill-color: mintcream;
   box-shadow:0px 5px 5px 1px black;
   text-shadow: 2px 2px 1px purple;
   border-top: 2px grey solid;
-  border-bottom: 4px black solid;
+  border-bottom: 2px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 #imgarray {
   grid-row: 7;

@@ -47,25 +47,27 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <video id="buildfly" autoplay muted>
+  <h1 id="title">Dayton-Aerotropolis Redevelopment</h1>
+  <video id="buildfly" style="grid-row:2" autoplay muted>
     <source src="files\flythroughcut.mp4" type="video/mp4">
   </video>
-  <h1 id="title">Dayton-Aerotropolis Redevelopment</h1>
-  <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;">
-  <div class="arrow-1">&#8675;</div>
-  <div class="arrow-2">&#8675;</div>
-  <div id="planimgs" style="background-color:grey">
-    <span style="color:aquamarine;text-shadow:2px 2px 5px purple;">Dayton Vision</span>
-    <div>
-      <button onclick="" id="button1" class="activate" >before</button>
-      <button onclick="" id="button2" class="deactivate">after</button>
+  <img src="img\SitePlanDayton.jpg" id="artistic" style="display:none;grid-row:2">
+  <div class="arrow-1" style="grid-row:3">&#8675;</div>
+  <div class="arrow-2" style="grid-row:3">&#8675;</div>
+  <hr style="grid-row:4;">
+  <div id='planimgs' class="container d-flex align-items-center rounded p-3 w-100">
+    <h1 class='display-4'>Dayton Vision</h1>
+    <div id='planimgs-grp' class="d-flex justify-content-between">
+      <img id='dayton-b' class="img-thumbnail img-fluid" src="img\1_DaytonAerial.png">
+      <img id='dayton-a' class="img-thumbnail img-fluid" src="img\4_DaytonAerial3dFilter.png" style="display:none">
+      <div id='buttongroup' class='btn-group align-items-center m-auto'>
+        <a class="btn btn-lg activate" id="button1">before</a>
+        <a class="btn btn-lg deactivate" id="button2">after</a>
+      </div>
     </div>
-    <figure>
-      <img src="img\1_DaytonAerial.png" id="dayton-b" alt="dayton-before" style="border-color:aquamarine">
-      <img src="img\4_DaytonAerial3dFilter.png" id="dayton-a" alt="dayton-after" style="display:none;border-color:aquamarine">
-    <figure>
   </div>
-  <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
+  <hr style="grid-row:6;">
+  <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="grid-row:7;box-shadow:inset 0px 0px 20px 1px;">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
         <img src="img/PlainMap.png" title="study area">
@@ -99,9 +101,18 @@
       <a role="button" class="btn btn-secondary btn-lg shadow" href="design-passaic.html">Next</a>
   </div>
 </section>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
 </body>
 <footer id="footer">
   <div class="top">

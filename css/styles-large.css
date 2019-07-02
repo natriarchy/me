@@ -498,15 +498,13 @@ article h3 {
  margin-bottom: 5vh;
  }
  #column-main hr {
-  grid-column: left / span 3;
-  background-image: url("iron-grip.png");
-  background-size: 20em 25em;
-  background-color: teal;
-  width: 90%;
-  height: 2.5em;
-  border-left: 1em black solid;
-  border-right: 1em black solid;
-  box-shadow: inset 0 0 10px #000000;
+   grid-column: 3 / span 3;
+   background-image: linear-gradient(to right,rgba(0,100,100,1) 0%,aquamarine 20%, lightyellow 50%, aquamarine 80%,rgba(0,100,100,1) 100%);
+   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0,.5);
+   border-top:1px white solid;
+   border-radius: 20px;
+   width: 100%;
+   height: 1em;
  }
 @keyframes columnenter {
  0% {filter: blur(100px);opacity:.25}
@@ -677,112 +675,76 @@ h6 a:hover {
   box-shadow: 2px 2px 20px 2px aqua;
 }
 .arrow-1 {
-  grid-row: splash;
   grid-column: useless-l;
   color: aqua;
+  -webkit-text-fill-color: aqua;
   text-align: center;
-  margin-top: 50vh;
   font-family: inherit;
   font-size: 4vw;
 }
 .arrow-2 {
-  grid-row: splash;
   grid-column: useless-r;
   color: aqua;
+  -webkit-text-fill-color: aqua;
   text-align: center;
-  margin-top: 50vh;
   font-family: inherit;
   font-size:4vw;
 }
 #planimgs {
-  grid-row: 4 / span 1;
+  grid-row: 5 / span 1;
   grid-column: left/span 3;
-  display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 50% 50%;
-  background-color: tan;
-  background-image: url(light-wool.png);
-  width: 100%;
+  background-image: url('natural-paper.png'),linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(200,100,0,.5) 10%, rgba(200,100,0,.5) 90%,rgba(260,260,2600.75) 100%);
+  background-size: 10em 10em,auto;
+  box-shadow: inset 0px 0px 3px 0px black;
   overflow:hidden;
-  border-top: 4px salmon inset;
-  border-left: 2px salmon inset;
-  border-right: 2px salmon inset;
-  border-bottom: 2px salmon inset;
-  border-radius:15px;
 }
-#planimgs figure {
-  top:0;
-  grid-area:1/1/span 2/span 1;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  overflow: hidden;
-  }
-#planimgs img {
+#button1 {
   display: flex;
-  width:100%;
-  border-radius:15px;
-  background-color: orange;
-  border: 4px orange inset;
-  overflow:hidden;
-  }
-#planimgs span  {
-  grid-area:1/2/span 1/span 1;
-  width:100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: column;
-  text-align: center;
-  text-align-last: center;
   color:white;
-  text-shadow: 3px 3px 3px red;
-  font-size:4vw;
-  text-transform: lowercase;
-  letter-spacing: .13em;
-  }
-#planimgs div {
-  grid-area:2/2/span 1/span 1;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  align-self:stretch;
-  position: relative;
-  TOP:inherit;
-  width:80%;
-  margin-left: auto;
-  margin-right: auto;
-  }
-#button1, #button2 {
-  color:white;
-  height: 8vh;
-  flex-basis: 35%;
-  margin-top: .5em;
-  margin-bottom: .5em;
+  justify-content: center;
+  width: 10vw;
   cursor: pointer;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: .25s;
-  font-weight: bold;
   text-align: center;
   text-shadow: 3px 3px 5px black;
   text-transform: lowercase;
-  letter-spacing: 2px;
+  letter-spacing: .15em;
   font-size: 2vw;
   font-family: "Century Gothic", sans-serif;
   border-top: 2px grey solid;
-  border-bottom: 4px dimgrey solid;
+  border-bottom: 2px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
-  border-radius: 10px;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+  border-radius: 10px 10px 0px 0px;
   }
+  #button2 {
+    display: flex;
+    color:white;
+    justify-content: center;
+    width: 10vw;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: 3px 3px 5px black;
+    text-transform: lowercase;
+    letter-spacing: .15em;
+    font-size: 2vw;
+    font-family: "Century Gothic", sans-serif;
+    border-top: 2px grey solid;
+    border-bottom: 2px dimgrey solid;
+    border-left: 1px dimgrey solid;
+    border-right: 1px dimgrey solid;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: .25s;
+    border-radius: 0px 0px 10px 10px;
+    }
   #button1:hover,#button2:hover {
     color: rgba(200, 250, 0);
     text-shadow:0px 0px 10px yellow;
   }
 .activate {
   box-shadow:inset 0px 5px 5px 1px black;
-  background-image: url("iron-grip.png"), radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
+  background-image:radial-gradient(rgba(200,200,0,1) 50%, grey 95%);
   color: mintcream;
   -webkit-text-fill-color: mintcream;
   text-shadow: 2px 2px 1px darkorange;
@@ -790,17 +752,21 @@ h6 a:hover {
   border-bottom: 1px black solid;
   border-left: 2px black solid;
   border-right: 1px black solid;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 .deactivate {
-  background-image: url("iron-grip.png"), radial-gradient(darkseagreen 0%, tan 50%, rgba(0,0,0,.5) 100%);
+  background-image:radial-gradient(dimgray 50%, rgba(0,0,0,.5) 100%);
   color:mintcream;
   -webkit-text-fill-color: mintcream;
   box-shadow:0px 5px 5px 1px black;
   text-shadow: 2px 2px 1px purple;
   border-top: 2px grey solid;
-  border-bottom: 4px black solid;
+  border-bottom: 2px dimgrey solid;
   border-left: 1px dimgrey solid;
   border-right: 1px dimgrey solid;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 #imgarray {
   grid-row: 7;
@@ -808,12 +774,13 @@ h6 a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("iron-grip.png");
-  box-shadow: inset 0px 5px 50px 10px black;
+  background-image: url("iron-grip.png"),linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(200,200,260,.5) 10%, rgba(200,200,260,.5) 90%,rgba(260,260,2600.75) 100%);
+  -webkit-background-image: url("iron-grip.png"),-webkit-linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(200,200,260,.5) 10%, rgba(200,200,260,.5) 90%,rgba(260,260,2600.75) 100%);
+  box-shadow: inset 0px 0px 3px 0px black;
   width:100%;
   height:70vh;
   margin:0;
-  border-radius: 15px;
+  border-radius: 5px;
   margin-bottom: 3em;
 }
 #imgarray .carousel-item img {

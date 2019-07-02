@@ -47,25 +47,26 @@
 <section id="column-main">
   <div class="leftside"></div>
   <div class="rightside"></div>
-  <video id="buildfly" onended="change()" autoplay muted>
+  <h1 id="title" style="color:white;" style="grid-row:1">Passaic Downtown Redevelopment</h1>
+  <video id="buildfly" autoplay muted style="grid-row:2">
     <source src="files\passaicprocess.mp4" type="video/mp4">
   </video>
-  <h1 id="title" style="color:white;">Passaic Downtown Redevelopment</h1>
-  <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;">
-  <div class="arrow-1">&#8675;</div>
-  <div class="arrow-2">&#8675;</div>
-  <div id="planimgs" style="background-color:grey">
-    <span>Passaic Vision</span>
-    <div>
-      <button onclick="" id="button1" class="activate" >before</button>
-      <button onclick="" id="button2" class="deactivate">after</button>
+  <img src="img\NErwin-Massing-005-pencil1.png" id="artistic" style="display:none;grid-row:2">
+  <div class="arrow-1" style="grid-row:3">&#8675;</div>
+  <div class="arrow-2" style="grid-row:3">&#8675;</div>
+  <hr style="grid-row:4;">
+  <div id='planimgs' class="container d-flex flex-column align-items-center rounded p-3 w-100">
+    <h1 class='display-4'>Passaic Vision</h1>
+    <div class="d-flex justify-content-between flex-row">
+      <img id="passaic-b" class="img-thumbnail img-fluid w-75" src="img\NErwin-Passaic-003-pg1010.png">
+      <img id="passaic-a" class="img-thumbnail img-fluid w-75" src="img\NErwin-Passaic-003-pg1016.png" style="display:none">
+      <div class='btn-group flex-column align-items-center m-auto'>
+        <a class="btn btn-lg activate" id="button1">before</a>
+        <a class="btn btn-lg deactivate" id="button2">after</a>
+      </div>
     </div>
-    <figure>
-      <img src="img\NErwin-Passaic-003-pg1010.png" id="passaic-b" alt="dayton-before" style="background-color: white;">
-      <img src="img\NErwin-Passaic-003-pg1016.png" id="passaic-a" alt="dayton-after" style="background-color: white;display:none;">
-    <figure>
   </div>
-  <hr style="background-color:brown;grid-row:5/span 1;">
+  <hr style="grid-row:6/span 1;">
   <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
@@ -96,9 +97,18 @@
       <a role="button" class="btn btn-secondary btn-lg shadow" href="design-morgan.html">Next</a>
   </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
 </body>
 <footer id="footer" class="container-fluid">
   <div class="top">
@@ -132,8 +142,8 @@ $(document).ready(function(){
     $("#artistic").fadeIn();
   });
   $("#button1").on("click",function(){
-   $("#passic-b").fadeIn();
-   $("#passic-a").hide();
+   $("#passaic-b").fadeIn();
+   $("#passaic-a").hide();
    $("#button1,#button2").toggleClass("activate");
    $("#button1,#button2").toggleClass("deactivate");
   });
