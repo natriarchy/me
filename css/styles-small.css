@@ -798,6 +798,13 @@ h6 a:hover {
   margin-bottom: 3em;
 }
 #imgarray img {
+  size: 100% auto;
+  max-width:100%;
+  max-height: 50vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  touch-action: auto;
 }
 #carrot-cake {
   all:unset;
