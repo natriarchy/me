@@ -698,12 +698,14 @@ h6 a:hover {
   background-size: 10em 10em,auto;
   box-shadow: inset 0px 0px 3px 0px black;
   overflow:hidden;
+  max-height: 66vh;
 }
 #planimgs-grp {
   flex-direction: row;
 }
 #planimgs-grp img {
   width:75%;
+  max-height: 50vh;
 }
 #buttongroup {
   flex-direction: column;
