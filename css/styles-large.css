@@ -704,6 +704,7 @@ h6 a:hover {
   flex-direction: row;
 }
 #planimgs-grp img {
+  display: block;
   width:75%;
   max-height: 50vh;
 }
