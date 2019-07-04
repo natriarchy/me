@@ -10,44 +10,37 @@
   <meta name="keywords" content="Nathan Erwin, Nathan, Erwin, Urban Planning, MCRP">
   <link rel="shortcut icon" href="img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
 </head>
-<header id="header" class="container-fluid">
-  <section class="design-header">
-      <div class="design-title2">The Matterhorn | original</div>
-      <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
-      <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
-  </section>
-  <section id="nav">
-    <nav id="topnav">
-      <ul class="nav nav-justified">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
-        <li class="nav-item">
-          <button id="dropdown-title" type="button" class="active" onclick="window.location.href='design.html'">Design</button>
-          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-          <div id="dropdown" class="dropdown-menu" role="group">
-            <a class="dropdown-item" href="design.html" role="button">intro</a>
-            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
-            <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
-            <a class="dropdown-item active" href="design-passaic.html" role="button">passaic</a>
-            <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
-          </div>
-        </li>
-        <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
-      </ul>
-      <div id="flair-before"></div>
-      <div id="flair-after"></div>
-    </nav>
-  </section>
-</header>
 <body>
+<header id="header" class="container-fluid">
+  <div class="design-title2">The Matterhorn | original</div>
+  <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
+  <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
+</header>
+<nav id="topnav">
+  <ul class="nav nav-justified">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+    <li class="nav-item">
+      <button id="dropdown-title" type="button"  class="active" onclick="window.location.href='design.html'">Design</button>
+      <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+      <div id="dropdown" class="dropdown-menu" role="group">
+        <a class="dropdown-item" href="design.html" role="button">intro</a>
+        <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+        <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
+        <a class="dropdown-item active" href="design-passaic.html" role="button">passaic</a>
+        <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+  </ul>
+</nav>
 <section id="column-main">
-  <div class="leftside"></div>
-  <div class="rightside"></div>
-  <h1 id="title" style="color:white;" style="grid-row:1">Passaic Downtown Redevelopment</h1>
+  <span id="title" class="text-white bg-info shadow justify-content-center text-center" style="grid-row:1;grid-column:left/span 3">Passaic Downtown Redevelopment</span>
   <video id="buildfly" autoplay muted style="grid-row:2">
     <source src="files\passaicprocess.mp4" type="video/mp4">
   </video>
@@ -67,7 +60,7 @@
     </div>
   </div>
   <hr style="grid-row:6/span 1;">
-  <div id="imgarray" class="container carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
+  <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
         <img src="img/passaicpg22.png" title="illustrative plan">
@@ -91,10 +84,13 @@
       <li data-target="#imgarray" data-slide-to="2"></li>
     </ol>
   </div>
-  <div role="group" class="d-flex justify-content-around" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
-      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-dayton.html">Last</a>
-      <a role="button" class="btn btn-light btn-lg shadow" href="design.html">Back to Overview</a>
-      <a role="button" class="btn btn-secondary btn-lg shadow" href="design-morgan.html">Next</a>
+  <div role="group" class="d-flex justify-content-around btn-group my-5" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
+    <button class="btn btn-light shadow w-25"onclick="window.location.href='design-dayton.html'"><i class='fas fa-arrow-left'></i></button>
+    <button class="btn btn-secondary shadow w-50"onclick="window.location.href='design.html'">Back to Overview</button>
+    <button class="btn btn-light shadow w-25"onclick="window.location.href='design-morgan.html'"><i class='fas fa-arrow-right'></i></button>
+  </div>
+  <div class="progress" style="grid-row:8;grid-column:left/span 3;cursor:progress;border-radius:15px">
+    <div class="progress-bar bg-dark font-weight-bold shadow" style="width:75%">3 | 4</div>
   </div>
 </section>
 <script
@@ -110,17 +106,25 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 crossorigin="anonymous"></script>
 </body>
-<footer id="footer" class="container-fluid">
-  <div class="top">
-    <img src="img/contact-me.png" alt="contact-me" class="contact">
-  </div>
-  <div class="top-line">
-    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
-    <a href="tel:+12026811138" target="_blank" class="tel"></a>
-  </div>
-  <div class="middle">
-    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
-    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+<footer>
+  <div id='dropup' class="dropup fixed-bottom mx-auto w-100">
+    <button type="button" class="btn d-flex m-auto" data-toggle="dropdown">
+      <div id='footbutton'>
+        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+        <kbd class='h5 w-75'>contact info</kbd>
+        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+      </div>
+    </button>
+    <div id="footer-dropdown" class="dropdown-menu text-center" style="transition-duration:.5">
+      <div class="top-line">
+        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+        <a href="tel:+12026811138" target="_blank" class="tel"></a>
+      </div>
+      <div class="middle">
+        <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+        <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+      </div>
+    </div>
   </div>
 </footer>
 <script type="text/javascript">
@@ -158,10 +162,12 @@ $(document).ready(function(){
    var titler = $('img',slider).attr('title');
    $("#viewcap").text(titler);
   });
-  $("#footer").hover(function(){
-   $("#footer").css("transform","translateY(-9vh)");
-   }, function(){
-   $("#footer").css("transform","translateY(0vh)");
+  $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
+  var x = $(event.relatedTarget).find("i");
+  var y = $(event.relatedTarget);
+  x.toggleClass('fa-arrow-alt-circle-up');
+  x.toggleClass('fa-arrow-alt-circle-down');
+  y.toggleClass('changecolor');
   });
 });
 </script>

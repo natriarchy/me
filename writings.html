@@ -10,61 +10,53 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="lightyellow">
   <link rel="shortcut icon" href="img\logo2.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" media="screen and (max-width: 599px)" href="css\styles-small.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" href="css\styles-medium.css" type="text/css">
   <link rel="stylesheet" media="screen and (min-width: 901px)" href="css\styles-large.css" type="text/css">
 </head>
-<header id="header" class="container-fluid">
-  <section class="design-header">
-      <div class="design-title2">The Matterhorn | original</div>
-      <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
-      <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
-  </section>
-  <section id="nav">
-    <nav id="topnav">
-      <ul class="nav nav-justified">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
-        <li class="nav-item">
-          <button id="dropdown-title" type="button" onclick="window.location.href='design.html'">Design</button>
-          <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-          <div id="dropdown" class="dropdown-menu" role="group">
-            <a class="dropdown-item" href="design.html" role="button">intro</a>
-            <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
-            <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
-            <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
-            <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
-          </div>
-        </li>
-        <li class="nav-item"><a href="writings.html" class="nav-link active">Writings</a></li>
-      </ul>
-      <div id="flair-before"></div>
-      <div id="flair-after"></div>
-    </nav>
-  </section>
-</header>
 <body>
+<header id="header" class="container-fluid">
+  <div class="design-title2">The Matterhorn | original</div>
+  <div class="matterhorn"><img src="/img/matterhorn.jpg"></div>
+  <div class="design-title1" id="titlea">natriarch | <script>document.write(document.title);</script></div>
+</header>
+<nav id="topnav">
+  <ul class="nav nav-justified">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
+    <li class="nav-item">
+      <button id="dropdown-title" type="button" onclick="window.location.href='design.html'">Design</button>
+      <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+      <div id="dropdown" class="dropdown-menu" role="group">
+        <a class="dropdown-item" href="design.html" role="button">intro</a>
+        <a class="dropdown-item" href="design-camden.html" role="button">camden</a>
+        <a class="dropdown-item" href="design-dayton.html" role="button">dayton-newark</a>
+        <a class="dropdown-item" href="design-passaic.html" role="button">passaic</a>
+        <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="writings.html" class="nav-link active">Writings</a></li>
+  </ul>
+</nav>
 <section id="column-main">
-  <div class="leftside"></div>
-  <div class="rightside"></div>
   <div class="card-left">
     <p>Understand and get a feel for my writing style. See the links below for a report I produced during the summer of 2018, and an assessment of a redevelopment project in Washington, DC, from the Spring of 2017. You can also find some informal blog posts of mine, which will update every now and then.<br><br><span style="font-size:60px;writing-mode:vertical-rl">&#10170;</span></p>
   </div>
   <div class="card-right">
-    <h1>Short Technical Report</h1>
+    <h3>Short Technical Report</h3>
     <br>
-    <a class="link" href="files\ERWIN_PS3_Final.pdf">Disparities in Bergen County, NJ</a>
+    <button class="link" onclick="window.location.href='/files/ERWIN_PS3_Final.pdf'">Disparities in Bergen County, NJ</button>
     <br><br>
-    <h1>Longer Reports</h1>
+    <h3>Longer Reports</h3>
     <br>
-    <a class="link" href="files\DaytonReportFinal.pdf">Newark-Dayton Report</a>
+    <button class="link" onclick="window.location.href='/files/DaytonReportFinal.pdf'">Newark-Dayton Report</button>
     <br>
-    <a class="link" href="files\NErwin-CSC-June2017.pdf">Redevelopment on H Street</a>
+    <button class="link" onclick="window.location.href='/filesNErwin-CSC-June2017.pdf">Redevelopment on H Street</button>
   </div>
   <hr>
-  <h1 style="color:black;text-decoration:overline;">Straight Outta the Noggin</h1>
-  <div class="card" style="background-color:lightsalmon">
-  <article id="article">
+  <h1>Straight Outta the Noggin</h1>
+  <article>
     <h3>First Thoughts</h3>
     <h4>February 20th, 2019</h4>
       <p>I wake from another frustrating dream. Yes, I am a little sweaty again, and my head hurts. The glare of the sun illuminates the grime on my windows. Through them, a snapshot of a cityscape that has changed little in sixty years; dirty facades, decrepit husks of acceptable mid-century apartments. In the distance, there is a fashionable modern gym. The little specks of human constantly huff, guffaw, and vibrate. You can feel their quixotic zeal to get “in shape” from my worn-out apartment across the way. </p>
@@ -74,27 +66,30 @@
       <p>It is certainly true that these devices have also converted humans into intelligent machines. We have a heretofore unimaginable breadth of information at the push of a button (or simply by speaking a phrase—“Ok Google”) and can accomplish a wide variety of tasks and communications at the speed of light. Though, what is our relationship to this technology? Where is it headed? Is it an inevitable force, now?</p>
       <p>Starting with the latter, yes. Our world is so intertwined with digital devices it is unlikely we will drop our penchant for them. Even today, it is common for children to start carrying a personal smartphone at some point in elementary school. Thus, we need to start asking what our <strong>relationship <em>should be</em></strong> with this technology, and how to make it benefit us even more.
   </article>
-  <div id="pagetog">
-    <button id="carrot1"><<<</button>
-    <button id="carrot2">>>></button>
-  </div>
-  </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-<footer id="footer">
-  <div class="top">
-    <img src="img/contact-me.png" alt="contact-me" class="contact">
-  </div>
-  <div class="top-line">
-    <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
-    <a href="tel:+12026811138" target="_blank" class="tel"></a>
-  </div>
-  <div class="middle">
-    <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
-    <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+<footer>
+  <div id='dropup' class="dropup fixed-bottom mx-auto w-100">
+    <button type="button" class="btn d-flex m-auto" data-toggle="dropdown">
+      <div id='footbutton'>
+        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+        <kbd class='h5 w-75'>contact info</kbd>
+        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+      </div>
+    </button>
+    <div id="footer-dropdown" class="dropdown-menu text-center" style="transition-duration:.5">
+      <div class="top-line">
+        <a href="https://goo.gl/maps/BGDG3myQtKB2" target="_blank" class="address"></a>
+        <a href="tel:+12026811138" target="_blank" class="tel"></a>
+      </div>
+      <div class="middle">
+        <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
+        <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+      </div>
+    </div>
   </div>
 </footer>
 <script type="text/javascript">
@@ -111,10 +106,12 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
-  $("#footer").hover(function(){
-    $("#footer").css("transform","translateY(-9vh)");
-    }, function(){
-    $("#footer").css("transform","translateY(0vh)");
+  $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
+  var x = $(event.relatedTarget).find("i");
+  var y = $(event.relatedTarget);
+  x.toggleClass('fa-arrow-alt-circle-up');
+  x.toggleClass('fa-arrow-alt-circle-down');
+  y.toggleClass('changecolor');
   });
   $("#carrot1").hover(function(){
     $("#carrot1").text("<");
