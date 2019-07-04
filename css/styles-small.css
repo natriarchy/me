@@ -518,9 +518,9 @@ animation-duration: 2s;
 animation-delay: 1s;
 }
 @keyframes title {
-0% {color:aquamarine}
-50% {color:aquamarine;transform:scale(1.5)}
-100% {color:white}
+  0% {-webkit-text-fill-color:aquamarine}
+  50% {-webkit-text-fill-color:aquamarine;transform:scale(1.5)}
+  100% {-webkit-text-fill-color:white}
 }
 
 h3 {
