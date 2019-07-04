@@ -130,6 +130,7 @@
 }
 #topnav li.nav-item{
   display: flex;
+  flex-direction: row;
   list-style: none;
   -webkit-transition-duration:.35s;
   transition-duration: .35s;
@@ -142,9 +143,10 @@
 #topnav li .nav-link {
   cursor: pointer;
   display: flex;
-  padding: 0;
+  padding: auto;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background-color: white;
   background-image: radial-gradient(white 0%,white 50%, gray 100%);
   width: 100%;

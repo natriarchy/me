@@ -301,16 +301,18 @@
 }
 .card {
   grid-column: left /span 3;
-  padding: 1vw;
+  padding: .25em;
   border-radius: 10px;
   border-top: 5px double black;
   border-bottom: 5px double black;
   border-right: 2px solid black;
   border-left: 2px solid black;
   box-shadow: 0px 0px 10px 1px;
-  background-image: linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,rgba(260,260,260,.75) 100%), url("light-wool.png");
-  -webkit-background-image: -webkit-linear-gradient(to right,rgba(260,260,260,.75) 0%, rgba(0,0,0,0) 2.5%, rgba(0,0,0,0) 97.5%,rgba(260,260,260,.75) 100%), url("light-wool.png");
-  background-size: auto auto, 6em auto;
+  border-style: solid;
+  background-image: url("iron-grip.png"), radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
+  -webkit-background-image: url("iron-grip.png"), -webkit-radial-gradient(circle,rgba(100,100,0,.8) 50%, rgba(0,0,0,.95) 70%);
+  background-size: 25em 10em, auto auto;
+  background-blend-mode:luminosity;
 }
 .card-left, .card-right {
   max-width:38vw;
@@ -504,28 +506,27 @@ scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
 h2 {
- position:relative;
  text-shadow: 3px 3px 3px grey;
  font-size: 2em;
  margin-bottom: .5em;
- text-align: left;
  text-transform: lowercase;
  color: #fff !important;
  -webkit-text-fill-color: rgba(260, 260, 260, 1);
+ transform:scale(1);
  letter-spacing:.15em;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
-.container h2{
+.card-right h2{
 animation-name: title;
 animation-duration: 2s;
 animation-delay: 1s;
 }
 @keyframes title {
-0% {color:aquamarine}
-50% {color:aquamarine;transform:scale(1.5)}
-100% {color:white}
+0% {-webkit-text-fill-color:aquamarine}
+50% {-webkit-text-fill-color:aquamarine;transform:scale(1.5)}
+100% {-webkit-text-fill-color:white}
 }
 
 h3 {
