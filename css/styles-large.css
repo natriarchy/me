@@ -847,6 +847,7 @@ footer a:hover,.linked:hover img {
   cursor: pointer;
 }
 footer #dropup, #footbutton i {
+  color: #fff !important;
   font-size: calc(16.4px + 0.175vw);
   line-height: calc(1.5em + 0.3333vw);
   letter-spacing: calc(.025em + .1vw);
