@@ -196,6 +196,7 @@
   display: flex;
   width: 75%;
   justify-content: center;
+  padding: auto;
   background: white;
   background-image: radial-gradient(white 0%,white 50%, gray 100%);
   text-align: center;
@@ -212,6 +213,7 @@
   display: flex;
   width: 25%;
   justify-content: center;
+  padding: auto;
   background-image: radial-gradient(circle,rgba(250,200,200) 0%, rgba(100,0,0) 100%);
   color: white;
   border: 2px black solid;
