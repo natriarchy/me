@@ -56,9 +56,9 @@
       </div>
     </div>
     <div id="carrot-cake" class="justify-content-center">
-      <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+      <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><i class='fas fa-arrow-left'></i></a>
       <div id="viewcap">GIS Graphics</div>
-      <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+      <a id="carrot2" href="#imgarray" role="button" data-slide="next"><i class='fas fa-arrow-right'></i></a>
       <a class="btn btn-warning p-1 align-self-end" data-toggle="modal" data-target="#morganModal1" style="cursor:pointer;position:absolute;bottom:.5em;">click for info</a>
     </div>
     <ol class="carousel-indicators m-auto w-50 bg-success rounded-bottom border border-top-0" style="opacity: .75;position:absolute;height:1.25em;bottom:-1.25em;">
@@ -69,10 +69,9 @@
     </ol>
   </div>
   <hr>
-  <h1 id="morgantitle">Morgan-Sayreville Interactive Map</h1>
-  <button id="subtitle" role="button" class="btn btn-warning p-1 shadow" data-toggle="modal" data-target="#morganModal2">learn more</button>
+  <h3 class='' style='grid-column:left/span 3;margin:0'>Morgan-Sayreville Interactive Map</h3>
   <div id="morganmap-b" class="card" name="leaflet map">
-    <button id='framebutton' onclick="this.style.display='hidden'" class='btn-lg btn-primary'>load map...</button>
+    <button id='framebutton' onclick="this.style.display='none'" class='btn-lg btn-primary' data-toggle="modal" data-target="#morganMapModal">load map...</button>
     <img id='placeholder' src='img\ZoningMap.png'>
   </div>
   <div role="group" class="d-flex justify-content-around btn-group my-5" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
@@ -93,7 +92,7 @@
       </div>
   </div>
 </div>
-<div class="modal fade" id="morganModal2" tabindex="-1" role="dialog" aria-labelledby="morganModal2" aria-hidden="true">
+<div class="modal fade" id="morganMapModal" tabindex="-1" role="dialog" aria-labelledby="morganModal2" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
       <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
         <span class="modal-title h2 text-white align-self-center">Interactive Zoning Map</span><br>
@@ -149,12 +148,11 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
-  $('[data-toggle="popover"]').popover({content: "Check below for an interactive GIS map!",placement: "bottom",trigger:"hover"});
+  $('[data-toggle="modal"]:first').popover({content: "Click then explore GIS app below",placement: "bottom",trigger:"hover"});
   $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
-  var x = $(event.relatedTarget).find("i");
-  var y = $(event.relatedTarget);
-  x.toggleClass('fa-arrow-alt-circle-up');
-  x.toggleClass('fa-arrow-alt-circle-down');
+  var x = $(event.relatedTarget).find("i"),
+  y = $(event.relatedTarget);
+  x.toggleClass('fa-arrow-alt-circle-up fa-arrow-alt-circle-down');
   y.toggleClass('changecolor');
   });
 });

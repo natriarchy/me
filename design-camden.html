@@ -76,9 +76,9 @@
       </div>
     </div>
     <div id="carrot-cake" class='justify-content-center'>
-      <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><</a>
+      <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><i class='fas fa-arrow-left'></i></a>
       <span id="viewcap" href="#imgarray">waterfront</span>
-      <a id="carrot2" href="#imgarray" role="button" data-slide="next">></a>
+      <a id="carrot2" href="#imgarray" role="button" data-slide="next"><i class='fas fa-arrow-right'></i></a>
       <a class="btn btn-warning p-1 align-self-end" data-toggle="modal" data-target="#morganModal1" style="cursor:pointer;position:absolute;bottom:.5em;">click for info</a>
     </div>
     <ol class="carousel-indicators m-auto w-50 bg-success rounded-bottom border border-top-0" style="opacity: .75;position:absolute;height:1.25em;bottom:-1.25em;">
@@ -163,31 +163,21 @@ $(document).ready(function(){
     }
   });
   $('#buildfly').on('ended',function(){
-    $("#buildfly").fadeOut();
-    $("#artistic").fadeIn();
+    $("#buildfly,#artistic").fadeToggle();
   });
-  $("#button1").on("click",function(){
-   $("#plan-b").fadeIn();
-   $("#plan-a").hide();
-   $("#button1,#button2").toggleClass("activate");
-   $("#button1,#button2").toggleClass("deactivate");
-  });
-  $("#button2").on("click",function(){
-   $("#plan-a").fadeIn();
-   $("#plan-b").hide();
-   $("#button1,#button2").toggleClass("activate");
-   $("#button1,#button2").toggleClass("deactivate");
+  $("#button1,#button2").on("click",function(){
+   $("#plan-b,#plan-a").toggle();
+   $("#button1,#button2").toggleClass("activate deactivate");
   });
   $("#imgarray").on('slide.bs.carousel', function(event){
-   var slider = event.relatedTarget;
-   var titler = $('img',slider).attr('title');
+   var slider = event.relatedTarget,
+   titler = $('img',slider).attr('title');
    $("#viewcap").text(titler);
   });
   $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
-  var x = $(event.relatedTarget).find("i");
-  var y = $(event.relatedTarget);
-  x.toggleClass('fa-arrow-alt-circle-up');
-  x.toggleClass('fa-arrow-alt-circle-down');
+  var x = $(event.relatedTarget).find("i"),
+  y = $(event.relatedTarget);
+  x.toggleClass('fa-arrow-alt-circle-up fa-arrow-alt-circle-down');
   y.toggleClass('changecolor');
   });
 });

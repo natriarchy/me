@@ -41,12 +41,12 @@
 </nav>
 <section id="column-main">
   <div class="card-left">
-    <p>Understand and get a feel for my writing style. See the links below for a report I produced during the summer of 2018, and an assessment of a redevelopment project in Washington, DC, from the Spring of 2017. You can also find some informal blog posts of mine, which will update every now and then.<br><br><span style="font-size:60px;writing-mode:vertical-rl">&#10170;</span></p>
+    <p>Understand and get a feel for my writing style. See the links below for a report I produced during the summer of 2018, and an assessment of a redevelopment project in Washington, DC, from the Spring of 2017. You can also find some informal blog posts of mine, which will update every now and then.<br><br><i class='h1 fas fa-arrow-down'></i></p>
   </div>
   <div class="card-right">
     <h3>Short Technical Report</h3>
     <br>
-    <button class="link" onclick="window.location.href='/files/ERWIN_PS3_Final.pdf'">Disparities in Bergen County, NJ</button>
+    <button class="link" onclick="window.location.href='/files/ERWIN_PS3_Final.pdf'">Disparity in Bergen Co., NJ</button>
     <br><br>
     <h3>Longer Reports</h3>
     <br>
@@ -57,17 +57,26 @@
   <hr>
   <h1>Straight Outta the Noggin</h1>
   <article>
-    <h3>First Thoughts</h3>
-    <h4>February 20th, 2019</h4>
+    <h3 style='cursor:pointer' data-target='#firstThoughts' data-toggle="collapse">First Thoughts</h3>
+    <h4>February 20th, 2019<pre id='wordCounter1'></pre></h4>
+    <div id='firstThoughts' class='collapse'>
       <p>I wake from another frustrating dream. Yes, I am a little sweaty again, and my head hurts. The glare of the sun illuminates the grime on my windows. Through them, a snapshot of a cityscape that has changed little in sixty years; dirty facades, decrepit husks of acceptable mid-century apartments. In the distance, there is a fashionable modern gym. The little specks of human constantly huff, guffaw, and vibrate. You can feel their quixotic zeal to get “in shape” from my worn-out apartment across the way. </p>
       <p>My eyes opened, my kingdom surveilled, of course I next check my phone. Why do I do it? I have a watch, but still check for the time on my phone. Did my friend send me a funny gif in the middle of the night? Continue a long running, moderately-funny, joke? Have an emergency? Did the NYT or WaPo break any earth-shattering news? Or am I just checking my phone out of habit?</p>
       <p>I value my time alone as much or more than anyone on the planet. More than 90% of the time I spend on my phone, or my iPad, is time that lies in a purgatory of value for me. Sure, I am slightly more informed about the goings-on of my friends and the famous. Sure, I get to share some jokes, discover new factoids that intrigue me and play a mildly engaging game. However, the lions’ share of that time is spent swiping to refresh my apps; in hopes that something exciting will come along. </p>
       <p>I know that there are hundreds of millions of people around the world with a similar quandary. Smartphones and tablets are on our person at all hours of the day and tugging at our attention spans all the same. There is ample evidence that our devices are responsible for a noticeable shortening of our attention spans, decline in restful sleep, increase in anxiety/depression, and decline in social skills. </p>
       <p>It is certainly true that these devices have also converted humans into intelligent machines. We have a heretofore unimaginable breadth of information at the push of a button (or simply by speaking a phrase—“Ok Google”) and can accomplish a wide variety of tasks and communications at the speed of light. Though, what is our relationship to this technology? Where is it headed? Is it an inevitable force, now?</p>
-      <p>Starting with the latter, yes. Our world is so intertwined with digital devices it is unlikely we will drop our penchant for them. Even today, it is common for children to start carrying a personal smartphone at some point in elementary school. Thus, we need to start asking what our <strong>relationship <em>should be</em></strong> with this technology, and how to make it benefit us even more.
+      <p>Starting with the latter, yes. Our world is so intertwined with digital devices it is unlikely we will drop our penchant for them. Even today, it is common for children to start carrying a personal smartphone at some point in elementary school. Thus, we need to start asking what our <strong>relationship <em>should be</em></strong> with this technology, and how to make it benefit us even more.</p>
+    </div><br>
+    <div id='expandtab' data-target='#firstThoughts' data-toggle="collapse">
+      <div id='collapser1'><i class='fa fa-arrow-down'></i><span>show</span><i class='fa fa-arrow-down'></i></div>
+      <div id='collapser2' style='display:none'><i class='fa fa-arrow-up'></i><span>hide</span><i class='fa fa-arrow-up'></i></div>
+    </div>
   </article>
 </section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
@@ -93,7 +102,7 @@
   </div>
 </footer>
 <script type="text/javascript">
-var art = document.getElementById("article");
+var art = document.getElementById("firstThoughts");
 $(document).ready(function(){
   $(window).scroll(function() {
     if ($(document).scrollTop() >= ($(window).innerHeight() * .155)) {
@@ -106,29 +115,19 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
-  $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
-  var x = $(event.relatedTarget).find("i");
-  var y = $(event.relatedTarget);
-  x.toggleClass('fa-arrow-alt-circle-up');
-  x.toggleClass('fa-arrow-alt-circle-down');
+  $("dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
+  var x = $(event.relatedTarget).find("i"),
+  y = $(event.relatedTarget);
+  x.toggleClass('fa-arrow-alt-circle-up fa-arrow-alt-circle-down');
   y.toggleClass('changecolor');
   });
-  $("#carrot1").hover(function(){
-    $("#carrot1").text("<");
-    }, function(){
-      $("#carrot1").text("<<<");
+  $("article h3,#expandtab").on("click", function(event){
+    $('#collapser1, #collapser2').toggle();
   });
-  $("#carrot2").hover(function(){
-    $("#carrot2").text(">");
-    }, function(){
-      $("#carrot2").text(">>>");
-  });
-  $("#carrot2").click(function(){
-    art.scrollLeft += (art.scrollWidth/2);
-  });
-  $("#carrot1").click(function(){
-    art.scrollLeft -= (art.scrollWidth/2);
-  });
+  var value1 = $('#firstThoughts').text();
+  var regex = /\s+/gi;
+  var wordCount1 = value1.trim().split(regex).length;
+  $(wordCounter1).text(wordCount1+' words'+' ~'+((wordCount1/300).toFixed(1))+' min');
 });
 </script>
 </html>

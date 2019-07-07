@@ -381,7 +381,6 @@ table {
 .leaflet-control-layers input {
   display: none;
 }
-
 .leaflet-control-layers {
   all:unset;
   text-align: center;
@@ -436,16 +435,6 @@ table {
 	}
 
 /* attribution and scale controls */
-
-.leaflet-container .leaflet-control-attribution {
-	all:unset;
-	background: rgba(255, 255, 255, 1);
-	margin: 0;
-	padding: .15em;
-	padding-left: 1em;
-	padding-right: 1em;
-	border-radius: 5px 0px 0px 0px;
-	}
 .leaflet-control-attribution,
 .leaflet-control-scale-line {
 	padding: 0 0px;
@@ -459,7 +448,7 @@ table {
 	}
 .leaflet-container .leaflet-control-attribution,
 .leaflet-container .leaflet-control-scale {
-	font-size: .66em;
+	font-size: .5em;
 	}
 .leaflet-left .leaflet-control-scale {
 	margin-left: 5px;
