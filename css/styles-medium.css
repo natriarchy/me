@@ -486,6 +486,57 @@ p {
  text-align: left;
  text-align-last: left;
 }
+aside {
+  display: flex;
+  color:#fff!important;
+  -webkit-text-fill-color: rgba(260, 260, 260, 1);
+  flex-direction: column;
+  text-align: justify;
+  text-align-last: center;
+  border-radius: 10px;
+  background-color: darkslategray;
+  background-image: url("mocha-grunge.png");
+  background-size: 10em 10em;
+  background-blend-mode:luminosity;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+  line-height:1.15em;
+  max-width: 95%;
+  box-shadow: 0px 0px 5px 2px black;
+}
+aside p {
+  color:white;
+  font-size: .8em;
+  text-align: justify;
+  text-align-last: center;
+  border-radius: 5px;
+  margin: .5em;
+  margin-left: .75em;
+  margin-right:.75em;
+  padding-left: .75em;
+  padding-right: .75em;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+aside kbd {
+  background-color: rgba(0,0,0,0);
+  display: inline-block;
+  margin: auto;
+  font-size: 1em;
+}
+aside em {
+  color:white;
+  font-family: monospace;
+  font-size: .8em;
+  border-radius: 4px;
+  margin: .5em;
+  padding: .5em;
+  letter-spacing: .15em;
+  font-variant: small-caps;
+  background-color: rgba(100,100,100,.75);
+  box-shadow: 1px 1px 1px 0px white;
+}
 article {
   grid-column: left/span 3;
   border-radius: 5px;
@@ -496,29 +547,33 @@ article {
   background-size: 20em 10em;
   box-shadow: inset 0px 0px 5px 0px;
 }
+#art-head {
+  padding-left: 5%;
+  padding-right: 5%;
+}
 article h3 {
   font-size: 2em;
   padding: .5em;
   width:100%;
-  box-shadow:inset 2px 2px 5px 2px white;
-  font-family: monospace;
   font-weight: bold;
-  background-color: rgba(200,200,0,.5);
+  border: .1em rgba(0,0,0,1) solid;
+  background-color: rgba(100,100,100,.25);
   border-radius: 5px;
 }
 #expandtab {
   cursor: pointer;
   display:flex;
+  width:33vw;
+  margin: auto;
   font-size: calc(20px + 0.175vw);
-  width:100%:
   justify-content:center;
   text-align: center;
   text-shadow: none;
   color:#fff!important;
   -webkit-text-fill-color: rgba(260, 260, 260, 1);
-  background-color: rgba(200,200,0,.5);
+  background-color: rgba(100,100,100,.33);
   border-radius: 5px;
-  box-shadow:inset 2px 2px 5px 2px white;
+  box-shadow:1px 1px 2px 0px grey;
 }
 #collapser1,#collapser2 {
   all:unset;
@@ -533,6 +588,7 @@ article h3 {
 }
 #collapser1 span,#collapser1 i,#collapser2 span,#collapser2 i{
   display: flex;
+  text-shadow: 1px 1px 0px grey;
   justify-content: space-between;
   align-self: center;
   align-items: center;
@@ -545,25 +601,28 @@ article h3 {
   transition-duration: .25s;
 }
 #collapser1 span,#collapser2 span {
-  background-color: white;
-  color:dimgray;
-  -webkit-text-fill-color: dimgray;
-  box-shadow:inset 1px 1px 5px 2px grey;
-  font-family: monospace;
+  font-weight: 600;
   text-indent: 0;
   margin: .5em;
   margin-left: 1em;
   margin-right: 1em;
-  padding: .66em;
+  padding: .5em;
   padding-left: 1em;
   padding-right: 1em;
 }
-#expandtab:hover i,#expandtab:hover span {
-  color:black;
-  -webkit-text-fill-color: black;
-  text-shadow: 1px 1px 2px;
-  -webkit-transition-duration: 0.25s;
+#collapser1:hover,#collapser2:hover {
+  color:dimgray;
+  -webkit-text-fill-color:dimgray;
   transition-duration: .25s;
+  -webkit-transition-duration: 0.25s;
+}
+#wordCounter1 {
+  float: left;
+  width:100%;
+  margin-top: .25em;;
+  text-align: center;
+  font-size: .75em;
+  font-family: inherit;
 }
 h1 {
   all:unset;
@@ -585,19 +644,19 @@ scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
 h2 {
- position:relative;
  text-shadow: 3px 3px 3px grey;
  font-size: 2em;
  margin-bottom: .5em;
- text-align: left;
  text-transform: lowercase;
  color: #fff !important;
  -webkit-text-fill-color: rgba(260, 260, 260, 1);
+ transform:scale(1);
  letter-spacing:.15em;
  scroll-snap-align: start; /* latest (Chrome 69+) */
 scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
 -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
 }
+
 h3 {
  position:relative;
  text-shadow: 3px 3px 3px grey;
@@ -610,25 +669,26 @@ h3 {
  letter-spacing: .2em;
  box-shadow: None;
 }
+
 h4 {
-  font-size: 1em;
-  padding-top: .25em;
+font-size: 1em;
+padding-top: .25em;
  text-align: center;
  margin-left:1.5em;
  margin-right:1.5em;
- border: 2px black double;
+ border: 2px black solid;
  border-top: none;
  border-radius: 0px 0px 5px 5px;
 }
+
 h5 {
- font-size: 1em;
- font-weight: 600;
- font-variant: small-caps;
- margin-left: -3em;
+text-align:center;
+ font-size: 1.15em;
  color: black;
  letter-spacing: 1.25;
- text-shadow: 1px 2px 5px grey;
+ margin-bottom: -1em;
 }
+
 h6 {
  text-align: center;
  font-size: 1em;
