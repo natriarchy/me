@@ -11,9 +11,9 @@
   justify-content: center;
   top:0;
   margin: 0;
-  margin-bottom: -9vh;
+  margin-bottom: -8vh;
   padding: 0;
-  padding-bottom: 8vh;
+  padding-bottom: 7vh;
   background-image: url("iron-grip.png");
   background-size: 10em 10em;
   background-color: dimgray;
@@ -326,8 +326,8 @@
 .card-left, .card-right {
   width: 100%:
   font-size: calc(18px + 0.175vw);
-  line-height: calc(1em + 0.3333vw);
-  letter-spacing: calc(.09em + .1vw);
+  line-height: calc(1.15em + 0.3333vw);
+  letter-spacing: calc(.15em + .1vw);
   display:flex;
   flex-direction: column;
   padding: .75em;
