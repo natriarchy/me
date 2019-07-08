@@ -46,13 +46,13 @@
   <div class="card-right">
     <h3>Short Technical Report</h3>
     <br>
-    <button class="link" onclick="window.location.href='/files/ERWIN_PS3_Final.pdf'">Disparity in Bergen Co., NJ</button>
+    <button class="link" data-words=1689 onclick="window.location.href='/files/ERWIN_PS3_Final.pdf'">Disparity in Bergen Co., NJ</button>
     <br><br>
     <h3>Longer Reports</h3>
     <br>
-    <button class="link" onclick="window.location.href='/files/DaytonReportFinal.pdf'">Newark-Dayton Report</button>
+    <button class="link" data-words=10190 onclick="window.location.href='/files/DaytonReportFinal.pdf'">Newark-Dayton Report</button>
     <br>
-    <button class="link" onclick="window.location.href='/files/NErwin-CSC-June2017.pdf'">Redevelopment on H Street</button>
+    <button class="link" data-words=14840 onclick="window.location.href='/files/NErwin-CSC-June2017.pdf'">Redevelopment on H Street</button>
   </div>
   <hr>
   <h1>Straight Outta the Noggin</h1>
@@ -132,6 +132,10 @@ $(document).ready(function(){
   var regex = /\s+/gi;
   var wordCount1 = value1.trim().split(regex).length;
   $(wordCounter1).text(wordCount1+' words'+' ~'+((wordCount1/225).toFixed(1))+' min');
+  $("[data-words]").each(function(){
+    var txt = $(this).attr('data-words');
+    $("<pre class='linkCounter'>"+(Number(txt).toLocaleString('en'))+' words'+' ~'+((txt/225).toFixed(1))+' min'+"</pre>").insertAfter(this);
+  });
 });
 </script>
 </html>

@@ -618,6 +618,14 @@ article h3 {
   font-size: .75em;
   font-family: inherit;
 }
+.linkCounter {
+  float: left;
+  width:100%;
+  margin-top: .1em;;
+  text-align: center;
+  font-size: .75em;
+  font-family: inherit;
+}
 h1 {
   all:unset;
   grid-column: left/span 3;
