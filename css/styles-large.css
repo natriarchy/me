@@ -154,6 +154,7 @@ li.nav-item:active .nav-link,#dropdown-title-btn:active, #dropdown-title:active,
    text-align: center;
    background: white;
    width: 100%;
+   font-size: calc(18px + 1vh);
    text-transform: lowercase;
    color: black;
    border: 2px black solid;
@@ -198,6 +199,7 @@ li.nav-item:active .nav-link,#dropdown-title-btn:active, #dropdown-title:active,
   cursor: pointer;
   display: flex;
   width: 75%;
+  font-size: calc(18px + 1vh);
   justify-content: center;
   background: white;
   text-align: center;
@@ -215,6 +217,7 @@ li.nav-item:active .nav-link,#dropdown-title-btn:active, #dropdown-title:active,
   cursor: pointer;
   display: flex;
   width: 25%;
+  font-size: calc(18px + 1vh);
   justify-content: center;
   color: white;
   border: 2px black solid;
@@ -507,6 +510,7 @@ body {
   background-size:10em 100em;
 }
 p {
+  text-indent: 1em;
  margin:1em;
  text-align: left;
  text-align-last: left;
@@ -565,7 +569,6 @@ aside em {
 article {
   grid-column: left/span 3;
   border-radius: 5px;
-  text-indent: 1em;
   padding: 1em;
   background-image: url("mocha-grunge.png");
   background-color: lightcyan;
@@ -588,58 +591,48 @@ article h3 {
 #expandtab {
   cursor: pointer;
   display:flex;
-  width:20vw;
-  margin: auto;
-  font-size: calc(20px + 0.175vw);
   justify-content:center;
-  text-align: center;
-  text-shadow: none;
-  color:#fff!important;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1);
-  background-color: rgba(100,100,100,.33);
-  border-radius: 5px;
-  box-shadow:1px 1px 2px 0px grey;
+  width:75%;
+  margin: auto;
+  padding: 5px;
+  border-top: 1px black solid;
+  color:rgba(260,260,0,1);
+  -webkit-text-fill-color: rgba(260,260,260,1);
 }
 #collapser1,#collapser2 {
-  all:unset;
   display:flex;
-  margin: auto;
-  cursor: pointer;
-  text-indent: unset;
   justify-content:center;
+  border-radius: 7px;
+  cursor: pointer;
   text-align: center;
-  font-size: 1em;
-  text-shadow: none;
-}
-#collapser1 span,#collapser1 i,#collapser2 span,#collapser2 i{
-  display: flex;
-  text-shadow: 1px 1px 0px grey;
-  justify-content: space-between;
-  align-self: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  height: 1em;
-  border-radius: 10px;
-  text-indent: 0;
+  font-size: 2em;
+  text-shadow: 0px 0px 15px dimgrey;
   -webkit-transition-duration: 0.25s;
   transition-duration: .25s;
 }
-#collapser1 span,#collapser2 span {
-  font-weight: 600;
-  text-indent: 0;
-  margin: .5em;
+#expandtab:hover #collapser1:before,#expandtab:hover #collapser1:after {
+  line-height: unset;
+  font-size: .75em;
+  content: 'show';
+  margin: unset;
   margin-left: 1em;
   margin-right: 1em;
-  padding: .5em;
-  padding-left: 1em;
-  padding-right: 1em;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
+}
+#expandtab:hover #collapser2:before,#expandtab:hover #collapser2:after{
+  line-height: unset;
+  font-size: .75em;
+  content: 'hide';
+  margin: unset;
+  margin-left: 1em;
+  margin-right: 1em;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 #collapser1:hover,#collapser2:hover {
-  color:dimgray;
-  -webkit-text-fill-color:dimgray;
-  transition-duration: .25s;
-  -webkit-transition-duration: 0.25s;
+  color:black;
+  -webkit-text-fill-color:black;
 }
 #wordCounter1 {
   float: left;
@@ -1022,7 +1015,7 @@ footer a:hover,.linked:hover img {
   filter:invert(0);
   cursor: pointer;
 }
-footer #dropup, #footbutton i {
+footer #dropup {
   color: #fff !important;
   font-size: calc(16.4px + 0.175vw);
   line-height: calc(1.5em + 0.3333vw);
@@ -1054,14 +1047,21 @@ footer #dropup, #footbutton i {
   padding: auto;
   justify-content:center;
   align-items:center;
-  font-size: 1em;
+  font-size: calc(12px + 0.175vw);
+  line-height: calc(1em + 0.3333vw);
+  letter-spacing: calc(.025em + .1vw);
   flex-wrap: nowrap;
+}
+#footbutton i {
+  font-size: calc(20px + 0.175vw);
+  margin: auto;
 }
 #footbutton kbd {
   background-image: url("iron-grip.png");
   background-size: 10em 10em;
   background-color: black;
   margin: auto;
+  font-size:inherit;
   flex-wrap: nowrap;
 }
 #footer-dropdown {
@@ -1078,6 +1078,12 @@ footer #dropup, #footbutton i {
   -webkit-text-fill-color: aquamarine;
   transition-duration: 1s;
   -webkit-transition-duration: 1s;
+}
+.top-line,.middle{
+  width:100%;
+  height: auto;
+  margin: unset;
+  padding: unset;
 }
 .changecolor {
   color:aquamarine;
@@ -1097,12 +1103,9 @@ footer #dropup, #footbutton i {
 .email:after {
   content: " ║ ";
 }
-.linked img {
-  filter:invert(1)drop-shadow(0px 0px 1px aquamarine);
-  position: relative;
-  height: 1.15em;
-  -webkit-transition-duration: 0s;
-  transition-duration: 0s;
+.linked i{
+  font-size: 1.25em;
+  vertical-align:middle;
 }
 .linked::after {
   content:"|nterwin714";

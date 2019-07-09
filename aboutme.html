@@ -23,10 +23,10 @@
 </header>
 <nav id="topnav">
   <ul class="nav nav-justified">
-    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-    <li class="nav-item"><a class="nav-link active" href="aboutme.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="index.html"><i class='fa fa-home'></i></a></li>
+    <li class="nav-item"><a class="nav-link active" href="aboutme.html"><i class='fa fa-id-card'></i></a></li>
     <li class="nav-item">
-      <button id="dropdown-title" type="button" onclick="window.location.href='design.html'">Design</button>
+      <button id="dropdown-title" type="button" onclick="window.location.href='design.html'"><i class='fa fa-images'></i></button>
       <button id="dropdown-title-btn" class="dropdown-toggle" type="button" data-offset="-100,2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
       <div id="dropdown" class="dropdown-menu" role="group">
         <a class="dropdown-item" href="design.html" role="button">intro</a>
@@ -36,7 +36,7 @@
         <a class="dropdown-item" href="design-morgan.html" role="button">morgan-Sayreville</a>
       </div>
     </li>
-    <li class="nav-item"><a href="writings.html" class="nav-link">Writings</a></li>
+    <li class="nav-item"><a href="writings.html" class="nav-link"><i class='fa fa-quote-left'></i></i></a></li>
   </ul>
 </nav>
 <section id="column-main">
@@ -44,7 +44,6 @@
     <aside>
       <kbd><h5>Learn about who I am or get the cliffnotes from my resume, which you can find at the link below.</h5><br>
       <p>"Passionate MCRP graduate eager to enhance how we connect with and experience our neighborhoods. Experienced creating and delivering public presentations, developing graphic content across several platforms, and working within a team. Extensive coursework taken in urban redevelopment, zoning, housing affordability, historic preservation, transit-oriented development and sustainability."</p></kbd>
-      <em>Very interested in how emerging employment and lifestyle trends might intersect with urban design.</em>
     </aside>
     <button class="general-link" onclick="window.location.href='/files/NErwinResume.pdf'">my resume pdf</button>
   </div>
@@ -64,8 +63,8 @@
       <p>I was lucky enough to get some travelling in just before classes began. I backpacked across Europe for more than a month, a perfect opportunity to marvel at the design of 13 great cities. It was a great intro to good and bad urban design. I graduated from Bloustein in December of 2018. In the time since, I have continued learning new computer skills, worked on myself, and developed more of my hobbies. I am an avid guitarist, and a general lover of all things music. In my life, I have read biographies on a third of the US presidents, amongst several other historical tomes. These days, I spend a lot of time thinking on and researching the trends that will come to shape our lives and environments as the next few decades unfold.</P>
     </div>
     <div id='expandtab' data-target='#aboutme' data-toggle="collapse">
-      <div id='collapser1'><i class='fa fa-arrow-down'></i><span>show</span><i class='fa fa-arrow-down'></i></div>
-      <div id='collapser2' style='display:none'><i class='fa fa-arrow-up'></i><span>hide</span><i class='fa fa-arrow-up'></i></div>
+      <div id='collapser1'><i class='fa fa-plus-square'></i></div>
+      <div id='collapser2' style='display:none'><i class='fa fa-minus-square'></i></div>
     </div>
   </article>
 </section>
@@ -77,9 +76,9 @@
   <div id='dropup' class="dropup fixed-bottom mx-auto w-100">
     <button type="button" class="btn d-flex m-auto" data-toggle="dropdown">
       <div id='footbutton'>
-        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+        <i class='h5 w-25 fas fa-chevron-circle-up'></i>
         <kbd class='h5 w-75'>contact info</kbd>
-        <i class='h5 w-25 fas fa-arrow-alt-circle-up'></i>
+        <i class='h5 w-25 fas fa-chevron-circle-up'></i>
       </div>
     </button>
     <div id="footer-dropdown" class="dropdown-menu text-center" style="transition-duration:.5">
@@ -89,7 +88,7 @@
       </div>
       <div class="middle">
         <a href="mailto: nterwin714@gmail.com" target="_blank" class="email"></a>
-        <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><img src="img\Logo-Black-128px-R.png" alt="linkedIn logo"></a>
+        <a href="https://linkedin.com/in/nterwin714" target="_blank" class="linked"><i class='fab fa-linkedin'></i></a>
       </div>
     </div>
   </div>
@@ -110,8 +109,7 @@ $(document).ready(function(){
   $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
   var x = $(event.relatedTarget).find("i");
   var y = $(event.relatedTarget);
-  x.toggleClass('fa-arrow-alt-circle-up');
-  x.toggleClass('fa-arrow-alt-circle-down');
+  x.toggleClass('fa-chevron-circle-up fa-chevron-circle-down');
   y.toggleClass('changecolor');
   });
   $("article h3,#expandtab").on("click", function(event){
@@ -121,7 +119,7 @@ $(document).ready(function(){
   var value1 = $('#aboutme').text();
   var regex = /\s+/gi;
   var wordCount1 = value1.trim().split(regex).length;
-  $(wordCounter1).text(wordCount1+' words'+' ~'+((wordCount1/225).toFixed(1))+' min');
+  $(wordCounter1).html(wordCount1+' words'+'  '+'<i class="fa fa-clock"></i> ~'+((wordCount1/225).toFixed(1))+' min');
 });
 </script>
 </html>
