@@ -45,7 +45,7 @@
       <h5>Learn about who I am or get the cliffnotes from my resume, which you can find at the link below.</h5>
       <p>"Passionate MCRP graduate eager to enhance how we connect with and experience our neighborhoods. Experienced creating and delivering public presentations, developing graphic content across several platforms, and working within a team. Extensive coursework taken in urban redevelopment, zoning, housing affordability, historic preservation, transit-oriented development and sustainability."</p>
     </aside>
-    <button class="general-link" onclick="window.location.href='/files/NErwinResume.pdf'">my resume pdf</button>
+    <button class="general-link" data-words=538 onclick="window.location.href='/files/NErwinResume.pdf'">my resume pdf</button>
   </div>
   <article>
     <div id='art-head'>
@@ -120,6 +120,10 @@ $(document).ready(function(){
   var regex = /\s+/gi;
   var wordCount1 = value1.trim().split(regex).length;
   $(wordCounter1).html(wordCount1+' words'+'  '+'<i class="fa fa-clock"></i> ~'+((wordCount1/225).toFixed(1))+' min');
+  $("[data-words]").each(function(){
+    var txt = $(this).attr('data-words');
+    $("<pre class='linkCounter'>"+(Number(txt).toLocaleString('en'))+' words'+'  '+'<i class="fa fa-clock"></i> ~'+((txt/225).toFixed(1))+' min'+"</pre>").insertAfter(this);
+  });
 });
 </script>
 </html>
