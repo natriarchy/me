@@ -42,7 +42,7 @@
 <section id="column-main">
   <div class="card">
     <h5 class="text-light lead">Experience a sampling of what I produced in my time at the Bloustein School of Planning & Public Policy.This page highlights each project, but you can also access the full pdf below.</h5><br>
-    <button class="general-link" onclick="window.location.href='/files/DesignPortfolio.pdf'">full portfolio pdf</button>
+    <button class="general-link" data-words=538 onclick="window.location.href='/files/DesignPortfolio.pdf'">full portfolio pdf</button>
   </div>
   <hr style="background-color: mistyrose;">
   <div class="card-left" style="background-color: darkseagreen">
@@ -115,6 +115,10 @@
       var y = $(event.relatedTarget);
       x.toggleClass('fa-chevron-circle-up fa-chevron-circle-down');
       y.toggleClass('changecolor');
+      });
+      $("[data-words]").each(function(){
+        var txt = $(this).attr('data-words');
+        $("<pre class='linkCounter'>"+(Number(txt).toLocaleString('en'))+' words'+'  '+'<i class="fa fa-clock"></i> ~'+((txt/225).toFixed(1))+' min'+"</pre>").insertAfter(this);
       });
     });
 </script>
