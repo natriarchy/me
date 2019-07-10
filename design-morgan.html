@@ -40,7 +40,7 @@
   </ul>
 </nav>
 <section id="column-main">
-  <div id="imgarray" class="container-fluid carousel bg-secondary" data-ride="carousel" style="box-shadow:inset 0px 0px 20px 1px;grid-row:1; max-height:60vh;">
+  <div id="imgarray" class="container-fluid carousel" data-ride="carousel" style="grid-row:1; max-height:60vh;">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
         <img src="img\Morgan_Inset.png" title="study area">
@@ -59,7 +59,6 @@
       <a id="carrot1" href="#imgarray" role="button" data-slide="prev"><i class='fas fa-arrow-left'></i></a>
       <div id="viewcap">GIS Graphics</div>
       <a id="carrot2" href="#imgarray" role="button" data-slide="next"><i class='fas fa-arrow-right'></i></a>
-      <a class="btn btn-warning p-1 align-self-end" data-toggle="modal" data-target="#morganModal1" style="cursor:pointer;position:absolute;bottom:.5em;">click for info</a>
     </div>
     <ol class="carousel-indicators m-auto w-50 bg-success rounded-bottom border border-top-0" style="opacity: .75;position:absolute;height:1.25em;bottom:-1.25em;">
       <li data-target="#imgarray" data-slide-to="0" class="active"></li>
@@ -71,7 +70,7 @@
   <hr>
   <h3 class='' style='grid-column:left/span 3;margin:0'>Morgan-Sayreville Interactive Map</h3>
   <div id="morganmap-b" class="card" name="leaflet map">
-    <button id='framebutton' onclick="this.style.display='none'" class='btn-lg btn-primary' data-toggle="modal" data-target="#morganMapModal">load map...</button>
+    <button id='framebutton' onclick="this.style.display='none'" class='btn-lg btn-primary' data-toggle="modal" data-target="#morganModal1">load map...</button>
     <img id='placeholder' src='img\ZoningMap.png'>
   </div>
   <div role="group" class="d-flex justify-content-around btn-group my-5" style="grid-row:8;grid-column:left/span 3;cursor:pointer">
@@ -86,18 +85,9 @@
 <div class="modal fade" id="morganModal1" tabindex="-1" role="dialog" aria-labelledby="morganModal1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
       <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
-        <span class="modal-title h2 text-white align-self-center">Morgan-Sayreville Project</span><br>
-        <p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
+        <span class="modal-title h2 text-white align-self-center">Morgan-Sayreville Interactive Map</span><br>
+        <p class="text-light">This was a proof-of-concept for me. I wanted to embed some sort of interactive map in this page, so I worked with an open source plug-in called Leaflet. It was much rougher to work with than would be the more expensive APIs offered by ArcGIS, or others. Leaflet's styling capacity and interface with desktop GIS applications is very limited. However, after much tinkering within Javascript, I was able to make a recognizable map.</p>
       <button type="button" class="btn btn-primary shadow align-self-end" data-dismiss="modal">Close</button>
-      </div>
-  </div>
-</div>
-<div class="modal fade" id="morganMapModal" tabindex="-1" role="dialog" aria-labelledby="morganModal2" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
-      <div class="modal-body bg-secondary d-flex flex-column rounded m-0">
-        <span class="modal-title h2 text-white align-self-center">Interactive Zoning Map</span><br>
-        <p class="text-light">Graduate comprehensive planning studio, focused on potential redevelopment of the Morgan neighborhood of Sayreville, NJ. We ultimately proposed a series of zoning, circulation and land use changes. I developed several <strong>GIS graphics</strong> detailing several constraints and characteristics of the study area. These analyses made it clear we had to focus our efforts around the State Highway bisecting the neighborhood.</p>
-      <button type="button" class="btn btn-primary shadow align-self-center" data-dismiss="modal">Close</button>
       </div>
   </div>
 </div>
@@ -148,7 +138,10 @@ $(document).ready(function(){
       $("#dropdown").removeClass("stickydrop");
     }
   });
-  $('[data-toggle="modal"]:first').popover({content: "Click then explore GIS app below",placement: "bottom",trigger:"hover"});
+  $('#viewcap').popover({html:true,content:'<span class="popovercont">made entirely within ArcGIS</span>',placement:'bottom',trigger:'manual',offset:'30%'});
+  $("#imgarray").hover(function(){
+   $('#viewcap').popover("toggle");
+  });
   $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
   var x = $(event.relatedTarget).find("i"),
   y = $(event.relatedTarget);

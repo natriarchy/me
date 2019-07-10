@@ -60,19 +60,19 @@
     </div>
   </div>
   <hr style="grid-row:6;">
-  <div id="imgarray" class="container-fluid carousel m-auto bg-secondary" data-ride="carousel" style="grid-row:7;box-shadow:inset 0px 0px 20px 1px;">
+  <div id="imgarray" class="container-fluid carousel m-auto" data-ride="carousel">
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
-        <img src="img/PlainMap.png" title="study area">
+        <img src="img/PlainMap.png" title="study area" data-content='made with GIS, adobe photoshop and adobe indesign'>
       </div>
       <div class="carousel-item">
-        <img src="img/ExistTransit.png" title="transit">
+        <img src="img/ExistTransit.png" title="transit" data-content='made with GIS, adobe photoshop and adobe indesign'>
       </div>
       <div class="carousel-item">
-        <img src="img/PropTransit.png" title="transit proposal">
+        <img src="img/PropTransit.png" title="transit proposal" data-content='made with GIS, adobe photoshop and adobe indesign'>
       </div>
       <div class="carousel-item">
-        <img src="img/PropSitePlan.png" title="site plan">
+        <img src="img/PropSitePlan.png" title="site plan" data-content='made with sketchup, GIS, adobe photoshop and adobe indesign'>
       </div>
     </div>
     <div id="carrot-cake" class='justify-content-center'>
@@ -153,8 +153,14 @@ $(document).ready(function(){
   });
   $("#imgarray").on('slide.bs.carousel', function(event){
    var slider = event.relatedTarget,
-   titler = $('img',slider).attr('title');
+   titler = $('img',slider).attr('title'),
+   popovercont = $('img',slider).attr('data-content');
    $("#viewcap").text(titler);
+   $('.popovercont').text(popovercont);
+  });
+  $('#viewcap').popover({html:true,content:'<span class="popovercont">made with GIS, adobe photoshop and adobe indesign</span>',placement:'bottom',trigger:'manual',offset:'-33%'});
+  $("#imgarray").hover(function(){
+   $('#viewcap').popover("toggle");
   });
   $(".dropup").on("show.bs.dropdown hide.bs.dropdown", function(event){
   var x = $(event.relatedTarget).find("i"),
