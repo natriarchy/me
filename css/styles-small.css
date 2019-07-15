@@ -257,7 +257,7 @@
   width:100%;
   display: grid;
   grid-template: [splash] auto [splash-b] auto repeat(6, auto)/
-  [l-gutter] 3fr [useless-l] 1fr [left] 94fr [c-gutter] 0fr [right] 0fr [useless-r] 1fr [r-gutter] 3fr;
+  [l-gutter] 3fr [useless-l] 1fr [left] 92fr [c-gutter] 0fr [right] 0fr [useless-r] 1fr [r-gutter] 3fr;
   grid-gap: 2.5vh 0;
   justify-content: center;
   margin: 0 0 10vh 0;
@@ -336,8 +336,8 @@
    border:.25em solid black;
    border-radius: .5rem;
    max-height:33vh;
-   max-width:30vw;
- }
+   width: 100%;
+  }
  .card-left i {
    text-align: center;
    font-size: 1.5rem;
@@ -398,6 +398,20 @@
   background-color: rgba(0,0,0,0);
   box-shadow: inset 0px 0px 1rem .05rem dimgray;
 }
+.progress:after {
+  content:'';
+  display: flex;
+  align-items: stretch;
+  grid-area:8/left/span 1/span 2;
+  position: absolute;
+  top:120%;
+  left:-1vw;
+  display: block;
+  height: 5rem;
+  width:94vw;
+  background: radial-gradient(circle,rgba(0,0,0,.5),rgba(0,100,100,.5),rgba(0,100,100,1));
+  box-shadow: inset 0 0 1rem .5rem black;
+}
 * {
   font:inherit;
   box-sizing: border-box;
@@ -413,19 +427,12 @@ kbd {
 body {
   margin:unset;
   overflow-x: hidden;
-  font-family: "Century Gothic", Georgia, sans-serif;
+  font-family: "Century Gothic", sans-serif;
   font-size: calc(16.4px + 0.175vw);
   line-height: calc(1.5em + 0.3333vw);
   letter-spacing: calc(.025em + .1vw);
-  max-width: 100%;
-  background-image: url("wood.png");;
-  background-color: antiquewhite;
-  background-size:10em 100em;
-}
-p {
-  text-indent: 1em;
- text-align: left;
- text-align-last: left;
+  background: url("wood.png"),antiquewhite;
+  background-size:10em 100em,auto;
 }
 aside {
   font:inherit;
@@ -682,7 +689,7 @@ transition-duration: .25s;
   background-size: 10rem 10rem,auto;
   box-shadow: inset 0 0 1rem 0 black;
   width:100%;
-  height:55vh;
+  height:50vh;
   border-radius: .5rem;
   margin-bottom: 3rem;
 }
