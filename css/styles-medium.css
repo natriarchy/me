@@ -2,25 +2,17 @@
 #header {
   z-index: 99;
   display: grid;
-  grid-template-columns: 7fr 43fr 43fr 7fr;
-  grid-template-rows: 2fr 11fr 5fr 2fr;
-  grid-column-gap: 0;
+  grid-template: 2fr 11fr 5fr 2fr/7fr 43fr 43fr 7fr;
+  grid-gap: 0;
   width: 100%;
-  max-width: 100vw;
   height: 29vh;
-  justify-content: center;
   top:0;
-  margin: 0;
-  margin-bottom: -8vh;
-  padding: 0;
-  padding-bottom: 7vh;
-  background-image: url("iron-grip.png");
-  background-size: 10em 10em;
-  background-color: dimgray;
-  box-shadow: inset 0px 0px 20px 0px black;
-  animation-name: matterhorn;
-  animation-duration: 1s;
-  animation-delay: 0s;
+  margin: 0 0 -8vh 0;
+  padding: 0 0 7vh 0;
+  background: url("iron-grip.png"), dimgray;
+  background-size: 10rem 10rem,auto;
+  box-shadow: inset 0 0 2rem 0 black;
+  animation: matterhorn 1s linear 0s;
 }
 @keyframes matterhorn {
 0% {background-color: black;}
@@ -38,8 +30,8 @@
   width:43vw;
   height: 11vh;
   border: .2vw inset aquamarine;
-  border-radius: 0px 10px 10px 10px;
-  box-shadow: 0px 15px 20px -10px black;
+  border-radius: 0px .75rem .75rem .75rem;
+  box-shadow: 0px .5rem 1.5rem -.5rem black;
 }
 .design-title1 {
   grid-area: 3 / 2 / span 1 / span 2;
@@ -52,18 +44,19 @@
   font-size: calc(40px + .5vmin);
   line-height: calc(1em + 0.3vh);
   letter-spacing: calc(.25em + .1vw);
-  text-shadow: 1px 1px 10px lightyellow;
-  animation-name: name;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  -webkit-animation-name: name;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 0s;
-  -webkit-transition-duration:.35s;
+  text-shadow: .1rem .1rem .75rem lightyellow;
+  justify-content: center;
+  align-items: center;
+  animation: name 1.25s ease-in-out 0s;
   transition-duration: .35s;
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+@keyframes name {
+  0%   {opacity: 0;-webkit-text-fill-color:purple}
+  100% {opacity: 1;-webkit-text-fill-color:white}
 }
 .design-title2 {
   grid-area: 2 / 2 / span 1 / span 1;
@@ -95,19 +88,10 @@
   border-radius: 100px 0 0 100px;
   box-shadow: 0px 15px 20px -5px black;
 }
-@keyframes name {
-  0%   {color:salmon}
-  50% {color:tan}
-}
--webkit-@keyframes name {
-  0%   {color:salmon}
-  50% {color:tan}
-}
 #topnav {
   font:inherit;
   display: grid;
-  grid-template-columns: 7fr 86fr 7fr;
-  grid-template-rows: 10vmin auto;
+  grid-template: 10vmin auto/7fr 86fr 7fr;
   width:100%;
   max-width:100vw;
   height: 15vh;
@@ -118,13 +102,13 @@
    grid-column: 1/span all;
    grid-row: 1;
    display: flex;
-   background: url("iron-grip.png"),white;
-   background-size: 10rem 10rem,auto;
    border: black inset;
    border-width: 5px 2px 2px 2px;
    padding: 0 7vw;
    justify-content:center;
-   box-shadow: 0px 0px 10px 0px;
+   box-shadow: 0px 0px .75rem 0px;
+   background: url("iron-grip.png"),white;
+   background-size: 10rem 10rem,auto;
    -webkit-transition-duration:.35s;
    transition-duration: .35s;
  }
@@ -224,11 +208,10 @@
 #dropdown {
   z-index: 98;
   list-style: none;
-  background: unset;
-  background-image:url("iron-grip.png"), linear-gradient(to right,rgba(260,260,260,.25) 0%, rgba(260,260,260,.75) 10%, rgba(260,260,260,.75) 90%,rgba(260,260,260,.25) 100%);
-  -webkit-background-image:url("iron-grip.png"), -webkit-linear-gradient(to right,rgba(260,260,260,.25) 0%, rgba(260,260,260,.75) 10%, rgba(260,260,260,.75) 90%,rgba(260,260,260,.25) 100%);
+  background:url("iron-grip.png"), linear-gradient(to right,rgba(260,260,260,.25) 0%, rgba(260,260,260,.75) 10%, rgba(260,260,260,.75) 90%,rgba(260,260,260,.25) 100%);
+  -webkit-background:url("iron-grip.png"), -webkit-linear-gradient(to right,rgba(260,260,260,.25) 0%, rgba(260,260,260,.75) 10%, rgba(260,260,260,.75) 90%,rgba(260,260,260,.25) 100%);
   background-size: 10em 10em,auto auto;
-  box-shadow: 0px 0px 10px 1px;
+  box-shadow: 0 0 .75rem .05rem;
   border: none;
   border-radius: 12px;
   -webkit-transition-duration:.35s;
@@ -306,10 +289,10 @@
   width:100%;
   max-width: 100vw;
   display: grid;
- grid-template-columns:[l-gutter] 7fr [useless-l] 2fr [left] 40fr [c-gutter] 2fr [right] 40fr [useless-r] 2fr [r-gutter] 7fr;
-  grid-template-rows: [splash] auto [splash-b] auto repeat(6, auto);
-  grid-row-gap: 2.5vh;
-  grid-column-gap: 0;
+ grid-template:
+ [splash] auto [splash-b] auto repeat(6, auto)/
+ [l-gutter] 7fr [useless-l] 2fr [left] 40fr [c-gutter] 2fr [right] 40fr [useless-r] 2fr [r-gutter] 7fr;
+  grid-gap: 2.5vh 0;
   justify-content: center;
   margin: 0 0 5vh 0;
   top:35vh;
@@ -476,8 +459,8 @@ body {
 aside {
   font:inherit;
   display: flex;
-  color:#fff;
-  -webkit-text-fill-color: rgba(260, 260, 260, 1);
+  color:white;
+  -webkit-text-fill-color: white;
   flex-direction: column;
   border-radius: 10px;
   background: url("mocha-grunge.png"), darkslategray;
@@ -740,30 +723,27 @@ h6 a:hover {
   transition-duration: .25s;
 }
 #imgarray {
-  grid-row: 7;
-  grid-column: left/span 3;
+  grid-area: 7/left/span 1/span 3;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("iron-grip.png"),linear-gradient(to right,rgba(0,100,100,.25) 0%,rgba(100,200,200,.25) 10%, rgba(100,200,200,.25) 90% ,rgba(0,100,100,.25) 100%);
   background-blend-mode:overlay;
-  background-size: 10em 10em,auto;
-  box-shadow: inset 0px 0px 10px 0px black;
+  background-size: 10rem 10rem,auto;
+  box-shadow: inset 0 0 1rem 0 black;
   width:100%;
   height:55vh;
   margin:0;
   border-radius: 5px;
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 }
 #imgarray:hover #carrot1,#imgarray:hover #carrot2 {
   -webkit-transition-duration:.25s;
   transition-duration: .25s;
-  font-size: 3em;
+  font-size: 3rem;
   opacity: .75;
 }
-#imgarray .carousel-item {
-  height: 60vh;
-}
+#imgarray .carousel-item {height: 60vh;}
 #imgarray img {
   max-width:100%;
   height: 100%;
