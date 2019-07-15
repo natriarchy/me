@@ -258,7 +258,7 @@
   display: grid;
   grid-template: [splash] auto [splash-b] auto repeat(6, auto)/
   [l-gutter] 3fr [useless-l] 1fr [left] 92fr [c-gutter] 0fr [right] 0fr [useless-r] 1fr [r-gutter] 3fr;
-  grid-gap: 2.5vh 0;
+  grid-gap: 2rem 0;
   justify-content: center;
   margin: 0 0 10vh 0;
   top:35vh;
